@@ -12,8 +12,10 @@ android {
         applicationId = "com.cristian.fonetica"
         minSdk = 26
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
+        // GitHub Actions numera cada compilación; Play exige que versionCode siempre aumente
+        val run = System.getenv("GITHUB_RUN_NUMBER")?.toIntOrNull() ?: 1
+        versionCode = run
+        versionName = "1.0.$run"
     }
 
     buildTypes {

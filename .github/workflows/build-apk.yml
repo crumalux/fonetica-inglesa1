@@ -1,4 +1,4 @@
-name: Compilar APK
+name: Compilar APK y AAB
 
 on:
   push:
@@ -26,20 +26,26 @@ jobs:
           chmod +x gradlew
           echo "Android SDK: $ANDROID_HOME"
           yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
-          ./gradlew assembleDebug --stacktrace
+          ./gradlew assembleDebug bundleRelease --stacktrace
 
       - name: Renombrar APK
-        run: cp app/build/outputs/apk/debug/app-debug.apk FoneticaInglesa.apk
+        run: |
+          cp app/build/outputs/apk/debug/app-debug.apk FoneticaInglesa.apk
+          cp app/build/outputs/bundle/release/app-release.aab FoneticaInglesa-sin-firmar.aab
 
       - uses: actions/upload-artifact@v4
         with:
           name: FoneticaInglesa-apk
-          path: FoneticaInglesa.apk
+          path: |
+            FoneticaInglesa.apk
+            FoneticaInglesa-sin-firmar.aab
 
       - name: Publicar en Releases (descarga directa desde el celular)
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.${{ github.run_number }}
           name: Fonética Inglesa v1.0.${{ github.run_number }}
-          body: "Descargá FoneticaInglesa.apk y abrilo en tu Android para instalarlo."
-          files: FoneticaInglesa.apk
+          body: "FoneticaInglesa.apk: instalar directo en Android. El .aab es para Play Store (se firma aparte con la clave de subida)."
+          files: |
+            FoneticaInglesa.apk
+            FoneticaInglesa-sin-firmar.aab
