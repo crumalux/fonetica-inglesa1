@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Tabla de fonemas del inglés americano con sonido y transcriptor de palabras a IPA.">
+<meta name="description" content="Tabla de los 44 fonemas del inglés británico con sonido y transcriptor de palabras a IPA.">
 <meta name="theme-color" content="#1f5f8b">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-180.png">
@@ -124,7 +124,7 @@ footer { color: var(--muted); font-size: .78rem; }
 <div class="wrap">
   <header>
     <h1>Fonética <span>Inglesa</span></h1>
-    <p>Tocá un símbolo para escucharlo. Inglés americano, alfabeto IPA. Las vocales suenan solas y luego en una palabra.</p>
+    <p>Tocá un símbolo para escucharlo. Inglés británico (RP), los 44 sonidos del alfabeto IPA. Las vocales y diptongos suenan solos y luego en una palabra; las consonantes, en su palabra de ejemplo.</p>
   </header>
 
   <div class="notice" id="noVoice" role="status" hidden></div>
@@ -140,7 +140,7 @@ footer { color: var(--muted); font-size: .78rem; }
       <button class="toggle" type="button" id="slow" aria-pressed="false">Lento</button>
     </div>
     <div class="result" id="result">
-      <div class="ipa" id="ipa">/proʊˌnʌnsiˈeɪʃən/</div>
+      <div class="ipa" id="ipa">/prəˌnʌnsɪˈeɪʃən/</div>
       <button type="button" class="play" id="replay" aria-label="Escuchar"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
     </div>
     <p class="missing" id="missing" hidden></p>
@@ -148,7 +148,7 @@ footer { color: var(--muted); font-size: .78rem; }
 
   <div id="chart"></div>
 
-  <footer>Diccionario: CMU Pronouncing Dictionary (Carnegie Mellon University), convertido a IPA. Audios de la tabla: voz neural Kokoro, incluidos en la página. Palabras escritas: voz del dispositivo o, si no hay, sintetizador eSpeak integrado.</footer>
+  <footer>Diccionario: CMU Pronouncing Dictionary (Carnegie Mellon University), convertido a IPA. Transcripción: Britfone e ipa-dict (inglés británico, licencia MIT) completados con eSpeak. Audios de la tabla: voz neural británica Kokoro; las vocales aisladas se extraen del marco h_d (heed, hid, head…). Palabras escritas: voz británica del dispositivo o, si no hay, eSpeak integrado.</footer>
 </div>
 
 <div class="sheet" id="sheet" aria-live="polite">
@@ -166,52 +166,55 @@ footer { color: var(--muted); font-size: .78rem; }
 <script>
 const GROUPS = [
   { title: "Vocales", cls: "vowel", note: "12", items: [
-    ["iː", ["see","green","teacher"], "i larga, sonrisa tensa"],
-    ["ɪ", ["sit","fish","busy"], "i corta y relajada, entre i y e"],
-    ["ɛ", ["bed","head","said"], "como la e española"],
-    ["æ", ["cat","black","apple"], "entre a y e, boca bien abierta"],
-    ["ɑː", ["father","hot","car"], "a larga, al fondo de la boca"],
-    ["ɔː", ["saw","thought","law"], "o abierta y larga"],
-    ["ʊ", ["book","put","could"], "u corta y relajada"],
-    ["uː", ["food","blue","two"], "u larga, labios redondeados"],
-    ["ʌ", ["cup","love","money"], "a corta y seca, en sílaba acentuada"],
-    ["ə", ["about","banana","sofa"], "schwa: vocal neutra, sin acento"],
-    ["ɝː", ["bird","work","learn"], "r vocálica acentuada"],
-    ["ɚ", ["teacher","water","doctor"], "r vocálica sin acento, al final"],
+    ["iː", ["see", "green", "eat"], "i larga y tensa, labios en sonrisa"],
+    ["ɪ", ["sit", "fish", "busy"], "i corta y relajada, entre i y e"],
+    ["e", ["bed", "head", "said"], "como la e española"],
+    ["æ", ["cat", "black", "apple"], "a muy abierta, tirando a e"],
+    ["ʌ", ["cup", "love", "money"], "a corta y central, breve"],
+    ["ɑː", ["father", "car", "bath"], "a larga y profunda, al fondo de la boca"],
+    ["ɒ", ["hot", "dog", "watch"], "o corta y abierta, labios apenas redondeados"],
+    ["ɔː", ["saw", "thought", "door"], "o larga, labios redondeados"],
+    ["ʊ", ["book", "put", "could"], "u corta y relajada"],
+    ["uː", ["food", "blue", "two"], "u larga"],
+    ["ɜː", ["bird", "work", "learn"], "vocal larga central, sin r: ni e ni o"],
+    ["ə", ["about", "sofa", "teacher"], "schwa: vocal neutra y débil, siempre sin acento"],
   ]},
-  { title: "Diptongos", cls: "diph", note: "5", items: [
-    ["eɪ", ["day","rain","make"], "como «ei» en «rey»"],
-    ["aɪ", ["my","time","fly"], "como «ai» en «aire»"],
-    ["ɔɪ", ["boy","coin","toy"], "como «oi» en «hoy»"],
-    ["aʊ", ["now","house","cow"], "como «au» en «auto»"],
-    ["oʊ", ["go","home","boat"], "o que se cierra hacia u"],
+  { title: "Diptongos", cls: "diph", note: "8", items: [
+    ["ɪə", ["near", "here", "ear"], "de i hacia schwa, sin r final"],
+    ["eə", ["hair", "where", "care"], "e larga que se apaga hacia schwa, sin r"],
+    ["ʊə", ["pure", "tour", "cure"], "de u hacia schwa (muchos hablantes dicen ɔː)"],
+    ["eɪ", ["day", "rain", "make"], "como «ei» en «rey»"],
+    ["aɪ", ["my", "time", "fly"], "como «ai» en «aire»"],
+    ["ɔɪ", ["boy", "coin", "toy"], "como «oi» en «hoy»"],
+    ["əʊ", ["go", "home", "boat"], "de schwa hacia u: ni «ou» ni «o»"],
+    ["aʊ", ["now", "house", "cow"], "como «au» en «auto»"],
   ]},
   { title: "Consonantes", cls: "cons", note: "24", items: [
-    ["p", ["pen","happy","stop"], "p con soplo de aire"],
-    ["b", ["bad","rabbit","job"], "b bien sonora, labios cerrados"],
-    ["t", ["tea","better","cat"], "t con la lengua en las encías, con aire"],
-    ["d", ["did","lady","bed"], "d con la lengua en las encías"],
-    ["k", ["cat","school","back"], "k con soplo de aire"],
-    ["ɡ", ["get","bigger","dog"], "g de «gato»"],
-    ["f", ["fish","coffee","laugh"], "como la f española"],
-    ["v", ["van","never","love"], "labio inferior y dientes, con vibración"],
-    ["θ", ["think","both","three"], "como la z de España"],
-    ["ð", ["this","mother","the"], "como la d suave de «nada»"],
-    ["s", ["see","city","bus"], "s sorda"],
-    ["z", ["zoo","easy","is"], "s sonora, zumbido de abeja"],
-    ["ʃ", ["she","nation","fish"], "«sh» para pedir silencio"],
-    ["ʒ", ["vision","measure","usual"], "como la «ll» rioplatense"],
-    ["h", ["hat","who","ahead"], "j muy suave, sólo aire"],
-    ["tʃ", ["chair","teacher","watch"], "como la ch española"],
-    ["dʒ", ["jump","age","bridge"], "como «ch» pero sonora"],
-    ["m", ["man","summer","time"], "como la m española"],
-    ["n", ["no","dinner","sun"], "como la n española"],
-    ["ŋ", ["sing","thinking","long"], "n nasal de «tengo», sin la g"],
-    ["l", ["leg","hello","feel"], "l (más oscura al final)"],
-    ["r", ["red","sorry","car"], "r retrofleja, la lengua no toca nada"],
-    ["w", ["wet","window","away"], "como «u» en «huevo»"],
-    ["j", ["yes","you","music"], "como la «i» de «hielo»"],
-  ]},
+    ["p", ["pen", "happy", "stop"], "p con soplo de aire"],
+    ["b", ["bad", "rabbit", "job"], "b bien sonora, labios cerrados"],
+    ["t", ["tea", "better", "cat"], "t con la lengua en las encías, con aire"],
+    ["d", ["did", "lady", "bed"], "d con la lengua en las encías"],
+    ["k", ["cat", "school", "back"], "k con soplo de aire"],
+    ["ɡ", ["get", "bigger", "dog"], "g de «gato»"],
+    ["f", ["fish", "coffee", "laugh"], "como la f española"],
+    ["v", ["van", "never", "love"], "labio inferior y dientes, con vibración"],
+    ["θ", ["think", "both", "three"], "como la z de España"],
+    ["ð", ["this", "mother", "the"], "como la d suave de «nada»"],
+    ["s", ["see", "city", "bus"], "s sorda"],
+    ["z", ["zoo", "easy", "is"], "s sonora, zumbido de abeja"],
+    ["ʃ", ["she", "nation", "fish"], "«sh» para pedir silencio"],
+    ["ʒ", ["vision", "measure", "usual"], "como la «ll» rioplatense"],
+    ["h", ["hat", "who", "ahead"], "j muy suave, sólo aire"],
+    ["tʃ", ["chair", "teacher", "watch"], "como la ch española"],
+    ["dʒ", ["jump", "age", "bridge"], "como «ch» pero sonora"],
+    ["m", ["man", "summer", "time"], "como la m española"],
+    ["n", ["no", "dinner", "sun"], "como la n española"],
+    ["ŋ", ["sing", "thinking", "long"], "n nasal de «tengo», sin la g"],
+    ["l", ["leg", "hello", "feel"], "l clara antes de vocal, oscura al final"],
+    ["r", ["red", "sorry", "very"], "r suave sin vibrar; sólo suena antes de vocal (en «car» no)"],
+    ["w", ["wet", "window", "away"], "como «u» en «huevo»"],
+    ["j", ["yes", "you", "music"], "como la «i» de «hielo»"],
+  ]}
 ];
 
 // ---------- Audio ----------
@@ -221,8 +224,10 @@ let voice = null, slow = false;
 function pickVoice() {
   if (!synth) return;
   const vs = synth.getVoices();
-  voice = vs.find(v => v.lang === "en-US" && /google/i.test(v.name))
-       || vs.find(v => v.lang === "en-US")
+  const gb = v => /^en[-_]GB$/i.test(v.lang);
+  voice = vs.find(v => gb(v) && /google|daniel|serena|kate|arthur|martha/i.test(v.name))
+       || vs.find(gb)
+       || vs.find(v => /^en[-_](IE|AU|NZ)$/i.test(v.lang))
        || vs.find(v => /^en[-_]/i.test(v.lang)) || null;
 }
 if (synth) { pickVoice(); synth.onvoiceschanged = pickVoice; }
@@ -292,7 +297,7 @@ async function deviceSpeak(text) {
   pickVoice();
   if (synth && voice) {
     const u = new SpeechSynthesisUtterance(text);
-    u.lang = "en-US"; u.voice = voice; u.rate = slow ? 0.5 : 0.85;
+    u.lang = "en-GB"; u.voice = voice; u.rate = slow ? 0.5 : 0.85;
     synth.speak(u);
     return;
   }
