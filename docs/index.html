@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Tabla de fonemas del inglés americano con sonido y transcriptor de palabras a IPA.">
+<meta name="theme-color" content="#1f5f8b">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Fonética">
+<title>Fonética Inglesa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:wght@400;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: una columna estrecha; buscador arriba, tabla de fonemas por grupos, ficha fija abajo al tocar */
+:root {
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --ink: #16263a;
+  --muted: #5a6b80;
+  --line: #d9e1ec;
+  --accent: #1f5f8b;
+  --accent-ink: #ffffff;
+  --vowel: #e4effa;
+  --diph: #efe8fb;
+  --cons: #e7f4ee;
+  --warn: #9a3412;
+  --warn-bg: #fff1e6;
+  --ipa: "Gentium Book Plus", "Charis SIL", "Doulos SIL", "Noto Serif", "Times New Roman", serif;
+  --ui: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1722; --surface: #172231; --ink: #e6edf5; --muted: #9aabbf; --line: #2a3a4f;
+    --accent: #7cc0ee; --accent-ink: #0b1622;
+    --vowel: #1b3047; --diph: #2a2445; --cons: #183629;
+    --warn: #fdba74; --warn-bg: #3a2414;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1722; --surface: #172231; --ink: #e6edf5; --muted: #9aabbf; --line: #2a3a4f;
+  --accent: #7cc0ee; --accent-ink: #0b1622;
+  --vowel: #1b3047; --diph: #2a2445; --cons: #183629;
+  --warn: #fdba74; --warn-bg: #3a2414;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--ui); font-size: 16px; line-height: 1.45;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 16px 140px;
+}
+.wrap { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+header h1 { font-family: var(--ipa); font-size: 1.9rem; margin: 0; text-wrap: balance; letter-spacing: .01em; }
+header h1 span { color: var(--accent); }
+header p { margin: 4px 0 0; color: var(--muted); font-size: .95rem; }
+
+.search { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.search label { font-weight: 700; font-size: .95rem; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.field { position: relative; flex: 1 1 220px; min-width: 0; }
+input[type=text] {
+  width: 100%; font: inherit; font-size: 1.1rem; padding: 12px 40px 12px 14px; border-radius: 10px;
+  border: 1.5px solid var(--line); background: var(--bg); color: var(--ink);
+}
+input[type=text]:focus { outline: none; border-color: var(--accent); }
+.clear { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); border: 0; background: none; color: var(--muted); font-size: 1.3rem; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; }
+button { font: inherit; cursor: pointer; }
+button:focus-visible, .ph:focus-visible, .chip:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.primary { background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 10px; padding: 12px 18px; font-weight: 700; }
+.toggle { border: 1.5px solid var(--line); background: transparent; color: var(--ink); border-radius: 999px; padding: 8px 14px; font-size: .9rem; }
+.toggle[aria-pressed=true] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+
+.result { display: flex; align-items: center; gap: 12px; padding-top: 4px; border-top: 1px dashed var(--line); }
+.result .ipa { font-family: var(--ipa); font-size: 1.9rem; color: var(--accent); flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.play { flex: none; width: 48px; height: 48px; border-radius: 50%; border: 0; background: var(--vowel); color: var(--ink); display: grid; place-items: center; }
+.play svg { width: 22px; height: 22px; fill: currentColor; }
+.missing { color: var(--warn); font-size: .88rem; margin: 0; }
+
+.notice { background: var(--warn-bg); color: var(--warn); border-radius: 12px; padding: 12px 14px; font-size: .92rem; }
+
+section h2 { font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin: 0 0 10px; display: flex; gap: 8px; align-items: baseline; }
+section h2 small { text-transform: none; letter-spacing: 0; font-weight: 400; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap: 8px; }
+.ph {
+  aspect-ratio: 1; max-width: 100%; border: 1.5px solid transparent; border-radius: 12px; color: var(--ink);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 4px;
+  transition: transform .12s ease, border-color .12s ease;
+}
+.ph .sym { font-family: var(--ipa); font-size: 1.8rem; line-height: 1; }
+.ph .ex { font-size: .72rem; color: var(--muted); }
+.vowel .ph { background: var(--vowel); }
+.diph .ph { background: var(--diph); }
+.cons .ph { background: var(--cons); }
+.ph:active { transform: scale(.94); }
+.ph.on { border-color: var(--accent); }
+
+.sheet {
+  position: fixed; left: 0; right: 0; bottom: 0; background: var(--surface); border-top: 1px solid var(--line);
+  box-shadow: 0 -8px 24px rgba(0,0,0,.12);
+  padding: 14px max(16px, env(safe-area-inset-right, 0px)) calc(16px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+  transform: translateY(110%); transition: transform .22s ease;
+}
+.sheet.open { transform: none; }
+.sheet .in { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+.sheet .top { display: flex; align-items: center; gap: 12px; }
+.sheet .big { font-family: var(--ipa); font-size: 2.3rem; font-weight: 700; color: var(--accent); }
+.sheet .hint { flex: 1; min-width: 0; font-size: .95rem; }
+.close { border: 0; background: none; color: var(--muted); font-size: 1.5rem; width: 40px; height: 40px; border-radius: 50%; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { border: 1.5px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 999px; padding: 6px 12px; font-size: .92rem; }
+.chip .ci { font-family: var(--ipa); color: var(--muted); margin-left: 4px; }
+footer { color: var(--muted); font-size: .78rem; }
+@media (prefers-reduced-motion: reduce) { .sheet, .ph { transition: none; } }
+</style>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)} body{margin:0}</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <h1>Fonética <span>Inglesa</span></h1>
+    <p>Tocá un símbolo para escucharlo. Inglés americano, alfabeto IPA. Las vocales suenan solas y luego en una palabra.</p>
+  </header>
+
+  <div class="notice" id="noVoice" role="status" hidden></div>
+
+  <form class="search" id="form" autocomplete="off">
+    <label for="q">Escribí una palabra o frase en inglés</label>
+    <div class="row">
+      <div class="field">
+        <input type="text" id="q" placeholder="p. ej. pronunciation" autocapitalize="off" spellcheck="false">
+        <button type="button" class="clear" id="clear" aria-label="Borrar" hidden>×</button>
+      </div>
+      <button class="primary" type="submit" id="go">Ver fonética</button>
+      <button class="toggle" type="button" id="slow" aria-pressed="false">Lento</button>
+    </div>
+    <div class="result" id="result">
+      <div class="ipa" id="ipa">/proʊˌnʌnsiˈeɪʃən/</div>
+      <button type="button" class="play" id="replay" aria-label="Escuchar"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+    </div>
+    <p class="missing" id="missing" hidden></p>
+  </form>
+
+  <div id="chart"></div>
+
+  <footer>Diccionario: CMU Pronouncing Dictionary (Carnegie Mellon University), convertido a IPA. Audios de la tabla: voz neural Kokoro, incluidos en la página. Palabras escritas: voz del dispositivo o, si no hay, sintetizador eSpeak integrado.</footer>
+</div>
+
+<div class="sheet" id="sheet" aria-live="polite">
+  <div class="in">
+    <div class="top">
+      <div class="big" id="sBig"></div>
+      <div class="hint" id="sHint"></div>
+      <button type="button" class="play" id="sPlay" aria-label="Repetir"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+      <button type="button" class="close" id="sClose" aria-label="Cerrar">×</button>
+    </div>
+    <div class="chips" id="sChips"></div>
+  </div>
+</div>
+
+<script>
+const GROUPS = [
+  { title: "Vocales", cls: "vowel", note: "12", items: [
+    ["iː", ["see","green","teacher"], "i larga, sonrisa tensa"],
+    ["ɪ", ["sit","fish","busy"], "i corta y relajada, entre i y e"],
+    ["ɛ", ["bed","head","said"], "como la e española"],
+    ["æ", ["cat","black","apple"], "entre a y e, boca bien abierta"],
+    ["ɑː", ["father","hot","car"], "a larga, al fondo de la boca"],
+    ["ɔː", ["saw","thought","law"], "o abierta y larga"],
+    ["ʊ", ["book","put","could"], "u corta y relajada"],
+    ["uː", ["food","blue","two"], "u larga, labios redondeados"],
+    ["ʌ", ["cup","love","money"], "a corta y seca, en sílaba acentuada"],
+    ["ə", ["about","banana","sofa"], "schwa: vocal neutra, sin acento"],
+    ["ɝː", ["bird","work","learn"], "r vocálica acentuada"],
+    ["ɚ", ["teacher","water","doctor"], "r vocálica sin acento, al final"],
+  ]},
+  { title: "Diptongos", cls: "diph", note: "5", items: [
+    ["eɪ", ["day","rain","make"], "como «ei» en «rey»"],
+    ["aɪ", ["my","time","fly"], "como «ai» en «aire»"],
+    ["ɔɪ", ["boy","coin","toy"], "como «oi» en «hoy»"],
+    ["aʊ", ["now","house","cow"], "como «au» en «auto»"],
+    ["oʊ", ["go","home","boat"], "o que se cierra hacia u"],
+  ]},
+  { title: "Consonantes", cls: "cons", note: "24", items: [
+    ["p", ["pen","happy","stop"], "p con soplo de aire"],
+    ["b", ["bad","rabbit","job"], "b bien sonora, labios cerrados"],
+    ["t", ["tea","better","cat"], "t con la lengua en las encías, con aire"],
+    ["d", ["did","lady","bed"], "d con la lengua en las encías"],
+    ["k", ["cat","school","back"], "k con soplo de aire"],
+    ["ɡ", ["get","bigger","dog"], "g de «gato»"],
+    ["f", ["fish","coffee","laugh"], "como la f española"],
+    ["v", ["van","never","love"], "labio inferior y dientes, con vibración"],
+    ["θ", ["think","both","three"], "como la z de España"],
+    ["ð", ["this","mother","the"], "como la d suave de «nada»"],
+    ["s", ["see","city","bus"], "s sorda"],
+    ["z", ["zoo","easy","is"], "s sonora, zumbido de abeja"],
+    ["ʃ", ["she","nation","fish"], "«sh» para pedir silencio"],
+    ["ʒ", ["vision","measure","usual"], "como la «ll» rioplatense"],
+    ["h", ["hat","who","ahead"], "j muy suave, sólo aire"],
+    ["tʃ", ["chair","teacher","watch"], "como la ch española"],
+    ["dʒ", ["jump","age","bridge"], "como «ch» pero sonora"],
+    ["m", ["man","summer","time"], "como la m española"],
+    ["n", ["no","dinner","sun"], "como la n española"],
+    ["ŋ", ["sing","thinking","long"], "n nasal de «tengo», sin la g"],
+    ["l", ["leg","hello","feel"], "l (más oscura al final)"],
+    ["r", ["red","sorry","car"], "r retrofleja, la lengua no toca nada"],
+    ["w", ["wet","window","away"], "como «u» en «huevo»"],
+    ["j", ["yes","you","music"], "como la «i» de «hielo»"],
+  ]},
+];
+
+// ---------- Audio ----------
+// 1) Audios incluidos (voz neural pregrabada)  2) voz del dispositivo  3) aviso
+const synth = window.speechSynthesis || null;
+let voice = null, slow = false;
+function pickVoice() {
+  if (!synth) return;
+  const vs = synth.getVoices();
+  voice = vs.find(v => v.lang === "en-US" && /google/i.test(v.name))
+       || vs.find(v => v.lang === "en-US")
+       || vs.find(v => /^en[-_]/i.test(v.lang)) || null;
+}
+if (synth) { pickVoice(); synth.onvoiceschanged = pickVoice; }
+
+let audioIndex = null;
+const indexReady = fetch("audio/audio_index.json").then(r => r.json()).then(j => (audioIndex = j)).catch(() => null);
+const bundles = {};
+function bundle(g) {
+  if (!bundles[g]) bundles[g] = fetch(`audio/a_${g}.mp3`).then(r => { if (!r.ok) throw 0; return r.arrayBuffer(); })
+    .catch(e => { delete bundles[g]; throw e; });
+  return bundles[g];
+}
+indexReady.then(() => bundle("_").catch(() => {}));
+
+const player = new Audio();
+let queue = [], playToken = 0, lastUrl = null;
+function clipKey(w) {
+  return w.toLowerCase().replace(/[’‘]/g, "'").replace(/^[^a-z0-9']+|[^a-z0-9']+$/g, "");
+}
+async function getClipUrl(key) {
+  await indexReady;
+  const e = audioIndex && audioIndex[key];
+  if (!e) return null;
+  const buf = await bundle(e[0]);
+  return URL.createObjectURL(new Blob([buf.slice(e[1], e[1] + e[2])], { type: "audio/mpeg" }));
+}
+function playUrl(url, token, rate) {
+  return new Promise(res => {
+    if (token !== playToken) return res();
+    if (lastUrl) URL.revokeObjectURL(lastUrl);
+    lastUrl = url;
+    player.src = url;
+    player.playbackRate = rate ?? (slow ? 0.7 : 1);
+    player.preservesPitch = true;
+    player.onended = () => setTimeout(res, 120);
+    player.onerror = () => res();
+    player.play().catch(() => res());
+  });
+}
+// Reproduce una lista de claves; si falta alguna, usa la voz del dispositivo para el texto completo.
+async function playKeys(keys, fallbackText) {
+  const token = ++playToken;
+  player.pause();
+  if (synth) synth.cancel();
+  let urls;
+  try { urls = await Promise.all(keys.map(getClipUrl)); } catch { urls = [null]; }
+  if (token !== playToken) return;
+  if (urls.length && urls.every(Boolean)) {
+    for (const u of urls) await playUrl(u, token);
+    return;
+  }
+  urls.forEach(u => u && URL.revokeObjectURL(u));
+  deviceSpeak(fallbackText);
+}
+let fallbackReady = null;
+function loadFallback() {
+  if (!fallbackReady) fallbackReady = new Promise((res, rej) => {
+    const sc = document.createElement("script");
+    sc.src = "tts-fallback.js";
+    sc.onload = () => window.meSpeakLite ? res(window.meSpeakLite) : rej();
+    sc.onerror = () => { fallbackReady = null; rej(); };
+    document.head.appendChild(sc);
+  });
+  return fallbackReady;
+}
+async function deviceSpeak(text) {
+  pickVoice();
+  if (synth && voice) {
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = "en-US"; u.voice = voice; u.rate = slow ? 0.5 : 0.85;
+    synth.speak(u);
+    return;
+  }
+  // Sin voz en el dispositivo: sintetizador integrado en la página
+  const token = playToken;
+  try {
+    const tts = await loadFallback();
+    const data = tts.wav(text, slow);
+    const url = URL.createObjectURL(new Blob([data], { type: "audio/wav" }));
+    await playUrl(url, token, 1);   // la velocidad ya va en la síntesis
+  } catch {
+    flash("No pude reproducir el audio en este dispositivo.");
+  }
+}
+function flash(msg) {
+  const n = document.getElementById("noVoice");
+  n.textContent = msg; n.hidden = false;
+  clearTimeout(flash.t); flash.t = setTimeout(() => (n.hidden = true), 6000);
+}
+function speak(text) {
+  const words = text.split(/[\s,;:.!?¿¡"()]+/).filter(Boolean).map(clipKey);
+  playKeys(words, text);
+}
+
+// ---------- Diccionario ----------
+let dict = null;
+const dictReady = fetch("dict.txt").then(r => r.text()).then(t => {
+  const m = new Map();
+  for (const line of t.split("\n")) {
+    const i = line.indexOf("\t");
+    if (i > 0) m.set(line.slice(0, i), line.slice(i + 1));
+  }
+  dict = m;
+  refreshChips();
+  return m;
+}).catch(() => null);
+
+function lookup(w) {
+  const k = w.toLowerCase().replace(/[’‘]/g, "'").replace(/^[^a-z0-9']+|[^a-z0-9']+$/g, "");
+  return k && dict ? dict.get(k) || null : null;
+}
+
+// ---------- Tabla ----------
+const chart = document.getElementById("chart");
+let current = null;
+GROUPS.forEach(g => {
+  const sec = document.createElement("section");
+  sec.className = g.cls;
+  sec.innerHTML = `<h2>${g.title} <small>${g.note}</small></h2>`;
+  const grid = document.createElement("div");
+  grid.className = "grid";
+  g.items.forEach(([sym, ex, hint]) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "ph";
+    b.setAttribute("aria-label", `/${sym}/ como en ${ex[0]}`);
+    b.innerHTML = `<span class="sym">${sym}</span><span class="ex">${ex[0]}</span>`;
+    b.onclick = () => select(b, sym, ex, hint);
+    grid.appendChild(b);
+  });
+  sec.appendChild(grid);
+  chart.appendChild(sec);
+});
+
+const sheet = document.getElementById("sheet");
+function select(btn, sym, ex, hint) {
+  document.querySelectorAll(".ph.on").forEach(e => e.classList.remove("on"));
+  btn.classList.add("on");
+  current = { sym, ex, hint };
+  document.getElementById("sBig").textContent = `/${sym}/`;
+  document.getElementById("sHint").textContent = hint;
+  refreshChips();
+  sheet.classList.add("open");
+  playPhoneme();
+}
+function refreshChips() {
+  if (!current) return;
+  const box = document.getElementById("sChips");
+  box.innerHTML = "";
+  current.ex.forEach(w => {
+    const c = document.createElement("button");
+    c.type = "button";
+    c.className = "chip";
+    const ipa = lookup(w);
+    c.innerHTML = `▶ ${w}${ipa ? `<span class="ci">/${ipa}/</span>` : ""}`;
+    c.onclick = () => speak(w);
+    box.appendChild(c);
+  });
+}
+function playPhoneme() {
+  if (!current) return;
+  const keys = audioIndex && audioIndex["#" + current.sym] ? ["#" + current.sym, current.ex[0]] : [current.ex[0]];
+  playKeys(keys, current.ex[0]);
+}
+document.getElementById("sPlay").onclick = playPhoneme;
+document.getElementById("sClose").onclick = () => {
+  sheet.classList.remove("open");
+  document.querySelectorAll(".ph.on").forEach(e => e.classList.remove("on"));
+};
+
+// ---------- Buscador ----------
+const q = document.getElementById("q"), ipaEl = document.getElementById("ipa"),
+      missEl = document.getElementById("missing"), clearBtn = document.getElementById("clear");
+let lastQuery = "pronunciation";
+
+async function transcribe(text) {
+  lastQuery = text;
+  ipaEl.textContent = "Cargando diccionario…";
+  missEl.hidden = true;
+  await dictReady;
+  if (!dict) { ipaEl.textContent = "No se pudo cargar el diccionario."; return; }
+  const words = text.split(/[\s,;:.!?¿¡"()]+/).filter(Boolean);
+  const out = [], miss = [];
+  words.forEach(w => { const p = lookup(w); if (p) out.push(p); else { out.push(w + "?"); miss.push(w); } });
+  ipaEl.textContent = `/${out.join(" ")}/`;
+  if (miss.length) {
+    missEl.textContent = `No encontré: ${miss.join(", ")}. Igual podés escucharla.`;
+    missEl.hidden = false;
+  }
+}
+
+document.getElementById("form").addEventListener("submit", e => {
+  e.preventDefault();
+  const t = q.value.trim();
+  if (!t) return;
+  q.blur();
+  transcribe(t);
+  speak(t);
+});
+q.addEventListener("input", () => { clearBtn.hidden = !q.value; });
+clearBtn.onclick = () => { q.value = ""; clearBtn.hidden = true; q.focus(); };
+document.getElementById("replay").onclick = () => speak(lastQuery);
+const slowBtn = document.getElementById("slow");
+slowBtn.onclick = () => { slow = !slow; slowBtn.setAttribute("aria-pressed", String(slow)); };
+</script>
+
+</body>
+</html>
