@@ -29,7 +29,7 @@ class Speaker(private val context: Context, onStatus: (Status) -> Unit) {
         if (status != TextToSpeech.SUCCESS) {
             onStatus(Status.NO_ENGINE)
         } else {
-            val result = engine().setLanguage(Locale.US)
+            val result = engine().setLanguage(Locale.UK)
             if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                 onStatus(Status.MISSING_VOICE)
             } else {
@@ -58,7 +58,7 @@ class Speaker(private val context: Context, onStatus: (Status) -> Unit) {
         context.resources.getIdentifier(name, "raw", context.packageName)
 
     private fun wordRes(word: String): Int {
-        val key = word.lowercase(Locale.US).filter { it in 'a'..'z' || it in '0'..'9' }
+        val key = word.lowercase(Locale.UK).filter { it in 'a'..'z' || it in '0'..'9' }
         return if (key.isEmpty()) 0 else rawId("w_$key")
     }
 

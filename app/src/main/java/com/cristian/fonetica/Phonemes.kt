@@ -1,7 +1,7 @@
 package com.cristian.fonetica
 
 /**
- * Un fonema del inglés americano.
+ * Un fonema del inglés británico (RP), tabla de 44 sonidos.
  * @param symbol símbolo IPA que se muestra en el botón
  * @param id     nombre corto (ASCII) para buscar una grabación opcional en res/raw: "ph_<id>"
  * @param examples palabras de ejemplo; la primera es la que se pronuncia al tocar el botón
@@ -20,28 +20,31 @@ val phonemeGroups = listOf(
     PhonemeGroup(
         "Vocales",
         listOf(
-            Phoneme("iː", "iy", listOf("see", "green", "teacher"), "i larga, sonrisa tensa"),
+            Phoneme("iː", "iy", listOf("see", "green", "eat"), "i larga y tensa, labios en sonrisa"),
             Phoneme("ɪ", "ih", listOf("sit", "fish", "busy"), "i corta y relajada, entre i y e"),
-            Phoneme("ɛ", "eh", listOf("bed", "head", "said"), "como la e española"),
-            Phoneme("æ", "ae", listOf("cat", "black", "apple"), "entre a y e, boca bien abierta"),
-            Phoneme("ɑː", "aa", listOf("father", "hot", "car"), "a larga, al fondo de la boca"),
-            Phoneme("ɔː", "ao", listOf("saw", "thought", "law"), "o abierta y larga"),
+            Phoneme("e", "e", listOf("bed", "head", "said"), "como la e española"),
+            Phoneme("æ", "ae", listOf("cat", "black", "apple"), "a muy abierta, tirando a e"),
+            Phoneme("ʌ", "ah", listOf("cup", "love", "money"), "a corta y central, breve"),
+            Phoneme("ɑː", "aa", listOf("father", "car", "bath"), "a larga y profunda, al fondo de la boca"),
+            Phoneme("ɒ", "o", listOf("hot", "dog", "watch"), "o corta y abierta, labios apenas redondeados"),
+            Phoneme("ɔː", "ao", listOf("saw", "thought", "door"), "o larga, labios redondeados"),
             Phoneme("ʊ", "uh", listOf("book", "put", "could"), "u corta y relajada"),
-            Phoneme("uː", "uw", listOf("food", "blue", "two"), "u larga, labios redondeados"),
-            Phoneme("ʌ", "ah", listOf("cup", "love", "money"), "a corta y seca, en sílaba acentuada"),
-            Phoneme("ə", "schwa", listOf("about", "banana", "sofa"), "schwa: vocal neutra, sin acento"),
-            Phoneme("ɝː", "er", listOf("bird", "work", "learn"), "r vocálica acentuada"),
-            Phoneme("ɚ", "er_weak", listOf("teacher", "water", "doctor"), "r vocálica sin acento, al final"),
+            Phoneme("uː", "uw", listOf("food", "blue", "two"), "u larga"),
+            Phoneme("ɜː", "er", listOf("bird", "work", "learn"), "vocal larga central, sin r: ni e ni o"),
+            Phoneme("ə", "schwa", listOf("about", "sofa", "teacher"), "schwa: vocal neutra y débil, siempre sin acento"),
         ),
     ),
     PhonemeGroup(
         "Diptongos",
         listOf(
+            Phoneme("ɪə", "ia", listOf("near", "here", "ear"), "de i hacia schwa, sin r final"),
+            Phoneme("eə", "ea", listOf("hair", "where", "care"), "e larga que se apaga hacia schwa, sin r"),
+            Phoneme("ʊə", "ua", listOf("pure", "tour", "cure"), "de u hacia schwa (muchos hablantes dicen ɔː)"),
             Phoneme("eɪ", "ey", listOf("day", "rain", "make"), "como «ei» en «rey»"),
             Phoneme("aɪ", "ay", listOf("my", "time", "fly"), "como «ai» en «aire»"),
             Phoneme("ɔɪ", "oy", listOf("boy", "coin", "toy"), "como «oi» en «hoy»"),
+            Phoneme("əʊ", "ow", listOf("go", "home", "boat"), "de schwa hacia u: ni «ou» ni «o»"),
             Phoneme("aʊ", "aw", listOf("now", "house", "cow"), "como «au» en «auto»"),
-            Phoneme("oʊ", "ow", listOf("go", "home", "boat"), "o que se cierra hacia u"),
         ),
     ),
     PhonemeGroup(
@@ -67,8 +70,8 @@ val phonemeGroups = listOf(
             Phoneme("m", "m", listOf("man", "summer", "time"), "como la m española"),
             Phoneme("n", "n", listOf("no", "dinner", "sun"), "como la n española"),
             Phoneme("ŋ", "ng", listOf("sing", "thinking", "long"), "n nasal de «tengo», sin la g"),
-            Phoneme("l", "l", listOf("leg", "hello", "feel"), "l (más oscura al final)"),
-            Phoneme("r", "r", listOf("red", "sorry", "car"), "r retrofleja, la lengua no toca nada"),
+            Phoneme("l", "l", listOf("leg", "hello", "feel"), "l clara antes de vocal, oscura al final"),
+            Phoneme("r", "r", listOf("red", "sorry", "very"), "r suave sin vibrar; sólo suena antes de vocal (en «car» no)"),
             Phoneme("w", "w", listOf("wet", "window", "away"), "como «u» en «huevo»"),
             Phoneme("j", "y", listOf("yes", "you", "music"), "como la «i» de «hielo»"),
         ),

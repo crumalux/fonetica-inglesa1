@@ -3,9 +3,9 @@
 App en Kotlin + Jetpack Compose (Material 3), compilada para Android 16 (API 36), compatible desde Android 8.
 
 ## Qué hace
-- **Tabla de fonemas**: los 41 sonidos del inglés americano (12 vocales, 5 diptongos, 24 consonantes). Al tocar uno se escucha y aparece una ficha con la explicación para hispanohablantes y tres palabras de ejemplo con su transcripción (cada una se puede escuchar).
-- **Caja de búsqueda**: escribís una palabra o frase, te devuelve la transcripción IPA (p. ej. `pronunciation → /proʊˌnʌnsiˈeɪʃən/`) y la pronuncia. Botón «Lento» para escuchar a media velocidad.
-- **Funciona sin internet**: incluye un diccionario de ~126.000 palabras (CMU Pronouncing Dictionary convertido a IPA) y usa la voz del propio teléfono.
+- **Tabla de fonemas**: los 44 sonidos del inglés británico (RP): 12 vocales, 8 diptongos y 24 consonantes. Al tocar uno se escucha y aparece una ficha con la explicación para hispanohablantes y tres palabras de ejemplo con su transcripción (cada una se puede escuchar).
+- **Caja de búsqueda**: escribís una palabra o frase, te devuelve la transcripción IPA (p. ej. `pronunciation → /prəˌnʌnsɪˈeɪʃən/`) y la pronuncia. Botón «Lento» para escuchar a media velocidad.
+- **Funciona sin internet**: incluye un diccionario británico de ~138.000 palabras (Britfone e ipa-dict, completados con eSpeak) y audios grabados con una voz neural británica.
 
 ## Cómo compilarla e instalarla
 1. Instalá **Android Studio** (versión reciente).
@@ -30,7 +30,7 @@ Si querés el sonido puro, podés agregar grabaciones propias: copiá archivos `
 | uː | ph_uw | | | | |
 
 ## Si no suena
-Revisá *Ajustes → Sistema → Idiomas → Salida de texto a voz*: motor «Servicios de voz de Google» y voz **English (United States)** descargada. La app avisa y ofrece instalarla si falta.
+Revisá *Ajustes → Sistema → Idiomas → Salida de texto a voz*: motor «Servicios de voz de Google» y voz **English (United Kingdom)** descargada. La app avisa y ofrece instalarla si falta.
 
 ## Créditos
-Diccionario: CMU Pronouncing Dictionary (Carnegie Mellon University, licencia tipo BSD), convertido de ARPAbet a IPA.
+Diccionario: Britfone (J. Llarena, MIT) e ipa-dict en_UK (MIT), completados con eSpeak NG. Audios: Kokoro-82M (Apache 2.0), voz bf_emma.

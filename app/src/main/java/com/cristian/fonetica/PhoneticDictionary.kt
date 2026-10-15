@@ -9,8 +9,8 @@ import java.util.Locale
 import java.util.zip.GZIPInputStream
 
 /**
- * Diccionario fonético offline (~126.000 palabras) derivado del
- * CMU Pronouncing Dictionary y convertido a IPA (inglés americano).
+ * Diccionario fonético británico offline (~138.000 palabras):
+ * Britfone + ipa-dict (inglés británico, MIT) completado con eSpeak en-gb; notación RP de manual.
  */
 object PhoneticDictionary {
 
@@ -27,8 +27,8 @@ object PhoneticDictionary {
                 val result = HashMap<String, String>(140_000)
                 runCatching {
                     // El empaquetador de Android puede descomprimir el .gz; se aceptan ambas formas.
-                    val stream = runCatching { GZIPInputStream(context.assets.open("cmudict_ipa.tsv.gz")) }
-                        .getOrElse { context.assets.open("cmudict_ipa.tsv") }
+                    val stream = runCatching { GZIPInputStream(context.assets.open("dict_gb.tsv.gz")) }
+                        .getOrElse { context.assets.open("dict_gb.tsv") }
                     stream.bufferedReader(Charsets.UTF_8).use { reader ->
                         reader.forEachLine { line ->
                             val tab = line.indexOf('\t')
