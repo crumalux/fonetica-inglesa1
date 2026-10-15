@@ -25,10 +25,15 @@ object PhoneticDictionary {
             if (map != null) return
             map = withContext(Dispatchers.IO) {
                 val result = HashMap<String, String>(140_000)
-                context.assets.open("cmudict_ipa.tsv.gz").use { raw ->
-                    GZIPInputStream(raw).bufferedReader(Charsets.UTF_8).forEachLine { line ->
-                        val tab = line.indexOf('\t')
-                        if (tab > 0) result[line.substring(0, tab)] = line.substring(tab + 1)
+                runCatching {
+                    // El empaquetador de Android puede descomprimir el .gz; se aceptan ambas formas.
+                    val stream = runCatching { GZIPInputStream(context.assets.open("cmudict_ipa.tsv.gz")) }
+                        .getOrElse { context.assets.open("cmudict_ipa.tsv") }
+                    stream.bufferedReader(Charsets.UTF_8).use { reader ->
+                        reader.forEachLine { line ->
+                            val tab = line.indexOf('\t')
+                            if (tab > 0) result[line.substring(0, tab)] = line.substring(tab + 1)
+                        }
                     }
                 }
                 result
