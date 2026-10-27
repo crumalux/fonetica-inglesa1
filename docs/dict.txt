@@ -6,7 +6,7 @@
 're	ə
 's	z
 've	v
-a	ə
+a	eɪ
 a's	eɪz
 aaa	ˌeɪˌeɪˈeɪ
 aaberg	ˈɑːbɜːɡ
@@ -3815,7 +3815,7 @@ amylin	ˈæmɪˌlɪn
 amyloid	ˈæmɪˌlɔɪd
 amyotrophic	ˌæmɪəˈtrəʊfɪk
 amyx	ˈæmɪks
-an	ən
+an	æn
 ana	ˈænə
 anabaptist	ˈænəˌbæptɪst
 anabolic	ˌænəˈbɒlɪk
@@ -3972,7 +3972,7 @@ ancon	ˈænkən
 ancona	ænˈkəʊnə
 ancrum	ˈæŋkrəm
 anctil	ˈæŋktɪl
-and	ənd
+and	ænd
 andalusia	ˈændəˌluːzɪə
 andalusian	ˈændəˌluːzɪən
 andante	ænˈdɑːnteɪ
@@ -5354,7 +5354,7 @@ arduini	ˌɑːdjuːˈiːnɪ
 arduino	ˌɑːdjuːˈiːnəʊ
 arduous	ˈɑːdjuːəs
 arduously	ˈɑːdjuːəsli
-are	ə
+are	ɑː
 area	ˈeərɪə
 area's	ˈeərɪəz
 areal	ˈeərɪəl
@@ -6410,7 +6410,7 @@ asymptote	ˈæsɪmˌtəʊt
 asymptotes	ˈæsɪmpˌtəʊts
 asymptotic	ˌæsɪmˈtɒtɪk
 asynchronous	əˈsɪŋkrənəs
-at	ət
+at	æt
 ata	ˈɑːtər
 atacama	ˌætəˈkɑːmər
 atalanta	ˌætəˈlæntər
@@ -9455,7 +9455,7 @@ bbc	ˌbiːˌbiːˈsiː
 bbc's	ˌbiːˌbiːˈsiːz
 bbq	ˌbiːˌbiːˈkjuː
 bc	ˌbiːˈsiː
-be	bɪ
+be	biː
 be's	biːz
 bea	biː
 beaber	ˈbiːbə
@@ -9889,7 +9889,7 @@ beeline	ˈbiːlaɪn
 beem	biːm
 beeman	ˈbiːmən
 beemer	ˈbiːmə
-been	bɪn
+been	biːn
 beene	biːn
 beeney	ˈbiːni
 beenken	ˈbiːŋkən
@@ -18212,7 +18212,7 @@ camshaft	ˈkæmʃɑːft
 camshafts	ˈkæmʃæfts
 camus	ˈkæməs
 camuso	kæˈmjuːsəʊ
-can	kən
+can	kæn
 can's	kænz
 can't	kɑːnt
 cana	ˈkɑːnə
@@ -34622,7 +34622,7 @@ doerner	ˈdəʊənə
 doerr	ˈdəʊə
 doers	ˈduːəz
 doersam	ˈdəʊəsəm
-does	dəz
+does	dʌz
 doescher	ˈdəʊʃə
 doesn't	ˈdʌzənt
 doetsch	dəʊtʃ
@@ -44928,7 +44928,7 @@ foppery	ˈfɒpəri
 foppiano	ˌfɒpiˈænəʊ
 foppish	ˈfɒpɪʃ
 fops	fɒps
-for	fə
+for	fɔː
 fora	ˈfɔːrə
 forage	ˈfɒrɪdʒ
 foraged	ˈfɒrɪdʒd
@@ -52886,7 +52886,7 @@ hacksaw	ˈhæksɔː
 hacksaws	ˈhæksɔːz
 hackstaff	ˈhækstæf
 hackworth	ˈhækwɜːθ
-had	həd
+had	hæd
 hada	ˈhɑːdə
 hadad	ˈhædæd
 hadar	ˈhædɑː
@@ -54360,7 +54360,7 @@ harwell	ˈhɑːwel
 harwick	ˈhɑːwɪk
 harwood	ˈhɑːwʊd
 haryana	ˌhɑːrɪˈɑːnə
-has	həz
+has	hæz
 hasan	ˈhæsən
 hasbro	ˈhæsbrəʊ
 hasbro's	ˈhæsbrəʊz
@@ -54626,7 +54626,7 @@ havana	həˈvænə
 havana's	həˈvænəz
 havard	ˈhævɑːd
 havas	ˈhɑːvəz
-have	həv
+have	hæv
 havelka	ˈheɪvlkə
 havelock	ˈheɪvlɒk
 haveman	ˈheɪvmən
@@ -56595,7 +56595,7 @@ hilty	ˈhɪlti
 hiltz	hɪlts
 hilyard	ˈhɪljɑːd
 hilyer	ˈhɪlaɪə
-him	ɪm
+him	hɪm
 hime	haɪm
 himebaugh	ˈhaɪmbɔː
 himes	haɪmz
@@ -64294,7 +64294,7 @@ jurymen	ˈdʒɔːrɪˌmen
 jus	dʒuː
 jusco	ˈdʒʌskəʊ
 jusino	dʒuːˈsiːnəʊ
-just	dʒəst
+just	dʒʌst
 justa	ˈdʒʌstə
 justen	ˈdʒʌstən
 juster	ˈdʒʌstə
@@ -87165,7 +87165,7 @@ oetken	ˈəʊtkən
 oetting	ˈəʊtɪŋ
 oettinger	ˈəʊtɪŋɡər
 oeuvre	ˈɜːvrə
-of	əv
+of	ɒv
 ofallon	ˈəʊfɔːlən
 ofc	ɒfk
 ofelia	əʊˈfiːlɪər
@@ -88704,7 +88704,7 @@ ouimette	ˌuːaɪˈmet
 ounce	aʊns
 ounces	ˈaʊnsɪz
 ounsted	ˈaʊnstɪd
-our	ˈaʊə
+our	aʊə
 ourada	aʊəˈrɑːdər
 ours	ˈaʊəz
 ourself	aʊəˈself
@@ -110908,7 +110908,7 @@ shaley	ˈʃeɪli
 shali	ˈʃɑːli
 shalikashvili	ˈʃælɪˌkæʃvɪli
 shalikashvili's	ˈʃælɪˌkæʃvɪliz
-shall	ʃəl
+shall	ʃæl
 shall's	ʃælz
 shallcross	ˈʃɔːlkrɒs
 shallenberger	ˈʃælənˌbɜːɡə
@@ -123240,7 +123240,7 @@ thalman	ˈθælmən
 thalmann	ˈθælmən
 tham	θæm
 thames	temz
-than	ðən
+than	ðæn
 thanatology	ˌθænəˈtɒlədʒi
 thane	θeɪn
 thanes	θeɪnz
@@ -123265,7 +123265,7 @@ tharpe's	θɑːps
 tharrington	ˈθærɪŋtən
 thaser	ˈθeɪsə
 thassos	ˈθæsəʊz
-that	ðət
+that	ðæt
 that'd	ðætəd
 that's	ðæts
 that've	ˌðætəv
@@ -123344,7 +123344,7 @@ thelen	ˈθelən
 thelin	ˈθelɪn
 thelma	ˈθelmə
 thelma's	ˈθelməz
-them	ðəm
+them	ðem
 thematic	θiːˈmætɪk
 thematically	θiːˈmætɪkli
 theme	θiːm
@@ -124537,7 +124537,7 @@ tkacz	ˈtiːˈkækz
 tlateloco	ˈtiːleɪtˈləʊkəʊ
 tlc	ˌtiːˌelˈsiː
 tlingit	ˈtiːˈlɪŋɡɪt
-to	tə
+to	tuː
 toa	ˈtəʊə
 toad	təʊd
 toadfish	ˈtəʊdfɪʃ
@@ -132659,7 +132659,7 @@ warwick's	ˈwɒrɪks
 warwickshire	ˈwɒrɪkʃə
 wary	ˈweəri
 warzecha	ˈwɔːzetʃə
-was	wəz
+was	wɒz
 wasabi	wəˈsɑːbi
 wasatch	ˈwɒsætʃ
 wasch	wɒʃ
@@ -134700,7 +134700,7 @@ wilkis	ˈwɪlkiz
 wilkison	ˈwɪlkɪsən
 wilkowski	wɪlˈkaʊskɪ
 wilks	wɪlks
-will	wəl
+will	wɪl
 will's	wɪlz
 willa	ˈwɪlə
 willabelle	ˌwɪleɪˈbel
@@ -136921,7 +136921,7 @@ younkin	ˈjaʊŋkɪn
 younkins	ˈjaʊŋkɪnz
 yount	jaʊnt
 younts	jaʊnts
-your	jə
+your	jɔː
 youree	ˈjɔːriː
 youri	ˈjɔːri
 yours	jʊəz

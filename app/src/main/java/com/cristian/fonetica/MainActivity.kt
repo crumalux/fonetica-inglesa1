@@ -7,35 +7,23 @@ import android.speech.tts.TextToSpeech
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.slideInVertically
-import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.ExperimentalLayoutApi
-import androidx.compose.foundation.layout.FlowRow
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.GridItemSpan
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
-import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.PlayArrow
-import androidx.compose.material3.AssistChip
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -49,7 +37,6 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
@@ -69,9 +56,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
-import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -86,7 +75,7 @@ class MainActivity : ComponentActivity() {
         speaker = Speaker(this) { voiceStatus.value = it }
         setContent {
             AppTheme {
-                FoneticaScreen(
+                PronunciationScreen(
                     speaker = speaker,
                     voiceStatus = voiceStatus.value,
                     onInstallVoice = {
@@ -118,9 +107,9 @@ fun AppTheme(content: @Composable () -> Unit) {
     MaterialTheme(colorScheme = colors, content = content)
 }
 
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FoneticaScreen(
+fun PronunciationScreen(
     speaker: Speaker,
     voiceStatus: Speaker.Status,
     onInstallVoice: () -> Unit,
@@ -131,115 +120,35 @@ fun FoneticaScreen(
         PhoneticDictionary.load(context)
         dictLoaded = true
     }
-
-    var selectedSymbol by rememberSaveable { mutableStateOf<String?>(null) }
-    val selected = remember(selectedSymbol) {
-        phonemeGroups.flatMap { it.items }.firstOrNull { it.symbol == selectedSymbol }
-    }
-    var lastShown by remember { mutableStateOf<Phoneme?>(null) }
-    if (selected != null) lastShown = selected
     var slow by rememberSaveable { mutableStateOf(false) }
     LaunchedEffect(slow) { speaker.slow = slow }
 
     Scaffold(
-        topBar = {
-            TopAppBar(title = { Text("Fonética Inglesa") })
-        },
-        bottomBar = {
-            AnimatedVisibility(
-                visible = selected != null,
-                enter = slideInVertically { it },
-                exit = slideOutVertically { it },
-            ) {
-                lastShown?.let { p ->
-                    PhonemeDetail(
-                        phoneme = p,
-                        onSpeakWord = { speaker.speak(it) },
-                        onPlay = { speaker.playPhoneme(p) },
-                        onClose = { selectedSymbol = null },
-                    )
-                }
-            }
-        },
+        topBar = { TopAppBar(title = { Text("Fonética Inglesa") }) },
     ) { inner ->
-        LazyVerticalGrid(
-            columns = GridCells.Adaptive(minSize = 72.dp),
-            contentPadding = PaddingValues(
-                start = 16.dp, end = 16.dp,
-                top = inner.calculateTopPadding() + 8.dp,
-                bottom = inner.calculateBottomPadding() + 16.dp,
-            ),
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
-        ) {
-            item(span = { GridItemSpan(maxLineSpan) }) {
-                SearchCard(
-                    dictLoaded = dictLoaded,
-                    slow = slow,
-                    onSlowChange = { slow = it },
-                    onSpeak = { speaker.speak(it) },
-                )
-            }
-            if (voiceStatus == Speaker.Status.MISSING_VOICE || voiceStatus == Speaker.Status.NO_ENGINE) {
-                item(span = { GridItemSpan(maxLineSpan) }) {
-                    VoiceWarning(voiceStatus, onInstallVoice)
-                }
-            }
-            phonemeGroups.forEach { group ->
-                item(span = { GridItemSpan(maxLineSpan) }) {
-                    Text(
-                        group.title,
-                        style = MaterialTheme.typography.titleMedium,
-                        color = MaterialTheme.colorScheme.primary,
-                        modifier = Modifier.padding(top = 12.dp, bottom = 2.dp),
-                    )
-                }
-                items(group.items, key = { it.id }) { p ->
-                    PhonemeButton(
-                        phoneme = p,
-                        isSelected = p.symbol == selectedSymbol,
-                        onClick = {
-                            selectedSymbol = p.symbol
-                            speaker.playPhoneme(p)
-                        },
-                    )
-                }
-            }
-        }
-    }
-}
-
-@Composable
-fun PhonemeButton(phoneme: Phoneme, isSelected: Boolean, onClick: () -> Unit) {
-    val colors = if (isSelected) {
-        CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.primary,
-            contentColor = MaterialTheme.colorScheme.onPrimary,
-        )
-    } else {
-        CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.secondaryContainer,
-            contentColor = MaterialTheme.colorScheme.onSecondaryContainer,
-        )
-    }
-    Card(
-        onClick = onClick,
-        colors = colors,
-        modifier = Modifier.aspectRatio(1f),
-    ) {
         Column(
             modifier = Modifier
-                .fillMaxSize()
-                .padding(4.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center,
+                .padding(inner)
+                .imePadding()
+                .verticalScroll(rememberScrollState())
+                .padding(horizontal = 16.dp, vertical = 8.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
-            Text(phoneme.symbol, fontSize = 26.sp, fontWeight = FontWeight.Medium)
             Text(
-                phoneme.examples.first(),
-                fontSize = 11.sp,
-                maxLines = 1,
+                "British English (RP) · IPA transcription with audio",
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
+            SearchCard(
+                dictLoaded = dictLoaded,
+                slow = slow,
+                onSlowChange = { slow = it },
+                onSpeak = { speaker.speak(it) },
+            )
+            if (voiceStatus == Speaker.Status.MISSING_VOICE || voiceStatus == Speaker.Status.NO_ENGINE) {
+                VoiceWarning(voiceStatus, onInstallVoice)
+            }
+            HowToUse()
         }
     }
 }
@@ -269,18 +178,18 @@ fun SearchCard(
 
     ElevatedCard(modifier = Modifier.fillMaxWidth()) {
         Column(Modifier.padding(16.dp)) {
-            Text("Escribí una palabra o frase en inglés", style = MaterialTheme.typography.titleSmall)
+            Text("Word or phrase", style = MaterialTheme.typography.titleSmall)
             Spacer(Modifier.size(8.dp))
             OutlinedTextField(
                 value = input,
                 onValueChange = { input = it },
                 modifier = Modifier.fillMaxWidth(),
                 singleLine = true,
-                placeholder = { Text("p. ej. pronunciation") },
+                placeholder = { Text("e.g. pronunciation") },
                 trailingIcon = {
                     if (input.isNotEmpty()) {
                         IconButton(onClick = { input = ""; lastQuery = "" }) {
-                            Icon(Icons.Filled.Clear, contentDescription = "Borrar")
+                            Icon(Icons.Filled.Clear, contentDescription = "Clear")
                         }
                     }
                 },
@@ -290,13 +199,13 @@ fun SearchCard(
             Spacer(Modifier.size(8.dp))
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Button(onClick = { submit() }, enabled = input.isNotBlank()) {
-                    Text("Ver fonética")
+                    Text("Show pronunciation")
                 }
                 Spacer(Modifier.width(12.dp))
                 FilterChip(
                     selected = slow,
                     onClick = { onSlowChange(!slow) },
-                    label = { Text("Lento") },
+                    label = { Text("Slow") },
                 )
             }
 
@@ -306,7 +215,7 @@ fun SearchCard(
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         CircularProgressIndicator(Modifier.size(18.dp), strokeWidth = 2.dp)
                         Spacer(Modifier.width(8.dp))
-                        Text("Cargando diccionario…")
+                        Text("Loading dictionary…")
                     }
                 } else {
                     val ipa = results.joinToString(" ") { it.ipa ?: "${it.word}?" }
@@ -319,12 +228,12 @@ fun SearchCard(
                             modifier = Modifier.weight(1f),
                         )
                         FilledTonalIconButton(onClick = { onSpeak(lastQuery) }) {
-                            Icon(Icons.Filled.PlayArrow, contentDescription = "Escuchar")
+                            Icon(Icons.Filled.PlayArrow, contentDescription = "Listen again")
                         }
                     }
                     if (missing.isNotEmpty()) {
                         Text(
-                            "No encontré: ${missing.joinToString(", ")} (igual podés escucharla)",
+                            "Not in the dictionary: ${missing.joinToString(", ")}. You can still listen to it.",
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.error,
                         )
@@ -335,47 +244,38 @@ fun SearchCard(
     }
 }
 
-@OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun PhonemeDetail(
-    phoneme: Phoneme,
-    onSpeakWord: (String) -> Unit,
-    onPlay: () -> Unit,
-    onClose: () -> Unit,
-) {
-    Surface(
-        tonalElevation = 6.dp,
-        shadowElevation = 8.dp,
-        modifier = Modifier.fillMaxWidth(),
-    ) {
-        Column(
-            Modifier
-                .navigationBarsPadding()
-                .padding(16.dp)
-        ) {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Text("/${phoneme.symbol}/", fontSize = 34.sp, fontWeight = FontWeight.Bold)
-                Spacer(Modifier.width(12.dp))
-                Text(phoneme.hint, style = MaterialTheme.typography.bodyMedium, modifier = Modifier.weight(1f))
-                FilledTonalIconButton(onClick = onPlay) {
-                    Icon(Icons.Filled.PlayArrow, contentDescription = "Repetir")
-                }
-                IconButton(onClick = onClose) {
-                    Icon(Icons.Filled.Close, contentDescription = "Cerrar")
-                }
-            }
-            Spacer(Modifier.size(8.dp))
-            FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                phoneme.examples.forEach { w ->
-                    val ipa = PhoneticDictionary.lookupWord(w)
-                    AssistChip(
-                        onClick = { onSpeakWord(w) },
-                        label = { Text(if (ipa != null) "$w  /$ipa/" else w) },
-                        leadingIcon = { Icon(Icons.Filled.PlayArrow, contentDescription = null, Modifier.size(16.dp)) },
-                    )
-                }
-            }
+fun HowToUse() {
+    val steps = listOf(
+        "Type an English word or phrase in the box.",
+        "Tap “Show pronunciation” (or the Done key). You will see the phonetic transcription in IPA and hear it read aloud.",
+        "Tap ▶ to listen again. Turn on “Slow” to hear it at a slower speed.",
+        "Stress marks: ˈ comes before the syllable with main stress, ˌ before secondary stress. A long vowel is shown with ː.",
+        "Single words are shown in their full (dictionary) form. In fast speech, short words like to, can or are are often reduced to /tə/, /kən/, /ə/.",
+    )
+    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        Text(
+            "HOW TO USE",
+            style = MaterialTheme.typography.labelMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            letterSpacing = 1.5.sp,
+        )
+        steps.forEachIndexed { i, step ->
+            Text(
+                buildAnnotatedString {
+                    withStyle(SpanStyle(color = MaterialTheme.colorScheme.primary, fontWeight = FontWeight.Bold)) {
+                        append("${i + 1}.  ")
+                    }
+                    append(step)
+                },
+                style = MaterialTheme.typography.bodyMedium,
+            )
         }
+        Text(
+            "No sound? Check that your phone is not on silent and turn up the media volume.",
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
     }
 }
 
@@ -388,13 +288,12 @@ fun VoiceWarning(status: Speaker.Status, onInstallVoice: () -> Unit) {
         Column(Modifier.padding(16.dp)) {
             Text(
                 if (status == Speaker.Status.NO_ENGINE)
-                    "No hay un motor de voz instalado. Instalá «Speech Services by Google» desde Play Store."
+                    "No text-to-speech engine is installed. Install “Speech Services by Google” from the Play Store."
                 else
-                    "Falta la voz en inglés (EE. UU.) en tu teléfono.",
-                textAlign = TextAlign.Start,
+                    "The British English voice is missing on this phone. Common words still play; for other words, install the voice.",
             )
             if (status == Speaker.Status.MISSING_VOICE) {
-                TextButton(onClick = onInstallVoice) { Text("Instalar voz") }
+                TextButton(onClick = onInstallVoice) { Text("Install voice") }
             }
         }
     }

@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Tabla de los 44 fonemas del inglés británico con sonido y transcriptor de palabras a IPA.">
+<meta name="description" content="Type an English word or phrase to see its British English (RP) IPA transcription and hear it.">
 <meta name="theme-color" content="#1f5f8b">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-180.png">
@@ -52,7 +52,7 @@ body {
   background: var(--bg); color: var(--ink); font-family: var(--ui); font-size: 16px; line-height: 1.45;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
-  padding-block: 16px 140px;
+  padding-block: 16px 32px;
 }
 .wrap { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
 header h1 { font-family: var(--ipa); font-size: 1.9rem; margin: 0; text-wrap: balance; letter-spacing: .01em; }
@@ -114,6 +114,12 @@ section h2 small { text-transform: none; letter-spacing: 0; font-weight: 400; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip { border: 1.5px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 999px; padding: 6px 12px; font-size: .92rem; }
 .chip .ci { font-family: var(--ipa); color: var(--muted); margin-left: 4px; }
+.howto { display: flex; flex-direction: column; gap: 8px; }
+.howto h2 { font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin: 0; }
+.howto ol { margin: 0; padding-left: 1.3em; display: flex; flex-direction: column; gap: 6px; max-width: 65ch; }
+.howto li::marker { color: var(--accent); font-weight: 700; }
+.howto .ipa-mark { font-family: var(--ipa); font-size: 1.25em; color: var(--accent); padding: 0 .1em; }
+.howto .tip { margin: 0; color: var(--muted); font-size: .88rem; }
 footer { color: var(--muted); font-size: .78rem; }
 @media (prefers-reduced-motion: reduce) { .sheet, .ph { transition: none; } }
 </style>
@@ -124,98 +130,46 @@ footer { color: var(--muted); font-size: .78rem; }
 <div class="wrap">
   <header>
     <h1>Fonética <span>Inglesa</span></h1>
-    <p>Tocá un símbolo para escucharlo. Inglés británico (RP), los 44 sonidos del alfabeto IPA. Las vocales y diptongos suenan solos y luego en una palabra; las consonantes, en su palabra de ejemplo.</p>
+    <p>British English (RP) · IPA transcription with audio</p>
   </header>
+
+  <section class="howto" aria-labelledby="howto-title">
+    <h2 id="howto-title">How to use</h2>
+    <ol>
+      <li>Type an English word or phrase in the box.</li>
+      <li>Tap <b>Show pronunciation</b> (or press Enter). You will see the phonetic transcription in IPA and hear it read aloud.</li>
+      <li>Tap <b>▶</b> to listen again. Turn on <b>Slow</b> to hear it at a slower speed.</li>
+      <li>Stress marks: <b class="ipa-mark">ˈ</b> comes before the syllable with main stress, <b class="ipa-mark">ˌ</b> before secondary stress. A long vowel is shown with <b class="ipa-mark">ː</b>.</li>
+      <li>Single words are shown in their full (dictionary) form. In fast speech, short words like <i>to</i>, <i>can</i> or <i>are</i> are often reduced to /tə/, /kən/, /ə/.</li>
+    </ol>
+    <p class="tip">No sound? Check that your phone is not on silent and turn up the media volume.</p>
+  </section>
 
   <div class="notice" id="noVoice" role="status" hidden></div>
 
   <form class="search" id="form" autocomplete="off">
-    <label for="q">Escribí una palabra o frase en inglés</label>
+    <label for="q">Word or phrase</label>
     <div class="row">
       <div class="field">
-        <input type="text" id="q" placeholder="p. ej. pronunciation" autocapitalize="off" spellcheck="false">
-        <button type="button" class="clear" id="clear" aria-label="Borrar" hidden>×</button>
+        <input type="text" id="q" placeholder="e.g. pronunciation" autocapitalize="off" spellcheck="false">
+        <button type="button" class="clear" id="clear" aria-label="Clear" hidden>×</button>
       </div>
-      <button class="primary" type="submit" id="go">Ver fonética</button>
-      <button class="toggle" type="button" id="slow" aria-pressed="false">Lento</button>
+      <button class="primary" type="submit" id="go">Show pronunciation</button>
+      <button class="toggle" type="button" id="slow" aria-pressed="false">Slow</button>
     </div>
     <div class="result" id="result">
       <div class="ipa" id="ipa">/prəˌnʌnsɪˈeɪʃən/</div>
-      <button type="button" class="play" id="replay" aria-label="Escuchar"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+      <button type="button" class="play" id="replay" aria-label="Listen again"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
     </div>
     <p class="missing" id="missing" hidden></p>
   </form>
 
-  <div id="chart"></div>
 
-  <footer>Diccionario: CMU Pronouncing Dictionary (Carnegie Mellon University), convertido a IPA. Transcripción: Britfone e ipa-dict (inglés británico, licencia MIT) completados con eSpeak. Audios de la tabla: voz neural británica Kokoro; las vocales aisladas se extraen del marco h_d (heed, hid, head…). Palabras escritas: voz británica del dispositivo o, si no hay, eSpeak integrado.</footer>
+  <footer>Transcriptions: Britfone and ipa-dict (British English, MIT licence), completed with eSpeak NG. Audio: British neural voice (Kokoro) for common words, otherwise your device’s British English voice or the built-in eSpeak voice.</footer>
 </div>
 
-<div class="sheet" id="sheet" aria-live="polite">
-  <div class="in">
-    <div class="top">
-      <div class="big" id="sBig"></div>
-      <div class="hint" id="sHint"></div>
-      <button type="button" class="play" id="sPlay" aria-label="Repetir"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
-      <button type="button" class="close" id="sClose" aria-label="Cerrar">×</button>
-    </div>
-    <div class="chips" id="sChips"></div>
-  </div>
-</div>
 
 <script>
-const GROUPS = [
-  { title: "Vocales", cls: "vowel", note: "12", items: [
-    ["iː", ["see", "green", "eat"], "i larga y tensa, labios en sonrisa"],
-    ["ɪ", ["sit", "fish", "busy"], "i corta y relajada, entre i y e"],
-    ["e", ["bed", "head", "said"], "como la e española"],
-    ["æ", ["cat", "black", "apple"], "a muy abierta, tirando a e"],
-    ["ʌ", ["cup", "love", "money"], "a corta y central, breve"],
-    ["ɑː", ["father", "car", "bath"], "a larga y profunda, al fondo de la boca"],
-    ["ɒ", ["hot", "dog", "watch"], "o corta y abierta, labios apenas redondeados"],
-    ["ɔː", ["saw", "thought", "door"], "o larga, labios redondeados"],
-    ["ʊ", ["book", "put", "could"], "u corta y relajada"],
-    ["uː", ["food", "blue", "two"], "u larga"],
-    ["ɜː", ["bird", "work", "learn"], "vocal larga central, sin r: ni e ni o"],
-    ["ə", ["about", "sofa", "teacher"], "schwa: vocal neutra y débil, siempre sin acento"],
-  ]},
-  { title: "Diptongos", cls: "diph", note: "8", items: [
-    ["ɪə", ["near", "here", "ear"], "de i hacia schwa, sin r final"],
-    ["eə", ["hair", "where", "care"], "e larga que se apaga hacia schwa, sin r"],
-    ["ʊə", ["pure", "tour", "cure"], "de u hacia schwa (muchos hablantes dicen ɔː)"],
-    ["eɪ", ["day", "rain", "make"], "como «ei» en «rey»"],
-    ["aɪ", ["my", "time", "fly"], "como «ai» en «aire»"],
-    ["ɔɪ", ["boy", "coin", "toy"], "como «oi» en «hoy»"],
-    ["əʊ", ["go", "home", "boat"], "de schwa hacia u: ni «ou» ni «o»"],
-    ["aʊ", ["now", "house", "cow"], "como «au» en «auto»"],
-  ]},
-  { title: "Consonantes", cls: "cons", note: "24", items: [
-    ["p", ["pen", "happy", "stop"], "p con soplo de aire"],
-    ["b", ["bad", "rabbit", "job"], "b bien sonora, labios cerrados"],
-    ["t", ["tea", "better", "cat"], "t con la lengua en las encías, con aire"],
-    ["d", ["did", "lady", "bed"], "d con la lengua en las encías"],
-    ["k", ["cat", "school", "back"], "k con soplo de aire"],
-    ["ɡ", ["get", "bigger", "dog"], "g de «gato»"],
-    ["f", ["fish", "coffee", "laugh"], "como la f española"],
-    ["v", ["van", "never", "love"], "labio inferior y dientes, con vibración"],
-    ["θ", ["think", "both", "three"], "como la z de España"],
-    ["ð", ["this", "mother", "the"], "como la d suave de «nada»"],
-    ["s", ["see", "city", "bus"], "s sorda"],
-    ["z", ["zoo", "easy", "is"], "s sonora, zumbido de abeja"],
-    ["ʃ", ["she", "nation", "fish"], "«sh» para pedir silencio"],
-    ["ʒ", ["vision", "measure", "usual"], "como la «ll» rioplatense"],
-    ["h", ["hat", "who", "ahead"], "j muy suave, sólo aire"],
-    ["tʃ", ["chair", "teacher", "watch"], "como la ch española"],
-    ["dʒ", ["jump", "age", "bridge"], "como «ch» pero sonora"],
-    ["m", ["man", "summer", "time"], "como la m española"],
-    ["n", ["no", "dinner", "sun"], "como la n española"],
-    ["ŋ", ["sing", "thinking", "long"], "n nasal de «tengo», sin la g"],
-    ["l", ["leg", "hello", "feel"], "l clara antes de vocal, oscura al final"],
-    ["r", ["red", "sorry", "very"], "r suave sin vibrar; sólo suena antes de vocal (en «car» no)"],
-    ["w", ["wet", "window", "away"], "como «u» en «huevo»"],
-    ["j", ["yes", "you", "music"], "como la «i» de «hielo»"],
-  ]}
-];
 
 // ---------- Audio ----------
 // 1) Audios incluidos (voz neural pregrabada)  2) voz del dispositivo  3) aviso
@@ -309,7 +263,7 @@ async function deviceSpeak(text) {
     const url = URL.createObjectURL(new Blob([data], { type: "audio/wav" }));
     await playUrl(url, token, 1);   // la velocidad ya va en la síntesis
   } catch {
-    flash("No pude reproducir el audio en este dispositivo.");
+    flash("Audio could not be played on this device.");
   }
 }
 function flash(msg) {
@@ -331,7 +285,6 @@ const dictReady = fetch("dict.txt").then(r => r.text()).then(t => {
     if (i > 0) m.set(line.slice(0, i), line.slice(i + 1));
   }
   dict = m;
-  refreshChips();
   return m;
 }).catch(() => null);
 
@@ -340,63 +293,6 @@ function lookup(w) {
   return k && dict ? dict.get(k) || null : null;
 }
 
-// ---------- Tabla ----------
-const chart = document.getElementById("chart");
-let current = null;
-GROUPS.forEach(g => {
-  const sec = document.createElement("section");
-  sec.className = g.cls;
-  sec.innerHTML = `<h2>${g.title} <small>${g.note}</small></h2>`;
-  const grid = document.createElement("div");
-  grid.className = "grid";
-  g.items.forEach(([sym, ex, hint]) => {
-    const b = document.createElement("button");
-    b.type = "button";
-    b.className = "ph";
-    b.setAttribute("aria-label", `/${sym}/ como en ${ex[0]}`);
-    b.innerHTML = `<span class="sym">${sym}</span><span class="ex">${ex[0]}</span>`;
-    b.onclick = () => select(b, sym, ex, hint);
-    grid.appendChild(b);
-  });
-  sec.appendChild(grid);
-  chart.appendChild(sec);
-});
-
-const sheet = document.getElementById("sheet");
-function select(btn, sym, ex, hint) {
-  document.querySelectorAll(".ph.on").forEach(e => e.classList.remove("on"));
-  btn.classList.add("on");
-  current = { sym, ex, hint };
-  document.getElementById("sBig").textContent = `/${sym}/`;
-  document.getElementById("sHint").textContent = hint;
-  refreshChips();
-  sheet.classList.add("open");
-  playPhoneme();
-}
-function refreshChips() {
-  if (!current) return;
-  const box = document.getElementById("sChips");
-  box.innerHTML = "";
-  current.ex.forEach(w => {
-    const c = document.createElement("button");
-    c.type = "button";
-    c.className = "chip";
-    const ipa = lookup(w);
-    c.innerHTML = `▶ ${w}${ipa ? `<span class="ci">/${ipa}/</span>` : ""}`;
-    c.onclick = () => speak(w);
-    box.appendChild(c);
-  });
-}
-function playPhoneme() {
-  if (!current) return;
-  const keys = audioIndex && audioIndex["#" + current.sym] ? ["#" + current.sym, current.ex[0]] : [current.ex[0]];
-  playKeys(keys, current.ex[0]);
-}
-document.getElementById("sPlay").onclick = playPhoneme;
-document.getElementById("sClose").onclick = () => {
-  sheet.classList.remove("open");
-  document.querySelectorAll(".ph.on").forEach(e => e.classList.remove("on"));
-};
 
 // ---------- Buscador ----------
 const q = document.getElementById("q"), ipaEl = document.getElementById("ipa"),
@@ -405,16 +301,16 @@ let lastQuery = "pronunciation";
 
 async function transcribe(text) {
   lastQuery = text;
-  ipaEl.textContent = "Cargando diccionario…";
+  ipaEl.textContent = "Loading dictionary…";
   missEl.hidden = true;
   await dictReady;
-  if (!dict) { ipaEl.textContent = "No se pudo cargar el diccionario."; return; }
+  if (!dict) { ipaEl.textContent = "The dictionary could not be loaded. Check your connection and reload the page."; return; }
   const words = text.split(/[\s,;:.!?¿¡"()]+/).filter(Boolean);
   const out = [], miss = [];
   words.forEach(w => { const p = lookup(w); if (p) out.push(p); else { out.push(w + "?"); miss.push(w); } });
   ipaEl.textContent = `/${out.join(" ")}/`;
   if (miss.length) {
-    missEl.textContent = `No encontré: ${miss.join(", ")}. Igual podés escucharla.`;
+    missEl.textContent = `Not in the dictionary: ${miss.join(", ")}. You can still listen to it.`;
     missEl.hidden = false;
   }
 }
