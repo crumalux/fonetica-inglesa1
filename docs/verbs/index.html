@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Irregular Verbs Quiz</title>
+<meta name="description" content="Practise 78 English irregular verbs: past simple and past participle, with British pronunciation.">
+<meta name="theme-color" content="#1f5f8b">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Irregular Verbs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:wght@400;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: una columna; pestañas arriba (Write / Choose / List), tarjeta de pregunta en el centro */
+:root {
+  --bg: #f6f8fb; --surface: #ffffff; --ink: #16263a; --muted: #5a6b80; --line: #d9e1ec;
+  --accent: #1f5f8b; --accent-ink: #ffffff; --soft: #e4effa;
+  --ok: #1d7a4c; --ok-bg: #e5f5ec; --bad: #b42318; --bad-bg: #fdecea;
+  --ipa: "Gentium Book Plus", "Charis SIL", "Doulos SIL", "Noto Serif", "Times New Roman", serif;
+  --ui: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1722; --surface: #172231; --ink: #e6edf5; --muted: #9aabbf; --line: #2a3a4f;
+    --accent: #7cc0ee; --accent-ink: #0b1622; --soft: #1b3047;
+    --ok: #6fd3a0; --ok-bg: #133325; --bad: #ff8a80; --bad-bg: #3a1a18; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1722; --surface: #172231; --ink: #e6edf5; --muted: #9aabbf; --line: #2a3a4f;
+  --accent: #7cc0ee; --accent-ink: #0b1622; --soft: #1b3047;
+  --ok: #6fd3a0; --ok-bg: #133325; --bad: #ff8a80; --bad-bg: #3a1a18; color-scheme: dark;
+}
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink); font-family: var(--ui); font-size: 16px; line-height: 1.45;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 16px 40px;
+}
+.wrap { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+header h1 { font-family: var(--ipa); font-size: 1.9rem; margin: 0; text-wrap: balance; }
+header h1 span { color: var(--accent); }
+header p { margin: 2px 0 0; color: var(--muted); font-size: .95rem; }
+header a { color: var(--accent); }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; background: var(--soft); padding: 4px; border-radius: 12px; }
+.tabs button { border: 0; background: transparent; color: var(--ink); padding: 10px 6px; border-radius: 9px; font-weight: 700; font-size: .95rem; }
+.tabs button[aria-selected="true"] { background: var(--surface); color: var(--accent); box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 14px; }
+.howto { margin: 0; padding-left: 1.2em; color: var(--muted); font-size: .92rem; display: flex; flex-direction: column; gap: 4px; }
+.setup { display: flex; flex-direction: column; gap: 12px; }
+.opt label.lbl { display: block; font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 6px; }
+.seg { display: flex; flex-wrap: wrap; gap: 6px; }
+.seg button { border: 1.5px solid var(--line); background: transparent; color: var(--ink); border-radius: 999px; padding: 7px 14px; font-size: .92rem; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.seg button:disabled { opacity: .45; cursor: default; }
+.primary { background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 12px; padding: 13px 20px; font-weight: 700; font-size: 1rem; }
+.primary:disabled { opacity: .5; cursor: default; }
+.ghost { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); border-radius: 12px; padding: 11px 18px; font-weight: 700; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.top { display: flex; justify-content: space-between; align-items: center; gap: 10px; color: var(--muted); font-size: .9rem; font-variant-numeric: tabular-nums; }
+.bar { height: 6px; background: var(--soft); border-radius: 99px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .25s ease; }
+.verb { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.verb .word { font-family: var(--ipa); font-size: 2.4rem; font-weight: 700; line-height: 1.1; }
+.verb .ipa { font-family: var(--ipa); color: var(--muted); font-size: 1.2rem; }
+.meaning { margin: 0; color: var(--muted); font-size: .95rem; }
+.meaning button { border: 0; background: none; color: var(--accent); padding: 0; text-decoration: underline; }
+.prompt { margin: 0; font-weight: 700; }
+.play { flex: none; width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--soft); color: var(--ink); display: inline-grid; place-items: center; }
+.play svg { width: 18px; height: 18px; fill: currentColor; }
+.play.sm { width: 32px; height: 32px; }
+.play.sm svg { width: 14px; height: 14px; }
+
+.fields { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 420px) { .fields { grid-template-columns: 1fr; } }
+.field label { display: block; font-size: .85rem; color: var(--muted); margin-bottom: 4px; }
+.field input { width: 100%; font-size: 1.15rem; padding: 11px 12px; border-radius: 10px; border: 1.5px solid var(--line); background: var(--bg); color: var(--ink); }
+.field input:focus { outline: none; border-color: var(--accent); }
+.field input.ok { border-color: var(--ok); background: var(--ok-bg); }
+.field input.bad { border-color: var(--bad); background: var(--bad-bg); }
+.field input:disabled { opacity: .6; }
+
+.choices { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.choices button { border: 1.5px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 12px; padding: 14px 10px; font-size: 1.1rem; font-weight: 700; }
+.choices button.ok { border-color: var(--ok); background: var(--ok-bg); color: var(--ok); }
+.choices button.bad { border-color: var(--bad); background: var(--bad-bg); color: var(--bad); }
+.choices button:disabled { cursor: default; }
+
+.feedback { border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; }
+.feedback.ok { background: var(--ok-bg); }
+.feedback.bad { background: var(--bad-bg); }
+.feedback strong { font-size: 1.05rem; }
+.feedback.ok strong { color: var(--ok); }
+.feedback.bad strong { color: var(--bad); }
+.forms { display: flex; flex-direction: column; gap: 6px; }
+.form-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.form-row .k { color: var(--muted); font-size: .82rem; min-width: 7.5em; }
+.form-row b { font-size: 1.05rem; }
+.form-row .i { font-family: var(--ipa); color: var(--muted); }
+
+.score { text-align: center; display: flex; flex-direction: column; gap: 4px; }
+.score .big { font-family: var(--ipa); font-size: 3rem; font-weight: 700; color: var(--accent); line-height: 1; font-variant-numeric: tabular-nums; }
+.score p { margin: 0; color: var(--muted); }
+.mist { display: flex; flex-direction: column; gap: 6px; }
+.mist h3 { margin: 0; font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.mist .row { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; padding: 8px 0; border-top: 1px solid var(--line); }
+.mist .row b { min-width: 6em; }
+
+.search input { width: 100%; font-size: 1rem; padding: 11px 12px; border-radius: 10px; border: 1.5px solid var(--line); background: var(--bg); color: var(--ink); }
+.tablewrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+th { text-align: left; font-size: .75rem; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); padding: 6px 6px; border-bottom: 1.5px solid var(--line); }
+td { padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+td .w { display: flex; align-items: center; gap: 6px; font-weight: 700; }
+td .i { font-family: var(--ipa); color: var(--muted); font-size: .92rem; }
+td .es { color: var(--muted); font-size: .82rem; }
+.cellbtn { border: 0; background: none; padding: 0; color: inherit; text-align: left; display: flex; flex-direction: column; }
+.cellbtn:hover b, .cellbtn:hover .wtxt { color: var(--accent); }
+footer { color: var(--muted); font-size: .78rem; }
+@media (prefers-reduced-motion: reduce) { .bar i { transition: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Irregular <span>Verbs</span></h1>
+    <p>78 verbs · past simple and past participle · British English. <a href="../">Pronunciation tool</a></p>
+  </header>
+
+  <div class="tabs" role="tablist">
+    <button role="tab" id="tab-write" aria-selected="true">Write</button>
+    <button role="tab" id="tab-choose" aria-selected="false">Choose</button>
+    <button role="tab" id="tab-list" aria-selected="false">Study list</button>
+  </div>
+
+  <!-- Configuración del quiz -->
+  <section class="card" id="setup">
+    <ol class="howto" id="howto"></ol>
+    <div class="setup">
+      <div class="opt"><label class="lbl">Questions</label>
+        <div class="seg" id="optCount">
+          <button data-v="10" aria-pressed="true">10</button>
+          <button data-v="20" aria-pressed="false">20</button>
+          <button data-v="all" aria-pressed="false">All 78</button>
+        </div>
+      </div>
+      <div class="opt"><label class="lbl">Verbs</label>
+        <div class="seg" id="optSet">
+          <button data-v="all" aria-pressed="true">All</button>
+          <button data-v="a" aria-pressed="false">be → leave</button>
+          <button data-v="b" aria-pressed="false">lend → write</button>
+          <button data-v="mistakes" aria-pressed="false" id="optMist">My mistakes (0)</button>
+        </div>
+      </div>
+      <div class="opt"><label class="lbl">Sound</label>
+        <div class="seg" id="optSound">
+          <button data-v="on" aria-pressed="true">On</button>
+          <button data-v="off" aria-pressed="false">Off</button>
+        </div>
+      </div>
+    </div>
+    <div class="actions"><button class="primary" id="start">Start</button></div>
+  </section>
+
+  <!-- Pregunta -->
+  <section class="card" id="quiz" hidden>
+    <div class="top"><span id="qnum">Question 1 of 10</span><span id="qscore">Score 0</span></div>
+    <div class="bar"><i id="qbar"></i></div>
+    <div class="verb">
+      <span class="word" id="qword">go</span>
+      <span class="ipa" id="qipa">/ɡəʊ/</span>
+      <button class="play" id="qplay" aria-label="Listen"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+    </div>
+    <p class="meaning" id="qmeaning"></p>
+    <p class="prompt" id="qprompt"></p>
+
+    <form id="writeForm" autocomplete="off">
+      <div class="fields">
+        <div class="field"><label for="inPast">Past simple</label><input id="inPast" autocapitalize="off" spellcheck="false" autocorrect="off"></div>
+        <div class="field"><label for="inPP">Past participle</label><input id="inPP" autocapitalize="off" spellcheck="false" autocorrect="off"></div>
+      </div>
+    </form>
+    <div class="choices" id="choices" hidden></div>
+
+    <div class="feedback" id="feedback" hidden></div>
+    <div class="actions">
+      <button class="primary" id="check" form="writeForm" type="submit">Check</button>
+      <button class="primary" id="next" hidden>Next</button>
+      <button class="ghost" id="quit">Finish</button>
+    </div>
+  </section>
+
+  <!-- Resultado -->
+  <section class="card" id="result" hidden>
+    <div class="score">
+      <div class="big" id="rscore">8 / 10</div>
+      <p id="rmsg">Well done!</p>
+    </div>
+    <div class="mist" id="rmist"></div>
+    <div class="actions">
+      <button class="primary" id="again">Play again</button>
+      <button class="ghost" id="retry">Practise my mistakes</button>
+    </div>
+  </section>
+
+  <!-- Lista -->
+  <section class="card" id="list" hidden>
+    <p class="meaning">Tap any form to hear it. Tap the Spanish meaning to hide it.</p>
+    <div class="search"><input id="filter" placeholder="Search a verb…" autocapitalize="off" spellcheck="false"></div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Infinitive</th><th>Past simple</th><th>Past participle</th></tr></thead>
+      <tbody id="tbody"></tbody>
+    </table></div>
+  </section>
+
+  <footer>Verb list and IPA as in the course book’s “Irregular verbs” page. Audio: British neural voice (Kokoro). Your mistakes are saved only on this device.</footer>
+</div>
+
+<script>
+let VERBS = [];          // [inf, ipa, [past, pastIpa], [pp, ppIpa], es]
+const $ = id => document.getElementById(id);
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+};
+let mistakes = new Set(store.get("iv-mistakes", []));
+const settings = { mode: "write", count: "10", set: "all", sound: "on" };
+
+// ---------- Audio ----------
+let audioIdx = null, audioBuf = null;
+const audioReady = Promise.all([
+  fetch("verbs_audio.json").then(r => r.json()),
+  fetch("verbs.mp3").then(r => r.arrayBuffer()),
+]).then(([i, b]) => { audioIdx = i; audioBuf = b; }).catch(() => {});
+const player = new Audio();
+let playToken = 0, lastUrl = null;
+function clipUrl(ipa) {
+  const e = audioIdx && audioIdx[ipa];
+  if (!e) return null;
+  return URL.createObjectURL(new Blob([audioBuf.slice(e[0], e[0] + e[1])], { type: "audio/mpeg" }));
+}
+function playOne(url, token) {
+  return new Promise(res => {
+    if (token !== playToken) return res();
+    if (lastUrl) URL.revokeObjectURL(lastUrl);
+    lastUrl = url; player.src = url;
+    player.onended = () => setTimeout(res, 150); player.onerror = () => res();
+    player.play().catch(() => res());
+  });
+}
+function deviceSay(text) {
+  const s = window.speechSynthesis; if (!s) return;
+  const v = s.getVoices().find(v => /^en[-_]GB$/i.test(v.lang)) || s.getVoices().find(v => /^en/i.test(v.lang));
+  s.cancel(); const u = new SpeechSynthesisUtterance(text); u.lang = "en-GB"; if (v) u.voice = v; u.rate = .9; s.speak(u);
+}
+// pairs: [[texto, ipa], ...]
+async function say(pairs, force) {
+  if (settings.sound === "off" && !force) return;
+  const token = ++playToken; player.pause();
+  await audioReady;
+  for (const [text, ipa] of pairs) {
+    if (token !== playToken) return;
+    const url = ipa && clipUrl(ipa);
+    if (url) await playOne(url, token); else deviceSay(text);
+  }
+}
+const ipas = s => (s || "").split(" / ");
+const forms = s => s.split(" / ").map(x => x.trim());
+const formPairs = (txt, ipa) => {
+  const t = forms(txt), i = ipas(ipa);
+  return i.length === t.length ? t.map((x, k) => [x, i[k]]) : [[t[0], i[0]]];
+};
+
+// ---------- Corrección ----------
+const EXTRA = { learnt: ["learned"] };   // variantes también correctas
+function accepted(form) {
+  if (form === "–") return [];
+  const a = forms(form).map(x => x.toLowerCase());
+  a.forEach(x => (EXTRA[x] || []).forEach(y => a.push(y)));
+  return a;
+}
+function isRight(answer, form) {
+  const ans = answer.toLowerCase().replace(/[’']/g, "").replace(/\s*(\/|,|or)\s*/g, "/").trim();
+  if (!ans) return false;
+  const ok = accepted(form);
+  return ans.split("/").filter(Boolean).every(p => ok.includes(p.trim()));
+}
+
+// ---------- Opciones de respuesta ----------
+const regular = v => v.endsWith("e") ? v + "d" : /[^aeiou]y$/.test(v) ? v.slice(0, -1) + "ied" : v + "ed";
+function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function buildChoices(v, col) {
+  const right = forms(col === 2 ? v[2][0] : v[3][0])[0];
+  const pool = new Set();
+  const other = col === 2 ? v[3][0] : v[2][0];
+  forms(other).forEach(x => pool.add(x));
+  pool.add(v[0]); pool.add(regular(v[0]));
+  if (col === 3) pool.add(regular(v[0]).replace(/d$/, "n"));
+  VERBS.forEach(w => { if (w[0][0] === v[0][0] && w !== v) pool.add(forms(w[col][0])[0]); });
+  const wrong = shuffle([...pool].filter(x => x && x !== "–" && !accepted(col === 2 ? v[2][0] : v[3][0]).includes(x.toLowerCase())));
+  return shuffle([right, ...wrong.slice(0, 3)]);
+}
+
+// ---------- Flujo del quiz ----------
+let queue = [], qi = 0, score = 0, wrongThisRound = [], answered = false, cur = null;
+function pool() {
+  if (settings.set === "a") return VERBS.slice(0, 39);
+  if (settings.set === "b") return VERBS.slice(39);
+  if (settings.set === "mistakes") return VERBS.filter(v => mistakes.has(v[0]));
+  return VERBS;
+}
+function start(list) {
+  const p = shuffle([...(list || pool())]);
+  const n = settings.count === "all" ? p.length : Math.min(p.length, +settings.count);
+  queue = p.slice(0, n).map(v => ({ v, col: v[3][0] === "–" ? 2 : (Math.random() < .5 ? 2 : 3) }));
+  if (!queue.length) return;
+  qi = 0; score = 0; wrongThisRound = [];
+  show("quiz"); ask();
+}
+function ask() {
+  answered = false; cur = queue[qi];
+  const { v, col } = cur;
+  $("qnum").textContent = `Question ${qi + 1} of ${queue.length}`;
+  $("qscore").textContent = `Score ${score}`;
+  $("qbar").style.width = `${qi / queue.length * 100}%`;
+  $("qword").textContent = v[0]; $("qipa").textContent = `/${v[1]}/`;
+  $("qmeaning").innerHTML = `<button type="button" id="showEs">Show meaning in Spanish</button>`;
+  $("showEs").onclick = () => { $("qmeaning").textContent = `= ${v[4]}`; };
+  $("feedback").hidden = true; $("next").hidden = true; $("check").hidden = settings.mode !== "write";
+  if (settings.mode === "write") {
+    $("writeForm").hidden = false; $("choices").hidden = true;
+    $("qprompt").textContent = "Write the past simple and the past participle.";
+    for (const id of ["inPast", "inPP"]) { const el = $(id); el.value = ""; el.className = ""; el.disabled = false; }
+    const noPP = v[3][0] === "–";
+    $("inPP").disabled = noPP; $("inPP").placeholder = noPP ? "no participle" : "";
+    setTimeout(() => $("inPast").focus(), 50);
+  } else {
+    $("writeForm").hidden = true; $("choices").hidden = false;
+    $("qprompt").textContent = col === 2 ? "Choose the past simple:" : "Choose the past participle:";
+    const box = $("choices"); box.innerHTML = "";
+    buildChoices(v, col).forEach(opt => {
+      const b = document.createElement("button"); b.type = "button"; b.textContent = opt;
+      b.onclick = () => choose(b, opt); box.appendChild(b);
+    });
+  }
+  say([[v[0], v[1]]]);
+}
+function formsHtml(v) {
+  const row = (k, txt, ipa) => `<div class="form-row"><span class="k">${k}</span><b>${txt}</b>` +
+    (ipa ? `<span class="i">/${ipa}/</span><button class="play sm" data-t="${txt}" data-i="${ipa}" aria-label="Listen to ${txt}"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>` : "") + `</div>`;
+  return `<div class="forms">${row("Infinitive", v[0], v[1])}${row("Past simple", v[2][0], v[2][1])}${row("Past participle", v[3][0], v[3][1])}</div>`;
+}
+function bindPlays(root) {
+  root.querySelectorAll("button.play.sm").forEach(b => b.onclick = () => say(formPairs(b.dataset.t, b.dataset.i), true));
+}
+function finishAnswer(right) {
+  answered = true;
+  const { v } = cur;
+  if (right) { score++; mistakes.delete(v[0]); } else { wrongThisRound.push(v); mistakes.add(v[0]); }
+  store.set("iv-mistakes", [...mistakes]); refreshMistakeBtn();
+  $("qscore").textContent = `Score ${score}`;
+  const fb = $("feedback");
+  fb.className = "feedback " + (right ? "ok" : "bad");
+  fb.innerHTML = `<strong>${right ? "Correct!" : "Not quite."}</strong>${formsHtml(v)}`;
+  fb.hidden = false; bindPlays(fb);
+  $("check").hidden = true; $("next").hidden = false; $("next").focus();
+  $("next").textContent = qi + 1 < queue.length ? "Next" : "See results";
+  say([[v[0], v[1]], ...formPairs(v[2][0], v[2][1]), ...(v[3][1] ? formPairs(v[3][0], v[3][1]) : [])]);
+}
+$("writeForm").addEventListener("submit", e => {
+  e.preventDefault();
+  if (answered) return next();
+  const { v } = cur;
+  const okPast = isRight($("inPast").value, v[2][0]);
+  const noPP = v[3][0] === "–";
+  const okPP = noPP || isRight($("inPP").value, v[3][0]);
+  $("inPast").className = okPast ? "ok" : "bad";
+  if (!noPP) $("inPP").className = okPP ? "ok" : "bad";
+  $("inPast").disabled = true; $("inPP").disabled = true;
+  finishAnswer(okPast && okPP);
+});
+function choose(btn, opt) {
+  if (answered) return;
+  const { v, col } = cur;
+  const right = isRight(opt, col === 2 ? v[2][0] : v[3][0]);
+  $("choices").querySelectorAll("button").forEach(b => {
+    b.disabled = true;
+    if (isRight(b.textContent, col === 2 ? v[2][0] : v[3][0])) b.classList.add("ok");
+  });
+  if (!right) btn.classList.add("bad");
+  finishAnswer(right);
+}
+function next() { qi++; if (qi < queue.length) ask(); else results(); }
+$("next").onclick = next;
+$("quit").onclick = () => results();
+function results() {
+  playToken++; player.pause();
+  const total = Math.max(1, Math.min(queue.length, qi + (answered ? 1 : 0)));
+  $("rscore").textContent = `${score} / ${total}`;
+  const pct = score / total;
+  $("rmsg").textContent = pct === 1 ? "Perfect! Every answer right." : pct >= .8 ? "Very good! Just a few to review." : pct >= .5 ? "Good progress. Review the verbs below." : "Keep practising. Review the verbs below and try again.";
+  const m = $("rmist");
+  m.innerHTML = wrongThisRound.length ? `<h3>Review these</h3>` + wrongThisRound.map(v =>
+    `<div class="row"><b>${v[0]}</b><span>${v[2][0]} · ${v[3][0]}</span><span class="i" style="font-family:var(--ipa);color:var(--muted)">/${v[2][1]}/ · ${v[3][1] ? "/" + v[3][1] + "/" : ""}</span><button class="play sm" data-t="${v[0]} / ${v[2][0]} / ${v[3][0]}" data-i="${[v[1], v[2][1], v[3][1]].filter(Boolean).join(" / ")}" aria-label="Listen"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></div>`).join("") : "";
+  m.querySelectorAll("button.play.sm").forEach(b => b.onclick = () => {
+    const v = VERBS.find(x => x[0] === b.dataset.t.split(" / ")[0]);
+    say([[v[0], v[1]], ...formPairs(v[2][0], v[2][1]), ...(v[3][1] ? formPairs(v[3][0], v[3][1]) : [])], true);
+  });
+  $("retry").hidden = !wrongThisRound.length;
+  show("result");
+}
+$("again").onclick = () => start();
+$("retry").onclick = () => start(wrongThisRound.slice());
+
+// ---------- Lista ----------
+function renderList() {
+  const f = $("filter").value.trim().toLowerCase();
+  const cell = (txt, ipa, extra = "") => `<button class="cellbtn" data-t="${txt}" data-i="${ipa}"><span class="w"><span class="wtxt">${txt}</span></span>${ipa ? `<span class="i">/${ipa}/</span>` : ""}${extra}</button>`;
+  $("tbody").innerHTML = VERBS.filter(v => !f || [v[0], v[2][0], v[3][0], v[4]].some(x => x.toLowerCase().includes(f))).map(v =>
+    `<tr><td>${cell(v[0], v[1])}<span class="es">${v[4]}</span></td><td>${cell(v[2][0], v[2][1])}</td><td>${v[3][0] === "–" ? "–" : cell(v[3][0], v[3][1])}</td></tr>`).join("");
+  $("tbody").querySelectorAll(".cellbtn").forEach(b => b.onclick = () => say(formPairs(b.dataset.t, b.dataset.i), true));
+  $("tbody").querySelectorAll(".es").forEach(e => e.onclick = () => document.body.classList.toggle("hide-es"));
+}
+$("filter").addEventListener("input", renderList);
+
+// ---------- Pestañas y opciones ----------
+const HOWTO = {
+  write: ["You see a verb in the infinitive and hear it.", "Write its <b>past simple</b> and <b>past participle</b>, then tap <b>Check</b> (or press Enter).", "Both must be right to score a point. You will see and hear the correct forms.", "If two forms are possible (<i>dreamt / dreamed</i>), either one is correct."],
+  choose: ["You see a verb and the form to find: past simple or past participle.", "Tap the correct option. Watch out for forms that look regular but are wrong (<i>goed</i>, <i>buyed</i>).", "After each answer you see and hear all three forms."],
+};
+function show(which) {
+  for (const id of ["setup", "quiz", "result", "list"]) $(id).hidden = id !== which;
+}
+function setTab(t) {
+  for (const [id, m] of [["tab-write", "write"], ["tab-choose", "choose"], ["tab-list", "list"]]) $(id).setAttribute("aria-selected", String(m === t));
+  playToken++; player.pause();
+  if (t === "list") { show("list"); renderList(); return; }
+  settings.mode = t;
+  $("howto").innerHTML = HOWTO[t].map(s => `<li>${s}</li>`).join("");
+  show("setup");
+}
+$("tab-write").onclick = () => setTab("write");
+$("tab-choose").onclick = () => setTab("choose");
+$("tab-list").onclick = () => setTab("list");
+function seg(id, key) {
+  $(id).querySelectorAll("button").forEach(b => b.onclick = () => {
+    if (b.disabled) return;
+    $(id).querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    settings[key] = b.dataset.v; store.set("iv-settings", settings);
+  });
+}
+seg("optCount", "count"); seg("optSet", "set"); seg("optSound", "sound");
+function refreshMistakeBtn() {
+  const b = $("optMist"); b.textContent = `My mistakes (${mistakes.size})`; b.disabled = !mistakes.size;
+  if (!mistakes.size && settings.set === "mistakes") $("optSet").querySelector('[data-v="all"]').click();
+}
+$("start").onclick = () => start();
+const style = document.createElement("style"); style.textContent = "body.hide-es td .es{visibility:hidden}"; document.head.appendChild(style);
+
+// ---------- Inicio ----------
+const saved = store.get("iv-settings", null);
+if (saved) for (const k of ["count", "set", "sound"]) {
+  const b = $({ count: "optCount", set: "optSet", sound: "optSound" }[k]).querySelector(`[data-v="${saved[k]}"]`);
+  if (b) { b.parentNode.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x === b))); settings[k] = saved[k]; }
+}
+fetch("verbs.json").then(r => r.json()).then(v => { VERBS = v; refreshMistakeBtn(); setTab("write"); })
+  .catch(() => { $("howto").innerHTML = "<li>The verb list could not be loaded. Check your connection and reload the page.</li>"; });
+</script>
+</body>
+</html>
