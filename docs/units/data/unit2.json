@@ -1,0 +1,169 @@
+[
+{
+ "id": "2A", "unit": 2, "title": "Spending money",
+ "summary": "Choose between the present perfect and the past simple. Talk about money.",
+ "sections": [
+  {"kind": "grammar", "title": "Present perfect and past simple", "blocks": [
+   {"h": "Present perfect: have / has + past participle",
+    "p": "Use the present perfect when the <b>time is not important or not finished</b>: experiences in your life (often with <b>ever / never</b>), and recent actions with a result now (often with <b>just</b>).",
+    "ex": ["Have you ever forgotten your PIN?", "I've never had a credit card.", "Oh no! I've just dropped my phone in the sink."]},
+   {"h": "already and yet",
+    "p": "<b>already</b> (= sooner than expected) goes before the main verb in positive sentences. <b>yet</b> goes at the end of negatives and questions.",
+    "ex": ["I've already booked the tickets.", "The bank hasn't answered my email yet.", "Have you opened your new account yet?"]},
+   {"h": "Past simple: finished time",
+    "p": "Use the <b>past simple</b> when you say or ask <b>when</b> something happened, or the time is clearly finished: <i>yesterday, last year, in 2019, two days ago, when I was a child</i>.",
+    "ex": ["I bought these boots in the sales last January.", "When did you open your bank account?", "We didn't go on holiday last year."]},
+   {"h": "A typical conversation",
+    "p": "We often start with the present perfect (the general experience) and continue with the past simple (the details).",
+    "ex": ["Have you ever been to Japan? Yes, I have. I went there in 2018.", "I've lost my keys. I left them on the bus this morning."]}
+  ]},
+  {"kind": "vocabulary", "title": "Money", "groups": [
+   {"h": "Verbs", "items": [
+    ["borrow", "take money from someone and give it back later (borrow FROM)"],
+    ["lend", "give money to someone for a time (lend TO)"],
+    ["owe", "need to pay back money you borrowed: I owe you €20"],
+    ["earn", "get money for work"],
+    ["save", "keep money for the future"],
+    ["waste", "spend money badly, on useless things"],
+    ["can't afford", "don't have enough money to buy something"],
+    ["charge", "ask a price for a service: They charged me €60"],
+    ["cost", "have a price: These shoes cost $200"],
+    ["be worth", "have a certain value: My car is worth €5,000"],
+    ["inherit", "receive money or property from someone who has died"],
+    ["invest", "put money into a business or property to make a profit"],
+    ["raise", "collect money for a good cause"]]},
+   {"h": "Nouns", "items": [
+    ["bill", "a paper that shows how much you must pay"],
+    ["budget", "the money you have and your plan for spending it"],
+    ["contactless payment", "paying by holding your card or phone near a reader"],
+    ["insurance", "you pay a company and they pay if something bad happens"],
+    ["loan", "money that you borrow from a bank"],
+    ["mortgage", "a loan to buy a house or flat"],
+    ["salary", "the money you get every month for your job"],
+    ["tax", "money that you pay to the government"]]},
+   {"h": "Prepositions", "items": [
+    ["pay by card / in cash", "Can I pay by card? / I'll pay in cash."],
+    ["pay for something", "I paid for the dinner."],
+    ["spend money on", "I spend too much on clothes."],
+    ["borrow from", "I borrowed €50 from my brother."],
+    ["lend to", "I never lend money to friends."],
+    ["invest in", "She invested in property."],
+    ["charge for", "They charged us €10 for delivery."]]}
+  ]},
+  {"kind": "pronunciation", "title": "The letters o and or", "blocks": [
+   {"h": "The letter o",
+    "p": "The letter <b>o</b> has several sounds. The most common are <b>/ɒ/</b> (short), <b>/əʊ/</b> (like 'go') and <b>/ʌ/</b> (like 'up').",
+    "pairs": [["ɒ", "cost, dollar, honest", "əʊ", "clothes, loan, owe"], ["ʌ", "money, done, month", "", ""]],
+    "ex": ["money", "honest", "loan"]},
+   {"h": "The letters or",
+    "p": "When <b>or</b> is stressed it's usually <b>/ɔː/</b>: <i>afford, mortgage, order</i>. But after <b>w</b> it's usually <b>/ɜː/</b>: <i>work, worth, world</i>.",
+    "ex": ["afford", "mortgage", "worth", "work"]}
+  ]}
+ ],
+ "quiz": {
+  "grammar": [
+   {"t": "mc", "q": "I ___ my wallet yesterday.", "o": ["have lost", "lost", "have losing"], "a": 1, "e": "yesterday = finished time → past simple."},
+   {"t": "mc", "q": "___ you ever ___ a camel?", "o": ["Did / ride", "Have / ridden", "Have / ride"], "a": 1, "e": "Life experience with ever → present perfect."},
+   {"t": "mc", "q": "Oh no! I ___ my finger!", "o": ["'ve cut", "cut", "was cut"], "a": 0, "e": "Recent action with a result now."},
+   {"t": "mc", "q": "When ___ your first car?", "o": ["have you bought", "did you buy", "you bought"], "a": 1, "e": "Questions with When → past simple."},
+   {"t": "mc", "q": "I haven't replied to her email ___.", "o": ["already", "yet", "just"], "a": 1, "e": "yet at the end of negatives."},
+   {"t": "mc", "q": "We don't need to queue. I've ___ bought the tickets online.", "o": ["yet", "already", "ever"], "a": 1, "e": "already = before now (sooner than expected)."},
+   {"t": "mc", "q": "Which sentence is correct?", "o": ["I've been to Paris in 2019.", "I went to Paris in 2019.", "I've went to Paris in 2019."], "a": 1, "e": "in 2019 = finished time."},
+   {"t": "gap", "q": "We ___ (never / win) the lottery.", "a": ["'ve never won", "have never won"], "e": "Experience: have + never + past participle."},
+   {"t": "gap", "q": "Sarah ___ (just / leave). You can call her later.", "a": ["has just left", "'s just left"], "e": "just goes between has and the participle."},
+   {"t": "gap", "q": "A: Have you seen the new film? B: Yes, I ___ (see) it last night.", "a": ["saw"], "e": "Details with a finished time → past simple."},
+   {"t": "gap", "q": "Have you ___ (finish) your report yet?", "a": ["finished"], "e": "Present perfect: have + past participle."}
+  ],
+  "vocabulary": [
+   {"t": "mc", "q": "Can you ___ me €20 until Friday?", "o": ["borrow", "lend", "owe"], "a": 1, "e": "lend TO someone; borrow FROM someone."},
+   {"t": "mc", "q": "I ___ €20 from my mum.", "o": ["borrowed", "lent", "charged"], "a": 0, "e": "borrow from."},
+   {"t": "mc", "q": "I still ___ Jim £100. I must pay him back.", "o": ["owe", "earn", "invest"], "a": 0, "e": "owe = need to pay back."},
+   {"t": "mc", "q": "We ___ to go on holiday this year. We have no money.", "o": ["can't afford", "can't spend", "don't cost"], "a": 0, "e": "can't afford."},
+   {"t": "mc", "q": "A loan from a bank to buy a house is a…", "o": ["mortgage", "salary", "budget"], "a": 0, "e": "mortgage /ˈmɔːɡɪdʒ/ (silent t)."},
+   {"t": "mc", "q": "I spend too much money ___ clothes.", "o": ["for", "on", "in"], "a": 1, "e": "spend money on."},
+   {"t": "mc", "q": "Would you like to pay ___ card?", "o": ["with", "by", "in"], "a": 1, "e": "pay by card / in cash."},
+   {"t": "mc", "q": "The money you get every month from your job is your…", "o": ["salary", "tax", "insurance"], "a": 0, "e": "salary."},
+   {"t": "mc", "q": "My grandmother left me her house. I ___ it.", "o": ["inherited", "invested", "raised"], "a": 0, "e": "inherit."},
+   {"t": "mc", "q": "This old painting ___ a lot of money.", "o": ["is worth", "is charged", "earns"], "a": 0, "e": "be worth = have a value."}
+  ],
+  "pronunciation": [
+   {"t": "mc", "q": "Which word has the sound /ʌ/?", "o": ["money", "cost", "loan"], "a": 0, "e": "money /ˈmʌni/."},
+   {"t": "mc", "q": "Which word has the sound /əʊ/?", "o": ["dollar", "owe", "honest"], "a": 1, "e": "owe /əʊ/."},
+   {"t": "mc", "q": "Which word has /ɜː/, not /ɔː/?", "o": ["afford", "worth", "order"], "a": 1, "e": "or after w → /ɜː/."},
+   {"t": "mc", "q": "Which letter is silent in 'mortgage'?", "o": ["r", "t", "g"], "a": 1, "e": "/ˈmɔːɡɪdʒ/"},
+   {"t": "mc", "q": "Which word has a different o sound?", "o": ["cost", "dollar", "done"], "a": 2, "e": "done /dʌn/; the others have /ɒ/."}
+  ]
+ }
+},
+{
+ "id": "2B", "unit": 2, "title": "Changing lives",
+ "summary": "Say how long something has lasted with for / since. Use strong adjectives.",
+ "sections": [
+  {"kind": "grammar", "title": "Present perfect + for / since; present perfect continuous", "blocks": [
+   {"h": "How long…? + present perfect",
+    "p": "To talk about a situation that <b>started in the past and continues now</b>, use the present perfect, not the present simple. Use <b>for</b> + a period of time and <b>since</b> + a point in time.",
+    "ex": ["I've had this bike for six years.", "My aunt has lived in Cork since 2015.", "How long have you lived here?"]},
+   {"h": "for or since?",
+    "p": "<b>for</b>: two weeks, ten years, a long time, ages. <b>since</b>: Monday, 2010, June, I was a child, last summer.",
+    "ex": ["for three months", "since last Christmas", "since I was at university"]},
+   {"h": "Present perfect continuous: have / has been + verb-ing",
+    "p": "With <b>action verbs</b> we often use the present perfect continuous with <i>for / since / How long</i> to emphasize the activity continuing up to now. With <b>non-action verbs</b> (know, have = possess, be, like) use the present perfect simple.",
+    "ex": ["How long have you been saving for the trip?", "The baby has been crying since six o'clock.", "We've known each other since primary school."]},
+   {"h": "Recent activities with a present result",
+    "p": "We also use the continuous for an activity that has just stopped and explains what we see now.",
+    "ex": ["You're out of breath. Have you been running?", "Yes, I've been jogging in the park."]},
+   {"h": "live and work",
+    "p": "With <b>live</b> and <b>work</b> both forms are fine with for / since.",
+    "ex": ["I've worked here since 2019.", "I've been working here since 2019."]}
+  ]},
+  {"kind": "vocabulary", "title": "Strong adjectives", "groups": [
+   {"h": "Normal adjective → strong adjective", "note": "Strong adjectives already mean 'very ___'. Use <b>absolutely</b> or <b>really</b> with them, NOT <i>very</i>: <i>absolutely exhausted</i>, NOT <i>very exhausted</i>.", "items": [
+    ["exhausted", "very tired"], ["starving", "very hungry"], ["freezing", "very cold"], ["boiling", "very hot"],
+    ["furious", "very angry"], ["terrified", "very scared"], ["delighted", "very pleased"], ["amazed", "very surprised"],
+    ["filthy", "very dirty"], ["tiny", "very small"], ["huge", "very big (also enormous)"],
+    ["fascinating", "very interesting"], ["delicious", "very tasty"], ["awful", "very bad (also terrible)"],
+    ["positive", "very sure"]]}
+  ]},
+  {"kind": "pronunciation", "title": "Sentence stress", "blocks": [
+   {"h": "Stress the important words",
+    "p": "In questions with <i>How long have you been…?</i>, the important words are stressed and <b>have you been</b> is said very fast: /əv jə bɪn/.",
+    "ex": ["How long have you been studying?", "How long have you known her?"]},
+   {"h": "Extra stress on strong adjectives",
+    "p": "We often give strong adjectives extra stress to show emotion.",
+    "ex": ["I'm absolutely exhausted!", "The water was freezing!", "I'm starving!"]}
+  ]}
+ ],
+ "quiz": {
+  "grammar": [
+   {"t": "mc", "q": "I ___ here since 2018.", "o": ["work", "'ve worked", "'m working"], "a": 1, "e": "Started in the past and continues → present perfect, not present simple."},
+   {"t": "mc", "q": "I've had this laptop ___ three years.", "o": ["since", "for", "from"], "a": 1, "e": "for + period of time."},
+   {"t": "mc", "q": "He's been in hospital ___ Monday.", "o": ["for", "since", "ago"], "a": 1, "e": "since + point in time."},
+   {"t": "mc", "q": "How long ___ your best friend?", "o": ["do you know", "have you known", "have you been knowing"], "a": 1, "e": "know is non-action → present perfect simple."},
+   {"t": "mc", "q": "It ___ all day. Take an umbrella.", "o": ["'s raining", "'s been raining", "rains"], "a": 1, "e": "Action continuing up to now → present perfect continuous."},
+   {"t": "mc", "q": "Why are you so dirty? What ___?", "o": ["have you been doing", "do you do", "have you done since"], "a": 0, "e": "Recent activity with a visible result."},
+   {"t": "mc", "q": "I ___ her since we were children.", "o": ["'ve been knowing", "'ve known", "know"], "a": 1, "e": "Non-action verb."},
+   {"t": "gap", "q": "How long have you ___ (wait) for the bus? Use the continuous.", "a": ["been waiting"], "e": "How long + have + been + -ing."},
+   {"t": "gap", "q": "My neighbours ___ (argue) for an hour. I can't sleep! Use the continuous.", "a": ["have been arguing", "'ve been arguing"], "e": "have been + -ing."},
+   {"t": "gap", "q": "Complete with for or since: I haven't seen him ___ ages.", "a": ["for"], "e": "ages = a period of time."},
+   {"t": "gap", "q": "Complete with for or since: My dad has worked for the same company ___ he left university.", "a": ["since"], "e": "since + a point in time (a clause)."}
+  ],
+  "vocabulary": [
+   {"t": "mc", "q": "A: Are you hungry? B: Hungry? I'm ___!", "o": ["starving", "boiling", "filthy"], "a": 0, "e": "starving = very hungry."},
+   {"t": "mc", "q": "A: Was it hot in Seville? B: It was ___ — 45 degrees!", "o": ["freezing", "boiling", "tiny"], "a": 1, "e": "boiling = very hot."},
+   {"t": "mc", "q": "A: Was your boss angry? B: He was ___!", "o": ["furious", "delighted", "positive"], "a": 0, "e": "furious = very angry."},
+   {"t": "mc", "q": "A: Is their flat small? B: It's ___ — just one room.", "o": ["huge", "tiny", "awful"], "a": 1, "e": "tiny = very small."},
+   {"t": "mc", "q": "A: Are you sure you locked the door? B: I'm ___.", "o": ["positive", "amazed", "terrified"], "a": 0, "e": "positive = very sure."},
+   {"t": "mc", "q": "Which is correct?", "o": ["I'm very exhausted.", "I'm absolutely exhausted.", "I'm absolutely tired."], "a": 1, "e": "absolutely + strong adjective; very + normal adjective."},
+   {"t": "mc", "q": "A: Are you scared of flying? B: I'm ___! I never fly.", "o": ["delighted", "terrified", "fascinated"], "a": 1, "e": "terrified = very scared."},
+   {"t": "mc", "q": "A: Was the kitchen dirty? B: It was ___. It took us three hours to clean.", "o": ["filthy", "freezing", "huge"], "a": 0, "e": "filthy = very dirty."},
+   {"t": "mc", "q": "A: Are your parents pleased about the baby? B: They're ___!", "o": ["furious", "delighted", "exhausted"], "a": 1, "e": "delighted = very pleased."}
+  ],
+  "pronunciation": [
+   {"t": "mc", "q": "In 'How long have you been waiting?', which words are stressed?", "o": ["How, long, waiting", "have, you, been", "long, you, been"], "a": 0, "e": "Content words are stressed; have you been is fast and weak."},
+   {"t": "mc", "q": "How is 'been' usually pronounced in fast speech?", "o": ["/biːn/", "/bɪn/", "/ben/"], "a": 1, "e": "Weak form /bɪn/."},
+   {"t": "mc", "q": "Where is the stress in 'delighted'?", "o": ["DElighted", "deLIGHTed", "delightED"], "a": 1, "e": "/dɪˈlaɪtɪd/"},
+   {"t": "mc", "q": "Where is the stress in 'fascinating'?", "o": ["FAScinating", "fasCInating", "fasciNAting"], "a": 0, "e": "/ˈfæsɪneɪtɪŋ/"}
+  ]
+ }
+}
+]
