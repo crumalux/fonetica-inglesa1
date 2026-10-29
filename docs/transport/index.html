@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Transport Vocabulary Quiz</title>
+<meta name="description" content="Practise transport vocabulary: vehicles, road compound nouns, phrasal verbs and 'How long does it take?', with British audio.">
+<meta name="theme-color" content="#1f5f8b">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:wght@400;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: una columna; portada con modos de quiz y lista de palabras; tarjeta de pregunta */
+:root {
+  --bg: #f4f8f9; --surface: #ffffff; --ink: #14262f; --muted: #566a73; --line: #d6e2e6;
+  --accent: #1f8aa8; --accent-strong: #176a82; --accent-ink: #ffffff; --soft: #e1f1f5;
+  --road: #2b3a40; --stripe: #f2c230;
+  --ok: #1d7a4c; --ok-bg: #e5f5ec; --bad: #b42318; --bad-bg: #fdecea;
+  --display: "Gentium Book Plus", "Noto Serif", Georgia, serif;
+  --ui: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e171b; --surface: #16232a; --ink: #e5eff2; --muted: #9db2ba; --line: #283a42;
+    --accent: #6fd0ec; --accent-strong: #9fe0f2; --accent-ink: #0a1a20; --soft: #183039;
+    --road: #0a1215; --stripe: #e8b923;
+    --ok: #6fd3a0; --ok-bg: #133325; --bad: #ff8a80; --bad-bg: #3a1a18; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e171b; --surface: #16232a; --ink: #e5eff2; --muted: #9db2ba; --line: #283a42;
+  --accent: #6fd0ec; --accent-strong: #9fe0f2; --accent-ink: #0a1a20; --soft: #183039;
+  --road: #0a1215; --stripe: #e8b923;
+  --ok: #6fd3a0; --ok-bg: #133325; --bad: #ff8a80; --bad-bg: #3a1a18; color-scheme: dark;
+}
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--ui); font-size: 16px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 16px 48px; }
+.wrap { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+button, input { font: inherit; } button { cursor: pointer; }
+button:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+header h1 { font-family: var(--display); font-size: 2.1rem; line-height: 1.1; margin: 0; }
+header p { margin: 6px 0 0; color: var(--muted); }
+.road { height: 10px; border-radius: 99px; background: var(--road) repeating-linear-gradient(90deg, transparent 0 18px, var(--stripe) 18px 34px) center / 100% 3px no-repeat; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 14px; }
+.card h2 { margin: 0; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.howto { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 4px; font-size: .95rem; }
+.modes { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+.modes button { text-align: left; border: 1.5px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 2px; }
+.modes button:hover { border-color: var(--accent); }
+.modes b { font-size: 1.05rem; } .modes span { color: var(--muted); font-size: .88rem; }
+.modes button.main { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.modes button.main span { color: var(--accent-ink); opacity: .85; }
+.words h3 { margin: 6px 0 4px; font-size: 1rem; color: var(--accent-strong); }
+.wrow { display: grid; grid-template-columns: auto minmax(0, 11em) minmax(0, 1fr); gap: 10px; align-items: center; padding: 6px 0; border-top: 1px solid var(--line); }
+.wrow .d { color: var(--muted); font-size: .92rem; }
+@media (max-width: 460px) { .wrow { grid-template-columns: auto minmax(0, 1fr); } .wrow .d { grid-column: 2; } }
+.play { flex: none; width: 32px; height: 32px; border-radius: 50%; border: 0; background: var(--soft); color: var(--ink); display: inline-grid; place-items: center; }
+.play svg { width: 14px; height: 14px; fill: currentColor; }
+.qtop { display: flex; justify-content: space-between; color: var(--muted); font-size: .9rem; font-variant-numeric: tabular-nums; }
+.bar { height: 6px; background: var(--soft); border-radius: 99px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .25s ease; }
+.qtext { font-size: 1.2rem; font-weight: 700; margin: 0; line-height: 1.4; }
+.qtext .gap { display: inline-block; min-width: 3em; border-bottom: 2px solid var(--accent); }
+.opts { display: grid; gap: 8px; }
+.opts button { text-align: left; border: 1.5px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 12px; padding: 12px 14px; font-size: 1.02rem; }
+.opts button.ok { border-color: var(--ok); background: var(--ok-bg); color: var(--ok); font-weight: 700; }
+.opts button.bad { border-color: var(--bad); background: var(--bad-bg); color: var(--bad); }
+.gapin { width: 100%; font-size: 1.1rem; padding: 12px; border-radius: 10px; border: 1.5px solid var(--line); background: var(--bg); color: var(--ink); }
+.gapin.ok { border-color: var(--ok); background: var(--ok-bg); } .gapin.bad { border-color: var(--bad); background: var(--bad-bg); }
+.fb { border-radius: 12px; padding: 12px 14px; display: flex; gap: 10px; align-items: flex-start; }
+.fb.ok { background: var(--ok-bg); } .fb.bad { background: var(--bad-bg); }
+.fb strong { display: block; } .fb.ok strong { color: var(--ok); } .fb.bad strong { color: var(--bad); }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.primary { background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 12px; padding: 12px 20px; font-weight: 700; }
+.ghost { background: transparent; color: var(--accent-strong); border: 1.5px solid var(--accent); border-radius: 12px; padding: 10px 18px; font-weight: 700; }
+.score { text-align: center; }
+.score .big { font-family: var(--display); font-size: 3rem; font-weight: 700; color: var(--accent-strong); line-height: 1; font-variant-numeric: tabular-nums; }
+.score p { margin: 6px 0 0; color: var(--muted); }
+.review div { padding: 10px 0; border-top: 1px solid var(--line); font-size: .95rem; }
+.review b { display: block; } .review span { color: var(--muted); }
+footer { color: var(--muted); font-size: .8rem; }
+footer a { color: var(--accent-strong); }
+@media (prefers-reduced-motion: reduce) { .bar i { transition: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Transport Vocabulary</h1>
+    <p>Vehicles, on the road, phrasal verbs and “How long does it take?” · British English</p>
+  </header>
+  <div class="road" aria-hidden="true"></div>
+
+  <main id="home">
+    <section class="card">
+      <h2>How to play</h2>
+      <ol class="howto">
+        <li>Choose a quiz. <b>Full quiz</b> mixes all the topics.</li>
+        <li>Tap an answer, or type it and press <b>Check</b>.</li>
+        <li>You'll see the right answer and can listen to it. At the end, practise the ones you missed.</li>
+      </ol>
+      <div class="modes" id="modes"></div>
+    </section>
+    <section class="card words" id="words"><h2>Word list · tap ▶ to listen</h2></section>
+  </main>
+  <main id="quiz" hidden></main>
+
+  <footer>Vocabulary from the Transport topic of <i>English File Intermediate</i> (4th ed.), Unit 3. Questions are original. Audio: British neural voice. <a href="../">Pronunciation tool</a> · <a href="../verbs/">Irregular verbs quiz</a></footer>
+</div>
+
+<script>
+const WORDS = [
+  { h: "Public transport and vehicles", items: [
+    ["coach", "a comfortable bus for long journeys (also: one part of a train)"],
+    ["ferry", "a boat that carries people and cars across water"],
+    ["lorry", "a big vehicle that carries goods (AmE truck)"],
+    ["motorbike", "a motorcycle"],
+    ["motorway", "a wide, fast road between cities (AmE freeway)"],
+    ["scooter", "a small motorbike, or an electric one you stand on"],
+    ["tram", "an electric vehicle on rails in the street"],
+    ["the Underground", "trains that run under a city (AmE subway)"],
+    ["van", "a vehicle for carrying things, smaller than a lorry"]]},
+  { h: "On the road", items: [
+    ["car crash", "an accident when a car hits something"],
+    ["cycle lane", "part of the road only for bicycles"],
+    ["parking fine", "money you pay for parking in the wrong place"],
+    ["pedestrian zone", "streets where cars can't go, only people walking"],
+    ["petrol station", "where you buy fuel (AmE gas station)"],
+    ["roadworks", "repairs being done to a road"],
+    ["rush hour", "when everyone travels to or from work"],
+    ["seat belt", "keeps you safe in your seat"],
+    ["speed camera", "photographs cars that go too fast"],
+    ["speed limit", "the maximum speed allowed"],
+    ["taxi rank", "a place where taxis wait for passengers"],
+    ["traffic jam", "a long line of cars that can't move"],
+    ["traffic lights", "red, amber and green lights"],
+    ["zebra crossing", "black and white stripes where people cross"]]},
+  { h: "Phrasal verbs", items: [
+    ["set off", "start a journey"],
+    ["pick somebody up", "collect someone in your car"],
+    ["drop somebody off", "take someone somewhere in your car and leave them there"],
+    ["end up", "finally arrive somewhere you didn't plan to go"],
+    ["run out of", "have none left"],
+    ["look out", "Be careful! (also: watch out)"]]},
+  { h: "How long does it take?", items: [
+    ["It takes about an hour to get there.", "take + time + to get"],
+    ["How long does it take you to get to work?", "question form"]]},
+];
+const QUESTIONS = {
+  vehicles: [
+    { t: "mc", q: "A boat that carries cars and passengers across the sea is a…", o: ["ferry", "tram", "coach"], a: 0, w: "ferry" },
+    { t: "mc", q: "We went from Dublin to Galway by ___. It was cheaper than the train and had Wi-Fi.", o: ["coach", "lorry", "van"], a: 0, w: "coach" },
+    { t: "mc", q: "The British word for 'truck' is…", o: ["van", "lorry", "scooter"], a: 1, w: "lorry" },
+    { t: "mc", q: "In London, the trains under the city are called…", o: ["the Underground", "the motorway", "the tram"], a: 0, w: "the Underground" },
+    { t: "mc", q: "An electric vehicle that runs on rails in the street is a…", o: ["tram", "ferry", "coach"], a: 0, w: "tram" },
+    { t: "mc", q: "The plumber arrived in a white ___ full of tools.", o: ["van", "tram", "ferry"], a: 0, w: "van" },
+    { t: "mc", q: "The British word for 'freeway' is…", o: ["motorway", "the Underground", "speed limit"], a: 0, w: "motorway" },
+    { t: "mc", q: "My son goes to school on an electric ___. It's quicker than walking.", o: ["scooter", "lorry", "ferry"], a: 0, w: "scooter" },
+    { t: "mc", q: "You need a helmet to ride a…", o: ["motorbike", "coach", "tram"], a: 0, w: "motorbike" },
+  ],
+  road: [
+    { t: "gap", q: "Complete the compound noun: traffic ___ (red, amber, green)", a: ["lights"], w: "traffic lights" },
+    { t: "gap", q: "Complete the compound noun: seat ___", a: ["belt"], w: "seat belt" },
+    { t: "gap", q: "Complete the compound noun: zebra ___", a: ["crossing"], w: "zebra crossing" },
+    { t: "gap", q: "Complete the compound noun: taxi ___", a: ["rank"], w: "taxi rank" },
+    { t: "gap", q: "Complete the compound noun: rush ___", a: ["hour"], w: "rush hour" },
+    { t: "gap", q: "Complete the compound noun: road ___", a: ["works"], w: "roadworks" },
+    { t: "mc", q: "I left my car in the wrong place and got a ___.", o: ["parking fine", "speed limit", "taxi rank"], a: 0, w: "parking fine" },
+    { t: "mc", q: "We were stuck in a ___ for an hour. Nobody could move.", o: ["traffic jam", "cycle lane", "zebra crossing"], a: 0, w: "traffic jam" },
+    { t: "mc", q: "The ___ here is 50 km per hour.", o: ["speed limit", "speed camera", "rush hour"], a: 0, w: "speed limit" },
+    { t: "mc", q: "Slow down! There's a ___ on that bridge.", o: ["speed camera", "taxi rank", "petrol station"], a: 0, w: "speed camera" },
+    { t: "mc", q: "We're almost out of fuel. Is there a ___ near here?", o: ["petrol station", "pedestrian zone", "cycle lane"], a: 0, w: "petrol station" },
+    { t: "mc", q: "Cars aren't allowed in the town centre. It's a ___.", o: ["pedestrian zone", "motorway", "car crash"], a: 0, w: "pedestrian zone" },
+    { t: "mc", q: "Bikes should use the ___, not the pavement.", o: ["cycle lane", "taxi rank", "seat belt"], a: 0, w: "cycle lane" },
+    { t: "mc", q: "Nobody was hurt in the ___, but both cars were badly damaged.", o: ["car crash", "traffic lights", "rush hour"], a: 0, w: "car crash" },
+    { t: "mc", q: "Avoid driving at ___. The roads are full between 8 and 9.", o: ["rush hour", "roadworks", "speed limit"], a: 0, w: "rush hour" },
+  ],
+  phrasal: [
+    { t: "mc", q: "We ___ at 6 a.m. to avoid the traffic.", o: ["set off", "ended up", "ran out"], a: 0, w: "set off" },
+    { t: "mc", q: "Can you ___ me ___ at the station? My train arrives at 8.", o: ["pick / up", "set / off", "look / out"], a: 0, w: "pick somebody up" },
+    { t: "mc", q: "The opposite of 'pick somebody up' is…", o: ["drop somebody off", "set somebody off", "run somebody out"], a: 0, w: "drop somebody off" },
+    { t: "mc", q: "The satnav was wrong and we ___ in a tiny village in the mountains.", o: ["ended up", "set off", "picked up"], a: 0, w: "end up" },
+    { t: "mc", q: "We've ___ petrol! We'll have to walk.", o: ["run out of", "set off", "looked out"], a: 0, w: "run out of" },
+    { t: "mc", q: "___! There's a cyclist behind you!", o: ["Look out", "Set off", "End up"], a: 0, w: "look out" },
+    { t: "gap", q: "Watch ___! The road is icy. (one word)", a: ["out"], w: "watch out" },
+  ],
+  take: [
+    { t: "mc", q: "How long does it ___ to get to the airport?", o: ["take", "last", "spend"], a: 0, w: "How long does it take you to get to work?" },
+    { t: "mc", q: "Which sentence is correct?", o: ["It took me two hours to get home.", "I took two hours for get home.", "It took me two hours getting home."], a: 0, w: "It takes about an hour to get there." },
+    { t: "gap", q: "It ___ about twenty minutes to walk to the centre. (one word, present)", a: ["takes"], w: "It takes about an hour to get there." },
+    { t: "gap", q: "Yesterday it ___ me an hour to get to work because of the roadworks. (one word)", a: ["took"], w: "It takes about an hour to get there." },
+  ],
+};
+const MODES = [
+  ["all", "Full quiz", "All topics mixed"],
+  ["vehicles", "Vehicles", "Public transport and vehicles"],
+  ["road", "On the road", "Compound nouns"],
+  ["phrasal", "Phrasal verbs", "set off, pick up, run out of…"],
+  ["take", "How long does it take?", "take + time"],
+];
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const norm = s => s.toLowerCase().replace(/[’‘]/g, "'").replace(/[.!?,]+$/, "").replace(/\s+/g, " ").trim();
+
+// Audio
+let aIdx = null, aBuf = null;
+const audioReady = Promise.all([fetch("transport_audio.json").then(r => r.json()), fetch("transport.mp3").then(r => r.arrayBuffer())])
+  .then(([i, b]) => { aIdx = i; aBuf = b; }).catch(() => {});
+const player = new Audio(); let lastUrl = null;
+async function say(text) {
+  await audioReady; player.pause();
+  const e = aIdx && aIdx[text];
+  if (e) { if (lastUrl) URL.revokeObjectURL(lastUrl); lastUrl = URL.createObjectURL(new Blob([aBuf.slice(e[0], e[0] + e[1])], { type: "audio/mpeg" })); player.src = lastUrl; player.play().catch(() => {}); }
+  else if (window.speechSynthesis) { const v = speechSynthesis.getVoices().find(v => /^en[-_]GB$/i.test(v.lang)); speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(text); u.lang = "en-GB"; if (v) u.voice = v; speechSynthesis.speak(u); }
+}
+const playBtn = t => `<button class="play" data-say="${esc(t)}" aria-label="Listen: ${esc(t)}"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>`;
+document.addEventListener("click", e => { const b = e.target.closest("[data-say]"); if (b) say(b.dataset.say); });
+
+// Portada
+$("modes").innerHTML = MODES.map(([k, t, s]) => {
+  const n = k === "all" ? Object.values(QUESTIONS).flat().length : QUESTIONS[k].length;
+  return `<button class="${k === "all" ? "main" : ""}" data-m="${k}"><b>${t}</b><span>${s} · ${n} questions</span></button>`;
+}).join("");
+$("modes").querySelectorAll("[data-m]").forEach(b => b.onclick = () => start(b.dataset.m === "all" ? Object.values(QUESTIONS).flat() : QUESTIONS[b.dataset.m], b.dataset.m));
+$("words").innerHTML += WORDS.map(g => `<h3>${g.h}</h3>${g.items.map(([w, d]) => `<div class="wrow">${playBtn(w)}<b>${esc(w)}</b><span class="d">${esc(d)}</span></div>`).join("")}`).join("");
+
+// Quiz
+let Q = null;
+function start(list, mode) {
+  Q = { mode, list: shuffle(list.map(q => { if (q.t !== "mc") return { ...q, orig: q }; const o = shuffle(q.o.map((_, i) => i)); return { ...q, o: o.map(i => q.o[i]), a: o.indexOf(q.a), orig: q }; })), i: 0, score: 0, wrong: [], answered: false };
+  $("home").hidden = true; $("quiz").hidden = false; ask(); scrollTo(0, 0);
+}
+function ask() {
+  const q = Q.list[Q.i]; Q.answered = false;
+  $("quiz").innerHTML = `<section class="card">
+    <div class="qtop"><span>Question ${Q.i + 1} of ${Q.list.length}</span><span>Score ${Q.score}</span></div>
+    <div class="bar"><i style="width:${Q.i / Q.list.length * 100}%"></i></div>
+    <p class="qtext">${esc(q.q).replace(/___/g, '<span class="gap">&nbsp;</span>')}</p>
+    ${q.t === "mc" ? `<div class="opts">${q.o.map((o, i) => `<button data-i="${i}">${esc(o)}</button>`).join("")}</div>`
+      : `<form id="gf" autocomplete="off"><input class="gapin" id="gi" aria-label="Your answer" placeholder="Type your answer" autocapitalize="off" spellcheck="false" autocorrect="off"></form>`}
+    <div id="fb" hidden></div>
+    <div class="actions">${q.t !== "mc" ? `<button class="primary" id="chk" type="submit" form="gf">Check</button>` : ""}<button class="primary" id="nxt" hidden>Next</button><button class="ghost" id="stop">Finish</button></div></section>`;
+  if (q.t === "mc") $("quiz").querySelectorAll(".opts button").forEach(b => b.onclick = () => answer(+b.dataset.i === q.a, b));
+  else { setTimeout(() => $("gi").focus(), 50); $("gf").onsubmit = e => { e.preventDefault(); if (Q.answered) return next(); const v = norm($("gi").value); if (v) answer(q.a.some(a => norm(a) === v)); }; }
+  $("nxt").onclick = next; $("stop").onclick = finish;
+}
+function answer(right, btn) {
+  const q = Q.list[Q.i]; Q.answered = true;
+  if (right) Q.score++; else Q.wrong.push(q);
+  let correct;
+  if (q.t === "mc") { $("quiz").querySelectorAll(".opts button").forEach((b, i) => { b.disabled = true; if (i === q.a) b.classList.add("ok"); }); if (!right) btn.classList.add("bad"); correct = q.o[q.a]; }
+  else { $("gi").classList.add(right ? "ok" : "bad"); $("gi").readOnly = true; $("chk").hidden = true; correct = q.a[0]; }
+  $("fb").className = "fb " + (right ? "ok" : "bad");
+  $("fb").innerHTML = `${playBtn(q.w)}<div><strong>${right ? "Correct!" : "Not quite. Answer: " + esc(correct)}</strong>${esc(q.w)}</div>`;
+  $("fb").hidden = false;
+  $("nxt").hidden = false; $("nxt").textContent = Q.i + 1 < Q.list.length ? "Next" : "See results"; $("nxt").focus();
+  say(q.w);
+}
+function next() { Q.i++; if (Q.i < Q.list.length) ask(); else finish(); }
+function finish() {
+  player.pause();
+  const done = Math.min(Q.list.length, Q.i + (Q.answered && Q.i < Q.list.length ? 1 : 0));
+  const pct = done ? Q.score / done : 0;
+  const msg = !done ? "No answers yet." : pct === 1 ? "Perfect! You know your transport vocabulary." : pct >= .8 ? "Very good! Just a few to review." : pct >= .5 ? "Good work. Review the words below and try again." : "Keep practising. Look at the word list and try again.";
+  $("quiz").innerHTML = `<section class="card"><div class="score"><div class="big">${Q.score} / ${done}</div><p>${msg}</p></div>
+    ${Q.wrong.length ? `<div class="review"><h2>Review</h2>${Q.wrong.map(q => `<div><b>${esc(q.q.replace(/___/g, "…"))}</b><span>Answer: ${esc(q.t === "mc" ? q.o[q.a] : q.a[0])}</span></div>`).join("")}</div>` : ""}
+    <div class="actions">${Q.wrong.length ? `<button class="primary" id="redo">Practise my mistakes</button>` : ""}
+    <button class="${Q.wrong.length ? "ghost" : "primary"}" id="again">Try again</button><button class="ghost" id="home2">All quizzes</button></div></section>`;
+  const wrong = Q.wrong.map(q => q.orig), all = Q.list.map(q => q.orig), mode = Q.mode;
+  if ($("redo")) $("redo").onclick = () => start(wrong, mode);
+  $("again").onclick = () => start(all, mode);
+  $("home2").onclick = () => { $("quiz").hidden = true; $("home").hidden = false; scrollTo(0, 0); };
+}
+</script>
+</body>
+</html>
