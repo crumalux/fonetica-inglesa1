@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Irregular Verbs Quiz</title>
+<meta http-equiv="Cache-Control" content="no-cache">
 <meta name="description" content="Practise 78 English irregular verbs: past simple and past participle, with British pronunciation.">
 <meta name="theme-color" content="#1f5f8b">
 <link rel="icon" href="../icon.svg" type="image/svg+xml">
@@ -290,10 +291,10 @@ function accepted(form) {
   return a;
 }
 function isRight(answer, form) {
-  const ans = answer.toLowerCase().replace(/[’']/g, "").replace(/\s*(?:\/|,|\bor\b)\s*/g, "/").trim();
+  const ans = answer.toLowerCase().normalize("NFKC").replace(/[’'`]/g, "").replace(/\s*(?:\/|,|\bor\b)\s*/g, "/").replace(/[^a-z/]+/g, " ").trim();
   if (!ans) return false;
   const ok = accepted(form);
-  return ans.split("/").filter(Boolean).every(p => ok.includes(p.trim()));
+  return ans.split("/").map(p => p.trim()).filter(Boolean).every(p => ok.includes(p));
 }
 
 // ---------- Opciones de respuesta ----------
