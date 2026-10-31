@@ -290,7 +290,7 @@ function accepted(form) {
   return a;
 }
 function isRight(answer, form) {
-  const ans = answer.toLowerCase().replace(/[’']/g, "").replace(/\s*(\/|,|or)\s*/g, "/").trim();
+  const ans = answer.toLowerCase().replace(/[’']/g, "").replace(/\s*(?:\/|,|\bor\b)\s*/g, "/").trim();
   if (!ans) return false;
   const ok = accepted(form);
   return ans.split("/").filter(Boolean).every(p => ok.includes(p.trim()));
