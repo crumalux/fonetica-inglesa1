@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Comparatives and Superlatives Quiz</title>
+<meta name="description" content="Practise comparative and superlative adjectives and adverbs, as … as and the same as, with British audio.">
+<meta name="theme-color" content="#1f5f8b">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:wght@400;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: una columna; portada con modos de quiz y lista de palabras; tarjeta de pregunta */
+:root {
+  --bg: #f4f8f9; --surface: #ffffff; --ink: #14262f; --muted: #566a73; --line: #d6e2e6;
+  --accent: #1f8aa8; --accent-strong: #176a82; --accent-ink: #ffffff; --soft: #e1f1f5;
+  --road: #2b3a40; --stripe: #f2c230;
+  --ok: #1d7a4c; --ok-bg: #e5f5ec; --bad: #b42318; --bad-bg: #fdecea;
+  --display: "Gentium Book Plus", "Noto Serif", Georgia, serif;
+  --ui: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e171b; --surface: #16232a; --ink: #e5eff2; --muted: #9db2ba; --line: #283a42;
+    --accent: #6fd0ec; --accent-strong: #9fe0f2; --accent-ink: #0a1a20; --soft: #183039;
+    --road: #0a1215; --stripe: #e8b923;
+    --ok: #6fd3a0; --ok-bg: #133325; --bad: #ff8a80; --bad-bg: #3a1a18; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e171b; --surface: #16232a; --ink: #e5eff2; --muted: #9db2ba; --line: #283a42;
+  --accent: #6fd0ec; --accent-strong: #9fe0f2; --accent-ink: #0a1a20; --soft: #183039;
+  --road: #0a1215; --stripe: #e8b923;
+  --ok: #6fd3a0; --ok-bg: #133325; --bad: #ff8a80; --bad-bg: #3a1a18; color-scheme: dark;
+}
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--ui); font-size: 16px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 16px 48px; }
+.wrap { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+button, input { font: inherit; } button { cursor: pointer; }
+button:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+header h1 { font-family: var(--display); font-size: 2.1rem; line-height: 1.1; margin: 0; }
+header p { margin: 6px 0 0; color: var(--muted); }
+.steps { display: flex; align-items: flex-end; gap: 6px; height: 28px; }
+.steps i { flex: 1; border-radius: 6px 6px 2px 2px; background: var(--accent); }
+.steps i:nth-child(1) { height: 30%; opacity: .45; } .steps i:nth-child(2) { height: 62%; opacity: .7; } .steps i:nth-child(3) { height: 100%; background: var(--stripe); }
+.rules h3 { margin: 6px 0 2px; font-size: 1rem; color: var(--accent-strong); }
+.rules p { margin: 0; }
+.rules ul { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.rules li { display: flex; gap: 10px; align-items: center; }
+.rules li span { font-family: var(--display); font-size: 1.08rem; }
+.tip { background: var(--soft); border-radius: 12px; padding: 10px 12px; font-size: .95rem; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 14px; }
+.card h2 { margin: 0; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.howto { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 4px; font-size: .95rem; }
+.modes { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+.modes button { text-align: left; border: 1.5px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 2px; }
+.modes button:hover { border-color: var(--accent); }
+.modes b { font-size: 1.05rem; } .modes span { color: var(--muted); font-size: .88rem; }
+.modes button.main { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.modes button.main span { color: var(--accent-ink); opacity: .85; }
+.words h3 { margin: 6px 0 4px; font-size: 1rem; color: var(--accent-strong); }
+.wrow { display: grid; grid-template-columns: auto minmax(0, 11em) minmax(0, 1fr); gap: 10px; align-items: center; padding: 6px 0; border-top: 1px solid var(--line); }
+.wrow .d { color: var(--muted); font-size: .92rem; }
+@media (max-width: 460px) { .wrow { grid-template-columns: auto minmax(0, 1fr); } .wrow .d { grid-column: 2; } }
+.play { flex: none; width: 32px; height: 32px; border-radius: 50%; border: 0; background: var(--soft); color: var(--ink); display: inline-grid; place-items: center; }
+.play svg { width: 14px; height: 14px; fill: currentColor; }
+.qtop { display: flex; justify-content: space-between; color: var(--muted); font-size: .9rem; font-variant-numeric: tabular-nums; }
+.bar { height: 6px; background: var(--soft); border-radius: 99px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .25s ease; }
+.qtext { font-size: 1.2rem; font-weight: 700; margin: 0; line-height: 1.4; }
+.qtext .gap { display: inline-block; min-width: 3em; border-bottom: 2px solid var(--accent); }
+.opts { display: grid; gap: 8px; }
+.opts button { text-align: left; border: 1.5px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 12px; padding: 12px 14px; font-size: 1.02rem; }
+.opts button.ok { border-color: var(--ok); background: var(--ok-bg); color: var(--ok); font-weight: 700; }
+.opts button.bad { border-color: var(--bad); background: var(--bad-bg); color: var(--bad); }
+.gapin { width: 100%; font-size: 1.1rem; padding: 12px; border-radius: 10px; border: 1.5px solid var(--line); background: var(--bg); color: var(--ink); }
+.gapin.ok { border-color: var(--ok); background: var(--ok-bg); } .gapin.bad { border-color: var(--bad); background: var(--bad-bg); }
+.fb { border-radius: 12px; padding: 12px 14px; display: flex; gap: 10px; align-items: flex-start; }
+.fb.ok { background: var(--ok-bg); } .fb.bad { background: var(--bad-bg); }
+.fb strong { display: block; } .fb.ok strong { color: var(--ok); } .fb.bad strong { color: var(--bad); }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.primary { background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 12px; padding: 12px 20px; font-weight: 700; }
+.ghost { background: transparent; color: var(--accent-strong); border: 1.5px solid var(--accent); border-radius: 12px; padding: 10px 18px; font-weight: 700; }
+.score { text-align: center; }
+.score .big { font-family: var(--display); font-size: 3rem; font-weight: 700; color: var(--accent-strong); line-height: 1; font-variant-numeric: tabular-nums; }
+.score p { margin: 6px 0 0; color: var(--muted); }
+.review div { padding: 10px 0; border-top: 1px solid var(--line); font-size: .95rem; }
+.review b { display: block; } .review span { color: var(--muted); }
+footer { color: var(--muted); font-size: .8rem; }
+footer a { color: var(--accent-strong); }
+@media (prefers-reduced-motion: reduce) { .bar i { transition: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Comparatives &amp; Superlatives</h1>
+    <p>Adjectives and adverbs · as … as · the same as · British English</p>
+  </header>
+  <div class="steps" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <main id="home">
+    <section class="card">
+      <h2>How to play</h2>
+      <ol class="howto">
+        <li>Choose a quiz. <b>Full quiz</b> mixes all the topics.</li>
+        <li>Tap an answer, or type it and press <b>Check</b>. When you see a word in brackets, use the right form of it (and <i>than</i> if necessary).</li>
+        <li>You'll hear the full correct sentence. At the end, practise the ones you missed.</li>
+      </ol>
+      <div class="modes" id="modes"></div>
+    </section>
+    <section class="card rules" id="words"><h2>Quick rules · tap ▶ to listen</h2></section>
+  </main>
+  <main id="quiz" hidden></main>
+
+  <footer>Practice for the comparatives and superlatives topic of <i>English File Intermediate</i> (4th ed.), lesson 3A. Rules and questions are original. Audio: British neural voice. <a href="../">Pronunciation tool</a> · <a href="../verbs/">Irregular verbs quiz</a> · <a href="../transport/">Transport quiz</a></footer>
+</div>
+
+<script>
+const RULES = [
+  { h: "Comparing two things: adjectives", p: "Short adjectives add <b>-er</b>; long ones use <b>more</b>. Add <b>than</b> before the second thing. Irregular: <b>good → better</b>, <b>bad → worse</b>, <b>far → further / farther</b>. Adjectives ending in <i>-ed</i> use <b>more</b>: <i>more bored, more tired</i>.",
+    ex: ["My brother is older than me, but he's shorter.", "Renting a flat in Dublin is more expensive than in Cork.", "My new job is better than my old one."] },
+  { h: "Comparing two actions: adverbs", p: "<b>more slowly, more carefully</b>; but <b>fast → faster</b>, <b>hard → harder</b>, <b>early → earlier</b>, <b>well → better</b>, <b>badly → worse</b>.",
+    ex: ["My sister drives more carefully than I do.", "She sings better than her brother."] },
+  { h: "as … as and the same as", p: "<b>as + adjective / adverb + as</b> = equal. <b>not as … as</b> = less. <b>as much / as many as</b>. <b>the same as</b> = identical. After <i>than</i> and <i>as</i> use <b>me, him, us</b> or <b>I do, he is, we are</b>.",
+    ex: ["I don't earn as much as my partner.", "They're not as busy as us.", "My phone is the same as yours."] },
+  { h: "Superlatives", p: "<b>the -est</b> or <b>the most / the least</b>. Irregular: <b>the best, the worst, the furthest</b>. Often with the present perfect + <b>ever</b>. Use <b>in</b> before places, not <i>of</i>.",
+    ex: ["This is the best book I've ever read.", "The Shannon is the longest river in Ireland.", "Take the bus. It's the least expensive option."] },
+];
+const QUESTIONS = {
+ "adj": [
+  {
+   "t": "gap",
+   "q": "My brother is ___ me, but he's shorter. (old)",
+   "a": [
+    "older than"
+   ],
+   "w": "My brother is older than me, but he's shorter."
+  },
+  {
+   "t": "gap",
+   "q": "Renting a flat in Dublin is ___ in Cork. (expensive)",
+   "a": [
+    "more expensive than"
+   ],
+   "w": "Renting a flat in Dublin is more expensive than in Cork."
+  },
+  {
+   "t": "gap",
+   "q": "My new job is ___ my old one. (good)",
+   "a": [
+    "better than"
+   ],
+   "w": "My new job is better than my old one."
+  },
+  {
+   "t": "gap",
+   "q": "The weather today is ___ yesterday. (bad)",
+   "a": [
+    "worse than"
+   ],
+   "w": "The weather today is worse than yesterday."
+  },
+  {
+   "t": "gap",
+   "q": "Is the station ___ the airport? (far)",
+   "a": [
+    "further than",
+    "farther than"
+   ],
+   "w": "Is the station further than the airport?"
+  },
+  {
+   "t": "gap",
+   "q": "This exercise is ___ the last one. (easy)",
+   "a": [
+    "easier than"
+   ],
+   "w": "This exercise is easier than the last one."
+  },
+  {
+   "t": "gap",
+   "q": "I'm ___ I was before the exam. (stressed)",
+   "a": [
+    "more stressed than"
+   ],
+   "w": "I'm more stressed than I was before the exam."
+  },
+  {
+   "t": "gap",
+   "q": "Our new kitchen is much ___ the old one. (big)",
+   "a": [
+    "bigger than"
+   ],
+   "w": "Our new kitchen is much bigger than the old one."
+  },
+  {
+   "t": "mc",
+   "q": "This sofa is ___ comfortable than the old one. (less = not as much)",
+   "o": [
+    "less",
+    "least",
+    "fewer"
+   ],
+   "a": 0,
+   "w": "This sofa is less comfortable than the old one."
+  },
+  {
+   "t": "mc",
+   "q": "Which sentence is correct?",
+   "o": [
+    "She's taller than me.",
+    "She's taller than I.",
+    "She's taller that me."
+   ],
+   "a": 0,
+   "w": "She's taller than me."
+  },
+  {
+   "t": "mc",
+   "q": "Which sentence is correct?",
+   "o": [
+    "I was more bored than the children.",
+    "I was boreder than the children.",
+    "I was more boring than the children."
+   ],
+   "a": 0,
+   "w": "I was more bored than the children."
+  },
+  {
+   "t": "mc",
+   "q": "My flat is a bit ___ than yours.",
+   "o": [
+    "smaller",
+    "more small",
+    "smallest"
+   ],
+   "a": 0,
+   "w": "My flat is a bit smaller than yours."
+  }
+ ],
+ "adv": [
+  {
+   "t": "gap",
+   "q": "My sister drives ___ I do. (carefully)",
+   "a": [
+    "more carefully than"
+   ],
+   "w": "My sister drives more carefully than I do."
+  },
+  {
+   "t": "gap",
+   "q": "Can you speak a bit ___, please? (slowly)",
+   "a": [
+    "more slowly"
+   ],
+   "w": "Can you speak a bit more slowly, please?"
+  },
+  {
+   "t": "gap",
+   "q": "Ireland played ___ today than last week. (badly)",
+   "a": [
+    "worse"
+   ],
+   "w": "Ireland played worse today than last week."
+  },
+  {
+   "t": "gap",
+   "q": "Tom runs ___ anyone in the team. (fast)",
+   "a": [
+    "faster than"
+   ],
+   "w": "Tom runs faster than anyone in the team."
+  },
+  {
+   "t": "gap",
+   "q": "She sings ___ her brother. (well)",
+   "a": [
+    "better than"
+   ],
+   "w": "She sings better than her brother."
+  },
+  {
+   "t": "mc",
+   "q": "He arrived ___ than everyone else.",
+   "o": [
+    "later",
+    "more late",
+    "more lately"
+   ],
+   "a": 0,
+   "w": "He arrived later than everyone else."
+  },
+  {
+   "t": "mc",
+   "q": "Which sentence is correct?",
+   "o": [
+    "He works harder than me.",
+    "He works more hardly than me.",
+    "He works more hard than me."
+   ],
+   "a": 0,
+   "w": "He works harder than me."
+  },
+  {
+   "t": "mc",
+   "q": "Could you come ___? We're starting at 9.",
+   "o": [
+    "earlier",
+    "more early",
+    "earliest"
+   ],
+   "a": 0,
+   "w": "Could you come earlier? We're starting at 9."
+  }
+ ],
+ "asas": [
+  {
+   "t": "gap",
+   "q": "The train isn't ___ the bus. It's always late. (punctual) (as … as)",
+   "a": [
+    "as punctual as",
+    "so punctual as"
+   ],
+   "w": "The train isn't as punctual as the bus. It's always late."
+  },
+  {
+   "t": "gap",
+   "q": "I don't earn ___ my partner. (as … as, much)",
+   "a": [
+    "as much as"
+   ],
+   "w": "I don't earn as much as my partner."
+  },
+  {
+   "t": "gap",
+   "q": "He doesn't speak Irish ___ his grandmother. (as … as, well)",
+   "a": [
+    "as well as"
+   ],
+   "w": "He doesn't speak Irish as well as his grandmother."
+  },
+  {
+   "t": "gap",
+   "q": "Her coat is ___ mine. Same colour, same shop! (the …)",
+   "a": [
+    "the same as"
+   ],
+   "w": "Her coat is the same as mine. Same colour, same shop!"
+  },
+  {
+   "t": "mc",
+   "q": "I don't have ___ free time as I used to.",
+   "o": [
+    "as much",
+    "as many",
+    "so many"
+   ],
+   "a": 0,
+   "w": "I don't have as much free time as I used to."
+  },
+  {
+   "t": "mc",
+   "q": "We don't have ___ friends here as in Argentina.",
+   "o": [
+    "as many",
+    "as much",
+    "the same"
+   ],
+   "a": 0,
+   "w": "We don't have as many friends here as in Argentina."
+  },
+  {
+   "t": "mc",
+   "q": "Which sentence is correct?",
+   "o": [
+    "They're not as busy as us.",
+    "They're not as busy than us.",
+    "They're not as busy as we not."
+   ],
+   "a": 0,
+   "w": "They're not as busy as us."
+  },
+  {
+   "t": "mc",
+   "q": "My phone is the same ___ yours.",
+   "o": [
+    "as",
+    "than",
+    "like as"
+   ],
+   "a": 0,
+   "w": "My phone is the same as yours."
+  },
+  {
+   "t": "mc",
+   "q": "This film is ___ good as the book.",
+   "o": [
+    "as",
+    "so much",
+    "more"
+   ],
+   "a": 0,
+   "w": "This film is as good as the book."
+  }
+ ],
+ "sup": [
+  {
+   "t": "gap",
+   "q": "It's ___ hotel in the city. (expensive)",
+   "a": [
+    "the most expensive"
+   ],
+   "w": "It's the most expensive hotel in the city."
+  },
+  {
+   "t": "gap",
+   "q": "That was ___ meal I've ever had. (bad)",
+   "a": [
+    "the worst"
+   ],
+   "w": "That was the worst meal I've ever had."
+  },
+  {
+   "t": "gap",
+   "q": "Who is ___ person in your family? (old)",
+   "a": [
+    "the oldest"
+   ],
+   "w": "Who is the oldest person in your family?"
+  },
+  {
+   "t": "gap",
+   "q": "This is ___ book I've ever read. (good)",
+   "a": [
+    "the best"
+   ],
+   "w": "This is the best book I've ever read."
+  },
+  {
+   "t": "gap",
+   "q": "It's ___ restaurant in town. Only €10 for lunch! (cheap)",
+   "a": [
+    "the cheapest"
+   ],
+   "w": "It's the cheapest restaurant in town. Only €10 for lunch!"
+  },
+  {
+   "t": "mc",
+   "q": "Take the bus. It's the ___ expensive option.",
+   "o": [
+    "least",
+    "less",
+    "fewest"
+   ],
+   "a": 0,
+   "w": "Take the bus. It's the least expensive option."
+  },
+  {
+   "t": "gap",
+   "q": "Who dresses ___ in your class? (stylishly)",
+   "a": [
+    "the most stylishly"
+   ],
+   "w": "Who dresses the most stylishly in your class?"
+  },
+  {
+   "t": "mc",
+   "q": "The Shannon is the longest river ___ Ireland.",
+   "o": [
+    "in",
+    "of",
+    "from"
+   ],
+   "a": 0,
+   "w": "The Shannon is the longest river in Ireland."
+  },
+  {
+   "t": "mc",
+   "q": "It's the best film I've ___ seen.",
+   "o": [
+    "ever",
+    "never",
+    "already"
+   ],
+   "a": 0,
+   "w": "It's the best film I've ever seen."
+  },
+  {
+   "t": "mc",
+   "q": "Mount Everest is ___ mountain in the world.",
+   "o": [
+    "the highest",
+    "the higher",
+    "higher"
+   ],
+   "a": 0,
+   "w": "Mount Everest is the highest mountain in the world."
+  },
+  {
+   "t": "mc",
+   "q": "My ___ friend lives in Córdoba.",
+   "o": [
+    "best",
+    "the best",
+    "most good"
+   ],
+   "a": 0,
+   "w": "My best friend lives in Córdoba."
+  },
+  {
+   "t": "mc",
+   "q": "That was the ___ day of my life!",
+   "o": [
+    "happiest",
+    "most happy",
+    "happier"
+   ],
+   "a": 0,
+   "w": "That was the happiest day of my life!"
+  },
+  {
+   "t": "mc",
+   "q": "Which sentence is correct?",
+   "o": [
+    "It's the biggest city in Europe.",
+    "It's the biggest city of Europe.",
+    "It's the most big city in Europe."
+   ],
+   "a": 0,
+   "w": "It's the biggest city in Europe."
+  }
+ ]
+};
+const MODES = [
+  ["all", "Full quiz", "All topics mixed"],
+  ["adj", "Adjectives", "older, more expensive, better than"],
+  ["adv", "Adverbs", "more slowly, faster, better than"],
+  ["asas", "as … as / the same as", "not as busy as us"],
+  ["sup", "Superlatives", "the best, the most, in the world"],
+];
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const norm = s => s.toLowerCase().replace(/[’‘]/g, "'").replace(/[.!?,]+$/, "").replace(/\s+/g, " ").trim();
+
+// Audio
+let aIdx = null, aBuf = null;
+const audioReady = Promise.all([fetch("comp_audio.json").then(r => r.json()), fetch("comp.mp3").then(r => r.arrayBuffer())])
+  .then(([i, b]) => { aIdx = i; aBuf = b; }).catch(() => {});
+const player = new Audio(); let lastUrl = null;
+async function say(text) {
+  await audioReady; player.pause();
+  const e = aIdx && aIdx[text];
+  if (e) { if (lastUrl) URL.revokeObjectURL(lastUrl); lastUrl = URL.createObjectURL(new Blob([aBuf.slice(e[0], e[0] + e[1])], { type: "audio/mpeg" })); player.src = lastUrl; player.play().catch(() => {}); }
+  else if (window.speechSynthesis) { const v = speechSynthesis.getVoices().find(v => /^en[-_]GB$/i.test(v.lang)); speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(text); u.lang = "en-GB"; if (v) u.voice = v; speechSynthesis.speak(u); }
+}
+const playBtn = t => `<button class="play" data-say="${esc(t)}" aria-label="Listen: ${esc(t)}"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>`;
+document.addEventListener("click", e => { const b = e.target.closest("[data-say]"); if (b) say(b.dataset.say); });
+
+// Portada
+$("modes").innerHTML = MODES.map(([k, t, s]) => {
+  const n = k === "all" ? Object.values(QUESTIONS).flat().length : QUESTIONS[k].length;
+  return `<button class="${k === "all" ? "main" : ""}" data-m="${k}"><b>${t}</b><span>${s} · ${n} questions</span></button>`;
+}).join("");
+$("modes").querySelectorAll("[data-m]").forEach(b => b.onclick = () => start(b.dataset.m === "all" ? Object.values(QUESTIONS).flat() : QUESTIONS[b.dataset.m], b.dataset.m));
+$("words").innerHTML += RULES.map(r => `<div><h3>${r.h}</h3><p>${r.p}</p><ul>${r.ex.map(x => `<li>${playBtn(x)}<span>${esc(x)}</span></li>`).join("")}</ul></div>`).join("");
+
+// Quiz
+let Q = null;
+function start(list, mode) {
+  Q = { mode, list: shuffle(list.map(q => { if (q.t !== "mc") return { ...q, orig: q }; const o = shuffle(q.o.map((_, i) => i)); return { ...q, o: o.map(i => q.o[i]), a: o.indexOf(q.a), orig: q }; })), i: 0, score: 0, wrong: [], answered: false };
+  $("home").hidden = true; $("quiz").hidden = false; ask(); scrollTo(0, 0);
+}
+function ask() {
+  const q = Q.list[Q.i]; Q.answered = false;
+  $("quiz").innerHTML = `<section class="card">
+    <div class="qtop"><span>Question ${Q.i + 1} of ${Q.list.length}</span><span>Score ${Q.score}</span></div>
+    <div class="bar"><i style="width:${Q.i / Q.list.length * 100}%"></i></div>
+    <p class="qtext">${esc(q.q).replace(/___/g, '<span class="gap">&nbsp;</span>')}</p>
+    ${q.t === "mc" ? `<div class="opts">${q.o.map((o, i) => `<button data-i="${i}">${esc(o)}</button>`).join("")}</div>`
+      : `<form id="gf" autocomplete="off"><input class="gapin" id="gi" aria-label="Your answer" placeholder="Type your answer" autocapitalize="off" spellcheck="false" autocorrect="off"></form>`}
+    <div id="fb" hidden></div>
+    <div class="actions">${q.t !== "mc" ? `<button class="primary" id="chk" type="submit" form="gf">Check</button>` : ""}<button class="primary" id="nxt" hidden>Next</button><button class="ghost" id="stop">Finish</button></div></section>`;
+  if (q.t === "mc") $("quiz").querySelectorAll(".opts button").forEach(b => b.onclick = () => answer(+b.dataset.i === q.a, b));
+  else { setTimeout(() => $("gi").focus(), 50); $("gf").onsubmit = e => { e.preventDefault(); if (Q.answered) return next(); const v = norm($("gi").value); if (v) answer(q.a.some(a => norm(a) === v)); }; }
+  $("nxt").onclick = next; $("stop").onclick = finish;
+}
+function answer(right, btn) {
+  const q = Q.list[Q.i]; Q.answered = true;
+  if (right) Q.score++; else Q.wrong.push(q);
+  let correct;
+  if (q.t === "mc") { $("quiz").querySelectorAll(".opts button").forEach((b, i) => { b.disabled = true; if (i === q.a) b.classList.add("ok"); }); if (!right) btn.classList.add("bad"); correct = q.o[q.a]; }
+  else { $("gi").classList.add(right ? "ok" : "bad"); $("gi").readOnly = true; $("chk").hidden = true; correct = q.a[0]; }
+  $("fb").className = "fb " + (right ? "ok" : "bad");
+  $("fb").innerHTML = `${playBtn(q.w)}<div><strong>${right ? "Correct!" : "Not quite. Answer: " + esc(correct)}</strong>${esc(q.w)}</div>`;
+  $("fb").hidden = false;
+  $("nxt").hidden = false; $("nxt").textContent = Q.i + 1 < Q.list.length ? "Next" : "See results"; $("nxt").focus();
+  say(q.w);
+}
+function next() { Q.i++; if (Q.i < Q.list.length) ask(); else finish(); }
+function finish() {
+  player.pause();
+  const done = Math.min(Q.list.length, Q.i + (Q.answered && Q.i < Q.list.length ? 1 : 0));
+  const pct = done ? Q.score / done : 0;
+  const msg = !done ? "No answers yet." : pct === 1 ? "Perfect! You've mastered comparatives and superlatives." : pct >= .8 ? "Very good! Just a few to review." : pct >= .5 ? "Good work. Review the words below and try again." : "Keep practising. Read the quick rules and try again.";
+  $("quiz").innerHTML = `<section class="card"><div class="score"><div class="big">${Q.score} / ${done}</div><p>${msg}</p></div>
+    ${Q.wrong.length ? `<div class="review"><h2>Review</h2>${Q.wrong.map(q => `<div><b>${esc(q.q.replace(/___/g, "…"))}</b><span>Answer: ${esc(q.t === "mc" ? q.o[q.a] : q.a[0])}</span></div>`).join("")}</div>` : ""}
+    <div class="actions">${Q.wrong.length ? `<button class="primary" id="redo">Practise my mistakes</button>` : ""}
+    <button class="${Q.wrong.length ? "ghost" : "primary"}" id="again">Try again</button><button class="ghost" id="home2">All quizzes</button></div></section>`;
+  const wrong = Q.wrong.map(q => q.orig), all = Q.list.map(q => q.orig), mode = Q.mode;
+  if ($("redo")) $("redo").onclick = () => start(wrong, mode);
+  $("again").onclick = () => start(all, mode);
+  $("home2").onclick = () => { $("quiz").hidden = true; $("home").hidden = false; scrollTo(0, 0); };
+}
+</script>
+</body>
+</html>
