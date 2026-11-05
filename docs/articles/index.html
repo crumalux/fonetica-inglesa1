@@ -1,0 +1,963 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Articles Quiz: a, an, the</title>
+<meta name="description" content="Learn and practise articles in English: a / an, the and no article, with British audio.">
+<meta name="theme-color" content="#1f5f8b">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:wght@400;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: una columna; portada con modos de quiz y lista de palabras; tarjeta de pregunta */
+:root {
+  --bg: #f4f8f9; --surface: #ffffff; --ink: #14262f; --muted: #566a73; --line: #d6e2e6;
+  --accent: #1f8aa8; --accent-strong: #176a82; --accent-ink: #ffffff; --soft: #e1f1f5;
+  --road: #2b3a40; --stripe: #f2c230;
+  --ok: #1d7a4c; --ok-bg: #e5f5ec; --bad: #b42318; --bad-bg: #fdecea;
+  --display: "Gentium Book Plus", "Noto Serif", Georgia, serif;
+  --ui: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e171b; --surface: #16232a; --ink: #e5eff2; --muted: #9db2ba; --line: #283a42;
+    --accent: #6fd0ec; --accent-strong: #9fe0f2; --accent-ink: #0a1a20; --soft: #183039;
+    --road: #0a1215; --stripe: #e8b923;
+    --ok: #6fd3a0; --ok-bg: #133325; --bad: #ff8a80; --bad-bg: #3a1a18; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e171b; --surface: #16232a; --ink: #e5eff2; --muted: #9db2ba; --line: #283a42;
+  --accent: #6fd0ec; --accent-strong: #9fe0f2; --accent-ink: #0a1a20; --soft: #183039;
+  --road: #0a1215; --stripe: #e8b923;
+  --ok: #6fd3a0; --ok-bg: #133325; --bad: #ff8a80; --bad-bg: #3a1a18; color-scheme: dark;
+}
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--ui); font-size: 16px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 16px 48px; }
+.wrap { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+button, input { font: inherit; } button { cursor: pointer; }
+button:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+header h1 { font-family: var(--display); font-size: 2.1rem; line-height: 1.1; margin: 0; }
+header p { margin: 6px 0 0; color: var(--muted); }
+.steps { display: flex; align-items: flex-end; gap: 6px; height: 28px; }
+.steps i { flex: 1; border-radius: 6px 6px 2px 2px; background: var(--accent); }
+.steps i:nth-child(1) { height: 30%; opacity: .45; } .steps i:nth-child(2) { height: 62%; opacity: .7; } .steps i:nth-child(3) { height: 100%; background: var(--stripe); }
+.rules h3 { margin: 6px 0 2px; font-size: 1rem; color: var(--accent-strong); }
+.rules p { margin: 0; }
+.rules ul { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.rules li { display: flex; gap: 10px; align-items: center; }
+.rules li span { font-family: var(--display); font-size: 1.08rem; }
+.rules .use { margin: 10px 0 2px; font-weight: 700; font-size: .95rem; }
+.rules .blk { border-top: 1px solid var(--line); padding-top: 8px; }
+.rules .blk:first-of-type { border-top: 0; }
+.tip { background: var(--soft); border-radius: 12px; padding: 10px 12px; font-size: .95rem; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 14px; }
+.card h2 { margin: 0; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.howto { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 4px; font-size: .95rem; }
+.modes { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+.modes button { text-align: left; border: 1.5px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 2px; }
+.modes button:hover { border-color: var(--accent); }
+.modes b { font-size: 1.05rem; } .modes span { color: var(--muted); font-size: .88rem; }
+.modes button.main { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.modes button.main span { color: var(--accent-ink); opacity: .85; }
+.words h3 { margin: 6px 0 4px; font-size: 1rem; color: var(--accent-strong); }
+.wrow { display: grid; grid-template-columns: auto minmax(0, 11em) minmax(0, 1fr); gap: 10px; align-items: center; padding: 6px 0; border-top: 1px solid var(--line); }
+.wrow .d { color: var(--muted); font-size: .92rem; }
+@media (max-width: 460px) { .wrow { grid-template-columns: auto minmax(0, 1fr); } .wrow .d { grid-column: 2; } }
+.play { flex: none; width: 32px; height: 32px; border-radius: 50%; border: 0; background: var(--soft); color: var(--ink); display: inline-grid; place-items: center; }
+.play svg { width: 14px; height: 14px; fill: currentColor; }
+.qtop { display: flex; justify-content: space-between; color: var(--muted); font-size: .9rem; font-variant-numeric: tabular-nums; }
+.bar { height: 6px; background: var(--soft); border-radius: 99px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .25s ease; }
+.qtext { font-size: 1.2rem; font-weight: 700; margin: 0; line-height: 1.4; }
+.qtext .gap { display: inline-block; min-width: 3em; border-bottom: 2px solid var(--accent); }
+.opts { display: grid; gap: 8px; }
+.opts button { text-align: left; border: 1.5px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 12px; padding: 12px 14px; font-size: 1.02rem; }
+.opts button.ok { border-color: var(--ok); background: var(--ok-bg); color: var(--ok); font-weight: 700; }
+.opts button.bad { border-color: var(--bad); background: var(--bad-bg); color: var(--bad); }
+.gapin { width: 100%; font-size: 1.1rem; padding: 12px; border-radius: 10px; border: 1.5px solid var(--line); background: var(--bg); color: var(--ink); }
+.gapin.ok { border-color: var(--ok); background: var(--ok-bg); } .gapin.bad { border-color: var(--bad); background: var(--bad-bg); }
+.fb { border-radius: 12px; padding: 12px 14px; display: flex; gap: 10px; align-items: flex-start; }
+.fb.ok { background: var(--ok-bg); } .fb.bad { background: var(--bad-bg); }
+.fb strong { display: block; } .fb.ok strong { color: var(--ok); } .fb.bad strong { color: var(--bad); }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.primary { background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 12px; padding: 12px 20px; font-weight: 700; }
+.ghost { background: transparent; color: var(--accent-strong); border: 1.5px solid var(--accent); border-radius: 12px; padding: 10px 18px; font-weight: 700; }
+.score { text-align: center; }
+.score .big { font-family: var(--display); font-size: 3rem; font-weight: 700; color: var(--accent-strong); line-height: 1; font-variant-numeric: tabular-nums; }
+.score p { margin: 6px 0 0; color: var(--muted); }
+.review div { padding: 10px 0; border-top: 1px solid var(--line); font-size: .95rem; }
+.review b { display: block; } .review span { color: var(--muted); }
+footer { color: var(--muted); font-size: .8rem; }
+footer a { color: var(--accent-strong); }
+@media (prefers-reduced-motion: reduce) { .bar i { transition: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Articles: a / an, the, –</h1>
+    <p>Part 1: learn the rules · Part 2: practise with 40 sentences · British English</p>
+  </header>
+  <div class="steps" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <main id="home" style="display:flex;flex-direction:column;gap:18px">
+    <section class="card rules" id="words"><h2>Part 1 · Learn the rules · tap ▶ to listen</h2></section>
+    <section class="card">
+      <h2>Part 1 · Check the concepts</h2>
+      <p style="margin:0">Why do we use <i>a</i>, <i>the</i> or no article? 14 questions about the rules above.</p>
+      <div class="modes" id="modes1"></div>
+    </section>
+    <section class="card">
+      <h2>Part 2 · Practice · 40 sentences</h2>
+      <ol class="howto">
+        <li><b>Choose</b>: tap a, an, the or – (no article).</li>
+        <li><b>Write</b>: type <i>a</i>, <i>an</i>, <i>the</i>, or <b>-</b> (a dash) when there's no article.</li>
+        <li>You'll hear the full correct sentence. At the end, practise the ones you missed.</li>
+      </ol>
+      <div class="modes" id="modes"></div>
+    </section>
+  </main>
+  <main id="quiz" hidden></main>
+
+  <footer>Practice for the articles topic of <i>English File Intermediate</i> (4th ed.), lesson 3B. Explanations and sentences are original. Audio: British neural voice. <a href="../">Pronunciation tool</a> · <a href="../verbs/">Irregular verbs quiz</a> · <a href="../transport/">Transport quiz</a> · <a href="../comparatives/">Comparatives quiz</a></footer>
+</div>
+
+<script>
+const RULES = [
+ {
+  "h": "a / an",
+  "p": "Use <b>a / an</b> with <b>singular countable nouns</b>. Say <b>an</b> before a vowel <i>sound</i>: <i>an hour, an honest man</i>, but <i>a university, a European city</i>.",
+  "items": [
+   [
+    "1. To say what something is or what somebody does",
+    "She's a nurse.",
+    "It's a lovely flat."
+   ],
+   [
+    "2. The first time you mention something",
+    "I met an interesting woman at the bus stop."
+   ],
+   [
+    "3. In exclamations with What…!",
+    "What a beautiful day!",
+    "What an awful film!"
+   ],
+   [
+    "4. In expressions of frequency",
+    "I go to the gym three times a week."
+   ]
+  ]
+ },
+ {
+  "h": "the",
+  "p": "Use <b>the</b> when you and the listener know <b>which one</b>.",
+  "items": [
+   [
+    "1. Something you've already mentioned",
+    "I bought a jacket and a scarf. The scarf was cheaper."
+   ],
+   [
+    "2. When it's clear what you mean",
+    "Can you close the window, please?"
+   ],
+   [
+    "3. When there is only one",
+    "The sun rises in the east."
+   ],
+   [
+    "4. Places in a town: the cinema, the theatre",
+    "Let's go to the cinema tonight."
+   ],
+   [
+    "5. With superlatives",
+    "It's the tallest building in Limerick."
+   ]
+  ]
+ },
+ {
+  "h": "No article",
+  "p": "Don't use an article in these cases.",
+  "items": [
+   [
+    "1. Plural and uncountable nouns in general",
+    "Dogs are friendlier than cats.",
+    "Money doesn't buy happiness."
+   ],
+   [
+    "Compare: general vs specific",
+    "I love flowers.",
+    "I love the flowers in your garden."
+   ],
+   [
+    "2. home, work, school, church after at / to / from",
+    "She's at work until six.",
+    "I get back from school at four."
+   ],
+   [
+    "3. Meals, days and months",
+    "I usually have breakfast at seven.",
+    "See you on Monday.",
+    "My birthday is in September."
+   ],
+   [
+    "4. Before next / last + day, week, month…",
+    "We're flying to Madrid next Friday."
+   ]
+  ]
+ }
+];
+const QUESTIONS = {
+ "concept": [
+  {
+   "t": "mc",
+   "q": "“She's a lawyer.” Why a?",
+   "o": [
+    "We say what somebody does (job).",
+    "We mentioned her before.",
+    "There is only one lawyer."
+   ],
+   "a": 0,
+   "w": "She's a lawyer."
+  },
+  {
+   "t": "mc",
+   "q": "“I saw a man with a dog. The dog was huge.” Why the dog?",
+   "o": [
+    "We have already mentioned the dog.",
+    "There is only one dog in the world.",
+    "It's a superlative."
+   ],
+   "a": 0,
+   "w": "I saw a man with a dog. The dog was huge."
+  },
+  {
+   "t": "mc",
+   "q": "“The moon is very bright tonight.” Why the?",
+   "o": [
+    "There is only one moon.",
+    "It's the first time we mention it.",
+    "It's an exclamation."
+   ],
+   "a": 0,
+   "w": "The moon is very bright tonight."
+  },
+  {
+   "t": "mc",
+   "q": "“Shut the door, please.” Why the?",
+   "o": [
+    "It's clear which door.",
+    "Doors in general.",
+    "It's a superlative."
+   ],
+   "a": 0,
+   "w": "Shut the door, please."
+  },
+  {
+   "t": "mc",
+   "q": "“It's the best café in Limerick.” Why the?",
+   "o": [
+    "Superlatives take the.",
+    "Cafés in general.",
+    "It's a job."
+   ],
+   "a": 0,
+   "w": "It's the best café in Limerick."
+  },
+  {
+   "t": "mc",
+   "q": "“I'm going to the theatre tonight.” Why the?",
+   "o": [
+    "Places in a town usually take the.",
+    "It's the only theatre in the world.",
+    "We are talking about theatres in general."
+   ],
+   "a": 0,
+   "w": "I'm going to the theatre tonight."
+  },
+  {
+   "t": "mc",
+   "q": "“I love cats.” Why no article?",
+   "o": [
+    "We're talking about cats in general.",
+    "We mentioned the cats before.",
+    "It's an uncountable noun with a job."
+   ],
+   "a": 0,
+   "w": "I love cats."
+  },
+  {
+   "t": "mc",
+   "q": "“We have dinner at eight.” Why no article?",
+   "o": [
+    "No article before meals.",
+    "Dinner is a superlative.",
+    "It's the first mention."
+   ],
+   "a": 0,
+   "w": "We have dinner at eight."
+  },
+  {
+   "t": "mc",
+   "q": "“See you next Tuesday.” Why no article?",
+   "o": [
+    "No article before next / last + day.",
+    "Days always take the.",
+    "It's an exclamation."
+   ],
+   "a": 0,
+   "w": "See you next Tuesday."
+  },
+  {
+   "t": "mc",
+   "q": "“What a lovely day!” Why a?",
+   "o": [
+    "Exclamations with What + singular noun take a / an.",
+    "There's only one day.",
+    "It's a frequency expression."
+   ],
+   "a": 0,
+   "w": "What a lovely day!"
+  },
+  {
+   "t": "mc",
+   "q": "“I go swimming twice a week.” Why a?",
+   "o": [
+    "Expressions of frequency use a / an.",
+    "We mention the week for the first time.",
+    "It's clear which week."
+   ],
+   "a": 0,
+   "w": "I go swimming twice a week."
+  },
+  {
+   "t": "mc",
+   "q": "Which is correct?",
+   "o": [
+    "an hour",
+    "a hour",
+    "the hour of a"
+   ],
+   "a": 0,
+   "w": "an hour"
+  },
+  {
+   "t": "mc",
+   "q": "Which is correct?",
+   "o": [
+    "a university",
+    "an university",
+    "the a university"
+   ],
+   "a": 0,
+   "w": "a university"
+  },
+  {
+   "t": "mc",
+   "q": "Which sentence is about flowers in general?",
+   "o": [
+    "I love flowers.",
+    "I love the flowers.",
+    "I love the flowers in your garden."
+   ],
+   "a": 0,
+   "w": "I love flowers."
+  }
+ ],
+ "choose": [
+  {
+   "t": "mc",
+   "q": "My cousin is ___ engineer in Cork.",
+   "o": [
+    "a",
+    "an",
+    "the",
+    "– (no article)"
+   ],
+   "a": 1,
+   "w": "My cousin is an engineer in Cork.",
+   "fixed": 1
+  },
+  {
+   "t": "mc",
+   "q": "What ___ beautiful view!",
+   "o": [
+    "a",
+    "an",
+    "the",
+    "– (no article)"
+   ],
+   "a": 0,
+   "w": "What a beautiful view!",
+   "fixed": 1
+  },
+  {
+   "t": "mc",
+   "q": "I go swimming twice ___ week.",
+   "o": [
+    "a",
+    "an",
+    "the",
+    "– (no article)"
+   ],
+   "a": 0,
+   "w": "I go swimming twice a week.",
+   "fixed": 1
+  },
+  {
+   "t": "mc",
+   "q": "I bought a jacket and a scarf. ___ scarf was cheaper.",
+   "o": [
+    "a",
+    "an",
+    "the",
+    "– (no article)"
+   ],
+   "a": 2,
+   "w": "I bought a jacket and a scarf. The scarf was cheaper.",
+   "fixed": 1
+  },
+  {
+   "t": "mc",
+   "q": "Can you close ___ window, please? It's cold.",
+   "o": [
+    "a",
+    "an",
+    "the",
+    "– (no article)"
+   ],
+   "a": 2,
+   "w": "Can you close the window, please? It's cold.",
+   "fixed": 1
+  },
+  {
+   "t": "mc",
+   "q": "___ sun rises in the east.",
+   "o": [
+    "a",
+    "an",
+    "the",
+    "– (no article)"
+   ],
+   "a": 2,
+   "w": "The sun rises in the east.",
+   "fixed": 1
+  },
+  {
+   "t": "mc",
+   "q": "Let's go to ___ cinema tonight.",
+   "o": [
+    "a",
+    "an",
+    "the",
+    "– (no article)"
+   ],
+   "a": 2,
+   "w": "Let's go to the cinema tonight.",
+   "fixed": 1
+  },
+  {
+   "t": "mc",
+   "q": "It's ___ tallest building in Limerick.",
+   "o": [
+    "a",
+    "an",
+    "the",
+    "– (no article)"
+   ],
+   "a": 2,
+   "w": "It's the tallest building in Limerick.",
+   "fixed": 1
+  },
+  {
+   "t": "mc",
+   "q": "___ dogs are usually friendlier than cats.",
+   "o": [
+    "a",
+    "an",
+    "the",
+    "– (no article)"
+   ],
+   "a": 3,
+   "w": "Dogs are usually friendlier than cats.",
+   "fixed": 1
+  },
+  {
+   "t": "mc",
+   "q": "I usually have ___ breakfast at seven.",
+   "o": [
+    "a",
+    "an",
+    "the",
+    "– (no article)"
+   ],
+   "a": 3,
+   "w": "I usually have breakfast at seven.",
+   "fixed": 1
+  },
+  {
+   "t": "mc",
+   "q": "She's at ___ work until six.",
+   "o": [
+    "a",
+    "an",
+    "the",
+    "– (no article)"
+   ],
+   "a": 3,
+   "w": "She's at work until six.",
+   "fixed": 1
+  },
+  {
+   "t": "mc",
+   "q": "We're flying to Madrid ___ next Friday.",
+   "o": [
+    "a",
+    "an",
+    "the",
+    "– (no article)"
+   ],
+   "a": 3,
+   "w": "We're flying to Madrid next Friday.",
+   "fixed": 1
+  },
+  {
+   "t": "mc",
+   "q": "My birthday is in ___ September.",
+   "o": [
+    "a",
+    "an",
+    "the",
+    "– (no article)"
+   ],
+   "a": 3,
+   "w": "My birthday is in September.",
+   "fixed": 1
+  },
+  {
+   "t": "mc",
+   "q": "I saw ___ old castle near Ennis.",
+   "o": [
+    "a",
+    "an",
+    "the",
+    "– (no article)"
+   ],
+   "a": 1,
+   "w": "I saw an old castle near Ennis.",
+   "fixed": 1
+  },
+  {
+   "t": "mc",
+   "q": "___ coffee in this café is excellent.",
+   "o": [
+    "a",
+    "an",
+    "the",
+    "– (no article)"
+   ],
+   "a": 2,
+   "w": "The coffee in this café is excellent.",
+   "fixed": 1
+  },
+  {
+   "t": "mc",
+   "q": "___ money doesn't buy happiness.",
+   "o": [
+    "a",
+    "an",
+    "the",
+    "– (no article)"
+   ],
+   "a": 3,
+   "w": "Money doesn't buy happiness.",
+   "fixed": 1
+  },
+  {
+   "t": "mc",
+   "q": "What ___ awful film!",
+   "o": [
+    "a",
+    "an",
+    "the",
+    "– (no article)"
+   ],
+   "a": 1,
+   "w": "What an awful film!",
+   "fixed": 1
+  },
+  {
+   "t": "mc",
+   "q": "The children went ___ home after school.",
+   "o": [
+    "a",
+    "an",
+    "the",
+    "– (no article)"
+   ],
+   "a": 3,
+   "w": "The children went home after school.",
+   "fixed": 1
+  },
+  {
+   "t": "mc",
+   "q": "He's ___ honest man.",
+   "o": [
+    "a",
+    "an",
+    "the",
+    "– (no article)"
+   ],
+   "a": 1,
+   "w": "He's an honest man.",
+   "fixed": 1
+  },
+  {
+   "t": "mc",
+   "q": "We stayed at ___ best hotel in town.",
+   "o": [
+    "a",
+    "an",
+    "the",
+    "– (no article)"
+   ],
+   "a": 2,
+   "w": "We stayed at the best hotel in town.",
+   "fixed": 1
+  }
+ ],
+ "write": [
+  {
+   "t": "gap",
+   "q": "My father is ___ doctor.",
+   "a": [
+    "a"
+   ],
+   "w": "My father is a doctor.",
+   "show": "a"
+  },
+  {
+   "t": "gap",
+   "q": "I eat fruit three times ___ day.",
+   "a": [
+    "a"
+   ],
+   "w": "I eat fruit three times a day.",
+   "show": "a"
+  },
+  {
+   "t": "gap",
+   "q": "Is there ___ bank near here?",
+   "a": [
+    "a"
+   ],
+   "w": "Is there a bank near here?",
+   "show": "a"
+  },
+  {
+   "t": "gap",
+   "q": "I have a cat and a dog. ___ cat is called Luna.",
+   "a": [
+    "the"
+   ],
+   "w": "I have a cat and a dog. The cat is called Luna.",
+   "show": "the"
+  },
+  {
+   "t": "gap",
+   "q": "___ Earth goes round the Sun.",
+   "a": [
+    "the"
+   ],
+   "w": "The Earth goes round the Sun.",
+   "show": "the"
+  },
+  {
+   "t": "gap",
+   "q": "Who's ___ oldest person in your family?",
+   "a": [
+    "the"
+   ],
+   "w": "Who's the oldest person in your family?",
+   "show": "the"
+  },
+  {
+   "t": "gap",
+   "q": "I'm going to ___ theatre on Saturday.",
+   "a": [
+    "the"
+   ],
+   "w": "I'm going to the theatre on Saturday.",
+   "show": "the"
+  },
+  {
+   "t": "gap",
+   "q": "I love ___ flowers. They make me happy.",
+   "a": [
+    "-",
+    "–",
+    "—",
+    "no",
+    "no article",
+    "none",
+    "nothing",
+    "0",
+    "x",
+    "ø"
+   ],
+   "w": "I love flowers. They make me happy.",
+   "show": "– (no article)"
+  },
+  {
+   "t": "gap",
+   "q": "I love ___ flowers in your garden.",
+   "a": [
+    "the"
+   ],
+   "w": "I love the flowers in your garden.",
+   "show": "the"
+  },
+  {
+   "t": "gap",
+   "q": "We had ___ lunch in a small pub.",
+   "a": [
+    "-",
+    "–",
+    "—",
+    "no",
+    "no article",
+    "none",
+    "nothing",
+    "0",
+    "x",
+    "ø"
+   ],
+   "w": "We had lunch in a small pub.",
+   "show": "– (no article)"
+  },
+  {
+   "t": "gap",
+   "q": "See you ___ next week!",
+   "a": [
+    "-",
+    "–",
+    "—",
+    "no",
+    "no article",
+    "none",
+    "nothing",
+    "0",
+    "x",
+    "ø"
+   ],
+   "w": "See you next week!",
+   "show": "– (no article)"
+  },
+  {
+   "t": "gap",
+   "q": "I usually get back from ___ school at four.",
+   "a": [
+    "-",
+    "–",
+    "—",
+    "no",
+    "no article",
+    "none",
+    "nothing",
+    "0",
+    "x",
+    "ø"
+   ],
+   "w": "I usually get back from school at four.",
+   "show": "– (no article)"
+  },
+  {
+   "t": "gap",
+   "q": "___ life is too short to worry.",
+   "a": [
+    "-",
+    "–",
+    "—",
+    "no",
+    "no article",
+    "none",
+    "nothing",
+    "0",
+    "x",
+    "ø"
+   ],
+   "w": "Life is too short to worry.",
+   "show": "– (no article)"
+  },
+  {
+   "t": "gap",
+   "q": "What ___ amazing idea!",
+   "a": [
+    "an"
+   ],
+   "w": "What an amazing idea!",
+   "show": "an"
+  },
+  {
+   "t": "gap",
+   "q": "She's ___ university student.",
+   "a": [
+    "a"
+   ],
+   "w": "She's a university student.",
+   "show": "a"
+  },
+  {
+   "t": "gap",
+   "q": "Can you pass me ___ salt, please?",
+   "a": [
+    "the"
+   ],
+   "w": "Can you pass me the salt, please?",
+   "show": "the"
+  },
+  {
+   "t": "gap",
+   "q": "Our meeting is on ___ Monday.",
+   "a": [
+    "-",
+    "–",
+    "—",
+    "no",
+    "no article",
+    "none",
+    "nothing",
+    "0",
+    "x",
+    "ø"
+   ],
+   "w": "Our meeting is on Monday.",
+   "show": "– (no article)"
+  },
+  {
+   "t": "gap",
+   "q": "___ children in my street play football every evening.",
+   "a": [
+    "the"
+   ],
+   "w": "The children in my street play football every evening.",
+   "show": "the"
+  },
+  {
+   "t": "gap",
+   "q": "I've got ___ interview tomorrow morning.",
+   "a": [
+    "an"
+   ],
+   "w": "I've got an interview tomorrow morning.",
+   "show": "an"
+  },
+  {
+   "t": "gap",
+   "q": "We go to ___ church on Sundays.",
+   "a": [
+    "-",
+    "–",
+    "—",
+    "no",
+    "no article",
+    "none",
+    "nothing",
+    "0",
+    "x",
+    "ø"
+   ],
+   "w": "We go to church on Sundays.",
+   "show": "– (no article)"
+  }
+ ]
+};
+const MODES = [
+  ["all", "All 40 sentences", "Choose and write, mixed"],
+  ["choose", "Choose", "a / an / the / –"],
+  ["write", "Write", "Type the article"],
+];
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const norm = s => s.toLowerCase().replace(/[’‘]/g, "'").replace(/[.!?,]+$/, "").replace(/\s+/g, " ").trim();
+
+// Audio
+let aIdx = null, aBuf = null;
+const audioReady = Promise.all([fetch("art_audio.json").then(r => r.json()), fetch("art.mp3").then(r => r.arrayBuffer())])
+  .then(([i, b]) => { aIdx = i; aBuf = b; }).catch(() => {});
+const player = new Audio(); let lastUrl = null;
+async function say(text) {
+  await audioReady; player.pause();
+  const e = aIdx && aIdx[text];
+  if (e) { if (lastUrl) URL.revokeObjectURL(lastUrl); lastUrl = URL.createObjectURL(new Blob([aBuf.slice(e[0], e[0] + e[1])], { type: "audio/mpeg" })); player.src = lastUrl; player.play().catch(() => {}); }
+  else if (window.speechSynthesis) { const v = speechSynthesis.getVoices().find(v => /^en[-_]GB$/i.test(v.lang)); speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(text); u.lang = "en-GB"; if (v) u.voice = v; speechSynthesis.speak(u); }
+}
+const playBtn = t => `<button class="play" data-say="${esc(t)}" aria-label="Listen: ${esc(t)}"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>`;
+document.addEventListener("click", e => { const b = e.target.closest("[data-say]"); if (b) say(b.dataset.say); });
+
+// Portada
+$("modes1").innerHTML = `<button class="main" data-m="concept"><b>Concept check</b><span>Why a, the or no article? · ${QUESTIONS.concept.length} questions</span></button>`;
+$("modes1").querySelector("button").onclick = () => start(QUESTIONS.concept, "concept");
+$("modes").innerHTML = MODES.map(([k, t, s]) => {
+  const n = k === "all" ? QUESTIONS.choose.length + QUESTIONS.write.length : QUESTIONS[k].length;
+  return `<button class="${k === "all" ? "main" : ""}" data-m="${k}"><b>${t}</b><span>${s} · ${n} questions</span></button>`;
+}).join("");
+$("modes").querySelectorAll("[data-m]").forEach(b => b.onclick = () => start(b.dataset.m === "all" ? QUESTIONS.choose.concat(QUESTIONS.write) : QUESTIONS[b.dataset.m], b.dataset.m));
+$("words").innerHTML += RULES.map(r => `<div class="blk"><h3>${r.h}</h3><p>${r.p}</p>${r.items.map(([u, ...ex]) => `<p class="use">${esc(u)}</p><ul>${ex.map(x => `<li>${playBtn(x)}<span>${esc(x)}</span></li>`).join("")}</ul>`).join("")}</div>`).join("");
+
+// Quiz
+let Q = null;
+function start(list, mode) {
+  Q = { mode, list: shuffle(list.map(q => { if (q.t !== "mc" || q.fixed) return { ...q, orig: q }; const o = shuffle(q.o.map((_, i) => i)); return { ...q, o: o.map(i => q.o[i]), a: o.indexOf(q.a), orig: q }; })), i: 0, score: 0, wrong: [], answered: false };
+  $("home").hidden = true; $("quiz").hidden = false; ask(); scrollTo(0, 0);
+}
+function ask() {
+  const q = Q.list[Q.i]; Q.answered = false;
+  $("quiz").innerHTML = `<section class="card">
+    <div class="qtop"><span>Question ${Q.i + 1} of ${Q.list.length}</span><span>Score ${Q.score}</span></div>
+    <div class="bar"><i style="width:${Q.i / Q.list.length * 100}%"></i></div>
+    <p class="qtext">${esc(q.q).replace(/___/g, '<span class="gap">&nbsp;</span>')}</p>
+    ${q.t === "mc" ? `<div class="opts">${q.o.map((o, i) => `<button data-i="${i}">${esc(o)}</button>`).join("")}</div>`
+      : `<form id="gf" autocomplete="off"><input class="gapin" id="gi" aria-label="Your answer" placeholder="${q.t === "gap" && q.show !== undefined ? "a, an, the or -" : "Type your answer"}" autocapitalize="off" spellcheck="false" autocorrect="off"></form>`}
+    <div id="fb" hidden></div>
+    <div class="actions">${q.t !== "mc" ? `<button class="primary" id="chk" type="submit" form="gf">Check</button>` : ""}<button class="primary" id="nxt" hidden>Next</button><button class="ghost" id="stop">Finish</button></div></section>`;
+  if (q.t === "mc") $("quiz").querySelectorAll(".opts button").forEach(b => b.onclick = () => answer(+b.dataset.i === q.a, b));
+  else { setTimeout(() => $("gi").focus(), 50); $("gf").onsubmit = e => { e.preventDefault(); if (Q.answered) return next(); const v = norm($("gi").value); if (v) answer(q.a.some(a => norm(a) === v)); }; }
+  $("nxt").onclick = next; $("stop").onclick = finish;
+}
+function answer(right, btn) {
+  const q = Q.list[Q.i]; Q.answered = true;
+  if (right) Q.score++; else Q.wrong.push(q);
+  let correct;
+  if (q.t === "mc") { $("quiz").querySelectorAll(".opts button").forEach((b, i) => { b.disabled = true; if (i === q.a) b.classList.add("ok"); }); if (!right) btn.classList.add("bad"); correct = q.o[q.a]; }
+  else { $("gi").classList.add(right ? "ok" : "bad"); $("gi").readOnly = true; $("chk").hidden = true; correct = q.show || q.a[0]; }
+  $("fb").className = "fb " + (right ? "ok" : "bad");
+  $("fb").innerHTML = `${playBtn(q.w)}<div><strong>${right ? "Correct!" : "Not quite. Answer: " + esc(correct)}</strong>${esc(q.w)}</div>`;
+  $("fb").hidden = false;
+  $("nxt").hidden = false; $("nxt").textContent = Q.i + 1 < Q.list.length ? "Next" : "See results"; $("nxt").focus();
+  say(q.w);
+}
+function next() { Q.i++; if (Q.i < Q.list.length) ask(); else finish(); }
+function finish() {
+  player.pause();
+  const done = Math.min(Q.list.length, Q.i + (Q.answered && Q.i < Q.list.length ? 1 : 0));
+  const pct = done ? Q.score / done : 0;
+  const msg = !done ? "No answers yet." : pct === 1 ? "Perfect! You've mastered articles." : pct >= .8 ? "Very good! Just a few to review." : pct >= .5 ? "Good work. Review the words below and try again." : "Keep practising. Read the rules in Part 1 and try again.";
+  $("quiz").innerHTML = `<section class="card"><div class="score"><div class="big">${Q.score} / ${done}</div><p>${msg}</p></div>
+    ${Q.wrong.length ? `<div class="review"><h2>Review</h2>${Q.wrong.map(q => `<div><b>${esc(q.q.replace(/___/g, "…"))}</b><span>${esc(q.w)}</span></div>`).join("")}</div>` : ""}
+    <div class="actions">${Q.wrong.length ? `<button class="primary" id="redo">Practise my mistakes</button>` : ""}
+    <button class="${Q.wrong.length ? "ghost" : "primary"}" id="again">Try again</button><button class="ghost" id="home2">All quizzes</button></div></section>`;
+  const wrong = Q.wrong.map(q => q.orig), all = Q.list.map(q => q.orig), mode = Q.mode;
+  if ($("redo")) $("redo").onclick = () => start(wrong, mode);
+  $("again").onclick = () => start(all, mode);
+  $("home2").textContent = "Back to the rules"; $("home2").onclick = () => { $("quiz").hidden = true; $("home").hidden = false; scrollTo(0, 0); };
+}
+</script>
+</body>
+</html>
