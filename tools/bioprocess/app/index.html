@@ -1,0 +1,311 @@
+<title>Bioprocess English</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column; a deep-teal "process header" band, then lesson sections as plain blocks separated by rules, quizzes and the writing desk as the only framed objects. */
+:root{
+  --bg:#f2f6f6; --surface:#ffffff; --fg:#14303c; --muted:#5a707a; --line:#d6e2e4;
+  --accent:#0f6c7c; --accent-strong:#0a5160; --accent-soft:#e1f0f2;
+  --band1:#0f3444; --band2:#11687a; --band-fg:#f1fbfb; --band-muted:#c9ecea;
+  --ok:#21754a; --ok-bg:#e7f5ec; --bad:#a83f3f; --bad-bg:#fbecea; --warn:#9a6a12; --hl:#fff4d6;
+  --display:"Archivo",system-ui,sans-serif; --body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0d1a1f; --surface:#132229; --fg:#e3eef0; --muted:#97adb4; --line:#25393f;
+  --accent:#4fb6c4; --accent-strong:#7fd0da; --accent-soft:#16333a;
+  --band1:#0b2630; --band2:#0f4d5a; --band-fg:#eefafa; --band-muted:#a9d9d8;
+  --ok:#6cc890; --ok-bg:#15301f; --bad:#ec8b83; --bad-bg:#3a1c1b; --warn:#e2b45a; --hl:#3a3218; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d1a1f; --surface:#132229; --fg:#e3eef0; --muted:#97adb4; --line:#25393f;
+  --accent:#4fb6c4; --accent-strong:#7fd0da; --accent-soft:#16333a;
+  --band1:#0b2630; --band2:#0f4d5a; --band-fg:#eefafa; --band-muted:#a9d9d8;
+  --ok:#6cc890; --ok-bg:#15301f; --bad:#ec8b83; --bad-bg:#3a1c1b; --warn:#e2b45a; --hl:#3a3218; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:17px/1.62 var(--body)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.band{background:linear-gradient(130deg,var(--band1),var(--band2));color:var(--band-fg)}
+header .wrap{padding-block:40px 34px;display:flex;flex-direction:column;gap:12px}
+.eyebrow{font:500 .76rem/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--band-muted)}
+h1{font:800 clamp(1.8rem,5vw,2.8rem)/1.12 var(--display);margin:0;text-wrap:balance;letter-spacing:-.01em}
+header p{margin:0;color:var(--band-muted);max-width:62ch}
+.picker{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.picker label{font-size:.9rem;color:var(--band-muted)}
+select{font:inherit;font-size:.95rem;padding:7px 10px;border-radius:8px;border:1px solid #ffffff55;background:#ffffff1a;color:var(--band-fg);max-width:100%}
+select option{color:#14303c;background:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{font:500 .74rem/1 var(--mono);padding:6px 10px;border-radius:99px;border:1px solid #ffffff4d;color:var(--band-fg)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:18px;overflow-x:auto;padding-block:10px;scrollbar-width:thin}
+nav a{font:700 .84rem/1.3 var(--display);color:var(--accent-strong);text-decoration:none;white-space:nowrap}
+nav a.done::after{content:" ✓";color:var(--ok)}
+main .wrap{padding-block:26px 60px;display:flex;flex-direction:column;gap:36px}
+section{display:flex;flex-direction:column;gap:12px;scroll-margin-top:60px}
+section+section{border-top:1px solid var(--line);padding-top:30px}
+h2{font:700 1.5rem/1.2 var(--display);margin:0;color:var(--fg);text-wrap:balance}
+h2 .n{font:500 .8rem/1 var(--mono);color:var(--accent);display:block;margin-bottom:6px;letter-spacing:.08em}
+h3{font:700 1.08rem/1.3 var(--display);margin:10px 0 0;color:var(--accent-strong)}
+p{margin:0}.sub{color:var(--muted);font-size:.95rem}
+ul{margin:0;padding-left:22px}
+.note{background:var(--accent-soft);border-radius:10px;padding:12px 16px;font-size:.96rem}
+.vocab{display:flex;flex-direction:column}
+.term{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:4px 18px;padding:12px 0;border-bottom:1px solid var(--line)}
+.term .t{font-weight:700;display:flex;gap:8px;align-items:flex-start}
+.term .ipa{font:400 .82rem/1.4 var(--mono);color:var(--muted);display:block}
+.term .ex{grid-column:2;color:var(--muted);font-style:italic;display:flex;gap:8px;align-items:flex-start}
+@media (max-width:620px){.term{grid-template-columns:1fr}.term .ex{grid-column:1}}
+.play{flex:none;width:30px;height:30px;border-radius:50%;border:0;background:var(--accent-soft);color:var(--accent-strong);cursor:pointer;font-size:.72rem;display:inline-grid;place-items:center;margin-top:1px}
+.play:hover{filter:brightness(.95)}.play.on{background:var(--accent);color:var(--surface)}
+.play:focus-visible,button:focus-visible,select:focus-visible,textarea:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.reading{display:flex;flex-direction:column;gap:14px;max-width:68ch}
+.reading p{display:flex;gap:10px;align-items:flex-start;font-size:1.05rem}
+blockquote{margin:4px 0;border-left:4px solid var(--accent);padding:10px 16px;background:var(--accent-soft);border-radius:0 8px 8px 0;font-weight:600}
+.quiz{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:6px 16px 14px}
+.q{padding:12px 0;border-bottom:1px solid var(--line)}.q:last-of-type{border-bottom:0}
+.q>p{font-weight:700;margin-bottom:6px}
+.opt{display:flex;gap:9px;align-items:flex-start;padding:4px 0;cursor:pointer}.opt input{margin-top:6px;accent-color:var(--accent)}
+.fb{font-size:.93rem;margin-top:6px}.fb.ok{color:var(--ok)}.fb.bad{color:var(--bad)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+button.btn{font:700 .92rem/1 var(--display);border:0;border-radius:8px;padding:11px 18px;background:var(--accent);color:var(--surface);cursor:pointer}
+button.btn:hover{background:var(--accent-strong)}button.btn:disabled{opacity:.55;cursor:default}
+button.ghost{background:var(--accent-soft);color:var(--accent-strong)}
+.score{font:700 .95rem var(--display);color:var(--accent-strong)}
+.line{display:grid;grid-template-columns:82px minmax(0,1fr);gap:10px;padding:7px 4px;border-bottom:1px dashed var(--line)}
+.line b{color:var(--accent-strong);font-family:var(--display);font-size:.92rem}.line.now{background:var(--hl)}
+details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:var(--surface)}
+summary{cursor:pointer;font:700 .95rem var(--display);color:var(--accent-strong)}details[open] summary{margin-bottom:10px}
+.phrase{display:flex;flex-direction:column;gap:3px;padding:8px 0;border-bottom:1px solid var(--line)}
+.phrase strong{color:var(--accent-strong)}.phrase em{display:flex;gap:8px;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:10px}.cmp div{border-radius:9px;padding:10px 12px;font-size:.96rem}
+.cmp .x{background:var(--bad-bg)}.cmp .v{background:var(--ok-bg)}.k{display:block;font:500 .68rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:620px){.cmp{grid-template-columns:1fr}}
+.desk{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:12px}
+textarea{width:100%;min-height:200px;font:inherit;font-size:1rem;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:12px;resize:vertical}
+.check{list-style:none;padding:0;display:flex;flex-direction:column;gap:2px;font-size:.95rem}.check li::before{content:"□ ";color:var(--accent)}
+.status{font-size:.93rem;color:var(--muted)}
+.fbk{display:flex;flex-direction:column;gap:14px}
+.level{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.badge{font:800 1.4rem var(--display);color:var(--accent-strong);border:2px solid var(--accent);border-radius:10px;padding:4px 12px}
+.bars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}@media (max-width:620px){.bars{grid-template-columns:1fr}}
+.bar{font-size:.9rem}.bar i{display:block;height:7px;border-radius:4px;background:var(--line);margin-top:4px;overflow:hidden}.bar i b{display:block;height:100%;background:var(--accent)}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:560px;font-size:.95rem}
+th,td{text-align:left;vertical-align:top;padding:8px;border-bottom:1px solid var(--line)}th{font:500 .72rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+td.o{color:var(--bad)}td.c{color:var(--ok);font-weight:600}
+.rule{border-left:3px solid var(--accent);padding:4px 0 4px 12px}.rule p{font-size:.95rem}
+.prac{display:flex;flex-direction:column;gap:8px}.prac input{width:100%;font:inherit;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg)}
+.hist{display:flex;flex-direction:column}.h{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);align-items:center}
+.h .lv{font:700 .9rem var(--display);color:var(--accent-strong)}.h small{color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{font-size:.82rem;background:var(--bad-bg);color:var(--bad);border-radius:99px;padding:2px 10px}
+footer{color:var(--muted);font-size:.85rem;text-align:center;padding-block:0 30px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+
+<header class="band"><div class="wrap">
+  <div class="eyebrow" id="eyebrow">Bioprocess English · B2</div>
+  <h1 id="title">Professional English for biotechnology</h1>
+  <p id="subtitle">A daily lesson about your work in the plant and the lab: vocabulary, reading, listening, grammar and writing with corrections.</p>
+  <div class="picker"><label for="pick">Lesson</label><select id="pick" aria-label="Choose a lesson"></select></div>
+  <div class="chips" id="chips"></div>
+</div></header>
+<nav aria-label="Sections"><div class="wrap" id="nav"></div></nav>
+<main><div class="wrap" id="lesson"><p class="sub">Loading the lesson…</p></div></main>
+<footer><div class="wrap">Bioprocess English · B2 professional practice · British English audio</div></footer>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let L = null, AIDX = {}, ABUF = null, player = new Audio(), lastBtn = null, url = null, seq = 0;
+let sample = null, db = null, user = null;
+const NAV = [["goals","Goals"],["vocab","Vocabulary"],["reading","Reading"],["listening","Listening"],["expressions","Expressions"],["grammar","Grammar"],["writing","Writing"],["speaking","Speaking"],["progress","My progress"]];
+
+function store(k, v){ try{ localStorage.setItem(k, v) }catch(e){} }
+function load(k){ try{ return localStorage.getItem(k) || "" }catch(e){ return "" } }
+
+// ---------- audio ----------
+function play(key, btn){ return new Promise(res => {
+  const e = AIDX[key]; if (lastBtn) lastBtn.classList.remove("on"); player.pause();
+  if (!e || !ABUF){ res(); return }
+  if (url) URL.revokeObjectURL(url);
+  url = URL.createObjectURL(new Blob([ABUF.slice(e[0], e[0] + e[1])], {type:"audio/mpeg"}));
+  player.src = url; lastBtn = btn; if (btn) btn.classList.add("on");
+  player.onended = player.onerror = () => { if (btn) btn.classList.remove("on"); res() };
+  player.play().catch(() => res());
+})}
+document.addEventListener("click", ev => { const b = ev.target.closest(".play"); if (b){ seq++; play(b.dataset.k, b) } });
+const pb = k => L.audio ? `<button class="play" data-k="${esc(k)}" aria-label="Listen">▶</button>` : "";
+async function playDialogue(btn){
+  const my = ++seq, lines = [...document.querySelectorAll("#transcript .line")];
+  btn.textContent = "■ Stop"; btn.onclick = () => { seq++; player.pause(); reset() };
+  for (const l of lines){ if (my !== seq) break; l.classList.add("now"); await play(l.dataset.k, null); l.classList.remove("now"); await new Promise(r => setTimeout(r, 350)) }
+  reset();
+  function reset(){ lines.forEach(l => l.classList.remove("now")); btn.textContent = "▶ Play the dialogue"; btn.onclick = () => playDialogue(btn) }
+}
+
+// ---------- quizzes ----------
+function quiz(id, qs){
+  return `<div class="quiz" id="${id}">${qs.map((q, i) => `<div class="q" data-a="${q.a}" data-e="${esc(q.e || "")}"><p>${i + 1}. ${esc(q.q)}</p>
+    ${q.o.map((o, j) => `<label class="opt"><input type="radio" name="${id}${i}" value="${j}"><span>${esc(o)}</span></label>`).join("")}<div class="fb" aria-live="polite"></div></div>`).join("")}
+    <div class="row" style="padding-top:10px"><button class="btn" data-check="${id}">Check answers</button><span class="score" role="status"></span></div></div>`;
+}
+document.addEventListener("click", ev => {
+  const b = ev.target.closest("[data-check]"); if (!b) return;
+  const box = document.getElementById(b.dataset.check), qs = [...box.querySelectorAll(".q")]; let s = 0;
+  qs.forEach(q => { const c = q.querySelector("input:checked"), fb = q.querySelector(".fb"), a = +q.dataset.a;
+    if (!c){ fb.textContent = "Choose an answer."; fb.className = "fb bad"; return }
+    if (+c.value === a){ s++; fb.textContent = "✓ Correct. " + q.dataset.e; fb.className = "fb ok" }
+    else { fb.textContent = "✗ Answer: " + q.querySelectorAll(".opt span")[a].textContent + ". " + q.dataset.e; fb.className = "fb bad" } });
+  box.querySelector(".score").textContent = `Score: ${s} / ${qs.length}`;
+  const sec = box.closest("section").id; if (s === qs.length) document.querySelector(`nav a[href="#${sec}"]`)?.classList.add("done");
+});
+
+// ---------- render ----------
+function render(){
+  const n = String(L.num).padStart(2, "0");
+  $("#eyebrow").textContent = `Bioprocess English · Lesson ${n} · ${L.date}`;
+  $("#title").textContent = L.title; $("#subtitle").textContent = L.subtitle;
+  $("#chips").innerHTML = ["CEFR B2", L.area, L.time || "40–50 min"].map(c => `<span class="chip">${esc(c)}</span>`).join("");
+  $("#nav").innerHTML = NAV.map(([id, t]) => `<a href="#${id}">${t}</a>`).join("");
+  const R = L.reading, LI = L.listening, G = L.grammar, W = L.writing, SP = L.speaking;
+  $("#lesson").innerHTML = `
+  <section id="goals"><h2>Learning goals</h2><ul>${L.goals.map(g => `<li>${g}</li>`).join("")}</ul>
+    <p class="note">Tap <b>▶</b> to hear British English. At the end, write your text and press <b>Correct my writing</b>: Claude marks every mistake, explains the grammar rule and gives you a corrected B2 version. Your corrections are saved in <b>My progress</b>.</p></section>
+  <section id="vocab"><h2><span class="n">01</span>Technical vocabulary</h2><p class="sub">Learn each term as a complete phrase.</p>
+    <div class="vocab">${L.vocab.map(v => `<div class="term"><div class="t">${pb(v.k1)}<span>${esc(v.term)}<span class="ipa">/${esc(v.ipa)}/</span></span></div><div>${esc(v.meaning)}</div><div class="ex">${pb(v.k2)}<span>${esc(v.example)}</span></div></div>`).join("")}</div>
+    <h3>Practice</h3>${quiz("vq", L.vocab_quiz)}</section>
+  <section id="reading"><h2><span class="n">02</span>Reading: ${esc(R.title)}</h2><p class="sub">About ${R.words} words · tap ▶ to hear each paragraph</p>
+    <div class="reading">${R.paras.map(p => `<p>${pb(p.k)}<span>${p.html}</span></p>`).join("")}${R.quote ? `<blockquote>${esc(R.quote)}</blockquote>` : ""}</div>
+    <h3>Comprehension</h3>${quiz("rq", R.questions)}</section>
+  <section id="listening"><h2><span class="n">03</span>Listening: ${esc(LI.title)}</h2><p class="sub">${esc(LI.intro)}</p>
+    <p class="note"><b>Step 1:</b> listen without reading and answer. <b>Step 2:</b> open the transcript and listen again.</p>
+    ${L.audio ? `<div class="row"><button class="btn" id="dlg">▶ Play the dialogue</button></div>` : `<p class="sub">Audio isn't available for this lesson: read the transcript.</p>`}
+    ${quiz("lq", LI.questions)}
+    <details id="transcript"><summary>Transcript</summary>${LI.lines.map(x => `<div class="line" data-k="${esc(x.k)}"><b>${esc(x.spk)}</b><span>${esc(x.text)}</span></div>`).join("")}</details></section>
+  <section id="expressions"><h2><span class="n">04</span>Useful expressions</h2>
+    ${L.expressions.map(x => `<div class="phrase"><strong>${esc(x.phrase)}</strong><em>${pb(x.k)}<span>${esc(x.example)}</span></em></div>`).join("")}</section>
+  <section id="grammar"><h2><span class="n">05</span>Grammar for work: ${esc(G.title)}</h2>
+    ${G.blocks.map(b => `<h3>${esc(b.h)}</h3><p>${b.p}</p>${b.wrong ? `<div class="cmp"><div class="x"><span class="k">Not correct</span>${esc(b.wrong)}</div><div class="v"><span class="k">Correct</span>${esc(b.right)}</div></div>` : ""}
+      ${(b.examples || []).map(x => `<div class="phrase"><em>${pb(x.k)}<span>${esc(x.t)}</span></em></div>`).join("")}`).join("")}
+    <h3>Practice</h3>${quiz("gq", G.quiz)}</section>
+  <section id="writing"><h2><span class="n">06</span>Writing task</h2>
+    <p><b>Situation:</b> ${esc(W.situation)}</p><p><b>Your task:</b> ${esc(W.task)}</p>
+    <ul class="check">${W.checklist.map(c => `<li>${c}</li>`).join("")}</ul>
+    <div class="desk"><label for="w1" class="sub">Your text</label><textarea id="w1" placeholder="${esc(W.placeholder)}"></textarea>
+      <div class="row"><span class="status" id="wc">0 words</span><button class="btn" id="correct">Correct my writing</button><button class="btn ghost" id="copy">Copy</button><span class="status" id="ws" role="status"></span></div>
+      <div id="feedback" class="fbk"></div></div>
+    <details><summary>Model answer (open it after writing yours)</summary>${W.model.map(p => `<p>${esc(p)}</p>`).join("<br>")}</details></section>
+  <section id="speaking"><h2><span class="n">07</span>Speaking practice</h2><p><b>${esc(SP.prompt)}</b></p><ul>${SP.tips.map(t => `<li>${t}</li>`).join("")}</ul>
+    <details><summary>Listen to a model answer</summary>${SP.model.map(p => `<div class="phrase"><em>${pb(p.k)}<span>${esc(p.t)}</span></em></div>`).join("")}</details>
+    <p class="note"><b>Key lesson:</b> ${esc(L.key_lesson)}</p></section>
+  <section id="progress"><h2><span class="n">08</span>My progress</h2><p class="sub">Your corrected writings and the grammar points you need to review most.</p><div id="hist"><p class="sub">Your corrected writings will appear here.</p></div></section>`;
+  if ($("#dlg")) $("#dlg").onclick = () => playDialogue($("#dlg"));
+  const ta = $("#w1"), key = "bpe-draft-" + L.num;
+  ta.value = load(key); const wc = () => { const t = ta.value.trim(); $("#wc").textContent = (t ? t.split(/\s+/).length : 0) + " words" };
+  wc(); ta.addEventListener("input", () => { wc(); store(key, ta.value) });
+  $("#copy").onclick = async () => { try { await navigator.clipboard.writeText(ta.value); $("#ws").textContent = "Copied." } catch(e){ ta.focus(); ta.select(); $("#ws").textContent = "Selected: copy it from your device menu." } };
+  $("#correct").onclick = correct;
+  if (!sample) $("#correct").hidden = true;
+  if (db){ showSaved(); loadHistory() }
+}
+
+// ---------- writing correction (asks Claude) ----------
+function prompt(text){
+  const W = L.writing;
+  return `You are an experienced English teacher (CEFR B2, British English) and an expert in industrial biotechnology, fermentation, microbiology, GMP and quality. Your student is Cristian, a Spanish-speaking microbiologist and production leader working towards B2 professional English.
+
+Lesson ${L.num}: "${L.title}". Grammar point of the lesson: ${L.grammar.title}.
+Writing situation: ${W.situation}
+Task: ${W.task}
+
+Student's text:
+"""
+${text}
+"""
+
+Correct it. Be direct and concrete. Don't invent errors and don't change correct choices just because you would phrase them differently. Check grammar, vocabulary, collocations, spelling, punctuation, register and technical accuracy. Explanations in simple English (B2), with a few words in Spanish only when it really helps.
+
+Reply with ONLY a JSON object, no other text:
+{
+ "level": "B1 | B1+ | B2 | B2+ | C1",
+ "summary": "2 sentences: what works and the main thing to improve",
+ "scores": {"task": 0-5, "vocabulary": 0-5, "grammar": 0-5, "organisation": 0-5},
+ "corrections": [{"original": "exact fragment from the text", "corrected": "corrected fragment", "why": "short explanation naming the rule"}],
+ "rules": [{"name": "short rule name, e.g. 'to + infinitive for purpose'", "explanation": "one or two sentences", "examples": ["correct example 1", "correct example 2"]}],
+ "corrected_text": "the whole text corrected at B2 level, keeping the student's ideas and voice; use \\n between paragraphs",
+ "practice": [{"task": "a sentence with an error of the main type, to rewrite correctly", "answer": "the correct version"}]
+}
+Give 2-3 rules (the ones the student gets wrong most) and exactly 3 practice items about the main error. If the text has no errors, return empty corrections and use rules for B2 upgrades.`;
+}
+async function correct(){
+  const text = $("#w1").value.trim(), btn = $("#correct");
+  if (text.split(/\s+/).length < 20){ $("#ws").textContent = "Write at least 20 words first."; return }
+  btn.disabled = true; $("#ws").textContent = "Claude is reading your text… (this can take up to a minute)"; $("#feedback").innerHTML = "";
+  try {
+    const f = await sample.json(prompt(text), { cache: false });
+    showFeedback(f, text); $("#ws").textContent = "Done. Your correction is saved in My progress.";
+    if (db){ try { await db.collection("writings").doc("lesson-" + String(L.num).padStart(2, "0")).set({ lesson: L.num, title: L.title, grammar: L.grammar.title, text, feedback: f, level: f.level || "", rules: (f.rules || []).map(r => r.name), at: new Date().toISOString() }); loadHistory() } catch(e){ $("#ws").textContent = "Corrected, but it couldn't be saved this time." } }
+  } catch (e){
+    $("#ws").textContent = { not_granted: "To get corrections, allow the page to use Claude.", rate_limited: "Too many requests right now. Try again in a minute.", invalid_json: "The correction came back incomplete. Press the button again.", cancelled: "Stopped." }[e.code] || "Claude couldn't correct it right now. Try again in a moment.";
+  } finally { btn.disabled = false }
+}
+function showFeedback(f, text){
+  const sc = f.scores || {}, bar = (k, t) => `<div class="bar">${t}: <b>${sc[k] ?? "–"}/5</b><i><b style="width:${(sc[k] || 0) * 20}%"></b></i></div>`;
+  $("#feedback").innerHTML = `<h3>Your correction</h3>
+    <div class="level"><span class="badge">${esc(f.level || "")}</span><p>${esc(f.summary || "")}</p></div>
+    <div class="bars">${bar("task", "Task and technical content")}${bar("vocabulary", "Vocabulary")}${bar("grammar", "Grammar")}${bar("organisation", "Organisation")}</div>
+    ${(f.corrections || []).length ? `<div class="tbl"><table><thead><tr><th>You wrote</th><th>Correct</th><th>Why</th></tr></thead><tbody>${f.corrections.map(c => `<tr><td class="o">${esc(c.original)}</td><td class="c">${esc(c.corrected)}</td><td>${esc(c.why)}</td></tr>`).join("")}</tbody></table></div>` : `<p class="note">No mistakes found. Well done!</p>`}
+    <h3>Rules to review</h3>${(f.rules || []).map(r => `<div class="rule"><b>${esc(r.name)}</b><p>${esc(r.explanation)}</p><ul>${(r.examples || []).map(x => `<li><i>${esc(x)}</i></li>`).join("")}</ul></div>`).join("")}
+    <h3>Corrected version</h3><div class="note">${esc(f.corrected_text || "").split("\n").filter(Boolean).map(p => `<p>${p}</p>`).join("<br>")}</div>
+    ${(f.practice || []).length ? `<h3>Quick practice</h3><p class="sub">Rewrite each sentence correctly, then check.</p><div class="prac">${f.practice.map((p, i) => `<label for="p${i}">${i + 1}. ${esc(p.task)}</label><input id="p${i}" autocomplete="off"><div class="fb" id="pf${i}"></div>`).join("")}<div class="row"><button class="btn" id="pcheck">Check my sentences</button><span class="status" id="ps"></span></div></div>` : ""}`;
+  if ($("#pcheck")) $("#pcheck").onclick = () => checkPractice(f.practice);
+}
+async function checkPractice(P){
+  const ans = P.map((p, i) => $("#p" + i).value.trim());
+  if (ans.some(a => !a)){ $("#ps").textContent = "Write all three sentences first."; return }
+  $("#pcheck").disabled = true; $("#ps").textContent = "Checking…";
+  try {
+    const r = await sample.json(`You are a B2 English teacher. Check the student's rewritten sentences. Accept any correct, natural answer, not only the model. Reply with ONLY a JSON array of ${P.length} objects {"ok": true|false, "comment": "one short sentence in simple English"}.\n\n` + P.map((p, i) => `${i + 1}. Original with error: ${p.task}\nModel answer: ${p.answer}\nStudent: ${ans[i]}`).join("\n\n"), { modelTier: "quick", cache: false });
+    r.forEach((x, i) => { const el = $("#pf" + i); el.textContent = (x.ok ? "✓ " : "✗ ") + x.comment + (x.ok ? "" : " Model: " + P[i].answer); el.className = "fb " + (x.ok ? "ok" : "bad") });
+    $("#ps").textContent = "";
+  } catch(e){ P.forEach((p, i) => { const el = $("#pf" + i); el.textContent = "Model answer: " + p.answer; el.className = "fb" }); $("#ps").textContent = "Showing the model answers." }
+  finally { $("#pcheck").disabled = false }
+}
+async function showSaved(){
+  if (!db) return;
+  try { const s = await db.collection("writings").doc("lesson-" + String(L.num).padStart(2, "0")).get();
+    if (s.exists){ const d = s.data(); if (!$("#w1").value) $("#w1").value = d.text; showFeedback(d.feedback, d.text); $("#ws").textContent = "This is your last correction for this lesson. Edit your text and press the button again to get a new one." } } catch(e){}
+}
+async function loadHistory(){
+  if (!db){ $("#hist").innerHTML = `<p class="sub">Your history is available when you open this page in Claude.</p>`; return }
+  try {
+    const q = await db.collection("writings").get(), rows = q.docs.map(d => d.data()).sort((a, b) => b.lesson - a.lesson);
+    if (!rows.length){ $("#hist").innerHTML = `<p class="sub">No corrected writings yet. Write today's task and press <b>Correct my writing</b>: it will appear here.</p>`; return }
+    const count = {}; rows.forEach(r => (r.rules || []).forEach(x => count[x] = (count[x] || 0) + 1));
+    const top = Object.entries(count).sort((a, b) => b[1] - a[1]).slice(0, 8);
+    $("#hist").innerHTML = `<h3>Grammar points to review</h3><div class="tags">${top.map(([r, c]) => `<span class="tag">${esc(r)}${c > 1 ? " ×" + c : ""}</span>`).join("")}</div>
+      <h3>Corrected writings</h3><div class="hist">${rows.map(r => `<div class="h"><span class="lv">${esc(r.level)}</span><span>Lesson ${String(r.lesson).padStart(2, "0")} · ${esc(r.title)}<br><small>${new Date(r.at).toLocaleDateString("en-IE")}</small></span><button class="btn ghost" data-go="${r.lesson}">Open</button></div>`).join("")}</div>`;
+    $("#hist").querySelectorAll("[data-go]").forEach(b => b.onclick = () => { $("#pick").value = b.dataset.go; openLesson(+b.dataset.go, "writing") });
+  } catch(e){ $("#hist").innerHTML = `<p class="sub">Your history couldn't be loaded right now.</p>` }
+}
+
+// ---------- boot ----------
+let MAN = [];
+async function openLesson(num, anchor){
+  const n = String(num).padStart(2, "0"); seq++; player.pause();
+  $("#lesson").innerHTML = `<p class="sub">Loading lesson ${n}…</p>`;
+  try {
+    L = await (await fetch(`lessons/lesson_${n}.json`)).json(); AIDX = {}; ABUF = null;
+    if (L.audio){ try { const [i, b] = await Promise.all([fetch(`lessons/lesson_${n}_audio.json`).then(r => r.json()), fetch(`lessons/lesson_${n}.mp3`).then(r => r.arrayBuffer())]); AIDX = i; ABUF = b } catch(e){ L.audio = false } }
+    render(); history.replaceState(null, "", "#lesson-" + n);
+    if (anchor) document.getElementById(anchor)?.scrollIntoView(); else scrollTo(0, 0);
+  } catch(e){ $("#lesson").innerHTML = `<p class="sub">This lesson couldn't be loaded. Check your connection and reload the page.</p>` }
+}
+(async () => {
+  try { MAN = await (await fetch("lessons/index.json")).json() } catch(e){ MAN = [] }
+  MAN.sort((a, b) => b.num - a.num);
+  $("#pick").innerHTML = MAN.map(m => `<option value="${m.num}">Lesson ${String(m.num).padStart(2, "0")} · ${esc(m.title)}</option>`).join("");
+  const h = /^#lesson-(\d+)$/.exec(location.hash), start = h && MAN.some(m => m.num === +h[1]) ? +h[1] : MAN[0]?.num;
+  $("#pick").value = start; $("#pick").onchange = () => openLesson(+$("#pick").value);
+  if (start) await openLesson(start); else $("#lesson").innerHTML = `<p class="sub">The first lesson is on its way.</p>`;
+  if (window.claude){ [sample, db, user] = await Promise.all([claude.use("sample"), claude.use("db"), claude.use("user")]) }
+  if (L){ if (sample) $("#correct").hidden = false; else $("#ws").textContent = "Open this page in Claude to get your writing corrected."; showSaved(); loadHistory() }
+})();
+</script>
