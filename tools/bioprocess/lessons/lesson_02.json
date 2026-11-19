@@ -1,0 +1,117 @@
+{
+ "num": 2,
+ "date": "19 November 2026",
+ "area": "Upstream · Aseptic sampling",
+ "title": "Taking an Aseptic Sample from a Bioreactor",
+ "subtitle": "Learn to describe a sampling procedure step by step, report in-process results, and write clear instructions using the passive voice.",
+ "time": "40–50 minutes",
+ "goals": [
+  "Describe the steps of an aseptic sampling procedure with precise technical verbs.",
+  "Use the <strong>passive voice</strong> to write procedures and reports in a neutral, professional style.",
+  "Understand a short shift conversation about in-process control results.",
+  "Write clear, numbered instructions for a new operator."
+ ],
+ "vocab": [
+  {"term": "aseptic technique", "ipa": "eɪˈseptɪk tekˈniːk", "meaning": "Working methods that prevent contamination by microorganisms.", "example": "Good aseptic technique protects both the culture and the product."},
+  {"term": "sampling port", "ipa": "ˈsɑːmplɪŋ pɔːt", "meaning": "The connection on a vessel through which samples are taken.", "example": "The sampling port is steamed before and after each sample."},
+  {"term": "steam-sterilise", "ipa": "stiːm ˈsterəlaɪz", "meaning": "Kill microorganisms using pressurised steam.", "example": "The valve must be steam-sterilised for at least twenty minutes."},
+  {"term": "dead leg", "ipa": "ded leɡ", "meaning": "A section of pipe where liquid can stay still and bacteria can grow.", "example": "Dead legs are a common source of contamination."},
+  {"term": "in-process control (IPC)", "ipa": "ɪn ˈprəʊses kənˈtrəʊl", "meaning": "Tests carried out during production to check that the process is on track.", "example": "Optical density is one of our in-process controls."},
+  {"term": "optical density (OD)", "ipa": "ˈɒptɪkl ˈdensəti", "meaning": "A measurement of how much light a culture absorbs; it shows cell growth.", "example": "The optical density was measured at 600 nanometres."},
+  {"term": "viable count", "ipa": "ˈvaɪəbl kaʊnt", "meaning": "The number of living cells, usually given in CFU per millilitre.", "example": "The viable count reached ten to the ninth CFU per millilitre."},
+  {"term": "Gram stain", "ipa": "ɡræm steɪn", "meaning": "A quick microscope test to check cell shape and purity.", "example": "A Gram stain was performed to check the purity of the culture."},
+  {"term": "flush the line", "ipa": "flʌʃ ðə laɪn", "meaning": "Let some liquid run through a pipe to remove what was sitting inside it.", "example": "Flush the line before you collect the sample."},
+  {"term": "label and log", "ipa": "ˈleɪbl ənd lɒɡ", "meaning": "Identify a sample and record it in the official system.", "example": "Every sample is labelled and logged in the LIMS."},
+  {"term": "out of specification (OOS)", "ipa": "aʊt əv ˌspesɪfɪˈkeɪʃn", "meaning": "A result that does not meet the approved limits.", "example": "An out-of-specification result must be reported immediately."},
+  {"term": "hand over (a shift)", "ipa": "hænd ˈəʊvə", "meaning": "Give information and responsibility to the next shift.", "example": "I'll hand over to the night shift at ten."}
+ ],
+ "vocab_quiz": [
+  {"q": "A section of pipe where liquid stays still and bacteria can grow is a…", "o": ["dead leg", "sampling port", "flush line"], "a": 0, "e": "Dead legs are avoided in hygienic design."},
+  {"q": "Before collecting the sample, you should ___ the line to remove the liquid that was sitting inside.", "o": ["flush", "label", "hand over"], "a": 0, "e": "flush the line = let some liquid run first."},
+  {"q": "A result that does not meet the approved limits is…", "o": ["out of specification", "in-process control", "aseptic"], "a": 0, "e": "OOS results must be reported and investigated."},
+  {"q": "We measure ___ to follow cell growth quickly.", "o": ["optical density", "Gram stain", "dead legs"], "a": 0, "e": "OD at 600 nm is a fast growth indicator."},
+  {"q": "The number of living cells per millilitre is the…", "o": ["viable count", "optical density", "specification"], "a": 0, "e": "Viable count is expressed in CFU/mL."},
+  {"q": "At ten o'clock I ___ to the night shift.", "o": ["hand over", "flush", "steam-sterilise"], "a": 0, "e": "hand over to the next shift."}
+ ],
+ "reading": {
+  "title": "Every Sample Tells a Story",
+  "words": 360,
+  "paras": [
+   "In a fermentation plant, a sample is much more than a few millilitres of broth. It is the main source of information about what is happening inside a closed vessel. Every decision about feeding, harvesting or rejecting a batch depends on it. However, sampling is also one of the moments when a sterile process is most vulnerable.",
+   "Each time the sampling port is opened, there is a risk that microorganisms from the environment will enter the bioreactor. For this reason, sampling is always carried out according to a written procedure, and operators are trained and assessed before they are allowed to do it alone.",
+   "A typical procedure begins before the valve is opened. The sampling port is steam-sterilised, and the steam supply is closed so that the port can cool down. Then a small volume of broth is flushed to drain. This removes the liquid that has been sitting in the line, which may not represent the culture and could contain contaminants.",
+   "Only then is the sample collected into a sterile, pre-labelled container. The port is steamed again immediately afterwards, and the time, the volume and the operator's initials are recorded in the batch record.",
+   "In the QC laboratory, the sample is analysed as soon as possible. Optical density and pH give a quick picture of growth, a Gram stain checks the purity of the culture, and plates are prepared for a viable count. Some of these results are available within minutes; others take two or three days.",
+   "When a result is unexpected, the first question is not \"What is wrong with the batch?\" but \"Was the sample representative?\". A sample taken from a dead leg, a container that was not properly closed, or a delay at room temperature can all produce misleading results.",
+   "That is why experienced supervisors pay so much attention to the sampling step. <strong>A good sample does not guarantee a good batch, but a bad sample can lead to a wrong decision about a perfectly good one.</strong>"
+  ],
+  "quote": "Before you question the batch, question the sample.",
+  "questions": [
+   {"q": "Why is sampling a critical moment in a sterile process?", "o": ["Because microorganisms can enter when the port is opened.", "Because the operator has to stop the fermentation.", "Because the results are always available immediately."], "a": 0, "e": "Each opening of the port is a contamination risk."},
+   {"q": "Why is some broth flushed to drain before collecting the sample?", "o": ["To remove liquid that may not represent the culture.", "To cool down the bioreactor.", "To reduce the volume of the batch."], "a": 0, "e": "The liquid sitting in the line is not representative."},
+   {"q": "Which test checks the purity of the culture quickly?", "o": ["The Gram stain.", "The pH.", "The viable count."], "a": 0, "e": "The Gram stain is a fast purity check."},
+   {"q": "What is the main message of the text?", "o": ["Unexpected results may come from a bad sample, not a bad batch.", "Samples should be taken as rarely as possible.", "QC results are not reliable."], "a": 0, "e": "Question the sample before the batch."}
+  ]
+ },
+ "listening": {
+  "title": "A shift handover",
+  "intro": "Aoife, a technician, is handing over to Dan, the night-shift supervisor. Listen to their conversation about fermenter F-202.",
+  "lines": [
+   {"spk": "Dan", "voice": "bm_george", "text": "Hi Aoife. How's F-202 looking?"},
+   {"spk": "Aoife", "voice": "bf_emma", "text": "Mostly fine. The six o'clock sample was taken on time, and the OD was 4.2, which is right on the growth curve."},
+   {"spk": "Dan", "voice": "bm_george", "text": "Good. And the pH?"},
+   {"spk": "Aoife", "voice": "bf_emma", "text": "6.9, stable. The base pump has been running normally all afternoon."},
+   {"spk": "Dan", "voice": "bm_george", "text": "You said mostly fine. Was there a problem?"},
+   {"spk": "Aoife", "voice": "bf_emma", "text": "The Gram stain from the two o'clock sample showed a few cells that looked different. But that sample was left on the bench for about forty minutes before it was analysed."},
+   {"spk": "Dan", "voice": "bm_george", "text": "So it might not be representative. Was it repeated?"},
+   {"spk": "Aoife", "voice": "bf_emma", "text": "Yes. A new sample was taken at six, and that Gram stain was clean. The plates will be read on Thursday."},
+   {"spk": "Dan", "voice": "bm_george", "text": "OK. Has QA been informed?"},
+   {"spk": "Aoife", "voice": "bf_emma", "text": "Yes, I emailed them and it's been recorded as an event in the batch record, not as a deviation for now."},
+   {"spk": "Dan", "voice": "bm_george", "text": "Perfect. I'll take the ten o'clock sample myself and make sure it goes to the lab straight away."},
+   {"spk": "Aoife", "voice": "bf_emma", "text": "Great. The feed is scheduled to start at midnight, by the way. Everything is in the handover sheet."}
+  ],
+  "questions": [
+   {"q": "What was the optical density at six o'clock?", "o": ["4.2", "6.9", "2.4"], "a": 0, "e": "The OD was 4.2, on the growth curve."},
+   {"q": "Why might the two o'clock Gram stain be unreliable?", "o": ["The sample was left on the bench for forty minutes.", "The pH was too high.", "The sample was taken from the wrong fermenter."], "a": 0, "e": "A delay at room temperature can change the sample."},
+   {"q": "How was the event recorded?", "o": ["As an event in the batch record.", "As a confirmed contamination.", "It wasn't recorded."], "a": 0, "e": "Not a deviation for now, but recorded and reported to QA."},
+   {"q": "What will happen at midnight?", "o": ["The feed will start.", "The batch will be harvested.", "The plates will be read."], "a": 0, "e": "The feed is scheduled to start at midnight."}
+  ]
+ },
+ "expressions": [
+  {"phrase": "The sample was taken at… and analysed at…", "example": "The sample was taken at six and analysed at half past six."},
+  {"phrase": "…which is in line with / right on…", "example": "The OD was 4.2, which is right on the growth curve."},
+  {"phrase": "It might not be representative because…", "example": "It might not be representative because it was left at room temperature."},
+  {"phrase": "…has been recorded as…", "example": "The event has been recorded in the batch record."},
+  {"phrase": "I'll make sure that…", "example": "I'll make sure that the sample goes to the lab straight away."}
+ ],
+ "grammar": {
+  "title": "the passive voice in procedures and reports",
+  "blocks": [
+   {"h": "A. Why use the passive?", "p": "In procedures and reports, the <strong>action</strong> is more important than the person. The passive (<strong>be + past participle</strong>) sounds neutral and professional. Use <strong>by</strong> only when the person really matters.", "wrong": "We take the sample and somebody labels it.", "right": "The sample is taken and labelled.", "examples": ["The sampling port is steam-sterilised before each sample.", "The results are recorded in the batch record."]},
+   {"h": "B. The passive in different tenses", "p": "Only the verb <strong>be</strong> changes: <em>is taken</em> (present), <em>was taken</em> (past), <em>has been taken</em> (present perfect), <em>will be taken</em> (future), <em>is being taken</em> (now).", "wrong": "The sample has taken at six o'clock.", "right": "The sample was taken at six o'clock.", "examples": ["A new sample was taken at six o'clock.", "The event has been recorded as a deviation.", "The plates will be read on Thursday."]},
+   {"h": "C. Passive with modal verbs", "p": "In SOPs we often use <strong>must / should / can + be + past participle</strong>.", "wrong": "The valve must sterilised for twenty minutes.", "right": "The valve must be sterilised for twenty minutes.", "examples": ["Out-of-specification results must be reported immediately.", "Samples should be analysed within thirty minutes."]},
+   {"h": "D. Instructions: imperative vs passive", "p": "For a <strong>colleague</strong>, use the imperative (<em>Flush the line.</em>). For an <strong>official document</strong>, use the passive (<em>The line is flushed.</em>). Don't mix both in the same list.", "examples": ["Open the steam valve and wait twenty minutes.", "The steam valve is opened for twenty minutes."]}
+  ],
+  "quiz": [
+   {"q": "The sampling port ___ before each sample.", "o": ["is sterilised", "sterilises", "is sterilise"], "a": 0, "e": "Present passive: is + past participle."},
+   {"q": "Yesterday the sample ___ to the lab late.", "o": ["was sent", "has sent", "sent"], "a": 0, "e": "Past passive with a finished time (yesterday)."},
+   {"q": "The plates ___ on Thursday.", "o": ["will be read", "will read", "are reading"], "a": 0, "e": "Future passive."},
+   {"q": "OOS results must ___ immediately.", "o": ["be reported", "reported", "being reported"], "a": 0, "e": "modal + be + past participle."},
+   {"q": "The event ___ in the batch record. (it's done now)", "o": ["has been recorded", "has recorded", "is recording"], "a": 0, "e": "Present perfect passive: has been + participle."},
+   {"q": "Which sentence is best for an SOP?", "o": ["The container is labelled before sampling.", "Somebody labels the container before sampling.", "The container labels before sampling."], "a": 0, "e": "Neutral passive, no person."}
+  ]
+ },
+ "writing": {
+  "situation": "A new operator starts in your fermentation area next week. They have never taken a sample from a bioreactor.",
+  "task": "Write 100–130 words: a short email to the new operator explaining how a sample is taken from F-202, step by step, and what must never be done. Use at least three passive forms and four words from today's vocabulary.",
+  "checklist": ["A greeting and a short introduction", "The steps in a logical order (first, then, after that, finally)", "At least three passive forms (is taken, must be recorded…)", "At least four words from the vocabulary", "A clear warning (must never / mustn't)", "A friendly closing"],
+  "placeholder": "Hi Seán, welcome to the team! Here is how a sample is taken from F-202. First, …",
+  "model": ["Hi Seán,", "Welcome to the team! Here is a short guide to how a sample is taken from F-202.", "First, the sampling port is steam-sterilised for twenty minutes, and then it is left to cool. After that, a small volume of broth is flushed to drain to clear the dead leg. Only then is the sample collected into a sterile, pre-labelled container. The port must be steamed again immediately, and the time and volume must be recorded in the batch record.", "Finally, the sample is taken to the QC lab straight away. It must never be left on the bench, because the results may not be representative.", "I'll show you the whole procedure on Monday.", "Best regards,", "Cristian"]
+ },
+ "speaking": {
+  "prompt": "Explain to a visitor why the sampling step is so important in a fermentation process. Speak for about one minute.",
+  "tips": ["Start with the main idea: a sample is the only window into a closed vessel.", "Give two risks: contamination and non-representative samples.", "Use at least two passive forms.", "Finish with a conclusion: <em>That's why…</em>"],
+  "model": ["In a closed bioreactor, the sample is our only window into the process, so every decision depends on it.", "At the same time, each sample is a risk, because the port has to be opened.", "That's why the port is sterilised before and after sampling, and the line is flushed first.", "We also make sure that samples are analysed quickly. Otherwise, a bad sample could lead us to reject a perfectly good batch."]
+ },
+ "key_lesson": "In GMP documents, focus on the action, not the person: use the passive (is taken, must be recorded, has been reported)."
+}
