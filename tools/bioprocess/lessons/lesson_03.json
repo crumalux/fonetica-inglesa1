@@ -1,0 +1,117 @@
+{
+ "num": 3,
+ "date": "20 November 2026",
+ "area": "Laboratory · Media preparation",
+ "title": "Preparing and Sterilising Culture Media",
+ "subtitle": "Learn to describe how media are prepared, autoclaved and checked, talk about F0 and cycle records, and write clear SOP steps in the right order.",
+ "time": "40–50 minutes",
+ "goals": [
+  "Use precise vocabulary for media preparation, autoclave cycles and sterility checks.",
+  "Put the steps of a procedure in order with <strong>first, then, once, before -ing and after -ing</strong>.",
+  "Understand a conversation about an autoclave cycle that did not reach its F0 target.",
+  "Write a short SOP section with clear, numbered steps."
+ ],
+ "vocab": [
+  {"term": "culture medium (pl. media)", "ipa": "ˈkʌltʃə ˈmiːdiəm", "meaning": "A liquid or solid mixture of nutrients used to grow microorganisms.", "example": "Three litres of culture medium are prepared for tomorrow's seed train."},
+  {"term": "dehydrated medium", "ipa": "ˌdiːhaɪˈdreɪtɪd ˈmiːdiəm", "meaning": "A medium supplied as a powder that is dissolved in purified water before use.", "example": "Weigh the dehydrated medium and dissolve it in purified water."},
+  {"term": "autoclave", "ipa": "ˈɔːtəkleɪv", "meaning": "A pressure vessel that sterilises materials with saturated steam; also used as a verb.", "example": "The bottles are autoclaved at 121 °C."},
+  {"term": "liquid cycle", "ipa": "ˈlɪkwɪd ˈsaɪkl", "meaning": "An autoclave programme for liquids, with slow pressure release so that the liquid does not boil over.", "example": "Always select the liquid cycle for media bottles."},
+  {"term": "load probe", "ipa": "ləʊd prəʊb", "meaning": "A temperature sensor placed inside a reference container in the load.", "example": "The load probe is placed in the largest bottle."},
+  {"term": "F0 value", "ipa": "ef ˈzɪərəʊ ˈvæljuː", "meaning": "The lethality of a steam cycle, expressed as equivalent minutes at 121.1 °C.", "example": "The F0 value is calculated from the temperature in the load."},
+  {"term": "heat penetration", "ipa": "hiːt ˌpenɪˈtreɪʃn", "meaning": "How quickly heat reaches the coldest point of the load.", "example": "Large volumes have slower heat penetration, so they need longer cycles."},
+  {"term": "heat-labile", "ipa": "hiːt ˈleɪbaɪl", "meaning": "Easily damaged or destroyed by heat.", "example": "Vitamins and some antibiotics are heat-labile."},
+  {"term": "filter-sterilise", "ipa": "ˈfɪltə ˈsterəlaɪz", "meaning": "Remove microorganisms by passing a liquid through a 0.2 µm filter.", "example": "The glucose solution is filter-sterilised and added aseptically."},
+  {"term": "biological indicator (BI)", "ipa": "ˌbaɪəˈlɒdʒɪkl ˈɪndɪkeɪtə", "meaning": "A carrier with a known number of resistant spores, used to challenge a sterilisation process.", "example": "Biological indicators are used when the cycle is validated."},
+  {"term": "growth promotion test", "ipa": "ɡrəʊθ prəˈməʊʃn test", "meaning": "A test that shows a medium can support the growth of a small inoculum of reference strains.", "example": "Each new lot of medium must pass the growth promotion test."},
+  {"term": "pre-incubation", "ipa": "ˌpriː ˌɪŋkjuˈbeɪʃn", "meaning": "Incubating a sample of the prepared media before use to check that it is sterile.", "example": "Ten plates from each batch go into pre-incubation for two days."}
+ ],
+ "vocab_quiz": [
+  {"q": "Vitamins can be destroyed in the autoclave because they are…", "o": ["heat-labile", "dehydrated", "pre-incubated"], "a": 0, "e": "heat-labile = easily damaged by heat."},
+  {"q": "The temperature sensor inside the reference bottle is the…", "o": ["load probe", "biological indicator", "liquid cycle"], "a": 0, "e": "The load probe measures the temperature in the load, not in the chamber."},
+  {"q": "A 5-litre bottle needs a longer cycle than a 100 mL bottle because of slower…", "o": ["heat penetration", "growth promotion", "pre-incubation"], "a": 0, "e": "Heat takes longer to reach the centre of a large volume."},
+  {"q": "To show that a new lot of medium can support growth, we perform a…", "o": ["growth promotion test", "liquid cycle", "load probe check"], "a": 0, "e": "The growth promotion test uses a small inoculum of reference strains."},
+  {"q": "Spores on a carrier that challenge a sterilisation process are a…", "o": ["biological indicator", "dehydrated medium", "heat-labile component"], "a": 0, "e": "BIs contain a known number of resistant spores."},
+  {"q": "The glucose solution is ___ through a 0.2 µm filter and added after autoclaving.", "o": ["filter-sterilised", "autoclaved", "pre-incubated"], "a": 0, "e": "Filtration is used for components that can't be heated."}
+ ],
+ "reading": {
+  "title": "The Coldest Bottle in the Load",
+  "words": 340,
+  "paras": [
+   "At a biologics plant near Cork, the media preparation room starts work at six in the morning. Before any cell or microbial culture can grow in a production vessel, the right medium has to be prepared, sterilised and checked. It is a quiet job, but a mistake here can affect every step that follows.",
+   "The process begins with the recipe. The technician weighs the dehydrated medium, dissolves it in purified water and checks the pH. Once the volume has been adjusted, the medium is dispensed into bottles, and the caps are loosened slightly so that steam can enter and air can escape.",
+   "Not every ingredient can go into the autoclave. Glucose, if it is heated together with amino acids, can react and form brown, potentially inhibitory compounds. Vitamins and some antibiotics are heat-labile. For this reason, these components are usually filter-sterilised and added aseptically after the base medium has cooled.",
+   "The bottles are then loaded into the autoclave, and a liquid cycle is selected. A load probe is placed in a reference bottle, which is normally the largest or the slowest to heat. The chamber may reach 121 °C quickly, but the centre of a five-litre bottle takes much longer. What matters is the temperature in the load, not in the chamber.",
+   "This is why the plant uses the F0 value. F0 adds up the lethal effect of the whole cycle, including heating and cooling, and expresses it as equivalent minutes at 121.1 °C. During validation, biological indicators and probes showed which load patterns achieve the required lethality. Every routine cycle is compared with that validated pattern.",
+   "After unloading, the work is not finished. A sample of each batch is pre-incubated before release, and each new lot of dehydrated medium must pass a growth promotion test with reference strains. Only when these checks are complete is the medium released for use.",
+   "<strong>A perfect cycle record does not prove that a medium is good, but a doubtful record is always a reason to stop and ask questions.</strong>"
+  ],
+  "quote": "The chamber tells you what the autoclave did; the load tells you what the medium received.",
+  "questions": [
+   {"q": "Why are the caps of the bottles loosened before autoclaving?", "o": ["So that steam can enter and air can escape.", "So that the medium can be filtered.", "So that the pH can be measured during the cycle."], "a": 0, "e": "Tight caps would stop steam from reaching the inside of the bottle."},
+   {"q": "Why is glucose often sterilised separately?", "o": ["It can react with amino acids when they are heated together.", "It is not soluble in purified water.", "It makes the cycle shorter."], "a": 0, "e": "Heating sugars with amino acids can produce brown, potentially inhibitory compounds."},
+   {"q": "Where is the load probe placed?", "o": ["In the bottle that is slowest to heat.", "Next to the chamber drain.", "In the smallest bottle of the load."], "a": 0, "e": "The probe goes in the worst-case container."},
+   {"q": "According to the text, when is the medium released for use?", "o": ["After pre-incubation and the growth promotion test are complete.", "As soon as the cycle finishes.", "When the chamber reaches 121 °C."], "a": 0, "e": "Only when these checks are complete is the medium released."}
+  ]
+ },
+ "listening": {
+  "title": "A cycle that didn't reach its target",
+  "intro": "Niamh, a QC microbiologist, calls Tomás in media preparation about this morning's autoclave run. Later, Ciara from QA joins them. Listen to their conversation.",
+  "lines": [
+   {"spk": "Niamh", "voice": "bf_isabella", "text": "Morning, Tomás. I'm reviewing the cycle record for autoclave two. The seven o'clock run with the five-litre bottles."},
+   {"spk": "Tomás", "voice": "bm_lewis", "text": "Morning. Is there a problem? The cycle finished without any alarms."},
+   {"spk": "Niamh", "voice": "bf_isabella", "text": "No alarms, but the F0 in the load probe is lower than the minimum in the SOP for that load pattern."},
+   {"spk": "Tomás", "voice": "bm_lewis", "text": "That's strange. The chamber reached 121 degrees and held it for the full time."},
+   {"spk": "Niamh", "voice": "bf_isabella", "text": "Exactly, the chamber was fine. But how many bottles were in the load?"},
+   {"spk": "Tomás", "voice": "bm_lewis", "text": "Twelve. We had extra media for the seed train, so I added two more bottles on the lower shelf."},
+   {"spk": "Niamh", "voice": "bf_isabella", "text": "That's probably it. The validated pattern is for ten bottles. With twelve, the heat takes longer to reach the reference bottle."},
+   {"spk": "Ciara", "voice": "bf_emma", "text": "Hi both, Niamh sent me the record. Has the medium been used yet?"},
+   {"spk": "Tomás", "voice": "bm_lewis", "text": "No, it's still in quarantine, and the pre-incubation samples haven't been taken yet."},
+   {"spk": "Ciara", "voice": "bf_emma", "text": "Good. Our SOP doesn't allow us to re-sterilise this medium, so the batch will be rejected and prepared again."},
+   {"spk": "Tomás", "voice": "bm_lewis", "text": "Understood. I'll prepare a new batch this afternoon and run it with ten bottles."},
+   {"spk": "Ciara", "voice": "bf_emma", "text": "Please open a deviation first, and after checking the load pattern, ask the supervisor to sign the load sheet before starting the cycle."}
+  ],
+  "questions": [
+   {"q": "Why did nobody notice the problem during the cycle?", "o": ["There were no alarms and the chamber temperature was correct.", "The load probe was not connected.", "The cycle was cancelled before the end."], "a": 0, "e": "The chamber was fine; only the load probe showed a low F0."},
+   {"q": "What was different about this load?", "o": ["It had two more bottles than the validated pattern.", "It had smaller bottles than usual.", "It used a different medium."], "a": 0, "e": "Twelve bottles instead of the validated ten."},
+   {"q": "What will happen to the medium?", "o": ["It will be rejected and prepared again.", "It will be autoclaved a second time.", "It will be used after a longer pre-incubation."], "a": 0, "e": "The SOP doesn't allow re-sterilisation of this medium."},
+   {"q": "What must Tomás do before he starts the new cycle?", "o": ["Open a deviation and get the load sheet signed.", "Wait for the growth promotion results.", "Call the autoclave supplier."], "a": 0, "e": "Deviation first, then a supervisor's signature on the load sheet."}
+  ]
+ },
+ "expressions": [
+  {"phrase": "The cycle finished without any alarms, but…", "example": "The cycle finished without any alarms, but the F0 was below the minimum."},
+  {"phrase": "…is lower / higher than the minimum / maximum in the SOP.", "example": "The F0 in the load probe is lower than the minimum in the SOP."},
+  {"phrase": "That's probably it. / That would explain it.", "example": "Twelve bottles instead of ten? That would explain it."},
+  {"phrase": "…is still in quarantine.", "example": "The medium is still in quarantine until the checks are complete."},
+  {"phrase": "Please … first, and then…", "example": "Please open a deviation first, and then prepare a new batch."}
+ ],
+ "grammar": {
+  "title": "sequencing a procedure: first / then / after -ing / before -ing / once",
+  "blocks": [
+   {"h": "A. Sequencers for a list of steps", "p": "Use <strong>first</strong> for the first step, <strong>then / next / after that</strong> for the middle steps, and <strong>finally</strong> for the last one. In Spanish we say <em>después</em>, but in English <strong>after</strong> alone is not an adverb at the start of a sentence: use <strong>after that</strong> or <strong>afterwards</strong>.", "wrong": "Weigh the powder. After, dissolve it in purified water.", "right": "Weigh the powder. After that, dissolve it in purified water.", "examples": ["First, weigh the dehydrated medium.", "Then dissolve it in purified water and check the pH.", "Finally, label the bottles and record the batch number."]},
+   {"h": "B. before / after + -ing", "p": "<strong>Before</strong> and <strong>after</strong> are prepositions here, so the verb after them takes <strong>-ing</strong>, not the infinitive. Use this structure when the subject of both actions is the same. In passive procedures, use <strong>before / after being + past participle</strong>.", "wrong": "Check the pH before to dispense the medium.", "right": "Check the pH before dispensing the medium.", "examples": ["Loosen the caps before loading the bottles.", "After unloading the autoclave, record the F0 value.", "The medium is stored at 2–8 °C after being autoclaved."]},
+   {"h": "C. once + present tense", "p": "<strong>Once</strong> means \"as soon as / when this is complete\". After <strong>once</strong>, use the present simple or present perfect, <strong>never will</strong>, even when you talk about the future.", "wrong": "Once the medium will cool to 50 °C, add the glucose.", "right": "Once the medium has cooled to 50 °C, add the glucose.", "examples": ["Once the cycle has finished, wait for the pressure to return to zero.", "Once the volume has been adjusted, the medium is dispensed into bottles."]},
+   {"h": "D. Don't mix styles in one list", "p": "In a numbered SOP, choose <strong>one</strong> style for all the steps: imperative (<em>Weigh…</em>) or passive (<em>The medium is weighed…</em>). Put sequencers and time clauses at the <strong>start</strong> of the step, so the reader sees the condition before the action.", "wrong": "3. Add the glucose, once the medium has cooled. 4. The bottles are labelled.", "right": "3. Once the medium has cooled, add the glucose. 4. Label the bottles.", "examples": ["1. Weigh the medium. 2. Dissolve it in purified water. 3. Before dispensing, check the pH.", "1. The medium is weighed. 2. It is dissolved in purified water. 3. The pH is checked before dispensing."]}
+  ],
+  "quiz": [
+   {"q": "Loosen the caps before ___ the bottles into the autoclave.", "o": ["loading", "to load", "load"], "a": 0, "e": "before + -ing."},
+   {"q": "___ the cycle has finished, wait for the pressure to return to zero.", "o": ["Once", "First", "After that"], "a": 0, "e": "Once + clause = when this is complete."},
+   {"q": "Once the medium ___ to 50 °C, add the filter-sterilised glucose.", "o": ["has cooled", "will cool", "will have cooled"], "a": 0, "e": "No will after once: use the present perfect."},
+   {"q": "Weigh the powder. ___, dissolve it in purified water.", "o": ["After that", "After", "Before"], "a": 0, "e": "After alone can't start the sentence as an adverb: use after that / afterwards."},
+   {"q": "The medium is stored at 2–8 °C after ___.", "o": ["being autoclaved", "autoclaved", "to be autoclaved"], "a": 0, "e": "Passive after a preposition: after being + past participle."},
+   {"q": "Which step is best for a numbered SOP written in the imperative?", "o": ["Before starting the cycle, place the load probe in the largest bottle.", "The load probe, before starting the cycle, place in the largest bottle.", "Place before to start the cycle the load probe in the largest bottle."], "a": 0, "e": "Time clause first, then the instruction; before + -ing."}
+  ]
+ },
+ "writing": {
+  "situation": "Your QC lab is updating the SOP for the preparation of a liquid growth medium. Your manager asks you to write section 5: from weighing the powder to releasing the medium for use. The glucose solution is filter-sterilised separately.",
+  "task": "Write 100–150 words: section 5 of the SOP with 6–8 numbered steps. Use at least four sequencing structures (first, then, once, before -ing, after -ing…) and five words from today's vocabulary. Keep one style (imperative or passive) in all the steps.",
+  "checklist": ["A section title and a one-line scope", "6–8 numbered steps in a logical order", "At least four sequencing structures (once, before -ing, after -ing…)", "No <em>will</em> after <em>once</em>", "At least five words from the vocabulary", "One style for all the steps (imperative or passive)", "A final step about checks and release"],
+  "placeholder": "5. Preparation and sterilisation of the medium\nScope: … \n5.1 First, weigh …",
+  "model": ["5. Preparation and sterilisation of the medium", "Scope: liquid medium for the seed train, prepared in the QC laboratory.", "5.1 First, weigh the dehydrated medium and dissolve it in purified water.", "5.2 Check the pH and adjust the final volume before dispensing the medium into bottles.", "5.3 Loosen the caps and place the load probe in the largest bottle. Use only the validated load pattern.", "5.4 Select the liquid cycle and start it.", "5.5 Once the cycle has finished, check that the F0 value in the load is above the SOP minimum. After unloading, record the cycle number in the batch record.", "5.6 Once the medium has cooled, add the filter-sterilised glucose aseptically.", "5.7 Finally, keep the medium in quarantine until pre-incubation is complete and the lot has passed the growth promotion test.", "Prepared by: Cristian"]
+ },
+ "speaking": {
+  "prompt": "A new technician asks you: \"Why can't we just put everything in the autoclave together?\" Explain in about one minute.",
+  "tips": ["Start with the short answer: some components are damaged by heat.", "Give two examples (glucose with amino acids, vitamins or antibiotics).", "Explain what you do instead, using <em>once</em> or <em>after -ing</em>.", "Finish with a conclusion: <em>That's why…</em>"],
+  "model": ["Because not every component can survive 121 degrees.", "If glucose is heated together with amino acids, it can react and form brown compounds that may inhibit growth, and vitamins are destroyed by heat.", "So we autoclave the base medium first, and once it has cooled, we add the glucose after filter-sterilising it.", "That's why the recipe always tells you which components go into the autoclave and which ones are added later."]
+ },
+ "key_lesson": "Put steps in a clear order: First… Then… Before -ing… After -ing… Once + present (never will)."
+}
