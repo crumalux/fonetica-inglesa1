@@ -1,0 +1,118 @@
+{
+ "num": 4,
+ "date": "21 November 2026",
+ "area": "Upstream · Inoculum",
+ "title": "The Seed Train: from Cryovial to Production Bioreactor",
+ "subtitle": "Learn to describe each stage of the seed train, report cell growth and transfer decisions, and write a clear shift handover with the right past tenses.",
+ "time": "40–50 minutes",
+ "goals": [
+  "Use precise vocabulary for cell banks, thawing, passaging and seed transfers.",
+  "Choose correctly between the <strong>past simple</strong> and the <strong>present perfect</strong> in a shift report.",
+  "Understand a night-shift handover about a seed bioreactor that is growing slowly.",
+  "Write a short, clear shift handover note for the next shift."
+ ],
+ "vocab": [
+  {"term": "seed train", "ipa": "siːd treɪn", "meaning": "The series of cultures of increasing volume used to produce enough cells to inoculate the production bioreactor.", "example": "Our seed train goes from a cryovial to a 2,000-litre production bioreactor in about three weeks."},
+  {"term": "working cell bank (WCB)", "ipa": "ˈwɜːkɪŋ sel bæŋk", "meaning": "A collection of identical frozen vials, prepared from the master cell bank, used to start each production campaign.", "example": "One vial from the working cell bank is thawed for every new campaign."},
+  {"term": "cryovial", "ipa": "ˈkraɪəʊˌvaɪəl", "meaning": "A small tube designed to store cells at very low temperatures, usually in liquid nitrogen.", "example": "The cryovial was taken from the liquid nitrogen freezer at 08:15."},
+  {"term": "thaw", "ipa": "θɔː", "meaning": "To warm frozen material until it becomes liquid again; also a noun.", "example": "The vial is thawed quickly in a 37 °C water bath."},
+  {"term": "cryoprotectant", "ipa": "ˌkraɪəʊprəˈtektənt", "meaning": "A substance, such as DMSO, that protects cells from damage during freezing.", "example": "The cells are diluted in fresh medium to reduce the cryoprotectant concentration."},
+  {"term": "passage", "ipa": "ˈpæsɪdʒ", "meaning": "To transfer cells into fresh medium in a new vessel so that they can keep growing; also a noun.", "example": "The cells have been passaged three times since the thaw."},
+  {"term": "split ratio", "ipa": "splɪt ˈreɪʃiəʊ", "meaning": "The proportion in which a culture is diluted at each passage.", "example": "We used a split ratio of one to five for the shake flasks."},
+  {"term": "viable cell density (VCD)", "ipa": "ˈvaɪəbl sel ˈdensəti", "meaning": "The number of living cells per millilitre of culture.", "example": "The viable cell density has reached the transfer criterion."},
+  {"term": "viability", "ipa": "ˌvaɪəˈbɪləti", "meaning": "The percentage of cells in a sample that are alive.", "example": "Viability dropped slightly after the thaw but has recovered since then."},
+  {"term": "doubling time", "ipa": "ˈdʌblɪŋ taɪm", "meaning": "The time a population of cells needs to double in number.", "example": "The doubling time in the N-1 bioreactor is longer than usual."},
+  {"term": "transfer criteria", "ipa": "ˈtrænsfɜː kraɪˈtɪəriə", "meaning": "The conditions, defined in the batch record, that a culture must meet before it is moved to the next vessel.", "example": "Don't transfer the culture until all the transfer criteria have been met."},
+  {"term": "cell age limit", "ipa": "sel eɪdʒ ˈlɪmɪt", "meaning": "The validated maximum time or number of generations that cells may be cultured after the thaw.", "example": "If we wait two more days, we may get close to the cell age limit."}
+ ],
+ "vocab_quiz": [
+  {"q": "The number of living cells per millilitre is the…", "o": ["viable cell density", "split ratio", "doubling time"], "a": 0, "e": "VCD = living cells per mL. Viability is a percentage."},
+  {"q": "DMSO is added to cells before freezing because it is a…", "o": ["cryoprotectant", "transfer criterion", "working cell bank"], "a": 0, "e": "A cryoprotectant protects cells during freezing."},
+  {"q": "Each new campaign starts with one vial from the…", "o": ["working cell bank", "production bioreactor", "split ratio"], "a": 0, "e": "The WCB is prepared from the master cell bank and used for production."},
+  {"q": "The culture can't be moved to the next vessel until it meets the…", "o": ["transfer criteria", "cell age limit", "cryoprotectant"], "a": 0, "e": "Transfer criteria are the conditions in the batch record for moving a culture."},
+  {"q": "Diluting one part of culture into five parts in total is a one-to-five…", "o": ["split ratio", "doubling time", "viability"], "a": 0, "e": "The split ratio describes the dilution at each passage."},
+  {"q": "Cells may only be cultured for a validated maximum time after the thaw: this is the…", "o": ["cell age limit", "doubling time", "seed train"], "a": 0, "e": "The cell age limit is validated; going beyond it is not allowed."}
+ ],
+ "reading": {
+  "title": "Twenty-One Days to Two Thousand Litres",
+  "words": 362,
+  "paras": [
+   "At a biologics plant in County Kildare, every production batch begins with something smaller than a finger: a single cryovial from the working cell bank. Three weeks later, the cells from that vial will fill a 2,000-litre bioreactor. The series of steps in between is called the seed train, and the upstream team treats it with great care.",
+   "The process starts with the thaw. A technician takes the vial out of the liquid nitrogen freezer, records the time and thaws it quickly in a water bath at 37 °C. Speed matters, because the cryoprotectant that protected the cells during freezing becomes toxic at warmer temperatures. The cells are immediately diluted in pre-warmed medium.",
+   "For the first days, the culture grows in shake flasks in an incubator. Every three or four days, the cells are counted and passaged into larger flasks at a defined split ratio. At each count, the team records the viable cell density and the viability, and calculates the doubling time. A slow doubling time is often the first sign that something is wrong.",
+   "From the flasks, the culture moves into a rocking-motion bioreactor with a single-use bag, and then into two stainless-steel seed bioreactors. The last of these, known as the N-1, prepares the inoculum for the production vessel. Before each transfer, the culture must meet the transfer criteria in the batch record, usually a minimum cell density and viability.",
+   "There is another limit that nobody can ignore: time. The cell line was validated for a maximum age after the thaw. If the seed train is delayed for too long, the cells may approach that limit, and the batch cannot continue.",
+   "Because the seed train runs day and night, the shift handover is critical. \"The night shift needs to know exactly what we did and what is still open,\" says Siobhán Walsh, the upstream supervisor.",
+   "Each handover note follows the same pattern: what happened, when it happened, and what the current status is. A clear note prevents mistakes such as a missed sample or a late transfer.",
+   "<strong>In a seed train, a problem you report early is a problem; a problem you report late can become a lost batch.</strong>"
+  ],
+  "quote": "The night shift needs to know exactly what we did and what is still open.",
+  "questions": [
+   {"q": "Why must the vial be thawed quickly?", "o": ["The cryoprotectant becomes toxic to the cells at warmer temperatures.", "The water bath is only available for a short time.", "The cells start dividing too fast at 37 °C."], "a": 0, "e": "The text says the cryoprotectant becomes toxic at warmer temperatures."},
+   {"q": "What can a slow doubling time indicate?", "o": ["That something may be wrong with the culture.", "That the split ratio is correct.", "That the culture is ready for transfer."], "a": 0, "e": "\"A slow doubling time is often the first sign that something is wrong.\""},
+   {"q": "What is the N-1 bioreactor?", "o": ["The last seed bioreactor before the production vessel.", "The first shake flask after the thaw.", "The bag used to store the working cell bank."], "a": 0, "e": "The N-1 prepares the inoculum for the production vessel."},
+   {"q": "According to the text, what does every handover note include?", "o": ["What happened, when it happened and the current status.", "A full copy of the batch record.", "The supervisor's signature and the next campaign plan."], "a": 0, "e": "\"What happened, when it happened, and what the current status is.\""}
+  ]
+ },
+ "listening": {
+  "title": "A slow N-1 at six in the morning",
+  "intro": "At the end of the night shift, Declan hands over the seed train to Aoife. Later, Gráinne, the upstream supervisor, joins them. Listen to their conversation.",
+  "lines": [
+   {"spk": "Declan", "voice": "bm_george", "text": "Morning, Aoife. Right, the seed train. The flasks for the next campaign are fine. I passaged them at two o'clock, and the counts were normal."},
+   {"spk": "Aoife", "voice": "bf_emma", "text": "Great. And the N-1? It was supposed to transfer this morning, wasn't it?"},
+   {"spk": "Declan", "voice": "bm_george", "text": "That's the problem. It hasn't reached the transfer density yet. I took a sample at four, and the viable cell density was still about twenty per cent below the criterion."},
+   {"spk": "Aoife", "voice": "bf_emma", "text": "What about viability?"},
+   {"spk": "Declan", "voice": "bm_george", "text": "Viability is good, above ninety-five per cent. The cells are healthy, they're just growing slowly. The doubling time has been longer than usual since yesterday afternoon."},
+   {"spk": "Aoife", "voice": "bf_emma", "text": "Have you checked the dissolved oxygen and the pH trends?"},
+   {"spk": "Declan", "voice": "bm_george", "text": "Yes, I checked them at five. Both have stayed within range all night. But I noticed the temperature probe was replaced on Tuesday, so it might be worth checking it against the calibrated reference."},
+   {"spk": "Gráinne", "voice": "bf_isabella", "text": "Morning, both. I've just read the night report. Have you informed QA about the delay?"},
+   {"spk": "Declan", "voice": "bm_george", "text": "Not yet. I wanted to wait for the next count first."},
+   {"spk": "Gráinne", "voice": "bf_isabella", "text": "Please send them a short note now. We're still well inside the cell age limit, but they need to know that the transfer has moved."},
+   {"spk": "Aoife", "voice": "bf_emma", "text": "OK. I'll take the next sample at eight and verify the temperature probe straight after."},
+   {"spk": "Gráinne", "voice": "bf_isabella", "text": "Good. If the density is at the criterion at eight, we transfer this morning. If not, we meet at nine and decide together."}
+  ],
+  "questions": [
+   {"q": "Why didn't the N-1 transfer happen this morning?", "o": ["The viable cell density was below the transfer criterion.", "The viability was too low.", "The production bioreactor was not ready."], "a": 0, "e": "The VCD was still about 20% below the criterion; viability was good."},
+   {"q": "What possible cause does Declan suggest?", "o": ["The temperature probe that was replaced on Tuesday.", "A contaminated shake flask.", "A wrong split ratio at two o'clock."], "a": 0, "e": "He suggests checking the new temperature probe against the calibrated reference."},
+   {"q": "What does Gráinne ask Declan to do now?", "o": ["Send QA a short note about the delay.", "Transfer the culture immediately.", "Start a new seed train from a new vial."], "a": 0, "e": "\"Please send them a short note now.\""},
+   {"q": "What will happen if the density hasn't reached the criterion at eight?", "o": ["They will meet at nine and decide together.", "They will transfer the culture anyway.", "They will discard the N-1 culture."], "a": 0, "e": "\"If not, we meet at nine and decide together.\""}
+  ]
+ },
+ "expressions": [
+  {"phrase": "It hasn't reached … yet.", "example": "The N-1 hasn't reached the transfer density yet."},
+  {"phrase": "…has stayed within range all night.", "example": "The pH has stayed within range all night."},
+  {"phrase": "It might be worth checking…", "example": "It might be worth checking the probe against the calibrated reference."},
+  {"phrase": "We're still well inside the … limit.", "example": "We're still well inside the cell age limit, so there's no immediate risk."},
+  {"phrase": "If …, we …. If not, we….", "example": "If the count is good at eight, we transfer. If not, we meet at nine."}
+ ],
+ "grammar": {
+  "title": "present perfect vs past simple in shift reports",
+  "blocks": [
+   {"h": "A. Past simple: finished actions at a known time", "p": "Use the <strong>past simple</strong> for actions that are finished and connected to a specific time: <em>at 02:00, yesterday, last night, on Tuesday, two hours ago</em>. In a handover, this is the <strong>timeline</strong> of what you did. In Spanish we often say <em>he hecho</em> for this, but in English a specific time always needs the past simple.", "wrong": "I have passaged the flasks at 02:00.", "right": "I passaged the flasks at 02:00.", "examples": ["I took a sample from the N-1 at 04:00.", "The temperature probe was replaced on Tuesday.", "We thawed the vial three days ago."]},
+   {"h": "B. Present perfect: the status now", "p": "Use the <strong>present perfect</strong> (<strong>have / has + past participle</strong>) when the time is <strong>not</strong> important and the <strong>result now</strong> is what matters. This is the <strong>status</strong> part of the handover: what is done, what is not done, what is new.", "wrong": "The culture didn't reach the transfer density yet.", "right": "The culture hasn't reached the transfer density yet.", "examples": ["The flasks have been passaged and labelled.", "QA has been informed about the delay.", "The N-1 hasn't been transferred yet."]},
+   {"h": "C. Time words that choose the tense", "p": "Some time words go with the present perfect: <strong>yet, already, just, so far, since, for</strong> (for a period that continues now). Others go with the past simple: <strong>ago, yesterday, last night, at + time, on + day, when…</strong>. Use <strong>since</strong> with a starting point and <strong>for</strong> with a period.", "wrong": "The pH has been stable since six hours.", "right": "The pH has been stable for six hours. / The pH has been stable since 00:00.", "examples": ["So far, viability has stayed above 95%.", "I've just checked the dissolved oxygen trend.", "The alarm sounded when the pump stopped."]},
+   {"h": "D. The handover pattern: status → timeline → open actions", "p": "A clear handover note often starts with the status (present perfect), then gives the details with times (past simple), and finishes with what is still open (<em>hasn't … yet</em>, <em>still needs to</em>, <em>please</em>). Don't switch to the present perfect when you add a time.", "wrong": "The N-1 has not reached the criterion. I have sampled it at 04:00 and the VCD has been low.", "right": "The N-1 has not reached the criterion. I sampled it at 04:00 and the VCD was 20% below the target.", "examples": ["Status: the flasks have been passaged; the N-1 hasn't been transferred yet.", "Timeline: I took the last sample at 04:00 and checked the trends at 05:00.", "Open: the next count is due at 08:00; please verify the temperature probe."]}
+  ],
+  "quiz": [
+   {"q": "I ___ the N-1 at 04:00.", "o": ["sampled", "have sampled", "have been sampling"], "a": 0, "e": "A specific time (at 04:00) needs the past simple."},
+   {"q": "The culture ___ the transfer criterion yet.", "o": ["hasn't reached", "didn't reach", "doesn't reach"], "a": 0, "e": "yet + negative = present perfect."},
+   {"q": "Viability has been above 95% ___ the thaw.", "o": ["since", "for", "ago"], "a": 0, "e": "since + a starting point (the thaw)."},
+   {"q": "The temperature probe ___ on Tuesday.", "o": ["was replaced", "has been replaced", "has replaced"], "a": 0, "e": "on Tuesday = finished time → past simple (passive)."},
+   {"q": "Which sentence is correct for the status of the shift?", "o": ["QA has been informed about the delay.", "QA has been informed about the delay at 06:30.", "QA was informed about the delay yet."], "a": 0, "e": "No specific time → present perfect. With a time, use the past simple; yet doesn't go with the past simple."},
+   {"q": "We thawed the vial ___.", "o": ["three days ago", "since three days", "for three days"], "a": 0, "e": "ago goes with the past simple; since/for with the present perfect."}
+  ]
+ },
+ "writing": {
+  "situation": "You are finishing the night shift in the upstream area. The flasks for the next campaign were passaged during the night. The N-1 seed bioreactor was due to transfer at 06:00, but it has not reached the transfer criterion. Viability is good. You have checked the pH and DO trends.",
+  "task": "Write 100–150 words: a shift handover note for the day shift. Give the current status, a short timeline with times, and the open actions. Use the present perfect at least three times and the past simple at least three times, and five words from today's vocabulary.",
+  "checklist": ["A subject line with the area, date and shift", "The current status first (present perfect)", "A short timeline with specific times (past simple)", "No present perfect next to a specific time (at 04:00, last night…)", "yet / already / since / for used correctly", "At least five words from the vocabulary", "Clear open actions for the next shift"],
+  "placeholder": "Subject: Upstream handover, night shift, 21 November\nHi Aoife,\nStatus: …",
+  "model": ["Subject: Upstream handover – night shift, 21 November", "Hi Aoife,", "Status: the flasks for the next campaign have been passaged and are growing normally. The N-1 hasn't reached the transfer criteria yet, so the transfer has not taken place.", "Timeline: I passaged the flasks at 02:00 with the usual split ratio. At 04:00 I took a sample from the N-1: the viable cell density was about 20% below the criterion, but viability was above 95%. At 05:00 I checked the pH and DO trends, and both were within range.", "The doubling time has been longer than usual since yesterday afternoon. We are still well inside the cell age limit.", "Open actions: please take the next sample at 08:00 and verify the temperature probe, which was replaced on Tuesday. QA hasn't been informed yet.", "Thanks,", "Cristian"]
+ },
+ "speaking": {
+  "prompt": "Your manager calls you at 07:00 and asks: \"What's the situation with the N-1?\" Answer in about one minute.",
+  "tips": ["Start with the status in one sentence (present perfect).", "Give two facts with times (past simple).", "Say what you think the cause might be: <em>It might be…</em>", "Finish with the next step and the time."],
+  "model": ["The N-1 hasn't reached the transfer criteria yet, so we haven't transferred it.", "I took a sample at four, and the cell density was about twenty per cent below the target, but viability was very good.", "The pH and oxygen have stayed in range, so it might be the new temperature probe that was installed on Tuesday.", "We'll take another sample at eight and decide on the transfer after that."]
+ },
+ "key_lesson": "Status now → present perfect (has reached, hasn't … yet). A specific time → past simple (at 04:00 I took…). Never use the present perfect with a specific past time."
+}
