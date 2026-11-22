@@ -1,0 +1,118 @@
+{
+ "num": 5,
+ "date": "22 November 2026",
+ "area": "Upstream · Process monitoring",
+ "title": "Monitoring a Fermentation: pH, DO, Temperature, Foam and Alarms",
+ "subtitle": "Learn to read the main signals of a running fermentation, discuss an alarm on the night shift, and write clear alarm responses with zero and first conditionals.",
+ "time": "40–50 minutes",
+ "goals": [
+  "Name and explain the key online parameters of a fermentation: temperature, pH, dissolved oxygen and foam.",
+  "Use the <strong>zero conditional</strong> to describe how the control system always behaves.",
+  "Use the <strong>first conditional</strong> (and <em>unless</em>, <em>as soon as</em>) to say what operators must do when an alarm sounds.",
+  "Write a short, clear alarm-response guide for operators."
+ ],
+ "vocab": [
+  {"term": "setpoint", "ipa": "ˈsetpɔɪnt", "meaning": "The target value that a controller tries to keep.", "example": "The temperature setpoint is thirty-seven degrees during the growth phase."},
+  {"term": "dissolved oxygen (DO)", "ipa": "dɪˈzɒlvd ˈɒksɪdʒən", "meaning": "The oxygen dissolved in the broth, usually shown as a percentage of air saturation.", "example": "The dissolved oxygen fell to twenty-five per cent after midnight."},
+  {"term": "control loop", "ipa": "kənˈtrəʊl luːp", "meaning": "A system that measures a value and automatically corrects it towards the setpoint.", "example": "The pH control loop adds base when the pH drops."},
+  {"term": "agitation", "ipa": "ˌædʒɪˈteɪʃn", "meaning": "The mixing of the broth by the impeller, measured in rpm.", "example": "Agitation is already at maximum, so the controller is adding oxygen."},
+  {"term": "DO cascade", "ipa": "diː əʊ kæˈskeɪd", "meaning": "A sequence of control actions used one after another to keep the DO up, for example agitation, then airflow, then oxygen.", "example": "The DO cascade has reached its last step."},
+  {"term": "DO spike", "ipa": "diː əʊ spaɪk", "meaning": "A sudden rise in dissolved oxygen, often because the cells have run out of carbon source.", "example": "A DO spike usually means that the feed has stopped."},
+  {"term": "antifoam", "ipa": "ˈæntifəʊm", "meaning": "A chemical added to the broth to break down foam.", "example": "Too much antifoam reduces oxygen transfer."},
+  {"term": "exhaust filter", "ipa": "ɪɡˈzɔːst ˈfɪltə", "meaning": "The sterile filter on the gas outlet of the vessel.", "example": "A wet exhaust filter is a sterility risk."},
+  {"term": "probe drift", "ipa": "prəʊb drɪft", "meaning": "A slow change in a sensor reading that is not caused by the process.", "example": "The offline pH showed that there was some probe drift."},
+  {"term": "acknowledge an alarm", "ipa": "əkˈnɒlɪdʒ ən əˈlɑːm", "meaning": "Confirm on the control system that you have seen an alarm.", "example": "Acknowledge the alarm first, and then check the trend."},
+  {"term": "nuisance alarm", "ipa": "ˈnjuːsns əˈlɑːm", "meaning": "An alarm that sounds often but does not need any action.", "example": "Too many nuisance alarms teach operators to ignore them."},
+  {"term": "trend", "ipa": "trend", "meaning": "A graph that shows how a value changes over time.", "example": "Let's look at the DO trend for the last six hours."}
+ ],
+ "vocab_quiz": [
+  {"q": "The target value that the controller tries to keep is the…", "o": ["setpoint", "trend", "probe drift"], "a": 0, "e": "setpoint = target value of a control loop."},
+  {"q": "A sudden rise in dissolved oxygen in a fed-batch often means that the cells have run out of carbon source. This is a…", "o": ["DO spike", "DO cascade", "nuisance alarm"], "a": 0, "e": "No food → no oxygen consumption → the DO goes up."},
+  {"q": "Agitation, then airflow, then pure oxygen: this sequence is the…", "o": ["DO cascade", "exhaust filter", "setpoint"], "a": 0, "e": "The cascade uses one action after another."},
+  {"q": "An alarm that sounds often but never needs any action is a…", "o": ["nuisance alarm", "control loop", "trend"], "a": 0, "e": "Nuisance alarms cause alarm fatigue."},
+  {"q": "Before you do anything else, ___ the alarm on the screen.", "o": ["acknowledge", "agitate", "drift"], "a": 0, "e": "acknowledge an alarm = confirm that you have seen it."},
+  {"q": "The online pH and the offline pH no longer agree. This could be…", "o": ["probe drift", "a DO spike", "antifoam"], "a": 0, "e": "Probe drift: the sensor changes, not the process."}
+ ],
+ "reading": {
+  "title": "When the Fermenter Talks",
+  "words": 360,
+  "paras": [
+   "At three o'clock in the morning, a fermentation suite near Cork is quiet, but it is never silent. The control system is recording hundreds of values every minute. Four of them tell most of the story: temperature, pH, dissolved oxygen and foam.",
+   "Temperature and pH are controlled by simple loops. If the broth gets warmer than the setpoint, more cooling water flows through the jacket. If the pH drops, the controller adds base. These loops work so well that operators can forget them, until something changes. For example, if base consumption suddenly stops, the culture may have stopped growing.",
+   "Dissolved oxygen is more complex. As the cells grow, they need more oxygen, so the controller increases agitation first, then airflow, and finally adds pure oxygen or raises the back pressure. This is called the DO cascade. If the cascade reaches its maximum and the DO keeps falling, the culture needs more oxygen than the vessel can transfer, and the feed rate may have to be reduced.",
+   "A sudden rise in DO is just as important. In a fed-batch process, a DO spike often means that the carbon source has run out: the cells stop consuming oxygen because they have nothing to eat. Experienced operators check the feed pump immediately.",
+   "Foam is the quiet enemy. If foam reaches the exhaust filter, it can wet and block it, and a wet filter is a sterility risk. A foam probe detects the foam and starts the antifoam pump. However, too much antifoam reduces oxygen transfer and can cause problems downstream, so the dose is limited and recorded.",
+   "Alarms are the last line of defence, not the first. Each alarm should have a clear response in the batch instructions. <strong>A plant with too many nuisance alarms trains its operators to ignore them.</strong> As Gráinne Walsh, the process engineering lead, puts it: every alarm must mean something.",
+   "Finally, a probe gives a measurement, not the truth. If the online pH drifts away from the offline value, the team does not simply trust the screen. The probe is checked and, if necessary, the reading is adjusted according to the procedure.",
+   "Good monitoring is not about watching numbers. It is about understanding what the culture is trying to tell you."
+  ],
+  "quote": "If every alarm is urgent, no alarm is urgent.",
+  "questions": [
+   {"q": "According to the text, what can it mean if base consumption suddenly stops?", "o": ["The culture may have stopped growing.", "The cooling water is too cold.", "The pH probe has just been calibrated."], "a": 0, "e": "Growing cells produce acids, so a growing culture keeps consuming base."},
+   {"q": "What is the DO cascade?", "o": ["A sequence of control actions used one after another to keep the DO up.", "A sudden rise in DO at the end of the feed.", "A test that checks the purity of the culture."], "a": 0, "e": "Agitation, then airflow, then oxygen or back pressure."},
+   {"q": "Why do operators check the feed pump after a DO spike?", "o": ["Because the spike often means that the carbon source has run out.", "Because the feed pump controls the agitation.", "Because antifoam is added through the feed line."], "a": 0, "e": "No carbon source → no oxygen consumption → DO rises."},
+   {"q": "Why is the antifoam dose limited?", "o": ["Too much antifoam reduces oxygen transfer and can cause downstream problems.", "Antifoam is the most expensive raw material in the plant.", "Antifoam wets the exhaust filter."], "a": 0, "e": "It is foam, not antifoam, that wets the filter."}
+  ]
+ },
+ "listening": {
+  "title": "A foam alarm on the night shift",
+  "intro": "Ciarán, a night-shift operator, calls Róisín, his supervisor, about fermenter F-301. Listen to what they decide.",
+  "lines": [
+   {"spk": "Ciarán", "voice": "bm_lewis", "text": "Róisín, have you got a minute? F-301 has just given me a high-foam alarm."},
+   {"spk": "Róisín", "voice": "bf_isabella", "text": "OK. Has the antifoam pump started?"},
+   {"spk": "Ciarán", "voice": "bm_lewis", "text": "Yes, it has dosed twice in the last hour. We've added eight hundred millilitres this shift, and the limit in the batch record is one litre per shift."},
+   {"spk": "Róisín", "voice": "bf_isabella", "text": "Right. If we reach the limit, we have to stop dosing and call the process engineer. What's the DO doing?"},
+   {"spk": "Ciarán", "voice": "bm_lewis", "text": "It's dropping. It was at forty per cent at midnight, and now it's about twenty-five. Agitation is already at maximum."},
+   {"spk": "Róisín", "voice": "bf_isabella", "text": "That makes sense, because antifoam reduces oxygen transfer. Is the oxygen enrichment on?"},
+   {"spk": "Ciarán", "voice": "bm_lewis", "text": "Yes, the controller has switched it on."},
+   {"spk": "Róisín", "voice": "bf_isabella", "text": "Then don't increase the feed tonight. If the DO falls below twenty per cent, reduce the feed rate by ten per cent, as the batch instruction says."},
+   {"spk": "Ciarán", "voice": "bm_lewis", "text": "Understood. And the exhaust filter? The differential pressure looks normal."},
+   {"spk": "Róisín", "voice": "bf_isabella", "text": "Good. If the pressure rises, it usually means that the filter is getting wet. Keep an eye on it and write it in the log every thirty minutes."},
+   {"spk": "Ciarán", "voice": "bm_lewis", "text": "Will do. Should I call Gráinne now?"},
+   {"spk": "Róisín", "voice": "bf_isabella", "text": "Not yet. If the foam alarm comes back after one more dose, call her straight away. I'll come down to the suite in ten minutes."}
+  ],
+  "questions": [
+   {"q": "How much antifoam has been added this shift?", "o": ["Eight hundred millilitres.", "One litre.", "Two hundred millilitres."], "a": 0, "e": "800 mL so far; the limit is 1 L per shift."},
+   {"q": "What will Ciarán do if the DO falls below twenty per cent?", "o": ["Reduce the feed rate by ten per cent.", "Increase the agitation.", "Add more antifoam."], "a": 0, "e": "Agitation is already at maximum, so the feed is reduced."},
+   {"q": "According to Róisín, what does a rise in the differential pressure across the exhaust filter usually mean?", "o": ["The filter is getting wet.", "The DO is too high.", "The antifoam pump has stopped."], "a": 0, "e": "A wet filter lets less gas through, so the pressure rises."},
+   {"q": "When should Ciarán call Gráinne?", "o": ["If the foam alarm comes back after one more dose.", "Immediately, before Róisín arrives.", "At the end of the shift."], "a": 0, "e": "Not yet; only if the alarm returns after one more dose."}
+  ]
+ },
+ "expressions": [
+  {"phrase": "…has just given me / triggered a … alarm", "example": "F-301 has just triggered a high-temperature alarm."},
+  {"phrase": "If we reach…, we have to…", "example": "If we reach the antifoam limit, we have to call the process engineer."},
+  {"phrase": "That makes sense, because…", "example": "That makes sense, because the feed started an hour ago."},
+  {"phrase": "…as the batch instruction says", "example": "Reduce the feed rate by ten per cent, as the batch instruction says."},
+  {"phrase": "Keep an eye on…", "example": "Keep an eye on the exhaust filter pressure during the night."}
+ ],
+ "grammar": {
+  "title": "zero and first conditionals for alarm responses",
+  "blocks": [
+   {"h": "A. Zero conditional: how the system always behaves", "p": "Use <strong>If + present simple, present simple</strong> for facts and automatic responses that are always true. Remember the <strong>-s</strong> with he / she / it.", "wrong": "If the pH drop, the controller add base.", "right": "If the pH drops, the controller adds base.", "examples": ["If the temperature rises, more cooling water flows through the jacket.", "If the cells run out of glucose, the DO goes up."]},
+   {"h": "B. First conditional: a possible situation and its result", "p": "Use <strong>If + present simple, will / must / imperative</strong> for a real situation that may happen. <strong>Never use will after if</strong>, even when you talk about the future.", "wrong": "If the DO will fall below twenty per cent, we will reduce the feed.", "right": "If the DO falls below twenty per cent, we will reduce the feed.", "examples": ["If we reach the antifoam limit, we'll call the process engineer.", "If the filter gets wet, the pressure will rise."]},
+   {"h": "C. Alarm guides: if + imperative, and unless", "p": "In an alarm-response guide, the result is usually an <strong>instruction</strong>: <em>If the alarm sounds, check…</em> <strong>Unless</strong> means <em>if… not</em>, so don't add another negative after it.", "wrong": "Unless the DO doesn't recover within ten minutes, call the supervisor.", "right": "Unless the DO recovers within ten minutes, call the supervisor.", "examples": ["If the high-foam alarm sounds, check that the antifoam pump has started.", "Unless the temperature starts to fall, inform the supervisor."]},
+   {"h": "D. when / as soon as / until + present", "p": "After <strong>when, as soon as, before, after</strong> and <strong>until</strong>, use the present simple for the future too. Use <em>when</em> for something you are sure will happen, and <em>if</em> for something that may happen.", "wrong": "As soon as the feed will start, record the time.", "right": "As soon as the feed starts, record the time.", "examples": ["When the batch finishes, the vessel will be cleaned.", "Don't increase the feed until the DO is stable."]}
+  ],
+  "quiz": [
+   {"q": "If the temperature ___ above the setpoint, more cooling water flows through the jacket.", "o": ["rises", "will rise", "rise"], "a": 0, "e": "Zero conditional: if + present simple, with -s for it."},
+   {"q": "If the DO ___ below twenty per cent, reduce the feed rate.", "o": ["falls", "will fall", "fell"], "a": 0, "e": "No will after if; present simple + imperative."},
+   {"q": "If we reach the antifoam limit, we ___ the process engineer.", "o": ["will call", "would called", "calls"], "a": 0, "e": "First conditional: if + present, will + infinitive."},
+   {"q": "As soon as the alarm ___, acknowledge it and check the trend.", "o": ["sounds", "will sound", "sounded"], "a": 0, "e": "as soon as + present simple for the future."},
+   {"q": "___ the DO recovers within ten minutes, call the supervisor.", "o": ["Unless", "If", "When"], "a": 0, "e": "Unless = if not: if the DO does NOT recover, call the supervisor."},
+   {"q": "Which sentence is best for an alarm-response guide?", "o": ["If the high-foam alarm sounds, check the antifoam pump.", "If the high-foam alarm will sound, you check the antifoam pump.", "When the high-foam alarm sounding, check the antifoam pump."], "a": 0, "e": "If + present simple + imperative: short and clear."}
+  ]
+ },
+ "writing": {
+  "situation": "New alarm limits have been set on fermenter F-301. Your manager asks you to prepare a short alarm-response guide for the night-shift operators.",
+  "task": "Write 100–150 words: a short email with an alarm-response guide for three alarms on F-301 (low DO, high foam and high temperature). Say what the system does automatically and what the operator must do. Use at least four conditional sentences (zero and first), <em>unless</em> or <em>as soon as</em> at least once, and four words from today's vocabulary.",
+  "checklist": ["A greeting and one sentence on the purpose of the guide", "A short section for each of the three alarms", "At least one zero conditional (what the system always does)", "At least three first conditionals or if + imperative (what the operator does)", "unless or as soon as at least once", "At least four words from the vocabulary", "No will after if", "A friendly closing"],
+  "placeholder": "Hi team, please follow this guide when an alarm sounds on F-301. As soon as an alarm sounds, …",
+  "model": ["Hi team,", "Please follow this short guide when an alarm sounds on F-301. As soon as an alarm sounds, acknowledge it and check the trend on the screen.", "Low DO: if the DO falls below the alarm limit, the DO cascade increases agitation and airflow automatically. If the cascade is already at maximum, reduce the feed rate as the batch instruction says.", "High foam: if the foam probe detects foam, the antifoam pump starts. If we reach the antifoam limit for the shift, stop dosing and call the process engineer. Keep an eye on the exhaust filter pressure.", "High temperature: if the temperature rises above the setpoint, check the cooling water valve. Unless the temperature starts to fall within ten minutes, call the supervisor.", "Please record every alarm and action in the batch record.", "Best regards,", "Cristian"]
+ },
+ "speaking": {
+  "prompt": "A new operator asks you: 'What does a DO spike mean, and what should I do if I see one?' Answer in about one minute.",
+  "tips": ["Start with what a DO spike is: a sudden rise in dissolved oxygen.", "Explain the usual cause with a zero conditional: <em>If the cells run out of…, they stop…</em>", "Give the response with a first conditional or if + imperative.", "Finish with what to record or who to call."],
+  "model": ["A DO spike is a sudden rise in dissolved oxygen, and in a fed-batch it usually tells us something about the feed.", "If the cells run out of carbon source, they stop consuming oxygen, so the DO goes up very quickly.", "If you see a spike, check the feed pump and the feed line first, because the pump may have stopped or the line may be blocked.", "If the feed doesn't restart within a few minutes, call the supervisor, and write the time of the spike in the batch record."]
+ },
+ "key_lesson": "In alarm guides, use if + present simple for the condition and will, must or an imperative for the response. Never use will after if, when or as soon as."
+}
