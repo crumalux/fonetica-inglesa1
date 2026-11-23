@@ -1,0 +1,118 @@
+{
+ "num": 6,
+ "date": "23 November 2026",
+ "area": "Upstream · Scale-up",
+ "title": "Scaling Up from 100 L to 2,300 L: kLa, Tip Speed, Power per Volume and Mixing Time",
+ "subtitle": "Learn to compare pilot and production data, discuss scale-up criteria with engineers, and recommend an option using comparatives and superlatives.",
+ "time": "40–50 minutes",
+ "goals": [
+  "Use the key vocabulary of scale-up: kLa, tip speed, power per unit volume, mixing time and gas velocity.",
+  "Use <strong>comparatives and superlatives</strong> to compare technical data precisely (<em>slightly higher, twice as long as, the most critical</em>).",
+  "Follow a technical meeting where engineers compare two scale-up options.",
+  "Write an email that compares two options and recommends one."
+ ],
+ "vocab": [
+  {"term": "scale-up", "ipa": "ˈskeɪl ʌp", "meaning": "Moving a process from a smaller vessel to a larger one while keeping the same performance.", "example": "The scale-up from 100 litres to 2,300 litres is planned for March."},
+  {"term": "geometric similarity", "ipa": "ˌdʒiːəˈmetrɪk ˌsɪməˈlærəti", "meaning": "When two vessels have the same shape and proportions, only a different size.", "example": "The two fermenters are not fully geometrically similar, because the large one is taller."},
+  {"term": "kLa (oxygen transfer coefficient)", "ipa": "ˌkeɪ el ˈeɪ", "meaning": "A measure of how quickly oxygen moves from the gas bubbles into the liquid.", "example": "A higher kLa means that the culture receives oxygen more easily."},
+  {"term": "power per unit volume (P/V)", "ipa": "ˈpaʊə pə ˈjuːnɪt ˈvɒljuːm", "meaning": "The agitation power put into the broth divided by its volume, usually in kW per cubic metre.", "example": "We kept the power per unit volume constant at both scales."},
+  {"term": "impeller", "ipa": "ɪmˈpelə", "meaning": "The rotating blades on the shaft that mix the broth and break up the bubbles.", "example": "The production vessel has three impellers on the same shaft."},
+  {"term": "tip speed", "ipa": "ˈtɪp spiːd", "meaning": "The speed of the outer edge of the impeller; it is related to the highest shear in the vessel.", "example": "The tip speed will be higher in the large vessel if we keep P/V constant."},
+  {"term": "mixing time", "ipa": "ˈmɪksɪŋ taɪm", "meaning": "The time needed to make the broth uniform after something is added.", "example": "Mixing time is usually much longer at production scale than in the pilot plant."},
+  {"term": "superficial gas velocity", "ipa": "ˌsuːpəˈfɪʃl ɡæs vəˈlɒsəti", "meaning": "The air flow rate divided by the cross-sectional area of the vessel.", "example": "At the same vvm, the superficial gas velocity is higher in the taller vessel."},
+  {"term": "shear", "ipa": "ʃɪə", "meaning": "The mechanical stress that fast-moving liquid puts on cells.", "example": "Bacteria are more resistant to shear than mammalian cells."},
+  {"term": "gradient", "ipa": "ˈɡreɪdiənt", "meaning": "A difference in concentration (of oxygen, substrate or pH) from one part of the vessel to another.", "example": "Large vessels can have substrate gradients near the feed point."},
+  {"term": "back-pressure", "ipa": "ˈbæk ˌpreʃə", "meaning": "The pressure kept in the headspace of a closed vessel.", "example": "Raising the back-pressure increases the oxygen driving force without changing the agitation."},
+  {"term": "scale-down model", "ipa": "ˈskeɪl daʊn ˈmɒdl", "meaning": "A small-scale system designed to reproduce the conditions of the large vessel.", "example": "We used a scale-down model to test the effect of longer mixing times."}
+ ],
+ "vocab_quiz": [
+  {"q": "The rotating blades that mix the broth are called…", "o": ["impellers", "spargers", "baffles"], "a": 0, "e": "Impellers are mounted on the agitator shaft."},
+  {"q": "A measure of how quickly oxygen moves from the bubbles into the liquid is the…", "o": ["kLa", "tip speed", "mixing time"], "a": 0, "e": "kLa = volumetric oxygen transfer coefficient."},
+  {"q": "The time needed to make the broth uniform after an addition is the…", "o": ["mixing time", "residence time", "lag phase"], "a": 0, "e": "Mixing time usually increases with scale."},
+  {"q": "Two vessels with the same shape and proportions show…", "o": ["geometric similarity", "back-pressure", "a gradient"], "a": 0, "e": "Geometric similarity = same proportions, different size."},
+  {"q": "A small system built to reproduce large-scale conditions is a…", "o": ["scale-down model", "seed vessel", "pilot batch"], "a": 0, "e": "Scale-down models help to predict problems before production."},
+  {"q": "The pressure kept in the headspace of a closed vessel is the…", "o": ["back-pressure", "tip speed", "shear"], "a": 0, "e": "Higher back-pressure increases oxygen solubility."}
+ ],
+ "reading": {
+  "title": "Bigger Is Not Simply Better",
+  "words": 376,
+  "paras": [
+   "A contract manufacturer near Shannon is preparing to move an enzyme process from its 100-litre pilot fermenter to a new 2,300-litre production vessel. The organism, a strain of <em>Bacillus subtilis</em>, grows fast and needs a lot of oxygen. The question now is how to keep it that way in a vessel twenty-three times larger.",
+   "The team cannot simply multiply everything by twenty-three. When a vessel gets bigger, its volume increases much faster than its surface area or its diameter. As a result, some parameters change in different directions, and it is impossible to keep all of them constant at the same time. The engineers have to choose which parameter matters most.",
+   "The first option is to keep the power per unit volume the same as in the pilot plant, at about 2.5 kW per cubic metre. This should give a kLa that is closer to the pilot value than any other option. However, the impeller tip speed would be around forty per cent higher, and the mixing time would still be about three times as long as at 100 litres.",
+   "The second option is to keep the tip speed constant. This produces lower shear, but the power per unit volume falls significantly, and so does the kLa. For a shear-sensitive animal cell line, that might be the safest choice. For a robust bacterium with a high oxygen demand, it is probably the riskiest one.",
+   "Mixing time is the hardest parameter to control. In a large vessel, a drop of feed or alkali takes longer to reach every part of the broth. Cells near the feed point may see more sugar than cells near the bottom, and these gradients can affect growth and product quality.",
+   "To reduce the risk, the team ran a scale-down study in the pilot plant. They added the feed in pulses to imitate a longer mixing time and measured the enzyme activity. The yield was only slightly lower than in the standard runs.",
+   "Their process engineer summarised the decision clearly: \"We are not trying to make the big vessel identical to the small one. We are trying to make the cells feel that nothing has changed.\"",
+   "The team recommended constant power per unit volume, combined with a higher back-pressure to support oxygen transfer."
+  ],
+  "quote": "We are trying to make the cells feel that nothing has changed.",
+  "questions": [
+   {"q": "Why can't the team keep every parameter constant?", "o": ["Because volume grows much faster than surface area and diameter, so parameters change differently.", "Because the production vessel has no impellers.", "Because the organism grows more slowly at large scale."], "a": 0, "e": "Volume increases faster than area or diameter, so not everything can stay constant."},
+   {"q": "What is the main disadvantage of keeping the tip speed constant for this process?", "o": ["The power per unit volume and the kLa fall.", "The shear becomes too high.", "The mixing time becomes shorter."], "a": 0, "e": "Constant tip speed → lower P/V → lower kLa, risky for a high oxygen demand."},
+   {"q": "How did the scale-down study imitate a longer mixing time?", "o": ["The feed was added in pulses.", "The agitation was stopped.", "The batch was run at a lower temperature."], "a": 0, "e": "Pulsed feeding simulates the zones a cell meets in a large vessel."},
+   {"q": "What did the team finally recommend?", "o": ["Constant power per unit volume, with a higher back-pressure.", "Constant tip speed, with a lower air flow.", "Staying at 100 litres."], "a": 0, "e": "Constant P/V plus higher back-pressure to support oxygen transfer."}
+  ]
+ },
+ "listening": {
+  "title": "The scale-up meeting",
+  "intro": "Gráinne (process engineer), Marek (production manager) and Siobhán (QA) are discussing the transfer of the enzyme process to fermenter F-501. Listen to their meeting.",
+  "lines": [
+   {"spk": "Marek", "voice": "bm_george", "text": "Right, Gráinne. Where are we with the scale-up to F-501?"},
+   {"spk": "Gráinne", "voice": "bf_isabella", "text": "We've modelled two options. With constant power per volume, the kLa at 2,300 litres is about a hundred and sixty per hour, compared with a hundred and eighty in the pilot fermenter."},
+   {"spk": "Marek", "voice": "bm_george", "text": "So slightly lower, but not dramatically. And the other option?"},
+   {"spk": "Gráinne", "voice": "bf_isabella", "text": "With constant tip speed, the kLa drops to about a hundred and ten. That's the lowest value of all the scenarios we looked at."},
+   {"spk": "Siobhán", "voice": "bf_emma", "text": "From a quality point of view, what worries me more is the mixing time. How much longer is it?"},
+   {"spk": "Gráinne", "voice": "bf_isabella", "text": "In the pilot vessel it's about eight seconds. In F-501 we expect roughly twenty-five, so about three times as long."},
+   {"spk": "Siobhán", "voice": "bf_emma", "text": "And did that affect the product in the scale-down runs?"},
+   {"spk": "Gráinne", "voice": "bf_isabella", "text": "The yield was about four per cent lower, and the impurity profile was the same. That was the most reassuring result."},
+   {"spk": "Marek", "voice": "bm_george", "text": "What about the tip speed with constant power per volume? Is it a problem?"},
+   {"spk": "Gráinne", "voice": "bf_isabella", "text": "It rises from three point one to about four point four metres per second. For Bacillus that's fine. It's far less sensitive to shear than a cell line."},
+   {"spk": "Marek", "voice": "bm_george", "text": "OK. So constant power per volume is the better option."},
+   {"spk": "Siobhán", "voice": "bf_emma", "text": "Agreed, but I'd like the first three batches to have extra sampling, especially near the feed point. They'll need a change control too."}
+  ],
+  "questions": [
+   {"q": "What is the kLa in the pilot fermenter?", "o": ["About 180 per hour.", "About 160 per hour.", "About 110 per hour."], "a": 0, "e": "160 is the predicted value at 2,300 L; 180 is the pilot value."},
+   {"q": "What worries Siobhán most?", "o": ["The longer mixing time.", "The higher tip speed.", "The cost of the new vessel."], "a": 0, "e": "She says the mixing time worries her more."},
+   {"q": "What happened in the scale-down runs?", "o": ["The yield was about 4% lower and the impurity profile did not change.", "The yield was 25% lower.", "The impurity profile got worse."], "a": 0, "e": "Yield about 4% lower, same impurity profile."},
+   {"q": "What does Siobhán ask for in the first three batches?", "o": ["Extra sampling, especially near the feed point.", "A lower tip speed.", "A smaller working volume."], "a": 0, "e": "Extra sampling near the feed point, plus a change control."}
+  ]
+ },
+ "expressions": [
+  {"phrase": "…compared with…", "example": "The kLa is about 160 per hour, compared with 180 in the pilot fermenter."},
+  {"phrase": "…is slightly / significantly lower than…", "example": "The yield was slightly lower than in the standard runs."},
+  {"phrase": "…is about three times as long as…", "example": "The mixing time is about three times as long as at 100 litres."},
+  {"phrase": "What worries me more is…", "example": "What worries me more is the mixing time near the feed point."},
+  {"phrase": "On balance, … is the better option because…", "example": "On balance, constant power per volume is the better option because it protects oxygen transfer."}
+ ],
+ "grammar": {
+  "title": "comparatives and superlatives with technical data",
+  "blocks": [
+   {"h": "A. Forming comparatives and superlatives", "p": "Short adjectives take <strong>-er / the -est</strong> (<em>high → higher → the highest</em>). Longer adjectives take <strong>more / the most</strong> (<em>efficient → more efficient → the most efficient</em>). Irregular: <em>good → better → the best</em>, <em>bad → worse → the worst</em>. Never use <em>more</em> and <em>-er</em> together.", "wrong": "The kLa in the pilot vessel is more higher than in F-501.", "right": "The kLa in the pilot vessel is higher than in F-501.", "examples": ["Mixing time is the most critical parameter at large scale.", "Constant tip speed gave the worst oxygen transfer of all the options."]},
+   {"h": "B. Saying how big the difference is", "p": "Put a modifier before the comparative: <strong>slightly / a little</strong> (small difference), <strong>much / far / significantly / considerably</strong> (big difference). With numbers, use <strong>about 20% higher</strong> or <strong>three times as long as</strong>. Do not use <em>very</em> with comparatives.", "wrong": "The yield was very lower in the scale-down runs.", "right": "The yield was slightly lower in the scale-down runs.", "examples": ["The tip speed is about forty per cent higher at 2,300 litres.", "The mixing time is about three times as long as in the pilot fermenter.", "Bacillus is far less sensitive to shear than a mammalian cell line."]},
+   {"h": "C. Equal and not equal: as … as", "p": "Use <strong>as + adjective + as</strong> for equal values and <strong>not as … as</strong> when the first value is lower. After a comparative, use <strong>than</strong>, never <em>that</em> or <em>as</em>.", "wrong": "The kLa at 2,300 litres is lower that in the pilot.", "right": "The kLa at 2,300 litres is lower than in the pilot.", "examples": ["The power per unit volume is as high as in the pilot plant.", "The large vessel does not mix as quickly as the small one."]},
+   {"h": "D. The more …, the more …", "p": "Use <strong>the + comparative …, the + comparative …</strong> to show that two things change together. This is very useful for explaining cause and effect in a process.", "examples": ["The bigger the vessel, the longer the mixing time.", "The higher the back-pressure, the more oxygen dissolves in the broth."]}
+  ],
+  "quiz": [
+   {"q": "The tip speed at 2,300 L is ___ than at 100 L.", "o": ["higher", "more higher", "highest"], "a": 0, "e": "Short adjective: high → higher. Never more + -er."},
+   {"q": "Of the three scenarios, constant tip speed gave ___ kLa.", "o": ["the lowest", "the lower", "lowest than"], "a": 0, "e": "Comparing three or more options: superlative with 'the'."},
+   {"q": "The mixing time is about three times ___ in the pilot vessel.", "o": ["as long as", "longer as", "as longer than"], "a": 0, "e": "times + as + adjective + as."},
+   {"q": "The yield was only ___ lower than in the standard runs (a difference of 4%).", "o": ["slightly", "very", "far"], "a": 0, "e": "Small difference → slightly. 'Very' cannot modify a comparative."},
+   {"q": "___ the vessel, the longer the mixing time.", "o": ["The bigger", "Bigger", "The biggest"], "a": 0, "e": "The + comparative …, the + comparative …"},
+   {"q": "On balance, constant P/V is the ___ option for this process.", "o": ["better", "more good", "best of"], "a": 0, "e": "good → better (irregular). Two options → comparative."}
+  ]
+ },
+ "writing": {
+  "situation": "Your production manager has asked you for a short recommendation before the change control meeting. You must compare two options for the transfer of a fermentation from the 100 L pilot fermenter to the 2,300 L production vessel: keeping constant power per unit volume, or keeping constant tip speed.",
+  "task": "Write 100–150 words: an email to your production manager that compares the two options using pilot and predicted data (kLa, tip speed, mixing time), and recommends one of them with a clear reason. Use at least five comparative or superlative forms (including one with <em>slightly / much / far</em> and one with <em>as … as</em>) and four words from today's vocabulary.",
+  "checklist": ["A greeting and the purpose of the email", "Data for both options, with clear comparisons", "At least five comparatives or superlatives", "One modifier (slightly / much / far) and one <em>as … as</em>", "At least four words from the vocabulary", "A clear recommendation with a reason, and a polite closing"],
+  "placeholder": "Hi Marek, as requested, here is a short comparison of the two scale-up options for F-501. …",
+  "model": ["Hi Marek,", "As requested, here is a short comparison of the two scale-up options for F-501.", "If we keep the power per unit volume constant, the predicted kLa is about 160 per hour, which is only slightly lower than the pilot value of 180. The tip speed will be about forty per cent higher, but Bacillus is far less sensitive to shear than a cell line.", "If we keep the tip speed constant, the kLa falls to about 110 per hour, the lowest value of all our scenarios. This would be the riskiest option for such a strong oxygen demand.", "In both cases, the mixing time will be about three times as long as at 100 litres, so I suggest extra sampling near the feed point in the first batches.", "On balance, constant power per unit volume is the better option, because it protects oxygen transfer.", "Best regards,", "Cristian"]
+ },
+ "speaking": {
+  "prompt": "A new graduate engineer asks you: \"Why can't we just make everything twenty-three times bigger?\" Explain the main challenge of scale-up in about one minute.",
+  "tips": ["Start with the main idea: volume grows faster than area and diameter.", "Compare two parameters with numbers or with <em>as … as</em>.", "Use one sentence with <em>the bigger …, the longer …</em>.", "Finish with what you choose to keep constant and why."],
+  "model": ["When a vessel gets bigger, its volume grows much faster than its diameter or surface area, so not every parameter can stay the same.", "For example, if we keep the power per unit volume constant, the tip speed becomes higher, and the mixing time is still about three times as long as in the pilot plant.", "Basically, the bigger the vessel, the longer it takes to mix the broth.", "So we choose the most critical parameter for the organism, which for an aerobic bacterium is usually oxygen transfer."]
+ },
+ "key_lesson": "To compare technical data clearly, say how big the difference is: slightly higher, far less sensitive, three times as long as, the lowest of all."
+}
