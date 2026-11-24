@@ -1,0 +1,496 @@
+{
+ "num": 7,
+ "date": "24 November 2026",
+ "area": "Upstream · Process strategy",
+ "title": "Batch, Fed-Batch and Continuous: Choosing a Strategy and a Feeding Profile",
+ "subtitle": "Learn to compare the three operating modes, describe a feeding profile, and talk about plans and schedules with the right future forms.",
+ "time": "40–50 minutes",
+ "goals": [
+  "Explain the differences between batch, fed-batch and continuous operation with precise technical vocabulary.",
+  "Describe a feeding profile (constant, exponential, DO-stat) and say why it is chosen.",
+  "Use <strong>will, going to, the present continuous and the future continuous</strong> correctly in production planning.",
+  "Write a clear production plan for the next 48 hours."
+ ],
+ "vocab": [
+  {
+   "term": "batch culture",
+   "ipa": "bætʃ ˈkʌltʃə",
+   "meaning": "A process where all the nutrients are added at the start and nothing is added or removed except gases and pH control agents.",
+   "example": "In a batch culture, growth stops when the main substrate runs out."
+  },
+  {
+   "term": "fed-batch",
+   "ipa": "ˌfed ˈbætʃ",
+   "meaning": "A process where nutrients are added during the run, but no broth is removed until harvest.",
+   "example": "Most of our protein processes are run as fed-batch."
+  },
+  {
+   "term": "continuous culture",
+   "ipa": "kənˈtɪnjuəs ˈkʌltʃə",
+   "meaning": "A process where fresh medium is added and broth is removed at the same rate, so the volume stays constant.",
+   "example": "A continuous culture can run for weeks if contamination is avoided."
+  },
+  {
+   "term": "chemostat",
+   "ipa": "ˈkiːməʊstæt",
+   "meaning": "A continuous culture in which growth is controlled by the supply of one limiting nutrient.",
+   "example": "At steady state in a chemostat, the specific growth rate equals the dilution rate."
+  },
+  {
+   "term": "dilution rate",
+   "ipa": "daɪˈluːʃn reɪt",
+   "meaning": "The feed flow divided by the working volume (D = F/V), usually given per hour.",
+   "example": "If the dilution rate is higher than the maximum growth rate, the cells are washed out."
+  },
+  {
+   "term": "washout",
+   "ipa": "ˈwɒʃaʊt",
+   "meaning": "The loss of cells from a continuous culture because they leave faster than they grow.",
+   "example": "We reduced the feed to avoid washout."
+  },
+  {
+   "term": "limiting substrate",
+   "ipa": "ˈlɪmɪtɪŋ ˈsʌbstreɪt",
+   "meaning": "The nutrient whose availability controls how fast the cells grow.",
+   "example": "Glucose is the limiting substrate during the fed-batch phase."
+  },
+  {
+   "term": "feeding profile",
+   "ipa": "ˈfiːdɪŋ ˈprəʊfaɪl",
+   "meaning": "The plan that says how the feed rate changes over time.",
+   "example": "The new feeding profile starts with an exponential phase."
+  },
+  {
+   "term": "exponential feed",
+   "ipa": "ˌekspəˈnenʃl fiːd",
+   "meaning": "A feed rate that increases over time to keep the specific growth rate constant.",
+   "example": "An exponential feed keeps the growth rate below the critical value."
+  },
+  {
+   "term": "overflow metabolism",
+   "ipa": "ˈəʊvəfləʊ məˈtæbəlɪzəm",
+   "meaning": "When cells take up more sugar than they can fully oxidise and form by-products such as acetate or ethanol.",
+   "example": "Too much glucose caused overflow metabolism and acetate built up."
+  },
+  {
+   "term": "DO-stat",
+   "ipa": "ˌdiː ˈəʊ stæt",
+   "meaning": "A feeding strategy in which feed is added when the dissolved oxygen rises, showing that the substrate is used up.",
+   "example": "We switched to a DO-stat because the off-line glucose results were slow."
+  },
+  {
+   "term": "steady state",
+   "ipa": "ˈstedi steɪt",
+   "meaning": "The condition in a continuous culture where cell density and substrate concentration stay constant over time.",
+   "example": "The culture reached steady state after about three residence times."
+  }
+ ],
+ "vocab_quiz": [
+  {
+   "q": "In a chemostat at steady state, the specific growth rate is equal to the…",
+   "o": [
+    "dilution rate",
+    "feeding profile",
+    "working volume"
+   ],
+   "a": 0,
+   "e": "At steady state, growth rate = dilution rate."
+  },
+  {
+   "q": "Cells leave the vessel faster than they can grow. This is called…",
+   "o": [
+    "washout",
+    "steady state",
+    "overflow metabolism"
+   ],
+   "a": 0,
+   "e": "Washout happens when the dilution rate is too high."
+  },
+  {
+   "q": "The culture received too much glucose and formed acetate. This is an example of…",
+   "o": [
+    "overflow metabolism",
+    "a DO-stat",
+    "a limiting substrate"
+   ],
+   "a": 0,
+   "e": "Excess sugar leads to by-products such as acetate."
+  },
+  {
+   "q": "Nutrients are added during the run, but nothing is removed until harvest. This is…",
+   "o": [
+    "fed-batch",
+    "batch culture",
+    "continuous culture"
+   ],
+   "a": 0,
+   "e": "Fed-batch: feed in, no broth out."
+  },
+  {
+   "q": "A rise in dissolved oxygen tells the controller to add more feed. This strategy is a…",
+   "o": [
+    "DO-stat",
+    "chemostat",
+    "batch culture"
+   ],
+   "a": 0,
+   "e": "In a DO-stat, the DO rise shows the substrate is used up."
+  },
+  {
+   "q": "The nutrient whose availability controls the growth rate is the…",
+   "o": [
+    "limiting substrate",
+    "dilution rate",
+    "residence time"
+   ],
+   "a": 0,
+   "e": "For example, glucose in a glucose-limited fed-batch."
+  }
+ ],
+ "reading": {
+  "title": "One Vessel, Three Ways to Run It",
+  "words": 376,
+  "paras": [
+   "At a biopharmaceutical plant near Cork, the process development team is preparing the technical transfer of a new microbial process for a recombinant enzyme to the 2,300 L production bioreactor. Before the transfer meeting, the team has to answer a simple but important question: how exactly will the vessel be operated?",
+   "The first option is a <strong>batch</strong> process. All the medium is added at the start, the vessel is inoculated, and nothing else goes in except air, antifoam and the agents used for pH control. Batch runs are easy to operate and easy to document. However, the cells only grow while the substrate lasts, and a high initial sugar concentration can cause overflow metabolism, so the final cell density is usually modest.",
+   "The second option is <strong>fed-batch</strong>. The run begins as a short batch phase and, once the initial sugar is used up, a concentrated feed is started. The feed is the main control tool: by setting the feed rate, the team sets the growth rate, and with it the oxygen demand and the heat that has to be removed. Most industrial processes for recombinant proteins are run in this mode.",
+   "The third option is <strong>continuous</strong> culture. Fresh medium enters and broth leaves at the same rate, so the volume stays constant and the culture can be held at steady state. Continuous operation can give a very high productivity per litre of vessel, but long runs increase the risk of contamination and of genetic drift in the host, and the control strategy is harder to justify to the authorities.",
+   "For this enzyme, the team chooses fed-batch. The next decision is the <strong>feeding profile</strong>. A constant feed is simple, but as the biomass grows, each cell receives less and less substrate, so the growth rate falls. An exponential feed rises with the biomass and keeps the specific growth rate constant, below the value at which acetate begins to accumulate.",
+   "The team will run two confirmation batches at 100 L first, and they are already booking the analytical capacity for them. <strong>A feeding profile is not only a recipe; it is the decision that fixes how hard the cells, the cooling system and the operators will have to work.</strong>",
+   "The manager closes the meeting with a familiar warning."
+  ],
+  "quote": "Feed the cells, not the by-products.",
+  "questions": [
+   {
+    "q": "Why is the final cell density usually limited in a batch process?",
+    "o": [
+     "Growth stops when the substrate runs out, and a high initial sugar level can cause overflow metabolism.",
+     "Because broth is removed continuously during the run.",
+     "Because the pH cannot be controlled in batch mode."
+    ],
+    "a": 0,
+    "e": "All the substrate is given at the start, which limits density and can cause by-products."
+   },
+   {
+    "q": "According to the text, what does the feed rate in a fed-batch process control?",
+    "o": [
+     "The growth rate, and with it the oxygen demand and the heat to be removed.",
+     "Only the final volume of the batch.",
+     "The sterilisation time of the vessel."
+    ],
+    "a": 0,
+    "e": "The feed sets the growth rate, and therefore oxygen and heat."
+   },
+   {
+    "q": "What are the disadvantages of continuous culture mentioned in the text?",
+    "o": [
+     "Contamination risk, genetic drift and a control strategy that is harder to justify.",
+     "A low productivity per litre of vessel.",
+     "The volume cannot be kept constant."
+    ],
+    "a": 0,
+    "e": "Long runs bring contamination, genetic drift and regulatory complexity."
+   },
+   {
+    "q": "Why does the team prefer an exponential feed to a constant feed?",
+    "o": [
+     "It keeps the specific growth rate constant and below the level where acetate accumulates.",
+     "It uses less feed in total.",
+     "It makes the batch phase unnecessary."
+    ],
+    "a": 0,
+    "e": "An exponential feed rises with the biomass, so the growth rate stays constant."
+   }
+  ]
+ },
+ "listening": {
+  "title": "Planning the next 48 hours",
+  "intro": "Síle (production planner), Eoin (upstream supervisor) and Pavel (process engineer) are planning fermenter F-301 for the next two days. Listen for who does what, and when.",
+  "lines": [
+   {
+    "spk": "Síle",
+    "voice": "bf_emma",
+    "text": "Right, F-301. The sterilisation finishes at six this evening, so when are we inoculating?"
+   },
+   {
+    "spk": "Eoin",
+    "voice": "bm_george",
+    "text": "We're inoculating at eight tonight. The seed bioreactor is already at the target cell density, so that time is fixed."
+   },
+   {
+    "spk": "Síle",
+    "voice": "bf_emma",
+    "text": "And the batch phase?"
+   },
+   {
+    "spk": "Eoin",
+    "voice": "bm_george",
+    "text": "About ten hours. The initial sugar will be used up at around six in the morning, and that's when the feed starts."
+   },
+   {
+    "spk": "Pavel",
+    "voice": "bm_lewis",
+    "text": "We're going to use the new exponential profile this time, not the constant feed. I've loaded it into the recipe already."
+   },
+   {
+    "spk": "Síle",
+    "voice": "bf_emma",
+    "text": "Is that a change we need to document?"
+   },
+   {
+    "spk": "Pavel",
+    "voice": "bm_lewis",
+    "text": "It's approved as a planned deviation, and I'll attach the calculation to the batch record before the run starts."
+   },
+   {
+    "spk": "Eoin",
+    "voice": "bm_george",
+    "text": "One thing: between ten and twelve tomorrow morning we'll be feeding at the maximum rate, and that's exactly when the cooling demand peaks."
+   },
+   {
+    "spk": "Síle",
+    "voice": "bf_emma",
+    "text": "That's a problem. Maintenance are working on the chiller tomorrow morning."
+   },
+   {
+    "spk": "Pavel",
+    "voice": "bm_lewis",
+    "text": "Then I'll ask them to move it to the afternoon. If the cooling is limited, we'll have to reduce the feed, and the growth rate will drop."
+   },
+   {
+    "spk": "Eoin",
+    "voice": "bm_george",
+    "text": "Agreed. And harvest?"
+   },
+   {
+    "spk": "Pavel",
+    "voice": "bm_lewis",
+    "text": "We're expecting to harvest on Thursday morning, but that depends on the cell density. I'm not promising a time yet."
+   },
+   {
+    "spk": "Síle",
+    "voice": "bf_emma",
+    "text": "Fine. I'm sending the plan round at five, so tell me before then if anything changes."
+   },
+   {
+    "spk": "Eoin",
+    "voice": "bm_george",
+    "text": "Will do. I'm on the night shift, so I'll be watching the feed start myself."
+   }
+  ],
+  "questions": [
+   {
+    "q": "When does the feed start, according to Eoin?",
+    "o": [
+     "At around six in the morning, when the initial sugar is used up.",
+     "At eight tonight, at the same time as the inoculation.",
+     "On Thursday morning, just before the harvest."
+    ],
+    "a": 0,
+    "e": "The batch phase lasts about ten hours after the eight o'clock inoculation."
+   },
+   {
+    "q": "What is the change in this run?",
+    "o": [
+     "An exponential feeding profile instead of a constant feed.",
+     "A continuous culture instead of a fed-batch.",
+     "A new seed bioreactor."
+    ],
+    "a": 0,
+    "e": "Pavel has loaded the new exponential profile into the recipe."
+   },
+   {
+    "q": "Why is the maintenance work on the chiller a problem?",
+    "o": [
+     "The cooling demand peaks at the same time as the maximum feed rate.",
+     "The chiller is needed for the sterilisation at six.",
+     "Maintenance want to work during the night shift."
+    ],
+    "a": 0,
+    "e": "Maximum feed between ten and twelve is also the cooling peak."
+   },
+   {
+    "q": "What does Pavel say about the harvest?",
+    "o": [
+     "They expect Thursday morning, but he will not commit to a time yet.",
+     "It is fixed for Thursday at eight o'clock.",
+     "It will not happen before Friday."
+    ],
+    "a": 0,
+    "e": "He says it depends on the cell density and he is not promising a time."
+   }
+  ]
+ },
+ "expressions": [
+  {
+   "phrase": "We're inoculating at…",
+   "example": "We're inoculating at eight tonight; the time is fixed."
+  },
+  {
+   "phrase": "We're going to use… this time",
+   "example": "We're going to use the exponential profile this time, not the constant feed."
+  },
+  {
+   "phrase": "That's exactly when…",
+   "example": "That's exactly when the cooling demand peaks."
+  },
+  {
+   "phrase": "That depends on…",
+   "example": "The harvest time depends on the cell density."
+  },
+  {
+   "phrase": "I'm not promising a time yet.",
+   "example": "We're expecting Thursday, but I'm not promising a time yet."
+  }
+ ],
+ "grammar": {
+  "title": "future forms: will, going to, present continuous and future continuous",
+  "blocks": [
+   {
+    "h": "A. Present continuous: the fixed point in the schedule",
+    "p": "For an arrangement already in the diary — a time agreed with other people — use the <strong>present continuous</strong> (<em>am/is/are + -ing</em>). This is the normal form in a production plan: the time is fixed, not a prediction.",
+    "wrong": "We will inoculate at eight tonight; it is in the plan.",
+    "right": "We're inoculating at eight tonight; it's in the plan.",
+    "examples": [
+     "We're inoculating F-301 at eight tonight.",
+     "Maintenance are working on the chiller tomorrow morning.",
+     "I'm sending the plan round at five."
+    ]
+   },
+   {
+    "h": "B. going to: a decision already taken, or evidence in front of you",
+    "p": "Use <strong>going to</strong> for an intention decided <em>before</em> you speak, and for a prediction based on something you can see now (a trend, a graph, an alarm).",
+    "wrong": "We will use the exponential profile; we decided it last week.",
+    "right": "We're going to use the exponential profile; we decided it last week.",
+    "examples": [
+     "We're going to run two confirmation batches at 100 L.",
+     "Look at the dissolved oxygen trend — it's going to hit the lower limit.",
+     "They aren't going to approve the change before Friday."
+    ]
+   },
+   {
+    "h": "C. will: decided while you speak, promises, offers and neutral predictions",
+    "p": "Use <strong>will</strong> ('ll) for a decision you take at that moment, for a promise or an offer, and for a prediction with no present evidence. Note the GMP favourite: <em>will be + past participle</em> (<em>The samples will be analysed on Thursday</em>). After <em>if / when / as soon as</em>, use the present tense, not <em>will</em>.",
+    "wrong": "If the cooling will be limited, we reduce the feed.",
+    "right": "If the cooling is limited, we'll reduce the feed.",
+    "examples": [
+     "I'll attach the calculation to the batch record.",
+     "The feed will probably start at around six.",
+     "As soon as the sugar is used up, the feed will start."
+    ]
+   },
+   {
+    "h": "D. Future continuous: in progress at a future moment",
+    "p": "Use <strong>will be + -ing</strong> for an activity that will already be in progress at a given future time. It is very useful to explain overlaps between two activities, which is exactly what a 48-hour plan has to do.",
+    "wrong": "At eleven tomorrow we will feed at the maximum rate, so don't stop the chiller.",
+    "right": "At eleven tomorrow we'll be feeding at the maximum rate, so don't stop the chiller.",
+    "examples": [
+     "Between ten and twelve we'll be feeding at the maximum rate.",
+     "I'll be watching the feed start myself: I'm on the night shift.",
+     "This time tomorrow the culture will still be growing exponentially."
+    ]
+   }
+  ],
+  "quiz": [
+   {
+    "q": "The time is agreed with QC and it is in the plan: \"We ___ at eight tonight.\"",
+    "o": [
+     "'re inoculating",
+     "will inoculate",
+     "will be inoculate"
+    ],
+    "a": 0,
+    "e": "A fixed arrangement in the schedule: present continuous."
+   },
+   {
+    "q": "You decided last week to change the profile: \"We ___ the exponential feed this time.\"",
+    "o": [
+     "'re going to use",
+     "will have used",
+     "use"
+    ],
+    "a": 0,
+    "e": "A decision taken before speaking: going to."
+   },
+   {
+    "q": "Síle asks who will talk to maintenance and you volunteer: \"___ them now.\"",
+    "o": [
+     "I'll call",
+     "I'm going to call",
+     "I call"
+    ],
+    "a": 0,
+    "e": "A decision made at the moment of speaking, and an offer: will."
+   },
+   {
+    "q": "Choose the correct sentence about an overlap in the plan.",
+    "o": [
+     "At eleven we'll be feeding at the maximum rate.",
+     "At eleven we will feed at the maximum rate already.",
+     "At eleven we are going to feeding at the maximum rate."
+    ],
+    "a": 0,
+    "e": "Future continuous for an activity in progress at a future time."
+   },
+   {
+    "q": "Complete: \"As soon as the initial glucose ___ used up, the feed will start.\"",
+    "o": [
+     "is",
+     "will be",
+     "is going to be"
+    ],
+    "a": 0,
+    "e": "After as soon as / when / if, use the present tense."
+   },
+   {
+    "q": "The dissolved oxygen trend is falling fast on the screen. The best comment is:",
+    "o": [
+     "It's going to hit the lower limit.",
+     "It will hit the lower limit, I suppose.",
+     "It hits the lower limit."
+    ],
+    "a": 0,
+    "e": "A prediction based on evidence you can see now: going to."
+   }
+  ]
+ },
+ "writing": {
+  "situation": "You are the upstream supervisor at a fermentation plant in Ireland. Fermenter F-301 is being sterilised now and the next two days are busy: inoculation tonight, a fed-batch feed starting in the morning with the new exponential profile, and a possible harvest on Thursday. Maintenance also want to work on the chiller.",
+  "task": "Write 100–150 words: a production plan for the next 48 hours for your team and for the planning department. Give the fixed times, the decisions already taken, what you will do if the cooling is limited, and what will be happening at the peak of the feed. Use at least one example of each future form (present continuous, going to, will, future continuous) and four words from today's vocabulary.",
+  "checklist": [
+   "A short opening line that says what the plan covers (F-301, next 48 hours)",
+   "Fixed times with the present continuous (we're inoculating at…)",
+   "A decision already taken with going to (we're going to use…)",
+   "An offer, promise or conditional action with will (I'll ask maintenance…, if the cooling is limited, we'll…)",
+   "An overlap with the future continuous (between ten and twelve we'll be feeding…)",
+   "At least four words from the vocabulary (fed-batch, feeding profile, exponential feed, limiting substrate…)",
+   "A clear closing line: who to contact if the plan changes"
+  ],
+  "placeholder": "F-301 — plan for the next 48 hours.\nWe're inoculating tonight at eight. The batch phase …",
+  "model": [
+   "F-301 — production plan for the next 48 hours.",
+   "Sterilisation finishes at six this evening and we're inoculating at eight tonight; the seed vessel is already at the target cell density. The batch phase will last about ten hours, so the limiting substrate will be used up at around six in the morning, and that is when the feed starts.",
+   "This time we're going to use the new exponential feed instead of the constant profile. The calculation will be attached to the batch record before the run starts.",
+   "Between ten and twelve tomorrow morning we'll be feeding at the maximum rate, which is also the peak of the cooling demand, so I'll ask maintenance to move the chiller work to the afternoon. If the cooling is limited, we'll reduce the feed rate and accept a lower growth rate.",
+   "We're expecting to harvest on Thursday morning, depending on the cell density.",
+   "Please contact me before five if anything changes.",
+   "Cristian"
+  ]
+ },
+ "speaking": {
+  "prompt": "In the Monday production meeting, present the plan for F-301 for the next 48 hours: the fixed times, the change in the feeding profile, and the one risk you have identified. Speak for about one minute.",
+  "tips": [
+   "Start with the fixed points in the diary: <em>We're inoculating at eight tonight…</em>",
+   "Then the decision already taken: <em>We're going to use the exponential feed…</em>",
+   "Name the overlap with the future continuous: <em>Between ten and twelve we'll be feeding at the maximum rate…</em>",
+   "Finish with the action you are taking about the risk: <em>I'll ask maintenance to…</em>"
+  ],
+  "model": [
+   "We're inoculating F-301 at eight tonight, and the batch phase lasts about ten hours, so the feed starts at around six in the morning.",
+   "This time we're going to use the new exponential profile, because it keeps the growth rate constant and below the level where acetate accumulates.",
+   "The one risk is tomorrow morning: between ten and twelve we'll be feeding at the maximum rate, and that is also the peak of the cooling demand.",
+   "So I'll ask maintenance to move the chiller work to the afternoon, and if the cooling is still limited, we'll reduce the feed and accept a slower run."
+  ]
+ },
+ "key_lesson": "In planning, let the form carry the meaning: a diary time is the present continuous (we're inoculating at eight), a decision already taken is going to (we're going to use the exponential feed), a decision made while you speak or a promise is will (I'll ask maintenance), and an activity in progress at a future moment is the future continuous (at eleven we'll be feeding at the maximum rate)."
+}
