@@ -1,0 +1,489 @@
+{
+ "num": 8,
+ "date": "25 November 2026",
+ "area": "Microbiology · Investigation",
+ "title": "Investigating a Contamination: What Must Have Happened?",
+ "subtitle": "Learn to follow the evidence in a contamination investigation, exclude routes one by one, and draw conclusions with past modals of deduction.",
+ "time": "40–50 minutes",
+ "goals": [
+  "Name the possible routes of contamination into a bioreactor and the evidence used to check each one.",
+  "Use precise investigation vocabulary: root cause, bioburden, integrity test, deviation, CAPA.",
+  "Use <strong>must have, might have, can't have and should have</strong> to express certainty, possibility, impossibility and criticism about the past.",
+  "Write a short, clear investigation summary for Quality Assurance."
+ ],
+ "vocab": [
+  {
+   "term": "contaminant",
+   "ipa": "kənˈtæmɪnənt",
+   "meaning": "An organism (or substance) that is present in a culture or product but should not be there.",
+   "example": "The contaminant grew faster than our production strain."
+  },
+  {
+   "term": "root cause",
+   "ipa": "ˌruːt ˈkɔːz",
+   "meaning": "The basic reason why a problem happened; if you remove it, the problem should not happen again.",
+   "example": "The investigation identified the feed filter as the most probable root cause."
+  },
+  {
+   "term": "Gram stain",
+   "ipa": "ˈɡræm steɪn",
+   "meaning": "A staining method that separates bacteria into Gram-positive (purple) and Gram-negative (pink) groups.",
+   "example": "The Gram stain showed large Gram-positive rods among our Gram-negative cells."
+  },
+  {
+   "term": "spore-former",
+   "ipa": "ˈspɔː ˌfɔːmə",
+   "meaning": "A bacterium, such as Bacillus, that can produce resistant spores which survive heat and drying.",
+   "example": "Spore-formers are a typical risk in raw materials and feed solutions."
+  },
+  {
+   "term": "bioburden",
+   "ipa": "ˈbaɪəʊˌbɜːdn",
+   "meaning": "The number of viable microorganisms in a material before it is sterilised.",
+   "example": "The bioburden of the feed solution was much higher than usual."
+  },
+  {
+   "term": "sterilising-grade filter",
+   "ipa": "ˈsterəlaɪzɪŋ ɡreɪd ˈfɪltə",
+   "meaning": "A filter, usually 0.2 µm, validated to remove bacteria from a liquid or a gas.",
+   "example": "The glucose feed passes through a sterilising-grade filter on its way into the vessel."
+  },
+  {
+   "term": "integrity test",
+   "ipa": "ɪnˈteɡrəti test",
+   "meaning": "A non-destructive test, such as a bubble point test, that shows whether a filter is intact.",
+   "example": "The post-use integrity test of the feed filter failed."
+  },
+  {
+   "term": "steam-in-place (SIP)",
+   "ipa": "ˌstiːm ɪn ˈpleɪs",
+   "meaning": "Sterilising a vessel and its lines with steam without taking them apart.",
+   "example": "The SIP records showed that every probe reached 121 °C."
+  },
+  {
+   "term": "cold spot",
+   "ipa": "ˈkəʊld spɒt",
+   "meaning": "The place in a vessel or line that heats up most slowly during sterilisation.",
+   "example": "A temperature probe is placed at the cold spot near the harvest valve."
+  },
+  {
+   "term": "aseptic connection",
+   "ipa": "eɪˈseptɪk kəˈnekʃn",
+   "meaning": "A connection made between two sterile systems without letting microorganisms in.",
+   "example": "The new feed line was attached with an aseptic connection."
+  },
+  {
+   "term": "deviation",
+   "ipa": "ˌdiːviˈeɪʃn",
+   "meaning": "A documented departure from an approved procedure, specification or expected result.",
+   "example": "A deviation was opened the same morning the contamination was found."
+  },
+  {
+   "term": "CAPA",
+   "ipa": "ˈkæpə",
+   "meaning": "Corrective and Preventive Action: the actions taken to fix a problem and stop it from happening again.",
+   "example": "The CAPA includes a shorter hold time for the feed solution."
+  }
+ ],
+ "vocab_quiz": [
+  {
+   "q": "A test that shows whether a filter is still intact after use is called…",
+   "o": [
+    "an integrity test",
+    "a Gram stain",
+    "a bioburden test"
+   ],
+   "a": 0,
+   "e": "A bubble point test is a typical integrity test."
+  },
+  {
+   "q": "The place in the vessel that heats up most slowly during sterilisation is the…",
+   "o": [
+    "cold spot",
+    "root cause",
+    "aseptic connection"
+   ],
+   "a": 0,
+   "e": "The cold spot is monitored with its own probe."
+  },
+  {
+   "q": "The number of viable microorganisms in a solution before sterilisation is its…",
+   "o": [
+    "bioburden",
+    "contaminant",
+    "deviation"
+   ],
+   "a": 0,
+   "e": "Bioburden is measured before filtration or sterilisation."
+  },
+  {
+   "q": "Bacillus can survive heat and drying because it is a…",
+   "o": [
+    "spore-former",
+    "sterilising-grade filter",
+    "Gram-negative rod"
+   ],
+   "a": 0,
+   "e": "Spores are much more resistant than vegetative cells."
+  },
+  {
+   "q": "The actions taken to fix the problem and prevent it from happening again are the…",
+   "o": [
+    "CAPA",
+    "SIP",
+    "bioburden"
+   ],
+   "a": 0,
+   "e": "CAPA = Corrective and Preventive Action."
+  },
+  {
+   "q": "The basic reason why the problem happened is the…",
+   "o": [
+    "root cause",
+    "cold spot",
+    "integrity test"
+   ],
+   "a": 0,
+   "e": "Remove the root cause and the problem should not come back."
+  }
+ ],
+ "reading": {
+  "title": "Following the Evidence",
+  "words": 372,
+  "paras": [
+   "At a contract manufacturing plant in County Limerick, a 2,300 L fed-batch run of a recombinant protein was going well until hour 22. Then an operator looked at a routine sample under the microscope and saw something that should not have been there: large rods, some of them with spores, among the small <em>E. coli</em> cells. A Gram stain confirmed a Gram-positive spore-former, and the contaminant was later identified as a <em>Bacillus</em> species.",
+   "A deviation was opened the same morning. Rather than guessing, the investigation team listed every possible route into the vessel — the inoculum, the medium, the air, the feed, the sampling valve and the vessel itself — and checked the evidence for each one.",
+   "The inoculum was the first route to be excluded. The samples from the seed bioreactor were clean on both the microscope and the agar plates, so the contaminant <strong>can't have come</strong> from the seed train. The steam-in-place records were also normal: every temperature probe, including the one at the cold spot near the harvest valve, had stayed at 121 °C for the full validated time.",
+   "The feed told a different story. The glucose solution had been prepared three days earlier and held at room temperature, and its bioburden was high, with spore-forming rods that looked like the contaminant. Even more important, the post-use integrity test of the sterilising-grade filter on the feed line failed. The filter had been replaced during the night shift, and there was no record of a pre-use test.",
+   "The conclusion was clear. The contaminant <strong>must have entered</strong> with the feed. The filter <strong>might have been damaged</strong> when it was installed, or the very high bioburden <strong>may have challenged</strong> it beyond its capacity; the evidence could not separate the two. Either way, the replacement filter <strong>should have been tested</strong> before use, as the site procedure requires.",
+   "The CAPA plan covered both causes: a shorter hold time for the feed solution, a bioburden check before filtration, and a batch record step that cannot be signed until the integrity test result is attached.",
+   "At the closing meeting, the QA lead summed up the method."
+  ],
+  "quote": "First prove where it can't have come from. Then the evidence will show you where it must have come from.",
+  "questions": [
+   {
+    "q": "Why did the team exclude the seed train as the route of contamination?",
+    "o": [
+     "The seed bioreactor samples were clean on the microscope and on the agar plates.",
+     "The steam-in-place records of the seed bioreactor were normal.",
+     "The contaminant was Gram-negative, like the production strain."
+    ],
+    "a": 0,
+    "e": "Clean seed samples mean the contaminant can't have come from the seed train."
+   },
+   {
+    "q": "Which two pieces of evidence pointed to the feed?",
+    "o": [
+     "A high bioburden in the feed solution and a failed post-use integrity test of the feed filter.",
+     "A failed SIP at the cold spot and a contaminated sampling valve.",
+     "A failed pre-use integrity test and a contaminated seed bioreactor."
+    ],
+    "a": 0,
+    "e": "The feed had spore-forming rods and the feed filter failed its post-use test."
+   },
+   {
+    "q": "Why can't the team say exactly how the filter failed?",
+    "o": [
+     "The evidence could not separate damage during installation from a challenge by the very high bioburden.",
+     "The filter was thrown away before anyone could test it.",
+     "The integrity test result was lost during the night shift."
+    ],
+    "a": 0,
+    "e": "Two possibilities remain, so the text uses might have and may have."
+   },
+   {
+    "q": "What does the new batch record step do?",
+    "o": [
+     "It cannot be signed until the integrity test result is attached.",
+     "It removes the need for a bioburden check.",
+     "It allows the night shift to replace filters without a test."
+    ],
+    "a": 0,
+    "e": "It makes the integrity test impossible to skip."
+   }
+  ]
+ },
+ "listening": {
+  "title": "Something is growing in the seed vessel",
+  "intro": "Aoife (QA), Declan (production supervisor) and Marta (microbiologist) meet the morning after a problem in the 100 L seed bioreactor. Listen for what they exclude, what they conclude and who does what next.",
+  "lines": [
+   {
+    "spk": "Aoife",
+    "voice": "bf_isabella",
+    "text": "So, the 100 L seed vessel. When did you first see that something was wrong?"
+   },
+   {
+    "spk": "Declan",
+    "voice": "bm_lewis",
+    "text": "At about two yesterday morning. The pH dropped much faster than usual, and the oxygen demand went up at the same time."
+   },
+   {
+    "spk": "Marta",
+    "voice": "bf_emma",
+    "text": "And the plates from yesterday's six o'clock sample confirmed it. There are yellow colonies on them, and our strain always gives white ones."
+   },
+   {
+    "spk": "Aoife",
+    "voice": "bf_isabella",
+    "text": "Could it have come in with the inoculum?"
+   },
+   {
+    "spk": "Marta",
+    "voice": "bf_emma",
+    "text": "It can't have. I checked the shake flasks before the transfer, and they were pure."
+   },
+   {
+    "spk": "Declan",
+    "voice": "bm_lewis",
+    "text": "What about the medium? It was sterilised in place, wasn't it?"
+   },
+   {
+    "spk": "Marta",
+    "voice": "bf_emma",
+    "text": "Yes, and the sterilisation records are fine. The timing points to sampling. It must have got in with the midnight sample."
+   },
+   {
+    "spk": "Aoife",
+    "voice": "bf_isabella",
+    "text": "Who took that sample?"
+   },
+   {
+    "spk": "Declan",
+    "voice": "bm_lewis",
+    "text": "One of the new operators. He might have forgotten to steam the sampling valve afterwards. There's no entry for it in the steam log."
+   },
+   {
+    "spk": "Aoife",
+    "voice": "bf_isabella",
+    "text": "Then someone should have been with him. That's a training gap, not just his mistake."
+   },
+   {
+    "spk": "Declan",
+    "voice": "bm_lewis",
+    "text": "Agreed. I'll go through the sampling SOP with the whole shift today."
+   },
+   {
+    "spk": "Marta",
+    "voice": "bf_emma",
+    "text": "And I'll send the isolate for identification, so we'll know whether it's an environmental organism."
+   },
+   {
+    "spk": "Aoife",
+    "voice": "bf_isabella",
+    "text": "Good. I'm opening the deviation now, and we'll decide about the batch once we have the identification."
+   }
+  ],
+  "questions": [
+   {
+    "q": "What were the first signs of the problem?",
+    "o": [
+     "The pH dropped much faster than usual and the oxygen demand went up.",
+     "The operator saw spores under the microscope at midnight.",
+     "The temperature rose and the vessel started to foam."
+    ],
+    "a": 0,
+    "e": "Declan describes a fast pH drop and a higher oxygen demand at about two yesterday morning."
+   },
+   {
+    "q": "How does Marta know the colonies are not their production strain?",
+    "o": [
+     "They are yellow, and their strain always gives white colonies.",
+     "They grew only on the plates from the shake flasks.",
+     "The Gram stain showed Gram-positive rods."
+    ],
+    "a": 0,
+    "e": "Colony colour: yellow instead of white."
+   },
+   {
+    "q": "Why does Declan think the sampling valve is the route?",
+    "o": [
+     "There is no entry in the steam log after the midnight sample.",
+     "The sterilisation records of the medium are incomplete.",
+     "The new operator told him he had forgotten."
+    ],
+    "a": 0,
+    "e": "No steam log entry, so the operator might have forgotten to steam the valve."
+   },
+   {
+    "q": "What is Aoife's view of the operator's mistake?",
+    "o": [
+     "Someone should have been with him; it is a training gap.",
+     "He must have done it on purpose.",
+     "It can't have caused the contamination."
+    ],
+    "a": 0,
+    "e": "She says someone should have been with him: a training gap, not just his mistake."
+   }
+  ]
+ },
+ "expressions": [
+  {
+   "phrase": "We can rule out…",
+   "example": "We can rule out the seed train: the shake flasks were pure."
+  },
+  {
+   "phrase": "The timing points to…",
+   "example": "The timing points to the midnight sample."
+  },
+  {
+   "phrase": "There's no record of…",
+   "example": "There's no record of a pre-use integrity test."
+  },
+  {
+   "phrase": "Either way, …",
+   "example": "Either way, the filter should have been tested before use."
+  },
+  {
+   "phrase": "We'll decide once we have…",
+   "example": "We'll decide about the batch once we have the identification."
+  }
+ ],
+ "grammar": {
+  "title": "past modals of deduction: must have, might have, can't have, should have",
+  "blocks": [
+   {
+    "h": "A. must have + past participle: the evidence makes you almost sure",
+    "p": "When the evidence points strongly to one explanation, use <strong>must have</strong> + past participle. Do not forget <em>have</em>, and use the past participle, not the past simple. For a passive idea, use <em>must have been</em> + past participle.",
+    "wrong": "The contaminant must entered with the feed.",
+    "right": "The contaminant must have entered with the feed.",
+    "examples": [
+     "The filter failed its integrity test, so bacteria must have passed through it.",
+     "The feed must have been contaminated before filtration.",
+     "Someone must have opened the valve without steaming it."
+    ]
+   },
+   {
+    "h": "B. might / may / could have: a possibility, not a conclusion",
+    "p": "When there are two or more possible explanations and you cannot choose yet, use <strong>might have, may have or could have</strong> + past participle. This is very important in an investigation report: it shows that a cause is possible but not proven.",
+    "wrong": "The filter might be damaged during installation yesterday.",
+    "right": "The filter might have been damaged during installation yesterday.",
+    "examples": [
+     "The new operator might have forgotten to steam the sampling valve.",
+     "A very high bioburden may have challenged the filter.",
+     "The organism could have come from the water system, but we have no evidence yet."
+    ]
+   },
+   {
+    "h": "C. can't / couldn't have: the evidence makes it impossible",
+    "p": "To exclude a route because the evidence makes it impossible, use <strong>can't have or couldn't have</strong> + past participle. The opposite of <em>must have</em> for deduction is <em>can't have</em>, not <em>mustn't have</em>.",
+    "wrong": "It mustn't have come from the seed: the samples were clean.",
+    "right": "It can't have come from the seed: the samples were clean.",
+    "examples": [
+     "The contaminant can't have come from the shake flasks; they were pure.",
+     "The vessel couldn't have been contaminated during SIP: every probe reached 121 °C.",
+     "He can't have taken the sample at midnight; he was in the canteen."
+    ]
+   },
+   {
+    "h": "D. should have: what was expected but did not happen",
+    "p": "<strong>should have</strong> + past participle is different: it is not a deduction but a criticism or a missed expectation. In GMP reports it often describes a step that was required but not done. <em>shouldn't have</em> describes something that was done but was wrong.",
+    "wrong": "The operator should steam the valve after the sample, but he didn't.",
+    "right": "The operator should have steamed the valve after the sample, but he didn't.",
+    "examples": [
+     "The replacement filter should have been tested before use.",
+     "The feed solution shouldn't have been held for three days at room temperature.",
+     "Someone should have been with the new operator."
+    ]
+   }
+  ],
+  "quiz": [
+   {
+    "q": "The seed samples were clean on plates and under the microscope: \"The contaminant ___ from the seed train.\"",
+    "o": [
+     "can't have come",
+     "mustn't have come",
+     "should have come"
+    ],
+    "a": 0,
+    "e": "The evidence makes it impossible: can't have + past participle."
+   },
+   {
+    "q": "The feed filter failed its integrity test and the feed contains the same organism: \"The contaminant ___ through the feed filter.\"",
+    "o": [
+     "must have passed",
+     "can't have passed",
+     "should have passed"
+    ],
+    "a": 0,
+    "e": "Strong evidence for one explanation: must have."
+   },
+   {
+    "q": "Nobody knows for sure, but one possibility is that the filter ___ during installation.",
+    "o": [
+     "might have been damaged",
+     "must have been damaged",
+     "can't have been damaged"
+    ],
+    "a": 0,
+    "e": "A possibility that is not proven: might have (been) + past participle."
+   },
+   {
+    "q": "The procedure requires a pre-use test, but it wasn't done: \"The filter ___ before use.\"",
+    "o": [
+     "should have been tested",
+     "must have been tested",
+     "might have been tested"
+    ],
+    "a": 0,
+    "e": "A requirement that was not met: should have (been) + past participle."
+   },
+   {
+    "q": "Choose the correct sentence.",
+    "o": [
+     "He may have forgotten to steam the valve.",
+     "He may have forgot to steam the valve.",
+     "He may forgotten to steam the valve."
+    ],
+    "a": 0,
+    "e": "may have + past participle (forget – forgot – forgotten)."
+   },
+   {
+    "q": "The feed was held for three days at room temperature, which is too long. The best comment is:",
+    "o": [
+     "It shouldn't have been held so long.",
+     "It can't have been held so long.",
+     "It mustn't have been held so long."
+    ],
+    "a": 0,
+    "e": "Something was done but was wrong: shouldn't have."
+   }
+  ]
+ },
+ "writing": {
+  "situation": "You are the microbiologist at a fermentation plant in Ireland. Yesterday the 100 L seed bioreactor was contaminated: the pH dropped fast at about two in the morning, and today the plates show yellow colonies that are not your strain. The shake flasks were pure, the SIP records are normal, and there is no steam log entry after the midnight sample, which a new operator took alone.",
+  "task": "Write 100–150 words: an investigation summary for the QA manager. Describe what was found, which routes you can exclude and why, the most probable root cause, what is still only a possibility, what should have happened, and the CAPA you propose. Use must have, might have (or may/could have), can't have and should have at least once each, and four words from today's vocabulary.",
+  "checklist": [
+   "A short opening line: which vessel, which batch, what was found",
+   "The routes you exclude, with evidence and can't have / couldn't have",
+   "The most probable root cause with must have",
+   "What is still only a possibility with might / may / could have",
+   "What was required but not done with should have",
+   "A short CAPA proposal",
+   "At least four words from the vocabulary (contaminant, root cause, deviation, CAPA…)"
+  ],
+  "placeholder": "Investigation summary — 100 L seed bioreactor, batch …\nAt about 02:00 the pH dropped …",
+  "model": [
+   "Investigation summary — 100 L seed bioreactor, contamination detected on 24 November.",
+   "At about 02:00 the pH dropped much faster than usual and the oxygen demand rose. The plates from the 06:00 sample now show yellow colonies, so a contaminant is present; our strain gives white colonies.",
+   "The contaminant can't have come from the inoculum, because the shake flasks were pure, and the SIP records rule out the medium. The steam log has no entry after the midnight sample, so the contaminant must have entered through the sampling valve. The operator might have forgotten to steam the valve, or the steam supply may have failed; we cannot confirm which yet. In any case, a new operator should have been supervised.",
+   "I have opened a deviation and sent the isolate for identification. Proposed CAPA: retrain the shift on the sampling SOP and add a signed steam check to the batch record.",
+   "Cristian"
+  ]
+ },
+ "speaking": {
+  "prompt": "In the deviation review meeting, explain the conclusion of the seed-vessel investigation: what you excluded, the most probable root cause, what is still uncertain and what should have happened. Speak for about one minute.",
+  "tips": [
+   "Start with what you can exclude: <em>It can't have come from the inoculum, because…</em>",
+   "Give your main conclusion with the evidence: <em>It must have entered through…</em>",
+   "Be honest about uncertainty: <em>The operator might have… or…</em>",
+   "Finish with the expectation and the action: <em>He should have been supervised, so we're going to…</em>"
+  ],
+  "model": [
+   "The contaminant can't have come from the inoculum, because the shake flasks were pure, and the sterilisation records rule out the medium.",
+   "The timing points to the midnight sample, and there's no entry in the steam log, so it must have entered through the sampling valve.",
+   "The operator might have forgotten to steam the valve, or the steam supply may have failed, and we can't separate the two yet.",
+   "Either way, a new operator should have been supervised, so the whole shift is being retrained on the sampling SOP this week."
+  ]
+ },
+ "key_lesson": "In an investigation, the modal shows how strong your evidence is: can't have excludes a route (it can't have come from the seed), must have gives the conclusion the evidence supports (it must have entered with the feed), might / may / could have keeps a possibility open, and should have records what was required but not done (the filter should have been tested before use)."
+}
