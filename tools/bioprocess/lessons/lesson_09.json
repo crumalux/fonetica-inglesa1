@@ -1,0 +1,118 @@
+{
+ "num": 9,
+ "date": "26 November 2026",
+ "area": "Quality · Deviations",
+ "title": "Deviations and CAPA: from Event to Effectiveness Check",
+ "subtitle": "Follow a real-style deviation from the first alarm to a closed CAPA, and learn to report what people said with precise reporting verbs.",
+ "time": "40–50 minutes",
+ "goals": [
+  "Describe the life cycle of a deviation: containment, classification, impact assessment, root cause, CAPA and effectiveness check.",
+  "Use <strong>reporting verbs</strong> (confirm, explain, recommend, deny, insist) with the correct pattern.",
+  "Understand a CAPA review meeting between QA, production and automation.",
+  "Write the description section of a deviation report in a neutral, factual style."
+ ],
+ "vocab": [
+  {"term": "raise a deviation", "ipa": "reɪz ə ˌdiːviˈeɪʃn", "meaning": "Officially open a record when something does not follow the approved procedure or process.", "example": "The night supervisor raised a deviation before the end of the shift."},
+  {"term": "containment action", "ipa": "kənˈteɪnmənt ˈækʃn", "meaning": "An immediate action that stops a problem from getting worse or spreading.", "example": "Putting the batch on hold was the first containment action."},
+  {"term": "classify (minor / major / critical)", "ipa": "ˈklæsɪfaɪ", "meaning": "Decide how serious a deviation is, according to its possible impact on the product and the patient.", "example": "QA classified the event as a major deviation."},
+  {"term": "impact assessment", "ipa": "ˈɪmpækt əˈsesmənt", "meaning": "An evaluation of how an event may affect product quality, other batches or equipment.", "example": "The impact assessment included the batches made with the same recipe."},
+  {"term": "critical process parameter (CPP)", "ipa": "ˈkrɪtɪkl ˈprəʊses pəˈræmɪtə", "meaning": "A process setting that can affect a critical quality attribute, so it must be controlled.", "example": "The feed rate is a critical process parameter for this product."},
+  {"term": "root cause", "ipa": "ruːt kɔːz", "meaning": "The basic reason why a problem happened; if you remove it, the problem should not come back.", "example": "The root cause was a recipe screen that allowed manual entry."},
+  {"term": "human error", "ipa": "ˈhjuːmən ˈerə", "meaning": "A mistake made by a person; in a good investigation it is a starting point, not the final answer.", "example": "Human error alone is rarely accepted as a root cause."},
+  {"term": "CAPA", "ipa": "ˈkæpə", "meaning": "Corrective and preventive action: actions that fix a problem and stop it from happening again or elsewhere.", "example": "The CAPA plan was approved by the quality manager."},
+  {"term": "second-person verification", "ipa": "ˈsekənd ˈpɜːsn ˌverɪfɪˈkeɪʃn", "meaning": "A check in which another trained person confirms that a critical step or entry is correct.", "example": "Every change to a feed rate now needs second-person verification."},
+  {"term": "recurrence", "ipa": "rɪˈkʌrəns", "meaning": "The fact of something happening again.", "example": "There has been no recurrence since the recipe was locked."},
+  {"term": "effectiveness check", "ipa": "ɪˈfektɪvnəs tʃek", "meaning": "A planned review that shows whether a CAPA has really solved the problem.", "example": "The effectiveness check will cover the next twenty batches."},
+  {"term": "near miss", "ipa": "nɪə mɪs", "meaning": "An event that could have caused a problem but did not, usually because someone noticed in time.", "example": "Please report near misses as well as real errors."}
+ ],
+ "vocab_quiz": [
+  {"q": "Putting the batch on hold immediately is an example of a…", "o": ["containment action", "root cause", "effectiveness check"], "a": 0, "e": "Containment stops the problem from getting worse; it doesn't explain it."},
+  {"q": "A planned review that shows whether the CAPA really worked is an…", "o": ["effectiveness check", "impact assessment", "near miss"], "a": 0, "e": "Effectiveness checks come after the CAPA is implemented."},
+  {"q": "The operator noticed the wrong value before starting the pump. Nothing happened, but it was a…", "o": ["near miss", "recurrence", "critical deviation"], "a": 0, "e": "A near miss: the error was caught in time."},
+  {"q": "A setting such as feed rate, which can affect product quality, is a…", "o": ["critical process parameter", "containment action", "second-person verification"], "a": 0, "e": "CPPs must be monitored and controlled."},
+  {"q": "QA has to ___ the event as minor, major or critical.", "o": ["classify", "contain", "recur"], "a": 0, "e": "Classification depends on the possible impact on product and patient."},
+  {"q": "Since the new interlock was installed, there has been no ___ of the problem.", "o": ["recurrence", "root cause", "impact"], "a": 0, "e": "recurrence = happening again."}
+ ],
+ "reading": {
+  "title": "Three Hours at the Wrong Feed Rate",
+  "words": 375,
+  "paras": [
+   "At a biologics plant near Cork, a 2,000-litre fed-batch fermentation was running smoothly until the night shift noticed something strange. The dissolved oxygen was falling faster than usual, and the glucose feed tank was emptying more quickly than the schedule predicted. The supervisor checked the control system and found that the feed pump had been running at twice the planned rate for almost three hours.",
+   "The first actions were taken within minutes. The feed rate was corrected, the batch was placed on hold, and a deviation was raised in the quality system. These were containment actions: they stopped the problem from getting worse, but they did not explain why it had happened.",
+   "The next morning, QA classified the event as a major deviation, because it affected a critical process parameter. An impact assessment was started at once. The process development team confirmed that the culture had tolerated short periods of overfeeding in earlier studies, but they insisted that the product quality data should be reviewed before any decision about the batch.",
+   "The investigation then looked for the root cause. The operator explained that he had copied the feed rate from another product's recipe, which used a different unit. At first, some people wanted to close the investigation with \"human error\". The quality manager refused. <strong>Human error is where an investigation starts, not where it ends.</strong>",
+   "Using the 5 Whys, the team discovered that the feed rate could be typed in manually without second-person verification, and that the two products displayed the feed rate in different units on the same screen. In other words, the system made the mistake easy to make.",
+   "The CAPA plan had two parts. As a corrective action, the recipe for this product was locked, and any change now needs a second person to verify it. As a preventive action, the automation team recommended standardising the units for all feed recipes on the site and adding an alarm for any rate outside the validated range.",
+   "Finally, an effectiveness check was defined: no recurrence of a feed-rate error in the next twenty batches, verified by a review of the electronic batch records. Only when this check is passed can the CAPA be closed."
+  ],
+  "quote": "A CAPA that is closed but not effective is just paperwork.",
+  "questions": [
+   {"q": "What first made the night shift suspect a problem?", "o": ["The dissolved oxygen was falling and the feed tank was emptying too fast.", "An alarm showed that the temperature was too high.", "QC reported an out-of-specification result."], "a": 0, "e": "Falling DO and a fast-emptying feed tank were the first signs."},
+   {"q": "Why was the event classified as a major deviation?", "o": ["Because it affected a critical process parameter.", "Because the batch was destroyed.", "Because the operator denied making a mistake."], "a": 0, "e": "The feed rate is a CPP."},
+   {"q": "Why did the quality manager refuse to close the investigation with \"human error\"?", "o": ["Because it does not explain why the system allowed the mistake.", "Because the operator had followed the procedure correctly.", "Because the batch had already been released."], "a": 0, "e": "The real question is what made the error possible."},
+   {"q": "Which of these was a preventive action?", "o": ["Standardising the feed-rate units for all recipes on the site.", "Correcting the feed rate during the night.", "Putting the batch on hold."], "a": 0, "e": "Preventive actions stop the same problem happening elsewhere; the other two are containment."}
+  ]
+ },
+ "listening": {
+  "title": "A CAPA review meeting",
+  "intro": "Niamh (QA), Ronan (production supervisor) and Mark (automation engineer) review the CAPA for the feed-rate deviation. Listen to their meeting.",
+  "lines": [
+   {"spk": "Niamh", "voice": "bf_isabella", "text": "Right, let's go through the CAPA for the feed-rate deviation. Ronan, can you remind us where the batch is?"},
+   {"spk": "Ronan", "voice": "bm_lewis", "text": "It's still on hold. The impact assessment is finished, and the quality results came back within specification yesterday."},
+   {"spk": "Niamh", "voice": "bf_isabella", "text": "So QC has confirmed that the impurity profile was normal?"},
+   {"spk": "Ronan", "voice": "bm_lewis", "text": "Yes, they confirmed it in writing. But the final decision on the batch is yours, of course."},
+   {"spk": "Niamh", "voice": "bf_isabella", "text": "Of course. Mark, what about the recipe lock?"},
+   {"spk": "Mark", "voice": "bm_george", "text": "It went live on Monday. Now nobody can change a feed rate unless a second person logs in and verifies it."},
+   {"spk": "Ronan", "voice": "bm_lewis", "text": "The operators aren't too happy. One of them said it would slow them down on nights."},
+   {"spk": "Mark", "voice": "bm_george", "text": "I explained to him that it only takes about thirty seconds. And I recommended running a short training session on each shift."},
+   {"spk": "Niamh", "voice": "bf_isabella", "text": "Good idea. And the site-wide units?"},
+   {"spk": "Mark", "voice": "bm_george", "text": "That's the bigger job. Three other products still show the rate in millilitres per minute. I'd say about six weeks."},
+   {"spk": "Niamh", "voice": "bf_isabella", "text": "Fine, but I insist on a proper effectiveness check: twenty batches without a feed-rate error, checked against the electronic batch records."},
+   {"spk": "Ronan", "voice": "bm_lewis", "text": "Agreed. I'll ask the shift leads to report near misses too, not just real errors."},
+   {"spk": "Niamh", "voice": "bf_isabella", "text": "Perfect. I'll update the CAPA record, and we'll review it again in January."}
+  ],
+  "questions": [
+   {"q": "What is the status of the batch?", "o": ["It is still on hold.", "It has been released.", "It has been rejected."], "a": 0, "e": "Ronan says it is still on hold; the decision belongs to QA."},
+   {"q": "What did Mark recommend?", "o": ["Running a short training session on each shift.", "Removing the second-person check at night.", "Changing all units to millilitres per minute."], "a": 0, "e": "He recommended training on each shift."},
+   {"q": "How long will the site-wide unit change take?", "o": ["About six weeks.", "About thirty seconds.", "Until Monday."], "a": 0, "e": "Mark estimates about six weeks."},
+   {"q": "What will Ronan ask the shift leads to do?", "o": ["Report near misses as well as real errors.", "Check the impurity profile.", "Lock the recipes of the other products."], "a": 0, "e": "Near misses help to show whether the CAPA is working."}
+  ]
+ },
+ "expressions": [
+  {"phrase": "A deviation was raised at… and classified as…", "example": "A deviation was raised at 03:40 and classified as major the next morning."},
+  {"phrase": "As a containment action, …", "example": "As a containment action, the batch was placed on hold."},
+  {"phrase": "The root cause was identified as…", "example": "The root cause was identified as a recipe screen that allowed manual entry without verification."},
+  {"phrase": "…confirmed that… / …recommended -ing…", "example": "QC confirmed that the results were within specification and recommended releasing the batch."},
+  {"phrase": "The CAPA will be considered effective if…", "example": "The CAPA will be considered effective if there is no recurrence in the next twenty batches."}
+ ],
+ "grammar": {
+  "title": "reporting verbs: confirm, explain, recommend, deny, insist",
+  "blocks": [
+   {"h": "A. Reporting verb + that-clause", "p": "In reports we rarely repeat people's exact words. We use a <strong>reporting verb + that + clause</strong>, and we usually move the tense one step back: <em>is → was</em>, <em>copied → had copied</em>. <strong>Say</strong> and <strong>confirm</strong> never take a person directly after them (no <em>said me</em>); use <strong>tell me</strong> or <strong>confirm to me</strong>.", "wrong": "The supervisor said me that the batch is on hold.", "right": "The supervisor told me that the batch was on hold.", "examples": ["QC confirmed that the impurity profile was normal.", "The operator explained that he had copied the value from another recipe.", "QA insisted that the batch should stay on hold."]},
+   {"h": "B. Verb + -ing: deny, recommend, insist on", "p": "<strong>Deny</strong> and <strong>recommend</strong> are followed by the <strong>-ing form</strong>, not <em>to + infinitive</em>. <strong>Insist</strong> needs <strong>on + -ing</strong>. For a formal recommendation you can also use <strong>recommend that + subject + (should) + verb</strong>.", "wrong": "The engineer recommended to add an alarm.", "right": "The engineer recommended adding an alarm.", "examples": ["The operator denied changing the set point.", "QA insisted on reviewing the raw data.", "The team recommended that the recipe should be locked."]},
+   {"h": "C. Explain something to somebody", "p": "<strong>Explain</strong> is never followed directly by a person. Use <strong>explain + thing + to + person</strong>, or <strong>explain to + person + that / how / why</strong>. In Spanish we say <em>explícame</em>, but in English <em>explain me</em> is always wrong.", "wrong": "Can you explain me the root cause?", "right": "Can you explain the root cause to me?", "examples": ["Mark explained to the operators how the recipe lock works.", "Please explain to the auditor why the batch was put on hold."]},
+   {"h": "D. Choose the verb that shows the intention", "p": "<strong>Said</strong> is neutral. A good report shows what the person was doing: <strong>confirm</strong> = say that something is true, usually after checking; <strong>explain</strong> = give the reason or details; <strong>recommend</strong> = advise the best action; <strong>deny</strong> = say that something is not true; <strong>insist</strong> = say something firmly, often when others disagree.", "examples": ["\"Yes, the probe was calibrated.\" → The technician confirmed that the probe had been calibrated.", "\"I didn't change the recipe.\" → The operator denied changing the recipe.", "\"We must check twenty batches, no fewer.\" → QA insisted on checking twenty batches."]}
+  ],
+  "quiz": [
+   {"q": "The operator ___ that he had copied the value from the old recipe.", "o": ["explained", "explained me", "said me"], "a": 0, "e": "explain / say + that; never explain me or said me."},
+   {"q": "The supervisor denied ___ the alarm.", "o": ["ignoring", "to ignore", "ignore"], "a": 0, "e": "deny + -ing."},
+   {"q": "QA insisted ___ a full impact assessment.", "o": ["on", "to", "for"], "a": 0, "e": "insist on + noun / -ing."},
+   {"q": "The automation engineer recommended ___ the units across the site.", "o": ["standardising", "to standardise", "standardise"], "a": 0, "e": "recommend + -ing (or recommend that…)."},
+   {"q": "Last week QC confirmed that the results ___ within specification.", "o": ["were", "be", "being"], "a": 0, "e": "Reported speech in the past: the tense moves back (are → were)."},
+   {"q": "\"No, I didn't open the sampling valve,\" said the technician. → The technician ___ opening the sampling valve.", "o": ["denied", "confirmed", "recommended"], "a": 0, "e": "deny = say that something is not true."}
+  ]
+ },
+ "writing": {
+  "situation": "Last night the temperature controller on fermenter F-301 failed, and the broth stayed at 39 °C for 40 minutes instead of 37 °C. The night technician, the automation engineer and QA have each told you something about the event.",
+  "task": "Write 100–150 words: the description section of a deviation report. Say what happened, the containment actions, what each person said (use at least four reporting verbs from today's lesson with the correct pattern) and the next steps. Use a neutral, factual style.",
+  "checklist": ["What happened, when and where (equipment, time, duration)", "The containment actions, in the passive", "At least four reporting verbs: confirm, explain, recommend, deny, insist", "Correct patterns: explain sth to sb, recommend / deny + -ing, insist on + -ing", "The classification or the next steps (impact assessment, root cause, CAPA)", "No opinions or blame: facts only"],
+  "placeholder": "Deviation description – F-301 temperature excursion. On 25 November at 02:15, …",
+  "model": ["Deviation description – F-301 temperature excursion", "On 25 November at 02:15, the temperature of fermenter F-301 rose to 39 °C and stayed there for 40 minutes, while the set point was 37 °C. The night technician confirmed that the high-temperature alarm had sounded and explained that the cooling valve had not opened.", "As a containment action, the temperature was controlled manually, the batch was placed on hold and the deviation was raised at 03:10.", "The automation engineer denied making any recent changes to the control loop and recommended replacing the valve positioner before the next batch. QA insisted on a full impact assessment, including the growth and product data, before any decision on the batch.", "Next steps: classification by QA, root cause investigation and a CAPA plan.", "Reported by: Cristian"]
+ },
+ "speaking": {
+  "prompt": "In a morning meeting, summarise what three different people said about a deviation in your plant. Speak for about one minute.",
+  "tips": ["Start with one sentence about the event: what, where and when.", "Use at least three different reporting verbs, not only <em>said</em>.", "Check the patterns: <em>recommended -ing</em>, <em>insisted on -ing</em>, <em>explained to us that…</em>", "Finish with the next step: <em>So the next step is…</em>"],
+  "model": ["Yesterday we had a temperature excursion on F-301 during the night shift.", "The technician confirmed that the alarm had worked and explained to us that the cooling valve had stuck.", "The engineer recommended replacing the positioner, and QA insisted on a full impact assessment before any decision on the batch.", "So the next step is to finish the assessment and agree the CAPA by Friday."]
+ },
+ "key_lesson": "Choose the reporting verb that shows the intention, and use the right pattern: confirm that…, explain something to someone, recommend -ing, deny -ing, insist on -ing."
+}
