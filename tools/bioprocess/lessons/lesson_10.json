@@ -1,0 +1,117 @@
+{
+ "num": 10,
+ "date": "27 November 2026",
+ "area": "Quality · Data integrity",
+ "title": "GMP Documentation and Data Integrity: Living with ALCOA+",
+ "subtitle": "Learn what makes a record trustworthy on paper and on screen, and talk about rules with must, have to, mustn't, don't have to and should.",
+ "time": "40–50 minutes",
+ "goals": [
+  "Explain the ALCOA+ principles and good documentation practice with precise vocabulary.",
+  "Use <strong>must, have to, mustn't, don't have to and should</strong> correctly to talk about rules, prohibitions and recommendations.",
+  "Understand a meeting where QA and production prepare an audit response.",
+  "Write a clear, factual reply to an auditor's observation."
+ ],
+ "vocab": [
+  {"term": "data integrity", "ipa": "ˈdeɪtə ɪnˈteɡrəti", "meaning": "The degree to which data are complete, consistent and accurate during their whole life, from creation to archiving.", "example": "Data integrity was the main topic of the last inspection."},
+  {"term": "ALCOA+", "ipa": "ælˈkəʊə plʌs", "meaning": "Attributable, Legible, Contemporaneous, Original, Accurate, plus Complete, Consistent, Enduring and Available: the qualities of reliable GMP data.", "example": "Every new form is checked against ALCOA+ before it is approved."},
+  {"term": "attributable", "ipa": "əˈtrɪbjətəbl", "meaning": "Clearly linked to the person who did the action or recorded the data.", "example": "A record is not attributable if nobody knows who wrote it."},
+  {"term": "contemporaneous", "ipa": "kənˌtempəˈreɪniəs", "meaning": "Recorded at the same time as the activity, not later.", "example": "Entries in the batch record must be contemporaneous."},
+  {"term": "legible", "ipa": "ˈledʒəbl", "meaning": "Clear enough to be read, now and in the future.", "example": "The corrected value was still legible under the single line."},
+  {"term": "original record", "ipa": "əˈrɪdʒənl ˈrekɔːd", "meaning": "The first place where data are captured, on paper or electronically.", "example": "The sticky note was the original record, and it was thrown away."},
+  {"term": "true copy", "ipa": "truː ˈkɒpi", "meaning": "A copy that has been verified to contain all the content and meaning of the original record.", "example": "A true copy of the chart was attached to the batch record."},
+  {"term": "audit trail", "ipa": "ˈɔːdɪt treɪl", "meaning": "A secure, automatic record of who created, changed or deleted electronic data, when, and why.", "example": "The analyst reviewed the audit trail before approving the result."},
+  {"term": "metadata", "ipa": "ˈmetədeɪtə", "meaning": "Data that describe other data, such as the date, time, user and instrument.", "example": "Without its metadata, a chromatogram is just a picture."},
+  {"term": "backdate", "ipa": "ˌbækˈdeɪt", "meaning": "Write an earlier date than the real one on a document.", "example": "A record must never be backdated, even to correct a mistake."},
+  {"term": "shared login", "ipa": "ʃeəd ˈlɒɡɪn", "meaning": "One user account used by several people, so actions cannot be linked to one person.", "example": "The shared login on the HMI was disabled after the upgrade."},
+  {"term": "observation (audit)", "ipa": "ˌɒbzəˈveɪʃn", "meaning": "A finding written by an auditor or inspector when a practice does not meet the expected standard.", "example": "The auditor raised two observations about documentation."}
+ ],
+ "vocab_quiz": [
+  {"q": "A record written forty minutes after the activity is not…", "o": ["contemporaneous", "legible", "metadata"], "a": 0, "e": "Contemporaneous = recorded at the time of the activity."},
+  {"q": "The automatic record of who changed electronic data, and when, is the…", "o": ["audit trail", "true copy", "shared login"], "a": 0, "e": "The audit trail shows the history of the data."},
+  {"q": "If several operators use the same account, the system has a…", "o": ["shared login", "true copy", "backdate"], "a": 0, "e": "A shared login makes actions impossible to attribute."},
+  {"q": "The date, time, user and instrument linked to a result are its…", "o": ["metadata", "observations", "original records"], "a": 0, "e": "Metadata give the result its context and meaning."},
+  {"q": "A verified copy with all the content and meaning of the original is a…", "o": ["true copy", "raw copy", "legible copy"], "a": 0, "e": "Only a verified true copy can replace the original."},
+  {"q": "Writing yesterday's date on a form you are filling in today is…", "o": ["backdating", "attributing", "auditing"], "a": 0, "e": "Backdating is never acceptable in GMP."}
+ ],
+ "reading": {
+  "title": "The Sticky Note That Became an Observation",
+  "words": 360,
+  "paras": [
+   "It was the second day of a customer audit at a biologics plant near Cork, and the auditor had asked to see the batch record of a 2,000-litre fermentation. Everything looked tidy: clear handwriting, signatures in the right places, no empty fields. Then she asked a simple question: where was this pH calibration first written down?",
+   "The honest answer was a sticky note. The operator had calibrated the probe in the preparation room, written the buffer readings on a note and copied them into the batch record forty minutes later. The note was already in the bin. Nobody had changed a number, but the auditor still raised an observation.",
+   "Why does it matter if the values were correct? Because GMP is not only about results; it is about evidence. Regulators describe reliable data with the acronym ALCOA+: data must be attributable, legible, contemporaneous, original and accurate, and also complete, consistent, enduring and available. The sticky note failed at least two of these principles: the entry was not contemporaneous, and the original record no longer existed.",
+   "Paper is only half of the picture. Most data in a modern plant are created by computerised systems: the bioreactor control system, the HPLC software, the LIMS. Here the key tool is the audit trail, which shows who created, changed or deleted data, when, and why. However, an audit trail only protects data if it is switched on and reviewed. For the same reason, every user has to log in with a personal account. A shared login makes every action anonymous.",
+   "Good documentation practice has simple rules for paper too. Entries are made in permanent ink at the time of the activity. Errors mustn't be erased or covered: they are crossed out with a single line, so the original stays legible, and then signed, dated and explained. A record must never be backdated.",
+   "The plant's response did not stop at retraining the operator. The team asked why he had used a note at all, and found that the batch record was kept in another room during calibration. The corrective action was practical: a controlled calibration form now stays beside the instrument.",
+   "<strong>Data integrity is not a paperwork exercise; it is the proof that the product is what the label says.</strong>"
+  ],
+  "quote": "Record it when you do it, where you do it.",
+  "questions": [
+   {"q": "Why did the auditor raise an observation, even though no value was changed?", "o": ["The entry was not made at the time and the original record was lost.", "The pH values were out of specification.", "The operator had not signed the batch record."], "a": 0, "e": "The record was not contemporaneous and the original was gone."},
+   {"q": "What does an audit trail show?", "o": ["Who created, changed or deleted data, when, and why.", "Only the final result of each batch.", "The list of auditors who visited the plant."], "a": 0, "e": "The audit trail is the history of electronic data."},
+   {"q": "How should an error on a paper record be corrected?", "o": ["With a single line, a signature, a date and a reason.", "With correction fluid and a new value.", "By copying the whole page again."], "a": 0, "e": "The original must stay legible."},
+   {"q": "What did the team find when they asked why the note was used?", "o": ["The batch record was kept in another room during calibration.", "The operator had never been trained.", "The pH probe was faulty."], "a": 0, "e": "The root cause was the location of the record, not only the person."}
+  ]
+ },
+ "listening": {
+  "title": "Preparing the audit response",
+  "intro": "Niamh (QA), Gareth (production supervisor) and Priya (data integrity specialist) are preparing the response to the pH calibration observation. Listen to their meeting.",
+  "lines": [
+   {"spk": "Niamh", "voice": "bf_isabella", "text": "Right, we've got until Friday to send the audit response. Let's start with the pH calibration observation."},
+   {"spk": "Gareth", "voice": "bm_lewis", "text": "I've spoken to the operator. He wasn't hiding anything. The batch record was in the office down the corridor, and he didn't want to leave the probe in the buffer."},
+   {"spk": "Niamh", "voice": "bf_isabella", "text": "I understand, but we have to explain why it happened. If we only write that he's been retrained, the auditor won't accept it."},
+   {"spk": "Priya", "voice": "bf_emma", "text": "From a data integrity point of view, the real problem is the lost original. That note was the raw data, and it went in the bin."},
+   {"spk": "Gareth", "voice": "bm_lewis", "text": "So what do we propose? We can't carry the batch record around the whole building."},
+   {"spk": "Priya", "voice": "bf_emma", "text": "You don't have to. We could keep a controlled calibration form at the bench, issued with each batch and reconciled at the end."},
+   {"spk": "Niamh", "voice": "bf_isabella", "text": "I like that. It's an original record, it's attributable and it's filled in at the time."},
+   {"spk": "Gareth", "voice": "bm_lewis", "text": "Do we have to check the other fermenters as well?"},
+   {"spk": "Niamh", "voice": "bf_isabella", "text": "Yes, the auditor will expect an extent assessment. Priya, can you check whether the same thing happens on F-301 and F-302?"},
+   {"spk": "Priya", "voice": "bf_emma", "text": "Sure. And there's something else. Last week I noticed that the night shift still uses the generic operator account on one of the HMI screens."},
+   {"spk": "Gareth", "voice": "bm_lewis", "text": "That's on me. We should have removed it after the upgrade. I'll ask automation to disable it by Wednesday."},
+   {"spk": "Niamh", "voice": "bf_isabella", "text": "Good. That one mustn't wait for the audit response. Let's raise a deviation today."}
+  ],
+  "questions": [
+   {"q": "Why did the operator write the readings on a note?", "o": ["The batch record was in another office and he didn't want to leave the probe.", "He had lost his pen and his gloves.", "He wanted to save time at the end of the shift."], "a": 0, "e": "The record was down the corridor and the probe was in the buffer."},
+   {"q": "What does Priya propose?", "o": ["A controlled calibration form kept at the bench.", "Carrying the batch record into the preparation room.", "Taking photos of the notes with a phone."], "a": 0, "e": "The form is issued with each batch and reconciled at the end."},
+   {"q": "What will Priya check on F-301 and F-302?", "o": ["Whether the same practice happens there.", "The age of their pH probes.", "Their cleaning records from last year."], "a": 0, "e": "This is the extent assessment the auditor will expect."},
+   {"q": "What will happen about the generic operator account?", "o": ["It will be disabled and a deviation will be raised today.", "It will be kept for the night shift only.", "It will be mentioned in the audit response on Friday only."], "a": 0, "e": "Niamh says it mustn't wait for the audit response."}
+  ]
+ },
+ "expressions": [
+  {"phrase": "We acknowledge the observation and…", "example": "We acknowledge the observation and have taken the following actions."},
+  {"phrase": "As an immediate action, …", "example": "As an immediate action, all operators were briefed on contemporaneous recording."},
+  {"phrase": "The root cause was identified as…", "example": "The root cause was identified as the location of the batch record during calibration."},
+  {"phrase": "To prevent recurrence, …", "example": "To prevent recurrence, a controlled form will be kept beside each instrument."},
+  {"phrase": "…will be completed by…", "example": "The extent assessment will be completed by the fifteenth of December."}
+ ],
+ "grammar": {
+  "title": "obligation and prohibition: must, have to, mustn't, don't have to, should",
+  "blocks": [
+   {"h": "A. must and have to: obligation", "p": "Both express obligation. In SOPs and written rules, use <strong>must</strong>. In conversation, and for obligations that come from outside (a regulation, a customer, a deadline), <strong>have to</strong> is very common. After <em>must</em> there is no <em>to</em>.", "wrong": "Every user must to log in with a personal account.", "right": "Every user must log in with a personal account.", "examples": ["Entries must be made at the time of the activity.", "We have to send the response to the customer by Friday."]},
+   {"h": "B. mustn't or don't have to?", "p": "<strong>mustn't</strong> = it is prohibited (<em>está prohibido</em>). <strong>don't have to</strong> = it is not necessary (<em>no hace falta</em>). In Spanish, <em>no tienes que</em> can mean both, so be careful: the meaning is very different in a GMP document.", "wrong": "You don't have to use correction fluid on a batch record.", "right": "You mustn't use correction fluid on a batch record.", "examples": ["Records mustn't be backdated.", "You don't have to print the audit trail; you can review it on screen."]},
+   {"h": "C. should and shouldn't: advice and expectations", "p": "<strong>should</strong> means it is the right thing to do. Careful: the EU GMP guidelines use <em>should</em> for what inspectors expect, so don't read it as optional. With the passive, use <strong>should be + past participle</strong>.", "wrong": "The audit trail should reviewed before the result is approved.", "right": "The audit trail should be reviewed before the result is approved.", "examples": ["You should report a shared login as soon as you see it.", "Operators shouldn't keep raw data on loose paper."]},
+   {"h": "D. Past and future: had to, will have to", "p": "<strong>must</strong> has no past or future form. Use <strong>had to</strong> (past obligation), <strong>didn't have to</strong> (no obligation in the past) and <strong>will have to</strong> (future).", "wrong": "Last week we must repeat the calibration.", "right": "Last week we had to repeat the calibration.", "examples": ["The operator had to copy the values from a note.", "From next month, every analyst will have to review the audit trail before approval.", "Luckily, we didn't have to stop the batch."]}
+  ],
+  "quiz": [
+   {"q": "Errors ___ be corrected with a single line, so the original stays legible.", "o": ["must", "mustn't", "don't have to"], "a": 0, "e": "It's an obligation of good documentation practice."},
+   {"q": "You ___ write in pencil on a batch record. It's prohibited.", "o": ["mustn't", "don't have to", "shouldn't to"], "a": 0, "e": "mustn't = prohibition."},
+   {"q": "The values were already in the system, so the analyst ___ type them again. (It wasn't necessary.)", "o": ["didn't have to", "mustn't", "hadn't to"], "a": 0, "e": "didn't have to = no obligation in the past."},
+   {"q": "Yesterday the operator ___ copy the readings from a sticky note.", "o": ["had to", "must", "musted"], "a": 0, "e": "must has no past form: use had to."},
+   {"q": "Every user ___ log in with a personal account.", "o": ["must", "must to", "musts"], "a": 0, "e": "must + infinitive without to, no -s."},
+   {"q": "Which sentence means 'it is not necessary'?", "o": ["You don't have to print the audit trail.", "You mustn't print the audit trail.", "You shouldn't print the audit trail."], "a": 0, "e": "don't have to = no hace falta."}
+  ]
+ },
+ "writing": {
+  "situation": "During a customer audit, the auditor raised this observation: \"pH calibration data for fermenter F-301 were recorded on a loose note and transcribed into the batch record later. The original record was not retained.\" Your QA manager asks you to write the production part of the response.",
+  "task": "Write 100–150 words replying to the observation. Acknowledge it, explain the root cause, describe the immediate action, the corrective and preventive action with a date, and the check on other equipment. Use at least four of: must, have to, mustn't, don't have to, should, had to.",
+  "checklist": ["A title with the observation number and subject", "A clear acknowledgement (We acknowledge…)", "The root cause, not only 'human error'", "Immediate action, CAPA with a target date, and the extent check", "At least four modal forms (must, mustn't, had to…)", "A neutral, factual style and a closing with your name"],
+  "placeholder": "Response to Observation 2 – Recording of pH calibration data on F-301. We acknowledge the observation…",
+  "model": ["Response to Observation 2 – Recording of pH calibration data on F-301", "We acknowledge the observation. The operator had to calibrate the probe in the preparation room, while the batch record was kept in the production office. For this reason, he wrote the readings on a note and transcribed them later. The root cause was identified as the location of the record, not only individual behaviour.", "As an immediate action, all fermentation operators were briefed on 20 November: raw data must be recorded directly in a controlled document and mustn't be written on loose paper.", "To prevent recurrence, a controlled calibration form will be kept beside each pH meter and reconciled with the batch record. It will be in place by 15 December. Operators will not have to leave the instrument to record data.", "We have also checked F-302 and F-303, and the same practice was not found.", "Kind regards,", "Cristian"]
+ },
+ "speaking": {
+  "prompt": "Explain to a new colleague what ALCOA+ means and why a correct value written down later is still a data integrity problem. Speak for about one minute.",
+  "tips": ["Start with a simple definition: ALCOA+ describes data you can trust.", "Explain two letters in detail, for example C (contemporaneous) and O (original).", "Use <em>must</em>, <em>mustn't</em> and <em>don't have to</em> at least once each.", "Finish with a conclusion: <em>So the point is…</em>"],
+  "model": ["ALCOA+ is a list of qualities that GMP data must have, so that anyone can trust them years later.", "For example, data must be contemporaneous, which means you record them at the time, and the original record mustn't be thrown away.", "If you write a value on a note and copy it later, the number may be correct, but nobody can prove it.", "You don't have to remember every letter on your first day, but you should always record data when you do the work, where you do the work."]
+ },
+ "key_lesson": "mustn't = it is prohibited; don't have to = it is not necessary. In a GMP document, that difference separates a rule from an option."
+}
