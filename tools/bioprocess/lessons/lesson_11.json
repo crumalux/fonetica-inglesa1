@@ -1,0 +1,493 @@
+{
+ "num": 11,
+ "date": "28 November 2026",
+ "area": "Equipment · CIP / SIP",
+ "title": "Cleaning and Sterilising in Place: CIP and SIP Cycles",
+ "subtitle": "Learn to describe automated cleaning and sterilisation cycles, discuss a failed cycle with a colleague, and write procedures and reports with the passive and modal verbs.",
+ "time": "40–50 minutes",
+ "goals": [
+  "Describe the steps of a CIP and an SIP cycle with precise technical vocabulary.",
+  "Use the <strong>passive with modal verbs</strong> (<em>must be cleaned, can be used, should have been checked</em>) in procedures and reports.",
+  "Understand a workplace conversation about a cleaning cycle that ran outside its validated conditions.",
+  "Write a clear description of a CIP cycle for a validation report."
+ ],
+ "vocab": [
+  {
+   "term": "clean-in-place (CIP)",
+   "ipa": "ˌkliːn ɪn ˈpleɪs",
+   "meaning": "Automated cleaning of equipment without taking it apart.",
+   "example": "The bioreactor is cleaned in place after every batch."
+  },
+  {
+   "term": "steam-in-place (SIP)",
+   "ipa": "ˌstiːm ɪn ˈpleɪs",
+   "meaning": "Sterilisation of installed equipment with clean steam, without taking it apart.",
+   "example": "The SIP cycle starts as soon as the CIP has passed."
+  },
+  {
+   "term": "spray ball",
+   "ipa": "ˈspreɪ bɔːl",
+   "meaning": "A device inside a vessel that sprays cleaning solution onto the internal surfaces.",
+   "example": "A blocked spray ball can leave part of the vessel wall dirty."
+  },
+  {
+   "term": "caustic wash",
+   "ipa": "ˈkɔːstɪk wɒʃ",
+   "meaning": "The CIP step that uses a hot alkaline solution, usually sodium hydroxide, to remove proteins and other organic residues.",
+   "example": "The caustic wash removes most of the protein residues."
+  },
+  {
+   "term": "final rinse",
+   "ipa": "ˈfaɪnl rɪns",
+   "meaning": "The last rinse with purified water, which removes the cleaning agents.",
+   "example": "The final rinse is sampled before the cycle is accepted."
+  },
+  {
+   "term": "conductivity",
+   "ipa": "ˌkɒndʌkˈtɪvəti",
+   "meaning": "How easily a liquid conducts electricity; in CIP it shows whether detergent is still present.",
+   "example": "Conductivity is measured online during the final rinse."
+  },
+  {
+   "term": "riboflavin test",
+   "ipa": "ˌraɪbəʊˈfleɪvɪn test",
+   "meaning": "A test in which a fluorescent solution is sprayed on surfaces to check that the spray devices reach all of them.",
+   "example": "A riboflavin test was carried out after the new spray ball was installed."
+  },
+  {
+   "term": "steam trap",
+   "ipa": "ˈstiːm træp",
+   "meaning": "A valve that lets condensate and air out of a steam line but keeps the steam in.",
+   "example": "Each low point of the system is fitted with a steam trap."
+  },
+  {
+   "term": "condensate",
+   "ipa": "ˈkɒndənseɪt",
+   "meaning": "Water that forms when steam cools and turns back into liquid.",
+   "example": "Condensate collects at the lowest points of the pipework."
+  },
+  {
+   "term": "cold spot",
+   "ipa": "ˈkəʊld spɒt",
+   "meaning": "A location that does not reach the required temperature during sterilisation.",
+   "example": "The validation study showed a cold spot near the harvest valve."
+  },
+  {
+   "term": "dirty hold time",
+   "ipa": "ˈdɜːti həʊld taɪm",
+   "meaning": "The maximum validated time that equipment can be left dirty before it is cleaned.",
+   "example": "The tank was left for longer than its dirty hold time."
+  },
+  {
+   "term": "positive pressure",
+   "ipa": "ˈpɒzətɪv ˈpreʃə",
+   "meaning": "Pressure inside a system that is higher than outside, so air cannot enter.",
+   "example": "After SIP, the vessel is kept under positive pressure with sterile air."
+  }
+ ],
+ "vocab_quiz": [
+  {
+   "q": "Water that forms when steam cools down is called…",
+   "o": [
+    "condensate",
+    "conductivity",
+    "final rinse"
+   ],
+   "a": 0,
+   "e": "Condensate must be drained, or it creates cold spots."
+  },
+  {
+   "q": "During the final rinse, we measure ___ to check that the detergent has been removed.",
+   "o": [
+    "conductivity",
+    "positive pressure",
+    "dirty hold time"
+   ],
+   "a": 0,
+   "e": "Detergent residues increase the conductivity of the rinse water."
+  },
+  {
+   "q": "To check that the spray devices reach every surface, a ___ is performed.",
+   "o": [
+    "riboflavin test",
+    "caustic wash",
+    "steam trap"
+   ],
+   "a": 0,
+   "e": "Riboflavin fluoresces under UV light, so dry or unreached areas are easy to see."
+  },
+  {
+   "q": "A location that does not reach sterilising temperature is a…",
+   "o": [
+    "cold spot",
+    "spray ball",
+    "final rinse"
+   ],
+   "a": 0,
+   "e": "Cold spots are usually found at low points and drains."
+  },
+  {
+   "q": "After SIP, the vessel is kept under ___ so that non-sterile air cannot enter.",
+   "o": [
+    "positive pressure",
+    "condensate",
+    "conductivity"
+   ],
+   "a": 0,
+   "e": "When steam cools it condenses, and the pressure can drop."
+  },
+  {
+   "q": "The maximum time equipment can be left dirty before cleaning is the…",
+   "o": [
+    "dirty hold time",
+    "final rinse",
+    "cold spot"
+   ],
+   "a": 0,
+   "e": "Dried residues are much harder to remove."
+  }
+ ],
+ "reading": {
+  "title": "Clean Is Not the Same as Sterile",
+  "words": 362,
+  "paras": [
+   "At Corrib Biologics, a contract manufacturer near Galway, the 2,000 L production bioreactor is never opened for cleaning. Between batches, it is cleaned and sterilised in place, without being dismantled. Both cycles are automated, but they are not simple, and if either of them fails, the next batch cannot be started.",
+   "The CIP cycle begins with a pre-rinse that removes loose soil. Then a hot caustic solution is circulated through the vessel and the transfer lines. Inside the vessel, the solution is distributed by spray balls, which must reach every surface, including the area under the agitator. In some cycles, an acid wash is added to remove mineral deposits. Finally, the system is rinsed with purified water until the conductivity of the final rinse shows that the detergent has been removed.",
+   "Cleaning depends on four factors: time, mechanical action, concentration and temperature. If one of them is reduced, the others may have to be increased. This is why the cycle parameters are fixed during validation and cannot be changed without a change control.",
+   "SIP follows CIP. Clean steam is introduced, air is removed, and the whole system is held at sterilising temperature for the validated time. The critical point is not the vessel itself but the coldest location, usually a drain or a low point where condensate collects. For this reason, steam traps are fitted at the low points, and temperature is measured there, not only in the vessel.",
+   "Last month, an SIP cycle was aborted automatically when the temperature at the harvest-line drain did not reach the set point. The investigation showed that a steam trap had been partially blocked, so condensate had built up and created a cold spot.",
+   "\"The vessel looked perfect, and the cleaning cycle had passed,\" said Sinéad Walsh, the validation engineer. \"But a vessel can be visually clean and still not be sterile.\"",
+   "After the trap was replaced, the cycle was repeated and passed. The vessel was then kept under positive pressure with sterile air, because a cooling vessel can pull in non-sterile air if the pressure drops. <strong>A cycle that passes on the screen is only as good as the points where it is measured.</strong>"
+  ],
+  "quote": "A vessel can be visually clean and still not be sterile.",
+  "questions": [
+   {
+    "q": "What is the main advantage of CIP and SIP described in the text?",
+    "o": [
+     "The equipment does not have to be dismantled.",
+     "The cycles never need to be validated.",
+     "The bioreactor can be cleaned while the batch is running."
+    ],
+    "a": 0,
+    "e": "It is cleaned and sterilised in place, without being dismantled."
+   },
+   {
+    "q": "What does the conductivity of the final rinse show?",
+    "o": [
+     "Whether the detergent has been removed.",
+     "Whether the vessel is sterile.",
+     "Whether the spray balls are blocked."
+    ],
+    "a": 0,
+    "e": "Conductivity shows detergent residues, not sterility."
+   },
+   {
+    "q": "Why are steam traps fitted at the low points?",
+    "o": [
+     "To remove condensate, which can create cold spots.",
+     "To increase the steam pressure in the vessel.",
+     "To measure the conductivity of the steam."
+    ],
+    "a": 0,
+    "e": "Condensate collects at low points and lowers the temperature."
+   },
+   {
+    "q": "Why was the vessel kept under positive pressure after SIP?",
+    "o": [
+     "So that non-sterile air could not be pulled in as it cooled.",
+     "So that the condensate could be measured.",
+     "So that the next CIP could start sooner."
+    ],
+    "a": 0,
+    "e": "A cooling vessel can pull in air if the pressure drops."
+   }
+  ]
+ },
+ "listening": {
+  "title": "A tank left dirty over the weekend",
+  "intro": "Orla, a production supervisor, talks to Tom, a validation engineer, about the CIP of harvest tank T-410. Listen to their conversation.",
+  "lines": [
+   {
+    "spk": "Orla",
+    "voice": "bf_isabella",
+    "text": "Tom, have you got a minute? It's about the harvest tank, T-410."
+   },
+   {
+    "spk": "Tom",
+    "voice": "bm_lewis",
+    "text": "Sure. Is it the CIP from this morning?"
+   },
+   {
+    "spk": "Orla",
+    "voice": "bf_isabella",
+    "text": "Yes. The cycle passed, but I've just noticed the timing. The tank was emptied on Friday at six in the evening, and the CIP didn't start until Monday at seven."
+   },
+   {
+    "spk": "Tom",
+    "voice": "bm_lewis",
+    "text": "So it sat dirty for more than sixty hours. What's the validated dirty hold time for that tank?"
+   },
+   {
+    "spk": "Orla",
+    "voice": "bf_isabella",
+    "text": "Forty-eight hours. So we're outside it."
+   },
+   {
+    "spk": "Tom",
+    "voice": "bm_lewis",
+    "text": "Then a passing cycle isn't enough on its own. The residues may have dried on the walls, and dried soil is much harder to remove."
+   },
+   {
+    "spk": "Orla",
+    "voice": "bf_isabella",
+    "text": "Can the tank be used for Wednesday's harvest?"
+   },
+   {
+    "spk": "Tom",
+    "voice": "bm_lewis",
+    "text": "Not yet. It should be inspected first, and swabs should be taken from the worst-case locations, under the spray ball and around the outlet valve."
+   },
+   {
+    "spk": "Orla",
+    "voice": "bf_isabella",
+    "text": "And if the swab results are fine?"
+   },
+   {
+    "spk": "Tom",
+    "voice": "bm_lewis",
+    "text": "Then QA might accept it, but it must be recorded as a deviation. It can't be treated as a normal cycle."
+   },
+   {
+    "spk": "Orla",
+    "voice": "bf_isabella",
+    "text": "Understood. Should the CIP be repeated anyway?"
+   },
+   {
+    "spk": "Tom",
+    "voice": "bm_lewis",
+    "text": "I'd say yes, a second full cycle before the swabs. It'll cost us a few hours, but it's much safer than arguing with an auditor."
+   },
+   {
+    "spk": "Orla",
+    "voice": "bf_isabella",
+    "text": "OK. I'll raise the deviation and book the second cycle for this afternoon."
+   },
+   {
+    "spk": "Tom",
+    "voice": "bm_lewis",
+    "text": "Great. And let's find out why it happened. The tank should have been cleaned on Friday night."
+   }
+  ],
+  "questions": [
+   {
+    "q": "Why is there a problem, even though the CIP cycle passed?",
+    "o": [
+     "The tank was left dirty for longer than the validated time.",
+     "The final rinse conductivity was too high.",
+     "The spray ball was blocked."
+    ],
+    "a": 0,
+    "e": "It was emptied on Friday evening and cleaned on Monday morning."
+   },
+   {
+    "q": "What is the validated dirty hold time for T-410?",
+    "o": [
+     "48 hours",
+     "60 hours",
+     "24 hours"
+    ],
+    "a": 0,
+    "e": "Orla says forty-eight hours."
+   },
+   {
+    "q": "Where should the swabs be taken?",
+    "o": [
+     "Under the spray ball and around the outlet valve.",
+     "In the transfer lines and the steam traps.",
+     "Only on the top of the tank."
+    ],
+    "a": 0,
+    "e": "These are the worst-case locations."
+   },
+   {
+    "q": "What will happen this afternoon?",
+    "o": [
+     "A second full CIP cycle will be run.",
+     "The tank will be used for the harvest.",
+     "The swab results will be sent to QA."
+    ],
+    "a": 0,
+    "e": "Orla will book the second cycle for this afternoon."
+   }
+  ]
+ },
+ "expressions": [
+  {
+   "phrase": "The cycle was aborted because…",
+   "example": "The cycle was aborted because the drain temperature did not reach the set point."
+  },
+  {
+   "phrase": "…is within / outside the validated limit",
+   "example": "The final rinse conductivity was within the validated limit."
+  },
+  {
+   "phrase": "Before the vessel can be released, …",
+   "example": "Before the vessel can be released, the cycle report must be reviewed."
+  },
+  {
+   "phrase": "…needs to be confirmed by…",
+   "example": "The result needs to be confirmed by a riboflavin test."
+  },
+  {
+   "phrase": "As a precaution, …",
+   "example": "As a precaution, the CIP will be repeated before the swabs are taken."
+  }
+ ],
+ "grammar": {
+  "title": "the passive with modal verbs",
+  "blocks": [
+   {
+    "h": "A. modal + be + past participle",
+    "p": "To make the passive with a modal verb (<em>must, should, can, may, will, might</em>), use <strong>modal + be + past participle</strong>. The modal never changes, and the participle always takes its regular or irregular form (<em>cleaned, taken, kept</em>). It is the normal style for SOPs, protocols and validation reports, because the action is more important than the person.",
+    "wrong": "The final rinse must be check before the cycle is accepted.",
+    "right": "The final rinse must be checked before the cycle is accepted.",
+    "examples": [
+     "The vessel must be cleaned within the dirty hold time.",
+     "An acid wash may be added to remove mineral deposits.",
+     "The results will be reviewed by QA tomorrow."
+    ]
+   },
+   {
+    "h": "B. Negative forms: cannot be, must not be, doesn't have to be",
+    "p": "Put <strong>not</strong> after the modal: <em>cannot be changed, must not be opened, should not be left</em>. Remember the difference from the last lesson: <strong>must not be</strong> = it is prohibited; <strong>doesn't have to be</strong> = it is not necessary (<em>no hace falta</em>).",
+    "wrong": "With CIP, the vessel mustn't be dismantled, so cleaning is faster.",
+    "right": "With CIP, the vessel doesn't have to be dismantled, so cleaning is faster.",
+    "examples": [
+     "The cycle parameters cannot be changed without a change control.",
+     "The sampling valve must not be opened during SIP.",
+     "The steam trap doesn't have to be replaced; it only needs cleaning."
+    ]
+   },
+   {
+    "h": "C. Questions: modal + subject + be + past participle",
+    "p": "In a question, the modal goes first and the subject goes between the modal and <strong>be</strong>. Spanish often puts the subject at the end (<em>¿Se puede usar el tanque?</em>), but English does not.",
+    "wrong": "Can be used the tank for Wednesday's harvest?",
+    "right": "Can the tank be used for Wednesday's harvest?",
+    "examples": [
+     "Should the CIP be repeated before the swabs are taken?",
+     "How long can the vessel be kept clean before SIP?",
+     "Will the deviation be closed this week?"
+    ]
+   },
+   {
+    "h": "D. Past: should have been / must have been + past participle",
+    "p": "To criticise a past action, use <strong>should have been + past participle</strong>. To make a deduction about the past, use <strong>must have been / might have been / can't have been + past participle</strong>. Don't forget <em>have</em>.",
+    "wrong": "The tank should been cleaned on Friday night.",
+    "right": "The tank should have been cleaned on Friday night.",
+    "examples": [
+     "The steam trap must have been blocked for several days.",
+     "The spray ball might have been damaged during maintenance.",
+     "The cycle can't have been started on time."
+    ]
+   }
+  ],
+  "quiz": [
+   {
+    "q": "After SIP, the vessel ___ under positive pressure with sterile air.",
+    "o": [
+     "must be kept",
+     "must keep",
+     "must be keep"
+    ],
+    "a": 0,
+    "e": "Passive modal: must + be + past participle (kept)."
+   },
+   {
+    "q": "The spray balls ___ before every validation run.",
+    "o": [
+     "should be inspected",
+     "should inspected",
+     "should be inspect"
+    ],
+    "a": 0,
+    "e": "should + be + past participle."
+   },
+   {
+    "q": "The cycle parameters ___ without a change control.",
+    "o": [
+     "cannot be changed",
+     "cannot changed",
+     "cannot be change"
+    ],
+    "a": 0,
+    "e": "Negative passive modal: cannot + be + past participle."
+   },
+   {
+    "q": "One advantage of CIP is that the equipment ___ for cleaning.",
+    "o": [
+     "doesn't have to be dismantled",
+     "mustn't be dismantled",
+     "can't dismantle"
+    ],
+    "a": 0,
+    "e": "It is not necessary to take it apart; it is not prohibited."
+   },
+   {
+    "q": "Choose the correct question.",
+    "o": [
+     "Can the tank be used for the harvest?",
+     "Can be used the tank for the harvest?",
+     "Can the tank used for the harvest?"
+    ],
+    "a": 0,
+    "e": "modal + subject + be + past participle."
+   },
+   {
+    "q": "The trap was blocked. It ___ during the last maintenance.",
+    "o": [
+     "should have been replaced",
+     "should be replaced",
+     "should have replaced"
+    ],
+    "a": 0,
+    "e": "Criticism of a past action in the passive: should have been + past participle."
+   }
+  ]
+ },
+ "writing": {
+  "situation": "You are preparing the validation report for the CIP cycle of bioreactor F-230 (2,300 L). The validation lead asks you to write section 3: a short description of the cycle that an inspector can read and understand.",
+  "task": "Write 100–150 words describing the CIP cycle. Explain its purpose, the sequence of steps, which parameters are recorded and how the cycle is accepted, and what must be done if a step fails. Use at least four passive forms with modal verbs (must be…, should be…, can't be…, may be…).",
+  "checklist": [
+   "A section title with the equipment number",
+   "The purpose of the cycle in one sentence",
+   "The steps in a logical order with sequencers (first, then, finally)",
+   "The recorded parameters and the acceptance criterion, without inventing exact limits",
+   "What happens if a step fails",
+   "At least four passive modals, a neutral style, and your name at the end"
+  ],
+  "placeholder": "3. Description of the CIP cycle – Bioreactor F-230 (2,300 L). The cycle is designed to…",
+  "model": [
+   "3. Description of the CIP cycle – Bioreactor F-230 (2,300 L)",
+   "The CIP cycle is designed to remove product residues and cleaning agents from the vessel, the spray balls and the transfer lines. It must be started within the validated dirty hold time.",
+   "First, the system is pre-rinsed with purified water to remove loose soil. Then a hot caustic solution is circulated through the spray balls and the lines for the time defined in the protocol. After an intermediate rinse, an acid wash may be added to remove mineral deposits. Finally, the system is rinsed with purified water until the final rinse conductivity is below the acceptance limit.",
+   "Temperature, flow rate, concentration and time are recorded automatically and must be reviewed before the vessel is released. If any parameter is outside its range, the cycle must be repeated and the event should be reported to QA. The cycle parameters cannot be changed without a change control.",
+   "Cristian"
+  ]
+ },
+ "speaking": {
+  "prompt": "Explain to a new operator the difference between CIP and SIP, and why the vessel must be kept under positive pressure after SIP. Speak for about one minute.",
+  "tips": [
+   "Start with one sentence for each cycle: <em>CIP removes…, SIP kills…</em>",
+   "Use at least three passive modals: <em>must be cleaned, can't be used, should be kept</em>.",
+   "Give one practical example, such as a blocked steam trap or a long dirty hold time.",
+   "Finish with a conclusion: <em>So the main point is…</em>"
+  ],
+  "model": [
+   "CIP is used to remove product residues and detergent, while SIP is used to sterilise the system with clean steam.",
+   "The vessel must be cleaned before it is sterilised, because steam cannot sterilise a surface that is still covered with soil.",
+   "After SIP, the vessel must be kept under positive pressure with sterile air, because as it cools down it can pull in non-sterile air.",
+   "So the main point is that a clean vessel is not necessarily a sterile one."
+  ]
+ },
+ "key_lesson": "Modal + be + past participle: the vessel must be cleaned, can be used, should have been checked. And remember: clean is not the same as sterile."
+}
